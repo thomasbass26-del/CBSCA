@@ -115,11 +115,11 @@ img{max-width:100%;display:block}
 .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;background-size:cover;background-position:center}
 .slide.active{opacity:1}
 .slide::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,20,80,.72) 0%,rgba(0,20,80,.28) 65%,rgba(0,20,80,.08) 100%)}
-.slide-1{background-image:url('https://picsum.photos/seed/coastal1/1800/900')}
-.slide-2{background-image:url('https://picsum.photos/seed/luxury-home/1800/900')}
-.slide-3{background-image:url('https://picsum.photos/seed/oceanfront/1800/900')}
-.slide-4{background-image:url('https://picsum.photos/seed/waterway/1800/900')}
-.slide-5{background-image:url('https://picsum.photos/seed/golf-sc/1800/900')}
+.slide-1{background-image:url('images/nmb-beach-drone.jpg')}
+.slide-2{background-image:url('images/plantation-lakes-home-1.jpg')}
+.slide-3{background-image:url('images/nmb-beach-1.jpg')}
+.slide-4{background-image:url('images/barefoot-landing.jpg')}
+.slide-5{background-image:url('images/barefoot-pool.jpg')}
 .hero-content{position:absolute;z-index:2;top:50%;left:0;right:0;transform:translateY(-50%);padding:0 20px;max-width:720px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:7px 14px;margin-bottom:18px}
 .hero-badge::before{content:'';width:7px;height:7px;background:var(--navy);border-radius:50%;animation:pulse 1.4s ease-in-out infinite}
@@ -143,31 +143,17 @@ img{max-width:100%;display:block}
 .oh-det{font-family:var(--fu);font-size:11px;color:var(--gray)}
 .oh-price{font-family:var(--fu);font-size:12px;font-weight:600;color:var(--blue);margin-top:2px}
 
-
 /* ══════════════════════════════════════
    SEARCH BAR
 ══════════════════════════════════════ */
-.search-wrap{background:var(--navy);padding:0}
-.search-bar{display:flex;flex-direction:column;background:var(--white);box-shadow:var(--shadow-lg)}
-.sf{display:flex;flex-direction:column;padding:14px 16px;border-bottom:1px solid var(--cream)}
+.search-wrap{background:var(--navy)}
+.search-bar{display:flex;background:var(--white);box-shadow:var(--shadow-lg)}
+.sf{flex:1;display:flex;flex-direction:column;padding:18px 20px;border-right:1px solid var(--cream)}
+.sf:last-of-type{border-right:none}
 .sf label{font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
-.sf select,.sf input{background:none;border:none;outline:none;font-family:var(--fu);font-size:14px;color:var(--dark);cursor:pointer;width:100%;min-height:28px}
-.s-btn{background:var(--gold);color:var(--navy);border:none;cursor:pointer;padding:18px 24px;font-family:var(--fu);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;transition:var(--ease);min-height:56px}
+.sf select,.sf input{background:none;border:none;outline:none;font-family:var(--fu);font-size:13px;color:var(--dark);cursor:pointer;width:100%}
+.s-btn{background:var(--gold);color:var(--navy);border:none;cursor:pointer;padding:0 32px;font-family:var(--fu);font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;display:flex;align-items:center;gap:10px;white-space:nowrap;transition:var(--ease);min-height:60px}
 .s-btn:hover{background:var(--gold-light)}
-
-@media(min-width:640px){
-  .search-bar{flex-direction:row;flex-wrap:wrap}
-  .sf{flex:1;min-width:45%;border-bottom:1px solid var(--cream);border-right:1px solid var(--cream)}
-  .s-btn{width:100%;flex:0 0 100%}
-}
-
-@media(min-width:900px){
-  .search-bar{flex-wrap:nowrap;flex-direction:row}
-  .sf{border-bottom:none;min-width:0}
-  .sf:last-of-type{border-right:none}
-  .s-btn{width:auto;flex:0 0 auto}
-}
-
 
 /* ══════════════════════════════════════
    HOME PAGE SECTIONS
@@ -213,8 +199,8 @@ img{max-width:100%;display:block}
 .agent-card{background:var(--white);box-shadow:var(--shadow);transition:var(--ease);border-bottom:3px solid transparent;overflow:hidden}
 .agent-card:hover{box-shadow:var(--shadow-lg);border-bottom-color:var(--gold);transform:translateY(-4px)}
 .agent-photo{height:240px;background-size:cover;background-position:center top}
-.agent-p1{background-image:url('https://picsum.photos/seed/agent-eric/400/300')}
-.agent-p2{background-image:url('https://picsum.photos/seed/agent-amanda/400/300')}
+.agent-p1{background-image:url('images/nmb-sign.jpg')}
+.agent-p2{background-image:url('images/nmb-sign.jpg')}
 .agent-body{padding:24px}
 .agent-name{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--navy)}
 .agent-title{font-family:var(--fu);font-size:9px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-top:5px;display:block}
@@ -295,7 +281,7 @@ img{max-width:100%;display:block}
    LIFESTYLE PAGE
 ══════════════════════════════════════ */
 .ls-hero{background:linear-gradient(135deg,#001855 0%,#003087 55%,#0057A8 100%);padding:56px 16px;position:relative;overflow:hidden}
-.ls-hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background-image:url('https://picsum.photos/seed/luxury-lifestyle/900/500');background-size:cover;background-position:center;clip-path:polygon(20% 0%,100% 0%,100% 100%,0% 100%);opacity:.3}
+.ls-hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background-image:url('images/plantation-lakes-home-1.jpg');background-size:cover;background-position:center;clip-path:polygon(20% 0%,100% 0%,100% 100%,0% 100%);opacity:.3}
 .ls-hero-body{position:relative;z-index:1;max-width:560px}
 .ls-hero-body .lbl{margin-bottom:12px}
 .ls-hero-body h1{font-family:var(--fd);font-size:clamp(2rem,6vw,4rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:16px}
@@ -429,6 +415,8 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   .ls-stats{grid-template-columns:repeat(4,1fr)}
   .stats{gap:16px}
   .about-img{height:360px}
+  .search-bar{flex-wrap:wrap}
+  .sf{min-width:45%;border-bottom:1px solid var(--cream)}
 }
 
 /* ══════════════════════════════════════
@@ -450,6 +438,10 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   .hero-actions{flex-wrap:nowrap}
   .oh-panel{display:block}
   .slide-dots{left:80px;bottom:40px}
+
+  /* Search */
+  .search-bar{flex-wrap:nowrap}
+  .sf{border-bottom:none}
 
   /* Sections */
   .intro-sec{padding:100px 0}
@@ -514,6 +506,113 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   .agent-card{grid-template-columns:180px 1fr}
   .ls-stats{grid-template-columns:repeat(4,1fr)}
 }
+
+/* ══════════════════════════════════════
+   LUXURY COMMUNITY LANDING PAGES
+══════════════════════════════════════ */
+.lux-hero{position:relative;height:65vh;min-height:480px;overflow:hidden;background:var(--navy);display:flex;align-items:flex-end}
+.lux-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.lux-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,20,80,.88) 0%,rgba(0,20,80,.4) 50%,rgba(0,20,80,.15) 100%)}
+.lux-hero-body{position:relative;z-index:2;padding:0 20px 48px;max-width:800px}
+.lux-hero-back{display:inline-flex;align-items:center;gap:6px;font-family:var(--fu);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);cursor:pointer;margin-bottom:16px;transition:var(--ease)}
+.lux-hero-back:hover{color:var(--gold-light);gap:10px}
+.lux-hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;padding:7px 16px;margin-bottom:14px}
+.lux-hero-title{font-family:var(--fd);font-size:clamp(2.2rem,5vw,4rem);font-weight:700;color:var(--white);line-height:1.08;margin-bottom:10px}
+.lux-hero-tagline{font-family:var(--fb);font-size:clamp(1rem,2vw,1.3rem);font-weight:300;color:rgba(255,255,255,.82);line-height:1.7;max-width:580px}
+
+/* Quick Facts Bar */
+.lux-facts{background:var(--navy);border-bottom:3px solid var(--gold)}
+.lux-facts-inner{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.08)}
+.lux-fact{background:var(--navy);padding:20px 16px;text-align:center}
+.lux-fact-label{font-family:var(--fu);font-size:9px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.lux-fact-val{font-family:var(--fd);font-size:clamp(.95rem,1.8vw,1.15rem);font-weight:600;color:var(--white)}
+
+/* Main Layout */
+.lux-body{padding:56px 0 80px}
+.lux-layout{display:grid;grid-template-columns:1fr;gap:40px}
+.lux-main{}
+.lux-sidebar{}
+
+/* About Section */
+.lux-about{margin-bottom:48px}
+.lux-about h2{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2rem);font-weight:600;color:var(--navy);margin-bottom:16px}
+.lux-about p{font-family:var(--fb);font-size:1.05rem;font-weight:300;color:var(--gray);line-height:1.85;margin-bottom:14px}
+
+/* Amenities Grid */
+.lux-amenities{margin-bottom:48px}
+.lux-amenities h3{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:20px}
+.lux-am-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.lux-am{display:flex;gap:14px;padding:18px;background:var(--off-white);border-left:3px solid var(--gold);transition:var(--ease)}
+.lux-am:hover{background:var(--cream);padding-left:22px}
+.lux-am-icon{font-size:1.6rem;line-height:1;flex-shrink:0}
+.lux-am h4{font-family:var(--fu);font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--navy);margin-bottom:4px}
+.lux-am p{font-family:var(--fu);font-size:12px;font-weight:300;color:var(--gray);line-height:1.6}
+
+/* Target Markets */
+.lux-targets{margin-bottom:48px}
+.lux-targets h3{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.lux-targets>p{font-family:var(--fb);font-size:.95rem;font-weight:300;color:var(--gray);margin-bottom:20px}
+.lux-t-grid{display:grid;gap:12px}
+.lux-t{display:grid;grid-template-columns:36px 1fr;gap:14px;padding:16px;background:var(--white);border:1px solid var(--cream);transition:var(--ease)}
+.lux-t:hover{border-color:var(--gold);box-shadow:var(--shadow)}
+.lux-t-tier{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--gold);text-align:center;padding-top:2px}
+.lux-t-metro{font-family:var(--fu);font-size:13px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.lux-t-why{font-family:var(--fu);font-size:11px;font-weight:300;color:var(--gray);line-height:1.6}
+
+/* Buyer Personas */
+.lux-personas{margin-bottom:48px}
+.lux-personas h3{font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:20px}
+.lux-p-grid{display:grid;gap:16px}
+.lux-persona{padding:24px;background:var(--white);border:1px solid var(--cream);transition:var(--ease)}
+.lux-persona:hover{box-shadow:var(--shadow)}
+.lux-p-type{font-family:var(--fu);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.lux-p-headline{font-family:var(--fd);font-size:1.1rem;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:10px;font-style:italic}
+.lux-p-channels{font-family:var(--fu);font-size:11px;font-weight:300;color:var(--gray)}
+.lux-p-channels strong{font-weight:500;color:var(--navy)}
+
+/* Sidebar Cards */
+.lux-sb-card{background:var(--off-white);padding:28px;margin-bottom:20px}
+.lux-sb-card h3{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:10px}
+.lux-sb-card p{font-family:var(--fu);font-size:12px;font-weight:300;color:var(--gray);line-height:1.7;margin-bottom:16px}
+.lux-sb-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.lux-sb-stat{text-align:center;padding:12px;background:var(--white)}
+.lux-sb-stat .val{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--navy)}
+.lux-sb-stat .lab{font-family:var(--fu);font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-top:2px}
+
+/* Luxury Communities Grid (on CF page) */
+.lux-comm-sec{padding:60px 0;background:var(--off-white)}
+.lux-comm-sec .sec-header{margin-bottom:36px}
+.lux-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.lux-card{position:relative;overflow:hidden;cursor:pointer;background:var(--white);box-shadow:var(--shadow);transition:var(--ease)}
+.lux-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
+.lux-card-img{height:200px;background-size:cover;background-position:center;position:relative}
+.lux-card-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,20,80,.6) 0%,transparent 60%)}
+.lux-card-gated{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--navy);font-family:var(--fu);font-size:8px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;z-index:2}
+.lux-card-body{padding:20px}
+.lux-card-name{font-family:var(--fd);font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.lux-card-tag{font-family:var(--fu);font-size:11px;font-weight:300;color:var(--gray);margin-bottom:10px}
+.lux-card-price{font-family:var(--fu);font-size:11px;font-weight:600;color:var(--blue);letter-spacing:.5px}
+.lux-card-cta{display:block;margin-top:12px;font-family:var(--fu);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);transition:var(--ease)}
+.lux-card:hover .lux-card-cta{color:var(--navy);padding-left:4px}
+
+@media(min-width:640px){
+  .lux-facts-inner{grid-template-columns:repeat(4,1fr)}
+  .lux-am-grid{grid-template-columns:repeat(2,1fr)}
+  .lux-grid{grid-template-columns:repeat(2,1fr)}
+  .lux-p-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:900px){
+  .lux-hero{height:62vh;min-height:520px}
+  .lux-hero-body{padding:0 80px 56px}
+  .lux-layout{grid-template-columns:1fr 340px;gap:56px}
+  .lux-am-grid{grid-template-columns:repeat(3,1fr)}
+  .lux-grid{grid-template-columns:repeat(3,1fr)}
+  .lux-card-img{height:220px}
+  .lux-p-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:1200px){
+  .lux-grid{grid-template-columns:repeat(4,1fr)}
+}
 </style>
 </head>
 <body>
@@ -522,7 +621,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 <div class="topbar">
   <a href="tel:8434305201">(843) 430-5201</a>
   <span class="tb-sep"> · </span>
-  <a href="/cdn-cgi/l/email-protection#2940474f46694a4b5a4c484a46485a5d074a4644"><span class="__cf_email__" data-cfemail="82ebece4edc2e1e0f1e7e3e1ede3f1f6ace1edef">[email&#160;protected]</span></a>
+  <a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a>
   <span class="tb-sep tb-loc"> · Myrtle Beach, SC | Grand Strand</span>
 </div>
 
@@ -543,7 +642,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
             <a href="#" onclick="showCommunity('little-river');return false">Little River</a>
             <a href="#" onclick="showCommunity('north-myrtle-beach');return false">North Myrtle Beach</a>
             <a href="#" onclick="showCommunity('conway');return false">Conway</a>
-            <a href="#" onclick="showCommunity('carolina-forest');return false">Carolina Forest</a>
+            <a href="#" onclick="showCommunity('carolina-forest');return false"><strong>Carolina Forest</strong></a>
             <a href="#" onclick="showCommunity('myrtle-beach');return false">Myrtle Beach</a>
             <hr>
             <a href="#" onclick="showCommunity('murrells-inlet');return false">Murrells Inlet</a>
@@ -723,9 +822,9 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
           </div>
         </div>
         <div class="intro-imgs">
-          <div class="intro-img" style="background-image:url('https://picsum.photos/seed/house-cb1/600/500');grid-row:1/3"></div>
-          <div class="intro-img" style="background-image:url('https://picsum.photos/seed/coastal-cb2/300/240')"></div>
-          <div class="intro-img" style="background-image:url('https://picsum.photos/seed/marina-cb3/300/240')"></div>
+          <div class="intro-img" style="background-image:url('images/pelican-bay-2.jpg');grid-row:1/3"></div>
+          <div class="intro-img" style="background-image:url('images/nmb-beach-access.jpg')"></div>
+          <div class="intro-img" style="background-image:url('images/barefoot-landing.jpg')"></div>
         </div>
       </div>
     </div>
@@ -741,27 +840,27 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
       </div>
       <div class="comm-grid">
         <div class="comm-card large" onclick="showCommunity('murrells-inlet')">
-          <div class="comm-bg" style="background-image:url('https://picsum.photos/seed/murrells-inlet/800/500')"></div>
+          <div class="comm-bg" style="background-image:url('images/barefoot-cabana.jpg')"></div>
           <div class="comm-info"><div class="comm-name">Murrells Inlet</div><span class="comm-tag">The Seafood Capital of SC</span><button class="comm-explore">Explore →</button></div>
         </div>
         <div class="comm-card" onclick="showCommunity('north-myrtle-beach')">
-          <div class="comm-bg" style="background-image:url('https://picsum.photos/seed/north-myrtle/500/380')"></div>
+          <div class="comm-bg" style="background-image:url('images/nmb-sign.jpg')"></div>
           <div class="comm-info"><div class="comm-name">North Myrtle Beach</div><span class="comm-tag">Oceanfront Living</span><button class="comm-explore">Explore →</button></div>
         </div>
         <div class="comm-card" onclick="showCommunity('pawleys-island')">
-          <div class="comm-bg" style="background-image:url('https://picsum.photos/seed/pawleys/500/380')"></div>
+          <div class="comm-bg" style="background-image:url('images/pelican-bay-4.jpg')"></div>
           <div class="comm-info"><div class="comm-name">Pawleys Island</div><span class="comm-tag">Understated Elegance</span><button class="comm-explore">Explore →</button></div>
         </div>
         <div class="comm-card" onclick="showCommunity('little-river')">
-          <div class="comm-bg" style="background-image:url('https://picsum.photos/seed/little-river/500/380')"></div>
+          <div class="comm-bg" style="background-image:url('images/pelican-bay-4.jpg')"></div>
           <div class="comm-info"><div class="comm-name">Little River</div><span class="comm-tag">Waterway &amp; Marina Living</span><button class="comm-explore">Explore →</button></div>
         </div>
         <div class="comm-card" onclick="showCommunity('carolina-forest')">
-          <div class="comm-bg" style="background-image:url('https://picsum.photos/seed/carolina-forest/500/380')"></div>
+          <div class="comm-bg" style="background-image:url('images/waterbridge-entrance.jpg')"></div>
           <div class="comm-info"><div class="comm-name">Carolina Forest</div><span class="comm-tag">Master-Planned Living</span><button class="comm-explore">Explore →</button></div>
         </div>
         <div class="comm-card" onclick="showCommunity('litchfield')">
-          <div class="comm-bg" style="background-image:url('https://picsum.photos/seed/litchfield/500/380')"></div>
+          <div class="comm-bg" style="background-image:url('images/little-river-1.jpg')"></div>
           <div class="comm-info"><div class="comm-name">Litchfield Beach</div><span class="comm-tag">Pristine &amp; Peaceful</span><button class="comm-explore">Explore →</button></div>
         </div>
       </div>
@@ -793,7 +892,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
             <div class="agent-name">Your Listing Specialist</div>
             <span class="agent-title">Senior Listing Agent · Grand Strand Expert</span>
             <p class="agent-bio">Our listing specialists bring deep Grand Strand market knowledge, cutting-edge marketing, and a relentless commitment to getting you the best possible outcome. With years of experience across every price point and community, we know how to position your home to sell fast and for top dollar.</p>
-            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="/cdn-cgi/l/email-protection#d2bbbcb4bd92b1b0a1b7b3b1bdb3a1a6fcb1bdbf"><span class="__cf_email__" data-cfemail="f29b9c949db29190819793919d938186dc919d9f">[email&#160;protected]</span></a></div>
+            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a></div>
           </div>
         </div>
         <div class="agent-card">
@@ -802,7 +901,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
             <div class="agent-name">Your Buyer's Specialist</div>
             <span class="agent-title">Buyer's Agent · Relocation Expert</span>
             <p class="agent-bio">Discovering a new home on the South Carolina coast is one of life's great adventures — and our buyer's specialists are the ideal guides. From first-time coastal buyers to seasoned investors, our team provides the local insight, market data, and genuine care that make all the difference.</p>
-            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="/cdn-cgi/l/email-protection#0b62656d644b6869786e6a68646a787f25686466"><span class="__cf_email__" data-cfemail="ff96919990bf9c9d8c9a9e9c909e8c8bd19c9092">[email&#160;protected]</span></a></div>
+            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a></div>
           </div>
         </div>
       </div>
@@ -852,9 +951,9 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <div class="lf"><label>Beds</label><select><option>Any</option><option>2+</option><option>3+</option><option>4+</option></select></div>
       </div>
       <div class="list-grid">
-        <div class="listing"><div class="l-photo"><div class="l-bg" style="background-image:url('https://picsum.photos/seed/listing-1/500/300')"></div><div class="l-badge">New Listing</div></div><div class="l-info"><div class="l-price">$1,250,000</div><div class="l-addr">412 Waterway Blvd</div><div class="l-loc">Gated Waterway Community</div><div class="l-specs"><div><span class="ls-v">4</span><span class="ls-l">Beds</span></div><div><span class="ls-v">3.5</span><span class="ls-l">Baths</span></div><div><span class="ls-v">3,240</span><span class="ls-l">Sq Ft</span></div><div><span class="ls-v">🚤</span><span class="ls-l">Dock</span></div></div></div></div>
-        <div class="listing"><div class="l-photo"><div class="l-bg" style="background-image:url('https://picsum.photos/seed/listing-2/500/300')"></div><div class="l-badge">Price Reduced</div></div><div class="l-info"><div class="l-price">$749,000</div><div class="l-addr">8820 Tidal Creek Dr</div><div class="l-loc">Marsh View · Golf Nearby</div><div class="l-specs"><div><span class="ls-v">3</span><span class="ls-l">Beds</span></div><div><span class="ls-v">2</span><span class="ls-l">Baths</span></div><div><span class="ls-v">2,100</span><span class="ls-l">Sq Ft</span></div><div><span class="ls-v">🏊</span><span class="ls-l">Pool</span></div></div></div></div>
-        <div class="listing"><div class="l-photo"><div class="l-bg" style="background-image:url('https://picsum.photos/seed/listing-3/500/300')"></div><div class="l-badge">Open House</div></div><div class="l-info"><div class="l-price">$2,100,000</div><div class="l-addr">3 Oceanview Terrace</div><div class="l-loc">Direct Ocean Views · Gated</div><div class="l-specs"><div><span class="ls-v">5</span><span class="ls-l">Beds</span></div><div><span class="ls-v">4</span><span class="ls-l">Baths</span></div><div><span class="ls-v">4,800</span><span class="ls-l">Sq Ft</span></div><div><span class="ls-v">🌊</span><span class="ls-l">Ocean</span></div></div></div></div>
+        <div class="listing"><div class="l-photo"><div class="l-bg" style="background-image:url('images/pelican-bay-1.jpg')"></div><div class="l-badge">New Listing</div></div><div class="l-info"><div class="l-price">$1,250,000</div><div class="l-addr">412 Waterway Blvd</div><div class="l-loc">Gated Waterway Community</div><div class="l-specs"><div><span class="ls-v">4</span><span class="ls-l">Beds</span></div><div><span class="ls-v">3.5</span><span class="ls-l">Baths</span></div><div><span class="ls-v">3,240</span><span class="ls-l">Sq Ft</span></div><div><span class="ls-v">🚤</span><span class="ls-l">Dock</span></div></div></div></div>
+        <div class="listing"><div class="l-photo"><div class="l-bg" style="background-image:url('images/pelican-bay-2.jpg')"></div><div class="l-badge">Price Reduced</div></div><div class="l-info"><div class="l-price">$749,000</div><div class="l-addr">8820 Tidal Creek Dr</div><div class="l-loc">Marsh View · Golf Nearby</div><div class="l-specs"><div><span class="ls-v">3</span><span class="ls-l">Beds</span></div><div><span class="ls-v">2</span><span class="ls-l">Baths</span></div><div><span class="ls-v">2,100</span><span class="ls-l">Sq Ft</span></div><div><span class="ls-v">🏊</span><span class="ls-l">Pool</span></div></div></div></div>
+        <div class="listing"><div class="l-photo"><div class="l-bg" style="background-image:url('images/plantation-lakes-home-1.jpg')"></div><div class="l-badge">Open House</div></div><div class="l-info"><div class="l-price">$2,100,000</div><div class="l-addr">3 Oceanview Terrace</div><div class="l-loc">Direct Ocean Views · Gated</div><div class="l-specs"><div><span class="ls-v">5</span><span class="ls-l">Beds</span></div><div><span class="ls-v">4</span><span class="ls-l">Baths</span></div><div><span class="ls-v">4,800</span><span class="ls-l">Sq Ft</span></div><div><span class="ls-v">🌊</span><span class="ls-l">Ocean</span></div></div></div></div>
       </div>
       <div style="text-align:center;margin-top:36px"><a href="#" class="btn btn-navy">View All Listings in This Area</a></div>
     </div>
@@ -891,28 +990,28 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 
   <!-- Each lifestyle section -->
   <div id="ls-golf">
-    <div class="ls-cat"><div class="container"><div class="ls-cat-hero" style="background-image:url('https://picsum.photos/seed/golf-myrtle/1200/500')"><div class="ls-cat-body"><div class="cat-left"><h2>Golf Communities</h2><p>With over 100 courses woven through coastal live oaks and marshlands, the Grand Strand is one of the premier golf destinations in the world. Live where you play.</p><a href="#" class="btn btn-outline">View All Golf Properties</a></div></div></div><div class="ls-stats"><div class="ls-stat"><span class="ls-stat-icon">⛳</span><span class="ls-stat-n">100+</span><span class="ls-stat-l">Golf Courses</span></div><div class="ls-stat"><span class="ls-stat-icon">🏆</span><span class="ls-stat-n">14</span><span class="ls-stat-l">Championship Courses</span></div><div class="ls-stat"><span class="ls-stat-icon">🌅</span><span class="ls-stat-n">60 mi</span><span class="ls-stat-l">Coastline</span></div><div class="ls-stat"><span class="ls-stat-icon">☀️</span><span class="ls-stat-n">215</span><span class="ls-stat-l">Sunny Days/Year</span></div></div></div></div>
-    <section class="tiers-sec"><div class="container"><div class="tiers-header"><span class="lbl">Search by Price</span><h2 class="h2">Golf Community Properties</h2></div><div class="tiers-grid"><div class="tier tier-entry"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/golf-tier1/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Entry Luxury</span><div class="tier-price">$600K – $1,000,000</div><p class="tier-desc">Beautifully appointed golf course homes with premium finishes, private pools, and effortless access to championship play.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-mid"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/golf-tier2/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Premier Collection</span><div class="tier-price">$1,000,000 – $3,000,000</div><p class="tier-desc">Exceptional fairway estates with custom architecture, resort-style outdoor living, and coveted addresses in the Grand Strand's finest gated golf communities.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-ultra"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/golf-tier3/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Ultra Luxury</span><div class="tier-price">$3,000,000+</div><p class="tier-desc">Rare trophy properties commanding the finest fairway frontage — available only to the most discerning buyers.</p><button class="tier-cta-btn">Request Private Access →</button></div></div></div></div></section>
+    <div class="ls-cat"><div class="container"><div class="ls-cat-hero" style="background-image:url('images/long-bay-2.jpg')"><div class="ls-cat-body"><div class="cat-left"><h2>Golf Communities</h2><p>With over 100 courses woven through coastal live oaks and marshlands, the Grand Strand is one of the premier golf destinations in the world. Live where you play.</p><a href="#" class="btn btn-outline">View All Golf Properties</a></div></div></div><div class="ls-stats"><div class="ls-stat"><span class="ls-stat-icon">⛳</span><span class="ls-stat-n">100+</span><span class="ls-stat-l">Golf Courses</span></div><div class="ls-stat"><span class="ls-stat-icon">🏆</span><span class="ls-stat-n">14</span><span class="ls-stat-l">Championship Courses</span></div><div class="ls-stat"><span class="ls-stat-icon">🌅</span><span class="ls-stat-n">60 mi</span><span class="ls-stat-l">Coastline</span></div><div class="ls-stat"><span class="ls-stat-icon">☀️</span><span class="ls-stat-n">215</span><span class="ls-stat-l">Sunny Days/Year</span></div></div></div></div>
+    <section class="tiers-sec"><div class="container"><div class="tiers-header"><span class="lbl">Search by Price</span><h2 class="h2">Golf Community Properties</h2></div><div class="tiers-grid"><div class="tier tier-entry"><div class="tier-bg" style="background-image:url('images/long-bay-1.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Entry Luxury</span><div class="tier-price">$600K – $1,000,000</div><p class="tier-desc">Beautifully appointed golf course homes with premium finishes, private pools, and effortless access to championship play.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-mid"><div class="tier-bg" style="background-image:url('images/long-bay-2.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Premier Collection</span><div class="tier-price">$1,000,000 – $3,000,000</div><p class="tier-desc">Exceptional fairway estates with custom architecture, resort-style outdoor living, and coveted addresses in the Grand Strand's finest gated golf communities.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-ultra"><div class="tier-bg" style="background-image:url('images/barefoot-pool.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Ultra Luxury</span><div class="tier-price">$3,000,000+</div><p class="tier-desc">Rare trophy properties commanding the finest fairway frontage — available only to the most discerning buyers.</p><button class="tier-cta-btn">Request Private Access →</button></div></div></div></div></section>
   </div>
 
   <div id="ls-oceanfront-condos" style="display:none">
-    <div class="ls-cat"><div class="container"><div class="ls-cat-hero" style="background-image:url('https://picsum.photos/seed/oceanfront-condo/1200/500')"><div class="ls-cat-body"><div class="cat-left"><h2>Oceanfront Condos</h2><p>Wake up to the sound of the waves. Oceanfront condos along the Grand Strand blend resort amenities, low-maintenance living, and unobstructed Atlantic views.</p><a href="#" class="btn btn-outline">View All Oceanfront Condos</a></div></div></div></div></div>
-    <section class="tiers-sec"><div class="container"><div class="tiers-header"><span class="lbl">Search by Price</span><h2 class="h2">Oceanfront Condominiums</h2></div><div class="tiers-grid"><div class="tier tier-entry"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/condo1/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Coastal Retreat</span><div class="tier-price">$600K – $1,000,000</div><p class="tier-desc">Stylish oceanfront residences with direct beach access, resort pools, and Atlantic views that make every morning feel like vacation.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-mid"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/condo2/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Signature Residences</span><div class="tier-price">$1,000,000 – $3,000,000</div><p class="tier-desc">Expansive floor plans, private terraces, and full-service buildings in the Grand Strand's most prestigious oceanfront addresses.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-ultra"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/condo3/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Penthouse Collection</span><div class="tier-price">$3,000,000+</div><p class="tier-desc">Sky-high penthouse residences with panoramic ocean horizons, private rooftop terraces, and white-glove services.</p><button class="tier-cta-btn">Request Private Access →</button></div></div></div></div></section>
+    <div class="ls-cat"><div class="container"><div class="ls-cat-hero" style="background-image:url('images/nmb-beach-1.jpg')"><div class="ls-cat-body"><div class="cat-left"><h2>Oceanfront Condos</h2><p>Wake up to the sound of the waves. Oceanfront condos along the Grand Strand blend resort amenities, low-maintenance living, and unobstructed Atlantic views.</p><a href="#" class="btn btn-outline">View All Oceanfront Condos</a></div></div></div></div></div>
+    <section class="tiers-sec"><div class="container"><div class="tiers-header"><span class="lbl">Search by Price</span><h2 class="h2">Oceanfront Condominiums</h2></div><div class="tiers-grid"><div class="tier tier-entry"><div class="tier-bg" style="background-image:url('images/nmb-beach-drone.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Coastal Retreat</span><div class="tier-price">$600K – $1,000,000</div><p class="tier-desc">Stylish oceanfront residences with direct beach access, resort pools, and Atlantic views that make every morning feel like vacation.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-mid"><div class="tier-bg" style="background-image:url('images/nmb-beach-1.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Signature Residences</span><div class="tier-price">$1,000,000 – $3,000,000</div><p class="tier-desc">Expansive floor plans, private terraces, and full-service buildings in the Grand Strand's most prestigious oceanfront addresses.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-ultra"><div class="tier-bg" style="background-image:url('images/nmb-beach-access.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Penthouse Collection</span><div class="tier-price">$3,000,000+</div><p class="tier-desc">Sky-high penthouse residences with panoramic ocean horizons, private rooftop terraces, and white-glove services.</p><button class="tier-cta-btn">Request Private Access →</button></div></div></div></div></section>
   </div>
 
   <div id="ls-resort" style="display:none">
-    <div class="ls-cat"><div class="container"><div class="ls-cat-hero" style="background-image:url('https://picsum.photos/seed/resort-sc/1200/500')"><div class="ls-cat-body"><div class="cat-left"><h2>Resort Communities</h2><p>The Grand Strand's resort communities offer a lifestyle most people only experience on vacation — every day. Pools, tennis, fitness, social clubs, and meticulously maintained grounds at your doorstep.</p><a href="#" class="btn btn-outline">Explore Resort Living</a></div></div></div></div></div>
-    <section class="tiers-sec"><div class="container"><div class="tiers-header"><span class="lbl">Search by Price</span><h2 class="h2">Resort Community Homes</h2></div><div class="tiers-grid"><div class="tier tier-entry"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/resort1/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Resort Living</span><div class="tier-price">$600K – $1,000,000</div><p class="tier-desc">Beautifully designed homes within amenity-rich resort communities where life outside your front door is just as spectacular as the home itself.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-mid"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/resort2/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Grand Collection</span><div class="tier-price">$1,000,000 – $3,000,000</div><p class="tier-desc">Prestigious addresses within the Grand Strand's most sought-after gated resort communities — private, secure, and effortlessly luxurious.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-ultra"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/resort3/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Estate Collection</span><div class="tier-price">$3,000,000+</div><p class="tier-desc">Singular estate properties within the Grand Strand's most exclusive resort communities — where privacy, prestige, and exceptional design converge.</p><button class="tier-cta-btn">Request Private Access →</button></div></div></div></div></section>
+    <div class="ls-cat"><div class="container"><div class="ls-cat-hero" style="background-image:url('images/barefoot-pool.jpg')"><div class="ls-cat-body"><div class="cat-left"><h2>Resort Communities</h2><p>The Grand Strand's resort communities offer a lifestyle most people only experience on vacation — every day. Pools, tennis, fitness, social clubs, and meticulously maintained grounds at your doorstep.</p><a href="#" class="btn btn-outline">Explore Resort Living</a></div></div></div></div></div>
+    <section class="tiers-sec"><div class="container"><div class="tiers-header"><span class="lbl">Search by Price</span><h2 class="h2">Resort Community Homes</h2></div><div class="tiers-grid"><div class="tier tier-entry"><div class="tier-bg" style="background-image:url('images/barefoot-cabana.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Resort Living</span><div class="tier-price">$600K – $1,000,000</div><p class="tier-desc">Beautifully designed homes within amenity-rich resort communities where life outside your front door is just as spectacular as the home itself.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-mid"><div class="tier-bg" style="background-image:url('images/barefoot-pool.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Grand Collection</span><div class="tier-price">$1,000,000 – $3,000,000</div><p class="tier-desc">Prestigious addresses within the Grand Strand's most sought-after gated resort communities — private, secure, and effortlessly luxurious.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-ultra"><div class="tier-bg" style="background-image:url('images/barefoot-landing.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Estate Collection</span><div class="tier-price">$3,000,000+</div><p class="tier-desc">Singular estate properties within the Grand Strand's most exclusive resort communities — where privacy, prestige, and exceptional design converge.</p><button class="tier-cta-btn">Request Private Access →</button></div></div></div></div></section>
   </div>
 
   <div id="ls-icw" style="display:none">
-    <div class="ls-cat"><div class="container"><div class="ls-cat-hero" style="background-image:url('https://picsum.photos/seed/icw-waterway/1200/500')"><div class="ls-cat-body"><div class="cat-left"><h2>Intracoastal Waterway</h2><p>The ICW winds 60+ miles through the Grand Strand, lined with moss-draped live oaks, blue herons, and some of the most stunning waterfront homes in the Southeast.</p><a href="#" class="btn btn-outline">View Waterway Properties</a></div></div></div></div></div>
-    <section class="tiers-sec"><div class="container"><div class="tiers-header"><span class="lbl">Search by Price</span><h2 class="h2">Intracoastal Waterway Homes</h2></div><div class="tiers-grid"><div class="tier tier-entry"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/icw1/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Waterway Access</span><div class="tier-price">$600K – $1,000,000</div><p class="tier-desc">Charming waterway homes with private docks, marsh views, and direct ICW access — the perfect blend of natural beauty and coastal comfort.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-mid"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/icw2/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Deep Water Estate</span><div class="tier-price">$1,000,000 – $3,000,000</div><p class="tier-desc">Exceptional deep-water properties with private boat docks, panoramic ICW views, and the serene privacy that only waterfront living provides.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-ultra"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/icw3/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Trophy Waterfront</span><div class="tier-price">$3,000,000+</div><p class="tier-desc">Rare trophy waterfront estates commanding the finest points of the Intracoastal — properties of this caliber almost never come to market.</p><button class="tier-cta-btn">Request Private Access →</button></div></div></div></div></section>
+    <div class="ls-cat"><div class="container"><div class="ls-cat-hero" style="background-image:url('images/barefoot-landing.jpg')"><div class="ls-cat-body"><div class="cat-left"><h2>Intracoastal Waterway</h2><p>The ICW winds 60+ miles through the Grand Strand, lined with moss-draped live oaks, blue herons, and some of the most stunning waterfront homes in the Southeast.</p><a href="#" class="btn btn-outline">View Waterway Properties</a></div></div></div></div></div>
+    <section class="tiers-sec"><div class="container"><div class="tiers-header"><span class="lbl">Search by Price</span><h2 class="h2">Intracoastal Waterway Homes</h2></div><div class="tiers-grid"><div class="tier tier-entry"><div class="tier-bg" style="background-image:url('images/barefoot-drone.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Waterway Access</span><div class="tier-price">$600K – $1,000,000</div><p class="tier-desc">Charming waterway homes with private docks, marsh views, and direct ICW access — the perfect blend of natural beauty and coastal comfort.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-mid"><div class="tier-bg" style="background-image:url('images/barefoot-landing.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Deep Water Estate</span><div class="tier-price">$1,000,000 – $3,000,000</div><p class="tier-desc">Exceptional deep-water properties with private boat docks, panoramic ICW views, and the serene privacy that only waterfront living provides.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-ultra"><div class="tier-bg" style="background-image:url('images/pelican-bay-4.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Trophy Waterfront</span><div class="tier-price">$3,000,000+</div><p class="tier-desc">Rare trophy waterfront estates commanding the finest points of the Intracoastal — properties of this caliber almost never come to market.</p><button class="tier-cta-btn">Request Private Access →</button></div></div></div></div></section>
   </div>
 
   <div id="ls-oceanfront-homes" style="display:none">
-    <div class="ls-cat"><div class="container"><div class="ls-cat-hero" style="background-image:url('https://picsum.photos/seed/ocean-home/1200/500')"><div class="ls-cat-body"><div class="cat-left"><h2>Oceanfront Homes</h2><p>There is nothing quite like owning a home where the Atlantic is your backyard. These are the Grand Strand's finest oceanfront residences — private, prestigious, and breathtaking.</p><a href="#" class="btn btn-outline">View Oceanfront Homes</a></div></div></div></div></div>
-    <section class="tiers-sec"><div class="container"><div class="tiers-header"><span class="lbl">Search by Price</span><h2 class="h2">Oceanfront Private Residences</h2></div><div class="tiers-grid"><div class="tier tier-entry"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/ocean-h1/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Oceanfront Access</span><div class="tier-price">$600K – $1,000,000</div><p class="tier-desc">Thoughtfully designed oceanfront homes where the sand is steps away and the sunrises are yours — an extraordinary lifestyle at an approachable entry point.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-mid"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/ocean-h2/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Premier Ocean Estates</span><div class="tier-price">$1,000,000 – $3,000,000</div><p class="tier-desc">Architecturally remarkable oceanfront estates with private pools, outdoor living spaces, and unrivaled direct Atlantic frontage along South Carolina's finest coast.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-ultra"><div class="tier-bg" style="background-image:url('https://picsum.photos/seed/ocean-h3/700/500')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Coastal Trophy Homes</span><div class="tier-price">$3,000,000+</div><p class="tier-desc">The rarest of the rare. These magnificent oceanfront estates sit on some of the most coveted ground in the Carolinas — irreplaceable addresses for those who demand the absolute finest.</p><button class="tier-cta-btn">Request Private Access →</button></div></div></div></div></section>
+    <div class="ls-cat"><div class="container"><div class="ls-cat-hero" style="background-image:url('images/nmb-beach-access.jpg')"><div class="ls-cat-body"><div class="cat-left"><h2>Oceanfront Homes</h2><p>There is nothing quite like owning a home where the Atlantic is your backyard. These are the Grand Strand's finest oceanfront residences — private, prestigious, and breathtaking.</p><a href="#" class="btn btn-outline">View Oceanfront Homes</a></div></div></div></div></div>
+    <section class="tiers-sec"><div class="container"><div class="tiers-header"><span class="lbl">Search by Price</span><h2 class="h2">Oceanfront Private Residences</h2></div><div class="tiers-grid"><div class="tier tier-entry"><div class="tier-bg" style="background-image:url('images/nmb-beach-drone.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Oceanfront Access</span><div class="tier-price">$600K – $1,000,000</div><p class="tier-desc">Thoughtfully designed oceanfront homes where the sand is steps away and the sunrises are yours — an extraordinary lifestyle at an approachable entry point.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-mid"><div class="tier-bg" style="background-image:url('images/nmb-beach-1.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Premier Ocean Estates</span><div class="tier-price">$1,000,000 – $3,000,000</div><p class="tier-desc">Architecturally remarkable oceanfront estates with private pools, outdoor living spaces, and unrivaled direct Atlantic frontage along South Carolina's finest coast.</p><button class="tier-cta-btn">Browse This Range →</button></div></div><div class="tier tier-ultra"><div class="tier-bg" style="background-image:url('images/nmb-beach-access.jpg')"></div><div class="tier-ov"></div><div class="tier-body"><span class="tier-lbl">Coastal Trophy Homes</span><div class="tier-price">$3,000,000+</div><p class="tier-desc">The rarest of the rare. These magnificent oceanfront estates sit on some of the most coveted ground in the Carolinas — irreplaceable addresses for those who demand the absolute finest.</p><button class="tier-cta-btn">Request Private Access →</button></div></div></div></div></section>
   </div>
 
 </div><!-- /page-lifestyle -->
@@ -955,12 +1054,12 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   <div class="blog-body">
     <div class="container">
       <div class="blog-grid">
-        <div class="blog-card"><div class="b-photo" style="background-image:url('https://picsum.photos/seed/blog1/500/250')"></div><div class="b-body"><span class="b-cat">Market Update</span><div class="b-title">Grand Strand Luxury Market: Q1 2025 Report & What It Means for Buyers</div><p class="b-exc">Inventory remains historically low while demand continues to outpace supply in the $1M+ segment. Here's what you need to know.</p><div class="b-meta"><span>March 4, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
-        <div class="blog-card"><div class="b-photo" style="background-image:url('https://picsum.photos/seed/blog2/500/250')"></div><div class="b-body"><span class="b-cat">Community Spotlight</span><div class="b-title">Pelican Bay: Why Little River's Best-Kept Secret Is Finally Getting Noticed</div><p class="b-exc">Gated. Waterway-front. Minutes from the ocean. We take a deep look at why Pelican Bay is one of the Grand Strand's most sought-after communities right now.</p><div class="b-meta"><span>February 28, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
-        <div class="blog-card"><div class="b-photo" style="background-image:url('https://picsum.photos/seed/blog3/500/250')"></div><div class="b-body"><span class="b-cat">Lifestyle Guide</span><div class="b-title">The Ultimate Guide to Golf Communities Along the Grand Strand</div><p class="b-exc">From TPC Myrtle Beach to Pawleys Plantation — we break down the top golf course communities for buyers at every price point.</p><div class="b-meta"><span>February 14, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
-        <div class="blog-card"><div class="b-photo" style="background-image:url('https://picsum.photos/seed/blog4/500/250')"></div><div class="b-body"><span class="b-cat">Buyer's Guide</span><div class="b-title">Relocating to Myrtle Beach? 7 Things Every Buyer Should Know First</div><p class="b-exc">Flood zones, HOA fees, rental income potential, and proximity to healthcare — the questions every relocation buyer should ask.</p><div class="b-meta"><span>February 6, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
-        <div class="blog-card"><div class="b-photo" style="background-image:url('https://picsum.photos/seed/blog5/500/250')"></div><div class="b-body"><span class="b-cat">Investing</span><div class="b-title">Short-Term Rental Potential on the Grand Strand: The Numbers Behind the Opportunity</div><p class="b-exc">Airbnb occupancy rates, average nightly rates, and which neighborhoods deliver the strongest returns for coastal property owners.</p><div class="b-meta"><span>January 22, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
-        <div class="blog-card"><div class="b-photo" style="background-image:url('https://picsum.photos/seed/blog6/500/250')"></div><div class="b-body"><span class="b-cat">Lifestyle Guide</span><div class="b-title">Life on the Intracoastal: A Day in the Life of a Waterway Homeowner</div><p class="b-exc">Morning kayak, afternoon cruise, evening marsh views — what makes ICW living so uniquely South Carolinian.</p><div class="b-meta"><span>January 10, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
+        <div class="blog-card"><div class="b-photo" style="background-image:url('images/barefoot-landing.jpg')"></div><div class="b-body"><span class="b-cat">Market Update</span><div class="b-title">Grand Strand Luxury Market: Q1 2025 Report & What It Means for Buyers</div><p class="b-exc">Inventory remains historically low while demand continues to outpace supply in the $1M+ segment. Here's what you need to know.</p><div class="b-meta"><span>March 4, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
+        <div class="blog-card"><div class="b-photo" style="background-image:url('images/pelican-bay-4.jpg')"></div><div class="b-body"><span class="b-cat">Community Spotlight</span><div class="b-title">Pelican Bay: Why Little River's Best-Kept Secret Is Finally Getting Noticed</div><p class="b-exc">Gated. Waterway-front. Minutes from the ocean. We take a deep look at why Pelican Bay is one of the Grand Strand's most sought-after communities right now.</p><div class="b-meta"><span>February 28, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
+        <div class="blog-card"><div class="b-photo" style="background-image:url('images/long-bay-2.jpg')"></div><div class="b-body"><span class="b-cat">Lifestyle Guide</span><div class="b-title">The Ultimate Guide to Golf Communities Along the Grand Strand</div><p class="b-exc">From TPC Myrtle Beach to Pawleys Plantation — we break down the top golf course communities for buyers at every price point.</p><div class="b-meta"><span>February 14, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
+        <div class="blog-card"><div class="b-photo" style="background-image:url('images/nmb-beach-drone.jpg')"></div><div class="b-body"><span class="b-cat">Buyer's Guide</span><div class="b-title">Relocating to Myrtle Beach? 7 Things Every Buyer Should Know First</div><p class="b-exc">Flood zones, HOA fees, rental income potential, and proximity to healthcare — the questions every relocation buyer should ask.</p><div class="b-meta"><span>February 6, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
+        <div class="blog-card"><div class="b-photo" style="background-image:url('images/barefoot-cabana.jpg')"></div><div class="b-body"><span class="b-cat">Investing</span><div class="b-title">Short-Term Rental Potential on the Grand Strand: The Numbers Behind the Opportunity</div><p class="b-exc">Airbnb occupancy rates, average nightly rates, and which neighborhoods deliver the strongest returns for coastal property owners.</p><div class="b-meta"><span>January 22, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
+        <div class="blog-card"><div class="b-photo" style="background-image:url('images/barefoot-drone.jpg')"></div><div class="b-body"><span class="b-cat">Lifestyle Guide</span><div class="b-title">Life on the Intracoastal: A Day in the Life of a Waterway Homeowner</div><p class="b-exc">Morning kayak, afternoon cruise, evening marsh views — what makes ICW living so uniquely South Carolinian.</p><div class="b-meta"><span>January 10, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
       </div>
       <div style="text-align:center;margin-top:40px"><a href="#" class="btn btn-navy">Load More Articles</a></div>
     </div>
@@ -989,7 +1088,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
           <p>Operating under the nationally recognized banner of Coldwell Banker, our agents combine deep local knowledge with world-class marketing tools, global listing reach, and the backing of one of the most trusted names in American real estate.</p>
           <a href="#" class="btn btn-navy" style="margin-top:20px">Meet the Full Team</a>
         </div>
-        <div class="about-img" style="background-image:url('https://picsum.photos/seed/team-about/600/500')"></div>
+        <div class="about-img" style="background-image:url('images/nmb-main-street.jpg')"></div>
       </div>
       <div class="awards">
         <div class="award"><span class="award-icon">🏆</span><div class="award-text">Diamond Society<br>Top Producer</div><span class="award-yr">2024</span></div>
@@ -1029,13 +1128,15 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         </ul>
       </div>
       <div class="foot-col">
-        <h4>Lifestyle Search</h4>
+        <h4>CF Luxury Communities</h4>
         <ul>
-          <li><a href="#" onclick="showPage('lifestyle');setLifestyleTab('golf');return false">Golf Communities</a></li>
-          <li><a href="#" onclick="showPage('lifestyle');setLifestyleTab('oceanfront-condos');return false">Oceanfront Condos</a></li>
-          <li><a href="#" onclick="showPage('lifestyle');setLifestyleTab('resort');return false">Resort Communities</a></li>
-          <li><a href="#" onclick="showPage('lifestyle');setLifestyleTab('icw');return false">ICW Communities</a></li>
-          <li><a href="#" onclick="showPage('lifestyle');setLifestyleTab('oceanfront-homes');return false">Oceanfront Homes</a></li>
+          <li><a href="#" onclick="showLuxuryCommunity('waterbridge');return false">Waterbridge</a></li>
+          <li><a href="#" onclick="showLuxuryCommunity('plantation-lakes');return false">Plantation Lakes</a></li>
+          <li><a href="#" onclick="showLuxuryCommunity('waterway-palms');return false">Waterway Palms</a></li>
+          <li><a href="#" onclick="showLuxuryCommunity('the-bluffs');return false">The Bluffs</a></li>
+          <li><a href="#" onclick="showLuxuryCommunity('black-creek');return false">Black Creek</a></li>
+          <li><a href="#" onclick="showLuxuryCommunity('carolina-waterway');return false">Carolina Waterway</a></li>
+          <li><a href="#" onclick="showLuxuryCommunity('indigo-bay');return false">Indigo Bay</a></li>
           <li><a href="#" onclick="showPage('home-value');return false">Home Valuation</a></li>
         </ul>
       </div>
@@ -1043,7 +1144,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <h4>Contact</h4>
         <ul>
           <li><a href="tel:8434305201">(843) 430-5201</a></li>
-          <li><a href="/cdn-cgi/l/email-protection#f59c9b939ab59697869094969a948681db969a98"><span class="__cf_email__" data-cfemail="4f262129200f2c2d3c2a2e2c202e3c3b612c2022">[email&#160;protected]</span></a></li>
+          <li><a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a></li>
           <li><a href="#">Schedule a Consultation</a></li>
           <li><a href="#" onclick="showPage('about');return false">About the Team</a></li>
           <li><a href="#" onclick="showPage('blog');return false">Blog &amp; Resources</a></li>
@@ -1061,19 +1162,19 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 <!-- ══════════════════════════════════════════
      JAVASCRIPT
 ══════════════════════════════════════════ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* ── Community data ── */
 const C = {
-  'little-river':{name:'Little River',tag:'Gated Waterway & Marina Living',tagline:'Where the waterway meets the good life.',bg:'https://picsum.photos/seed/lr-hero/1200/600',intro:`Little River sits at the northernmost tip of the Grand Strand, where the Intracoastal Waterway opens into Cherry Grove Inlet and the Atlantic Ocean. This quiet fishing village turned upscale waterway community is one of the most coveted addresses on the South Carolina coast — and one of the best-kept secrets outside of it.`,p2:`Known for its annual Blue Crab Festival, a thriving casino boat scene, and some of the most spectacular waterway frontage in the state, Little River offers a lifestyle that feels like permanent vacation. Gated communities like Pelican Bay, Lightkeepers Village, and Cypress Village draw buyers who want privacy, natural beauty, and serious boating access without sacrificing proximity to shopping, dining, and golf.`,hi:[{i:'⚓',t:'Deep Water Access',d:'Direct ICW and ocean access with deep-water boat slips and private docks'},{i:'🦀',t:'Blue Crab Festival',d:'Annual festival draws 50,000+ visitors each May to this charming waterfront village'},{i:'⛳',t:'20+ Golf Courses',d:'World-class courses minutes from most neighborhoods'},{i:'🎰',t:'Casino Boats',d:'Unique waterfront entertainment at the Big M and other local vessels'},{i:'🍽️',t:'Waterfront Dining',d:'Fresh seafood restaurants lining the waterway with stunning sunset views'},{i:'🛡️',t:'Gated Communities',d:'Multiple premier gated communities including Pelican Bay and Lightkeepers Village'}]},
-  'north-myrtle-beach':{name:'North Myrtle Beach',tag:'Oceanfront Living & Shag Capital',tagline:'Home of the shag and the Atlantic sunrise.',bg:'https://picsum.photos/seed/nmb-hero/1200/600',intro:`North Myrtle Beach is the quieter, more residential side of the Myrtle Beach experience — and to many, the better side. Spanning four distinct beach communities (Cherry Grove, Ocean Drive, Crescent Beach, and Windy Hill), NMB offers direct oceanfront living, a vibrant local culture, and one of the most loyal communities of full-time residents and second-home owners in the Carolinas.`,p2:`This is the birthplace of the shag — South Carolina's state dance — and the community maintains that spirited, old-soul coastal character even as new luxury developments bring modern amenities. From oceanfront condos with sweeping Atlantic views to quiet single-family neighborhoods blocks from the beach, North Myrtle Beach has something for every buyer.`,hi:[{i:'🌊',t:'4 Beach Communities',d:"Cherry Grove, Ocean Drive, Crescent Beach & Windy Hill — each with distinct character"},{i:'💃',t:'Shag Dancing Capital',d:"Home of the SOS Festival — the world's largest shag dancing festival twice yearly"},{i:'⛳',t:'Golf Access',d:'Dozens of courses within a short drive of most neighborhoods'},{i:'🏡',t:'Family-Friendly',d:'Safe, walkable neighborhoods with strong sense of community and local pride'},{i:'🍷',t:'Main Street Scene',d:'Vibrant Main Street district with local shops, dining, and entertainment'},{i:'📈',t:'Strong Investment',d:'Consistently strong rental demand and property value appreciation'}]},
-  'conway':{name:'Conway',tag:'Historic Charm on the Waccamaw',tagline:'The soul of Horry County.',bg:'https://picsum.photos/seed/conway-hero/1200/600',intro:`Conway is the historic heart of Horry County — a moss-draped, river-front city that has been quietly charming residents and visitors for over 300 years. Situated along the banks of the Waccamaw River, Conway offers something increasingly rare in the coastal Southeast: authentic small-town character, reasonable home prices, and easy access to everything the Grand Strand has to offer.`,p2:`The Conway Riverwalk is a beloved community centerpiece, lined with beautiful homes, local eateries, and the kind of live-oak canopy that feels like something out of a Southern novel. Historic downtown Conway is home to a thriving arts scene, independent restaurants, and a community deeply proud of its roots.`,hi:[{i:'⛵',t:'Waccamaw Riverwalk',d:"Miles of scenic riverwalk through one of South Carolina's most charming downtowns"},{i:'🏛️',t:'Historic Downtown',d:'Over 300 years of history, vibrant arts scene, and authentic local character'},{i:'💰',t:'Outstanding Value',d:'Significantly more home for your dollar than coastal communities'},{i:'🎓',t:'Coastal Carolina Univ.',d:'Home of Coastal Carolina University, driving culture, dining, and events'},{i:'🌳',t:'Tree-Canopied Streets',d:'Mature live oaks and historic homes creating neighborhoods of rare beauty'},{i:'📍',t:'Central Location',d:'Easy access to Myrtle Beach, the beaches, and all Grand Strand amenities'}]},
-  'carolina-forest':{name:'Carolina Forest',tag:'Master-Planned Community Living',tagline:'Where families put down deep roots.',bg:'https://picsum.photos/seed/cf-hero/1200/600',intro:`Carolina Forest has grown from a vision to one of the most vibrant, sought-after master-planned communities in the entire Southeast. Located just minutes from the beach and the heart of Myrtle Beach, this sprawling community offers exceptional schools, resort-caliber amenities, and some of the best home value in the entire Grand Strand.`,p2:`The community encompasses several distinct neighborhoods — from starter-home subdivisions to luxury lakefront estates — all united by exceptional infrastructure, community parks, and a genuine neighborhood spirit. Top-rated Horry County schools, including the highly regarded Carolina Forest High School, make this the top choice for families relocating to the coast.`,hi:[{i:'🏫',t:'Top-Rated Schools',d:"Carolina Forest High School consistently ranked among South Carolina's finest"},{i:'🌊',t:'Lake Communities',d:'Multiple stunning lakefront neighborhoods with private docks and water access'},{i:'🏊',t:'Resort Amenities',d:'Community pools, tennis courts, walking trails, and clubhouses throughout'},{i:'🛒',t:'Retail & Dining',d:'Self-contained with major retail, restaurants, and services all within the community'},{i:'🏠',t:'Range of Options',d:'From $300K starter homes to $2M+ luxury estates'},{i:'📍',t:'5 Miles to Beach',d:'Close enough to feel coastal, private enough to feel residential'}]},
-  'myrtle-beach':{name:'Myrtle Beach',tag:"The Grand Strand's Crown Jewel",tagline:'The energy of a resort. The soul of a home.',bg:'https://picsum.photos/seed/mb-hero/1200/600',intro:`Myrtle Beach is the engine of the Grand Strand — a city of 35,000+ full-time residents that hosts over 14 million visitors a year. But beyond the hotels and attractions lies a remarkably livable city with diverse neighborhoods, excellent medical facilities, a growing arts and culinary scene, and direct ocean access that never gets old.`,p2:`From the high-rise oceanfront condos along the Golden Mile to quiet golf course communities tucked inland, Myrtle Beach is a city of remarkable variety. The Market Common — a walkable urban village built on a former Air Force base — has become one of the region's most desirable addresses, with luxury townhomes, restaurants, boutiques, and cultural venues all woven into a pedestrian-friendly design.`,hi:[{i:'🏖️',t:'The Golden Mile',d:"Myrtle Beach's most prestigious oceanfront stretch, lined with luxury high-rises"},{i:'🛍️',t:'The Market Common',d:'Award-winning walkable village with luxury residences, dining, and retail'},{i:'✈️',t:'Myrtle Beach Airport',d:'Direct flights to dozens of cities'},{i:'🏥',t:'World-Class Healthcare',d:'Grand Strand Medical Center and Tidelands Health system serving the region'},{i:'🎭',t:'Arts & Culture',d:'Broadway at the Beach, convention center, and a growing arts district'},{i:'🌅',t:'60 Miles of Beach',d:"The heart of the Grand Strand's spectacular Atlantic coastline"}]},
-  'murrells-inlet':{name:'Murrells Inlet',tag:'The Seafood Capital of South Carolina',tagline:'Fresh shrimp, green marshes, and the good life.',bg:'https://picsum.photos/seed/mi-hero/1200/600',intro:`Murrells Inlet is, without question, one of the most beloved communities on the entire South Carolina coast. Widely known as the "Seafood Capital of South Carolina," Murrells Inlet is home to the famed MarshWalk — a mile-long wooden boardwalk lining the tidal creek, dotted with waterfront restaurants, live music venues, and the most spectacular marsh views in the state.`,p2:`But Murrells Inlet is more than a dining destination. It is a genuine community with deep roots, extraordinary natural beauty, and a real estate market that consistently outperforms the broader Grand Strand. From deep-water waterfront estates to charming cottages steps from the MarshWalk, Murrells Inlet offers buyers an authenticity and character that is genuinely difficult to replicate anywhere else on the coast.`,hi:[{i:'🦐',t:'The MarshWalk',d:'Famous mile-long boardwalk with waterfront restaurants, live music, and sunset views'},{i:'🚤',t:'Deep Water Access',d:'Tidal creeks and ocean inlets provide exceptional boating access'},{i:'🐦',t:'Huntington Beach SP',d:'Neighboring state park is one of the finest birding and beach destinations in the SE'},{i:'⛳',t:'Brookgreen Gardens',d:'World-class botanical gardens and sculpture park — a national treasure nearby'},{i:'🍽️',t:'World-Class Dining',d:"Lee's Inlet Kitchen, The Wicked Tuna, Dead Dog Saloon — legendary waterfront dining"},{i:'🏡',t:'Community Character',d:'One of the most authentic, character-rich communities in the entire Grand Strand'}]},
-  'surfside':{name:'Surfside Beach',tag:'"The Family Beach"',tagline:"South Carolina's friendliest stretch of sand.",bg:'https://picsum.photos/seed/surfside-hero/1200/600',intro:`Surfside Beach earned its official nickname — "The Family Beach" — honestly. This compact, walkable beach town has one of the most authentic residential beach characters in all of the Carolinas. Quiet streets lined with beach cottages and modest homes, a genuine small-town boardwalk, and a community that has resisted the overdevelopment that has changed other coastal towns.`,p2:`The result is a place where families can still ride bikes to the beach, kids play freely, and neighbors know each other by name. For buyers seeking an authentic beach town experience — not a resort development — Surfside Beach is one of the last true bargains on the Grand Strand.`,hi:[{i:'👨‍👩‍👧‍👦',t:'Family Beach',d:'Official designation reflects the safe, welcoming community character'},{i:'🚴',t:'Walkable & Bikeable',d:'One of the only true bike-to-beach communities on the Grand Strand'},{i:'💰',t:'Strong Value',d:'Authentic beach character at prices still accessible compared to neighboring communities'},{i:'🌊',t:'Beautiful Beach',d:'Wide, clean beaches with gentle waves ideal for families and water lovers'},{i:'🏄',t:'Surf Culture',d:'Active surfing community and beach lifestyle culture'},{i:'📈',t:'Appreciating Market',d:"Rapidly growing buyer demand as the community's unique character is discovered"}]},
-  'garden-city':{name:'Garden City',tag:'Laid-Back & Authentic Coastal Living',tagline:'Old-school beach town. New-school appreciation.',bg:'https://picsum.photos/seed/gc-hero/1200/600',intro:`Garden City occupies a narrow barrier island at the southern end of the Grand Strand, separated from the mainland by Murrells Inlet's tidal creeks and connected to the ocean by miles of wide, uncrowded beach. It has the feel of a beach town from another era — one that has remained stubbornly, wonderfully itself while the world around it has changed.`,p2:`The Garden City Pier is one of the last remaining classic beach piers in the state and remains the community's beloved centerpiece. Beach houses range from classic cottages to contemporary elevated homes with stunning ocean views.`,hi:[{i:'🎣',t:'Garden City Pier',d:"One of South Carolina's last great classic piers — fishing, entertainment, and views"},{i:'🏖️',t:'Wide Uncrowded Beach',d:"Some of the Grand Strand's most unspoiled and accessible beach frontage"},{i:'🦭',t:'Wildlife Rich',d:'Excellent shelling, dolphin watching, and birding on both ocean and inlet sides'},{i:'🍦',t:'Boardwalk Scene',d:'Small, authentic boardwalk strip with local shops and classic coastal dining'},{i:'💲',t:'Great Entry Value',d:'Still among the most accessible oceanfront and ocean-view communities in the region'},{i:'🤫',t:'Under the Radar',d:'Discovered by fewer buyers than neighboring communities — for now'}]},
-  'litchfield':{name:'Litchfield Beach',tag:'Pristine, Private & Utterly Beautiful',tagline:'Understated beauty. Unmatched peace.',bg:'https://picsum.photos/seed/litchfield-hero/1200/600',intro:`Litchfield Beach sits just north of Pawleys Island in the quietest stretch of the Grand Strand, occupying a narrow barrier island between the Atlantic and Midway Inlet. It is the kind of place that people stumble upon and then can't stop thinking about — peaceful, beautiful, and blessedly uncommercial.`,p2:`The community is anchored by the historic Litchfield Resort and several private oceanfront neighborhoods that have maintained their character for generations. The beach here is wide, clean, and never crowded. The community has a strong architectural aesthetic — natural wood, elevated construction, low signage — that gives it an integrity and visual harmony that few coastal communities can match.`,hi:[{i:'🤫',t:'Peaceful & Private',d:'One of the quietest, least commercialized stretches of the Grand Strand'},{i:'🌊',t:'Wide Clean Beach',d:'Stunning uncrowded beach with no heavy commercial development in sight'},{i:'⛳',t:'Litchfield Country Club',d:'Private golf and country club community in a setting of exceptional natural beauty'},{i:'🦅',t:'Nature Preserve Access',d:'Surrounded by preserved wetlands, creeks, and wildlife corridors'},{i:'🏛️',t:'Litchfield Resort',d:'Historic resort with tennis, pools, and amenities available to property owners'},{i:'📍',t:'Between Two Treasures',d:"Between Murrells Inlet's dining and Pawleys Island's charm — best of both worlds"}]},
-  'pawleys-island':{name:'Pawleys Island',tag:'Arrogantly Shabby Since 1755',tagline:'The original South Carolina beach. Still the best.',bg:'https://picsum.photos/seed/pawleys-hero/1200/600',intro:`Pawleys Island has been South Carolina's most beloved beach destination since plantation families first built summer retreats here in the late 1700s. Its self-proclaimed motto — "arrogantly shabby" — captures its personality perfectly: this is a place that has never tried to be anything other than exactly what it is, and it is all the better for it.`,p2:`The island itself is only four miles long and less than a quarter mile wide, with a strict development cap that has preserved its extraordinary natural character. Nearby Pawleys Island Hammock Shops and the surrounding mainland communities offer exceptional dining, boutique shopping, and world-class golf at courses like Caledonia and True Blue.`,hi:[{i:'🏛️',t:'Historic Island',d:'One of the oldest sea island communities in the US — authentic history at every turn'},{i:'🌿',t:'Protected Character',d:'Strict development limits preserve the natural and architectural integrity of the island'},{i:'⛳',t:'World-Class Golf',d:'Caledonia Golf & Fish Club and True Blue consistently ranked among the best in the US'},{i:'🦺',t:'Hammock Shops',d:"Famous village of shops where the original Pawleys Island hammock has been made since 1889"},{i:'🏖️',t:'Pristine Beaches',d:'Wide, uncrowded beaches with some of the finest shelling on the East Coast'},{i:'🍽️',t:"Frank's & The Bistro",d:'Among the finest dining in the Carolinas — right in the heart of Pawleys'}]}
+  'little-river':{name:'Little River',tag:'Gated Waterway & Marina Living',tagline:'Where the waterway meets the good life.',bg:'images/little-river-1.jpg',intro:`Little River sits at the northernmost tip of the Grand Strand, where the Intracoastal Waterway opens into Cherry Grove Inlet and the Atlantic Ocean. This quiet fishing village turned upscale waterway community is one of the most coveted addresses on the South Carolina coast — and one of the best-kept secrets outside of it.`,p2:`Known for its annual Blue Crab Festival, a thriving casino boat scene, and some of the most spectacular waterway frontage in the state, Little River offers a lifestyle that feels like permanent vacation. Gated communities like Pelican Bay, Lightkeepers Village, and Cypress Village draw buyers who want privacy, natural beauty, and serious boating access without sacrificing proximity to shopping, dining, and golf.`,hi:[{i:'⚓',t:'Deep Water Access',d:'Direct ICW and ocean access with deep-water boat slips and private docks'},{i:'🦀',t:'Blue Crab Festival',d:'Annual festival draws 50,000+ visitors each May to this charming waterfront village'},{i:'⛳',t:'20+ Golf Courses',d:'World-class courses minutes from most neighborhoods'},{i:'🎰',t:'Casino Boats',d:'Unique waterfront entertainment at the Big M and other local vessels'},{i:'🍽️',t:'Waterfront Dining',d:'Fresh seafood restaurants lining the waterway with stunning sunset views'},{i:'🛡️',t:'Gated Communities',d:'Multiple premier gated communities including Pelican Bay and Lightkeepers Village'}]},
+  'north-myrtle-beach':{name:'North Myrtle Beach',tag:'Oceanfront Living & Shag Capital',tagline:'Home of the shag and the Atlantic sunrise.',bg:'images/nmb-beach-drone.jpg',intro:`North Myrtle Beach is the quieter, more residential side of the Myrtle Beach experience — and to many, the better side. Spanning four distinct beach communities (Cherry Grove, Ocean Drive, Crescent Beach, and Windy Hill), NMB offers direct oceanfront living, a vibrant local culture, and one of the most loyal communities of full-time residents and second-home owners in the Carolinas.`,p2:`This is the birthplace of the shag — South Carolina's state dance — and the community maintains that spirited, old-soul coastal character even as new luxury developments bring modern amenities. From oceanfront condos with sweeping Atlantic views to quiet single-family neighborhoods blocks from the beach, North Myrtle Beach has something for every buyer.`,hi:[{i:'🌊',t:'4 Beach Communities',d:"Cherry Grove, Ocean Drive, Crescent Beach & Windy Hill — each with distinct character"},{i:'💃',t:'Shag Dancing Capital',d:"Home of the SOS Festival — the world's largest shag dancing festival twice yearly"},{i:'⛳',t:'Golf Access',d:'Dozens of courses within a short drive of most neighborhoods'},{i:'🏡',t:'Family-Friendly',d:'Safe, walkable neighborhoods with strong sense of community and local pride'},{i:'🍷',t:'Main Street Scene',d:'Vibrant Main Street district with local shops, dining, and entertainment'},{i:'📈',t:'Strong Investment',d:'Consistently strong rental demand and property value appreciation'}]},
+  'conway':{name:'Conway',tag:'Historic Charm on the Waccamaw',tagline:'The soul of Horry County.',bg:'images/long-bay-1.jpg',intro:`Conway is the historic heart of Horry County — a moss-draped, river-front city that has been quietly charming residents and visitors for over 300 years. Situated along the banks of the Waccamaw River, Conway offers something increasingly rare in the coastal Southeast: authentic small-town character, reasonable home prices, and easy access to everything the Grand Strand has to offer.`,p2:`The Conway Riverwalk is a beloved community centerpiece, lined with beautiful homes, local eateries, and the kind of live-oak canopy that feels like something out of a Southern novel. Historic downtown Conway is home to a thriving arts scene, independent restaurants, and a community deeply proud of its roots.`,hi:[{i:'⛵',t:'Waccamaw Riverwalk',d:"Miles of scenic riverwalk through one of South Carolina's most charming downtowns"},{i:'🏛️',t:'Historic Downtown',d:'Over 300 years of history, vibrant arts scene, and authentic local character'},{i:'💰',t:'Outstanding Value',d:'Significantly more home for your dollar than coastal communities'},{i:'🎓',t:'Coastal Carolina Univ.',d:'Home of Coastal Carolina University, driving culture, dining, and events'},{i:'🌳',t:'Tree-Canopied Streets',d:'Mature live oaks and historic homes creating neighborhoods of rare beauty'},{i:'📍',t:'Central Location',d:'Easy access to Myrtle Beach, the beaches, and all Grand Strand amenities'}]},
+  'carolina-forest':{name:'Carolina Forest',tag:'Master-Planned Community Living',tagline:'Where families put down deep roots.',bg:'images/waterbridge-entrance.jpg',intro:`Carolina Forest has grown from a vision to one of the most vibrant, sought-after master-planned communities in the entire Southeast. Located just minutes from the beach and the heart of Myrtle Beach, this sprawling community offers exceptional schools, resort-caliber amenities, and some of the best home value in the entire Grand Strand.`,p2:`The community encompasses several distinct neighborhoods — from starter-home subdivisions to luxury lakefront estates — all united by exceptional infrastructure, community parks, and a genuine neighborhood spirit. Top-rated Horry County schools, including the highly regarded Carolina Forest High School, make this the top choice for families relocating to the coast.`,hi:[{i:'🏫',t:'Top-Rated Schools',d:"Carolina Forest High School consistently ranked among South Carolina's finest"},{i:'🌊',t:'Lake Communities',d:'Multiple stunning lakefront neighborhoods with private docks and water access'},{i:'🏊',t:'Resort Amenities',d:'Community pools, tennis courts, walking trails, and clubhouses throughout'},{i:'🛒',t:'Retail & Dining',d:'Self-contained with major retail, restaurants, and services all within the community'},{i:'🏠',t:'Range of Options',d:'From $300K starter homes to $2M+ luxury estates'},{i:'📍',t:'5 Miles to Beach',d:'Close enough to feel coastal, private enough to feel residential'}]},
+  'myrtle-beach':{name:'Myrtle Beach',tag:"The Grand Strand's Crown Jewel",tagline:'The energy of a resort. The soul of a home.',bg:'images/barefoot-landing.jpg',intro:`Myrtle Beach is the engine of the Grand Strand — a city of 35,000+ full-time residents that hosts over 14 million visitors a year. But beyond the hotels and attractions lies a remarkably livable city with diverse neighborhoods, excellent medical facilities, a growing arts and culinary scene, and direct ocean access that never gets old.`,p2:`From the high-rise oceanfront condos along the Golden Mile to quiet golf course communities tucked inland, Myrtle Beach is a city of remarkable variety. The Market Common — a walkable urban village built on a former Air Force base — has become one of the region's most desirable addresses, with luxury townhomes, restaurants, boutiques, and cultural venues all woven into a pedestrian-friendly design.`,hi:[{i:'🏖️',t:'The Golden Mile',d:"Myrtle Beach's most prestigious oceanfront stretch, lined with luxury high-rises"},{i:'🛍️',t:'The Market Common',d:'Award-winning walkable village with luxury residences, dining, and retail'},{i:'✈️',t:'Myrtle Beach Airport',d:'Direct flights to dozens of cities'},{i:'🏥',t:'World-Class Healthcare',d:'Grand Strand Medical Center and Tidelands Health system serving the region'},{i:'🎭',t:'Arts & Culture',d:'Broadway at the Beach, convention center, and a growing arts district'},{i:'🌅',t:'60 Miles of Beach',d:"The heart of the Grand Strand's spectacular Atlantic coastline"}]},
+  'murrells-inlet':{name:'Murrells Inlet',tag:'The Seafood Capital of South Carolina',tagline:'Fresh shrimp, green marshes, and the good life.',bg:'images/barefoot-cabana.jpg',intro:`Murrells Inlet is, without question, one of the most beloved communities on the entire South Carolina coast. Widely known as the "Seafood Capital of South Carolina," Murrells Inlet is home to the famed MarshWalk — a mile-long wooden boardwalk lining the tidal creek, dotted with waterfront restaurants, live music venues, and the most spectacular marsh views in the state.`,p2:`But Murrells Inlet is more than a dining destination. It is a genuine community with deep roots, extraordinary natural beauty, and a real estate market that consistently outperforms the broader Grand Strand. From deep-water waterfront estates to charming cottages steps from the MarshWalk, Murrells Inlet offers buyers an authenticity and character that is genuinely difficult to replicate anywhere else on the coast.`,hi:[{i:'🦐',t:'The MarshWalk',d:'Famous mile-long boardwalk with waterfront restaurants, live music, and sunset views'},{i:'🚤',t:'Deep Water Access',d:'Tidal creeks and ocean inlets provide exceptional boating access'},{i:'🐦',t:'Huntington Beach SP',d:'Neighboring state park is one of the finest birding and beach destinations in the SE'},{i:'⛳',t:'Brookgreen Gardens',d:'World-class botanical gardens and sculpture park — a national treasure nearby'},{i:'🍽️',t:'World-Class Dining',d:"Lee's Inlet Kitchen, The Wicked Tuna, Dead Dog Saloon — legendary waterfront dining"},{i:'🏡',t:'Community Character',d:'One of the most authentic, character-rich communities in the entire Grand Strand'}]},
+  'surfside':{name:'Surfside Beach',tag:'"The Family Beach"',tagline:"South Carolina's friendliest stretch of sand.",bg:'images/nmb-beach-access.jpg',intro:`Surfside Beach earned its official nickname — "The Family Beach" — honestly. This compact, walkable beach town has one of the most authentic residential beach characters in all of the Carolinas. Quiet streets lined with beach cottages and modest homes, a genuine small-town boardwalk, and a community that has resisted the overdevelopment that has changed other coastal towns.`,p2:`The result is a place where families can still ride bikes to the beach, kids play freely, and neighbors know each other by name. For buyers seeking an authentic beach town experience — not a resort development — Surfside Beach is one of the last true bargains on the Grand Strand.`,hi:[{i:'👨‍👩‍👧‍👦',t:'Family Beach',d:'Official designation reflects the safe, welcoming community character'},{i:'🚴',t:'Walkable & Bikeable',d:'One of the only true bike-to-beach communities on the Grand Strand'},{i:'💰',t:'Strong Value',d:'Authentic beach character at prices still accessible compared to neighboring communities'},{i:'🌊',t:'Beautiful Beach',d:'Wide, clean beaches with gentle waves ideal for families and water lovers'},{i:'🏄',t:'Surf Culture',d:'Active surfing community and beach lifestyle culture'},{i:'📈',t:'Appreciating Market',d:"Rapidly growing buyer demand as the community's unique character is discovered"}]},
+  'garden-city':{name:'Garden City',tag:'Laid-Back & Authentic Coastal Living',tagline:'Old-school beach town. New-school appreciation.',bg:'images/nmb-beach-1.jpg',intro:`Garden City occupies a narrow barrier island at the southern end of the Grand Strand, separated from the mainland by Murrells Inlet's tidal creeks and connected to the ocean by miles of wide, uncrowded beach. It has the feel of a beach town from another era — one that has remained stubbornly, wonderfully itself while the world around it has changed.`,p2:`The Garden City Pier is one of the last remaining classic beach piers in the state and remains the community's beloved centerpiece. Beach houses range from classic cottages to contemporary elevated homes with stunning ocean views.`,hi:[{i:'🎣',t:'Garden City Pier',d:"One of South Carolina's last great classic piers — fishing, entertainment, and views"},{i:'🏖️',t:'Wide Uncrowded Beach',d:"Some of the Grand Strand's most unspoiled and accessible beach frontage"},{i:'🦭',t:'Wildlife Rich',d:'Excellent shelling, dolphin watching, and birding on both ocean and inlet sides'},{i:'🍦',t:'Boardwalk Scene',d:'Small, authentic boardwalk strip with local shops and classic coastal dining'},{i:'💲',t:'Great Entry Value',d:'Still among the most accessible oceanfront and ocean-view communities in the region'},{i:'🤫',t:'Under the Radar',d:'Discovered by fewer buyers than neighboring communities — for now'}]},
+  'litchfield':{name:'Litchfield Beach',tag:'Pristine, Private & Utterly Beautiful',tagline:'Understated beauty. Unmatched peace.',bg:'images/nmb-beach-drone.jpg',intro:`Litchfield Beach sits just north of Pawleys Island in the quietest stretch of the Grand Strand, occupying a narrow barrier island between the Atlantic and Midway Inlet. It is the kind of place that people stumble upon and then can't stop thinking about — peaceful, beautiful, and blessedly uncommercial.`,p2:`The community is anchored by the historic Litchfield Resort and several private oceanfront neighborhoods that have maintained their character for generations. The beach here is wide, clean, and never crowded. The community has a strong architectural aesthetic — natural wood, elevated construction, low signage — that gives it an integrity and visual harmony that few coastal communities can match.`,hi:[{i:'🤫',t:'Peaceful & Private',d:'One of the quietest, least commercialized stretches of the Grand Strand'},{i:'🌊',t:'Wide Clean Beach',d:'Stunning uncrowded beach with no heavy commercial development in sight'},{i:'⛳',t:'Litchfield Country Club',d:'Private golf and country club community in a setting of exceptional natural beauty'},{i:'🦅',t:'Nature Preserve Access',d:'Surrounded by preserved wetlands, creeks, and wildlife corridors'},{i:'🏛️',t:'Litchfield Resort',d:'Historic resort with tennis, pools, and amenities available to property owners'},{i:'📍',t:'Between Two Treasures',d:"Between Murrells Inlet's dining and Pawleys Island's charm — best of both worlds"}]},
+  'pawleys-island':{name:'Pawleys Island',tag:'Arrogantly Shabby Since 1755',tagline:'The original South Carolina beach. Still the best.',bg:'images/pelican-bay-4.jpg',intro:`Pawleys Island has been South Carolina's most beloved beach destination since plantation families first built summer retreats here in the late 1700s. Its self-proclaimed motto — "arrogantly shabby" — captures its personality perfectly: this is a place that has never tried to be anything other than exactly what it is, and it is all the better for it.`,p2:`The island itself is only four miles long and less than a quarter mile wide, with a strict development cap that has preserved its extraordinary natural character. Nearby Pawleys Island Hammock Shops and the surrounding mainland communities offer exceptional dining, boutique shopping, and world-class golf at courses like Caledonia and True Blue.`,hi:[{i:'🏛️',t:'Historic Island',d:'One of the oldest sea island communities in the US — authentic history at every turn'},{i:'🌿',t:'Protected Character',d:'Strict development limits preserve the natural and architectural integrity of the island'},{i:'⛳',t:'World-Class Golf',d:'Caledonia Golf & Fish Club and True Blue consistently ranked among the best in the US'},{i:'🦺',t:'Hammock Shops',d:"Famous village of shops where the original Pawleys Island hammock has been made since 1889"},{i:'🏖️',t:'Pristine Beaches',d:'Wide, uncrowded beaches with some of the finest shelling on the East Coast'},{i:'🍽️',t:"Frank's & The Bistro",d:'Among the finest dining in the Carolinas — right in the heart of Pawleys'}]}
 };
 
 /* ── Page routing ── */
@@ -1194,6 +1295,459 @@ document.getElementById('mob-life-btn').onclick=function(){toggleMobSub('mob-lif
 
 /* ── Prevent default on # links ── */
 document.querySelectorAll('a[href="#"]').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+
+/* ══════════════════════════════════════════
+   LUXURY COMMUNITIES DATA & RENDERING
+══════════════════════════════════════════ */
+const LC = {
+  'waterbridge':{
+    name:'Waterbridge',
+    tag:'Resort-Style Gated Luxury',
+    tagline:'Where every day feels like vacation — without ever leaving home.',
+    bg:'images/waterbridge-entrance.jpg',
+    price:'$550K – $1M+',
+    gated:'Yes',
+    styles:'Coastal Contemporary, Lowcountry, Custom',
+    bestFor:'Resort Lifestyle Buyers',
+    intro:'Waterbridge is Carolina Forest\'s premier resort-style gated community, designed for buyers who want five-star amenities without sacrificing the privacy and warmth of a residential neighborhood. The community centers around an extraordinary resort-caliber amenity campus that rivals any high-end coastal resort.',
+    p2:'With a massive resort-style pool complex, fitness center, tennis and pickleball courts, fire pits, and an owners\' clubhouse, Waterbridge has redefined what luxury community living looks like in the Myrtle Beach market. Homes feature open floor plans, luxury finishes, and architectural styles ranging from coastal contemporary to classic Lowcountry.',
+    amenities:[
+      {i:'🏊',t:'Resort Pool Complex',d:'Massive lagoon-style pool with lazy river, splash pad, and cabanas'},
+      {i:'🎾',t:'Tennis & Pickleball',d:'Lighted courts with scheduled clinics and social play'},
+      {i:'🏋️',t:'Fitness Center',d:'State-of-the-art fitness facility with classes and personal training'},
+      {i:'🔥',t:'Fire Pits & Pavilion',d:'Outdoor gathering spaces with fire features and covered pavilion'},
+      {i:'🛡️',t:'24/7 Gated Security',d:'Staffed gatehouse with controlled access for residents and guests'},
+      {i:'🌳',t:'Nature Trails',d:'Miles of walking and biking trails through preserved natural areas'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte & Raleigh, NC',why:'NC professionals seeking resort lifestyle at half the cost of Hilton Head'},
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'Northeast buyers drawn to gated luxury with resort amenities and no state income tax'},
+      {tier:1,metro:'Washington DC / NoVA',why:'Federal workers and military retirees seeking warm-climate resort community'},
+      {tier:2,metro:'Philadelphia & Pittsburgh, PA',why:'PA families attracted to top-rated schools and resort-caliber amenities'},
+      {tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest professionals seeking coastal upgrade with similar community feel'},
+      {tier:3,metro:'Chicago, IL',why:'Midwest exodus to warm-climate luxury without seasonal limitations'}
+    ],
+    personas:[
+      {type:'Resort Lifestyle Couple',headline:'"Trade your country club dues for a community that feels like a year-round five-star resort."',channels:'Facebook 45+, Instagram Reels, Zillow, Realtor.com'},
+      {type:'Relocating Professional Family',headline:'"Top-rated schools. Resort amenities. Gated security. Your family deserves Waterbridge."',channels:'Facebook/IG Ads, Google Ads "gated communities Myrtle Beach"'},
+      {type:'Active Retiree',headline:'"Pickleball at 9, pool at noon, dinner with friends by 6. Welcome to retirement done right."',channels:'Facebook 55+, Zillow, AARP digital, Google Ads'}
+    ]
+  },
+  'plantation-lakes':{
+    name:'Plantation Lakes',
+    tag:'Custom Lakefront Living',
+    tagline:'Design your dream home on 180 acres of pristine lake.',
+    bg:'images/plantation-lakes-home-1.jpg',
+    price:'$500K – $1M+',
+    gated:'No',
+    styles:'Custom Built, Lakefront Estate',
+    bestFor:'Custom Home Builders',
+    intro:'Plantation Lakes is Carolina Forest\'s premier custom-build lakefront community, centered around the largest boatable recreational lake in the Myrtle Beach area — a stunning 180-acre lake with 15 miles of shoreline perfect for fishing, kayaking, and pontoon cruising.',
+    p2:'Unlike cookie-cutter subdivisions, Plantation Lakes offers no build-time restrictions on residential lots, allowing buyers to design and build their dream home on their schedule. The community features a luxurious amenities center with swimming pools, modern fitness center, and man-made beach. Tennis courts, playground, and lighted basketball courts with double sidewalks on every street.',
+    amenities:[
+      {i:'🌊',t:'180-Acre Boatable Lake',d:'15 miles of shoreline with fishing, kayaking, and pontoon access'},
+      {i:'🏗️',t:'No Build Restrictions',d:'Custom-build on your timeline with your own builder — no cookie-cutter homes'},
+      {i:'🏖️',t:'Man-Made Beach',d:'Private sandy beach area exclusively for residents'},
+      {i:'🏊',t:'Pool & Clubhouse',d:'Resort-style pool, modern fitness center, and spacious clubhouse'},
+      {i:'🎾',t:'Courts & Playgrounds',d:'Tennis, basketball, and playground facilities throughout the community'},
+      {i:'🚶',t:'Double Sidewalks',d:'Pedestrian-friendly streetscape on every road in the community'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte & Raleigh, NC',why:'Custom-build appeal for NC professionals wanting their dream lakefront home'},
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'"Build your own" appeals to buyers tired of cookie-cutter suburbs at 1/3 the cost'},
+      {tier:1,metro:'Philadelphia & Pittsburgh, PA',why:'No build restrictions attract custom-home enthusiasts. 180-acre lake is a massive draw'},
+      {tier:2,metro:'Washington DC / NoVA',why:'Federal workers and military retirees seeking custom waterfront homes with boating access'},
+      {tier:2,metro:'Columbus & Cleveland, OH',why:'Lake-lovers from the Great Lakes states drawn to year-round boating and warm climate'},
+      {tier:3,metro:'Chicago, IL',why:'Midwest exodus for custom lakefront living without the seasonal limitations'}
+    ],
+    personas:[
+      {type:'Custom Home Builders',headline:'"Design your dream home on 180 acres of pristine lake. No build-time restrictions, endless possibilities."',channels:'Houzz, Pinterest, Facebook custom-home interest groups'},
+      {type:'Boating Families',headline:'"15 miles of shoreline, your own boatable lake, and top-rated schools just minutes away."',channels:'Facebook/IG, Google Ads "lakefront homes SC"'},
+      {type:'Active Retirees',headline:'"Fish your own lake every morning. Custom-built luxury on the Grand Strand."',channels:'Facebook 55+, Zillow, Realtor.com, Google Ads'}
+    ]
+  },
+  'waterway-palms':{
+    name:'Waterway Palms Plantation',
+    tag:'Charleston Charm on the Waterway',
+    tagline:'Timeless architecture meets Lowcountry waterway living.',
+    bg:'images/pelican-bay-2.jpg',
+    price:'$400K – $800K+',
+    gated:'Yes',
+    styles:'Charleston Lowcountry, Traditional',
+    bestFor:'Architecture-Loving Families',
+    intro:'Waterway Palms Plantation is one of Carolina Forest\'s most distinguished gated communities, known for its strict Charleston-inspired architectural standards and stunning Intracoastal Waterway views. Every home reflects the timeless elegance of Lowcountry design — wide porches, tabby accents, and live-oak lined streets.',
+    p2:'The community offers direct Intracoastal Waterway access with a private community dock and boat launch, resort-style pool and clubhouse, walking trails along the waterway, and some of the most beautifully landscaped streetscapes in the entire Grand Strand. It attracts buyers who appreciate architectural integrity and community character.',
+    amenities:[
+      {i:'⚓',t:'ICW Access & Boat Dock',d:'Private community dock and boat launch on the Intracoastal Waterway'},
+      {i:'🏛️',t:'Charleston Architecture',d:'Strict architectural standards ensuring timeless Lowcountry character'},
+      {i:'🏊',t:'Resort Pool & Clubhouse',d:'Elegant community pool and gathering spaces'},
+      {i:'🌳',t:'Waterway Walking Trails',d:'Scenic trails along the Intracoastal with stunning water views'},
+      {i:'🛡️',t:'Gated Community',d:'Controlled access with beautifully landscaped entrance'},
+      {i:'🏫',t:'Top School District',d:'Zoned for Carolina Forest\'s highly rated Horry County schools'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte & Raleigh, NC',why:'Charleston architecture lovers seeking waterway lifestyle at better value than Charleston itself'},
+      {tier:1,metro:'Washington DC / NoVA',why:'Federal professionals drawn to gated Lowcountry elegance with ICW boating'},
+      {tier:2,metro:'NYC Metro & Northern NJ',why:'Buyers seeking southern charm and waterway access at a fraction of northeast costs'},
+      {tier:2,metro:'Philadelphia & Pittsburgh, PA',why:'History-loving families attracted to architectural character and community standards'},
+      {tier:2,metro:'Atlanta, GA',why:'Coastal second-home buyers who already love Lowcountry architecture'},
+      {tier:3,metro:'Boston Metro',why:'New England families drawn to warmer climate with architectural standards they appreciate'}
+    ],
+    personas:[
+      {type:'Architecture Enthusiasts',headline:'"Live in a community where every home tells a story of Lowcountry craftsmanship."',channels:'Architectural Digest digital, Houzz, Southern Living'},
+      {type:'Boating Families',headline:'"Your own dock on the Intracoastal. Charleston charm without the Charleston price tag."',channels:'Facebook boating groups, Google Ads "waterway homes SC"'},
+      {type:'Relocating Professionals',headline:'"Gated elegance, top schools, and a dock on the waterway — the family life you\'ve been searching for."',channels:'Zillow, Realtor.com, Facebook/IG targeted'}
+    ]
+  },
+  'the-bluffs':{
+    name:'The Bluffs on the Waterway',
+    tag:'Ultra-Luxury Mediterranean Estates',
+    tagline:'The Grand Strand\'s most exclusive waterway address.',
+    bg:'images/bluffs-home-1.jpg',
+    price:'$850K – $2M+',
+    gated:'Yes',
+    styles:'Mediterranean, European Estate, Custom',
+    bestFor:'Ultra-Luxury Buyers',
+    intro:'The Bluffs on the Waterway is Carolina Forest\'s most exclusive residential enclave — a gated collection of Mediterranean-inspired estate homes perched on elevated bluffs overlooking the Intracoastal Waterway. This is where the Grand Strand\'s most discerning buyers come when they want something truly extraordinary.',
+    p2:'With home sizes often exceeding 4,000 square feet and price points reaching well into the millions, The Bluffs attracts executives, entrepreneurs, and luxury buyers who demand the finest finishes, dramatic waterway views, and absolute privacy. The community features deep-water boat slips, a private residents\' dock, and some of the most breathtaking sunset views in the entire state.',
+    amenities:[
+      {i:'🚤',t:'Deep-Water Boat Slips',d:'Private deep-water dock with direct ICW access for serious boaters'},
+      {i:'🏔️',t:'Elevated Waterway Bluffs',d:'Homes perched on natural bluffs with panoramic ICW views'},
+      {i:'🏛️',t:'Mediterranean Architecture',d:'Stunning European-inspired estate homes with luxury finishes'},
+      {i:'🛡️',t:'Ultra-Private Gated',d:'Exclusive gated entry with minimal home count for maximum privacy'},
+      {i:'🌅',t:'Sunset Views',d:'West-facing waterway views delivering the most spectacular sunsets on the coast'},
+      {i:'🎣',t:'Private Dock Access',d:'Residents-only waterway dock for kayaking, fishing, and boat access'}
+    ],
+    targets:[
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'$2M+ buyers finding estate-caliber waterfront at 1/4 the price of the Hamptons'},
+      {tier:1,metro:'Washington DC / NoVA',why:'Senior executives and diplomats seeking private waterway estate living'},
+      {tier:1,metro:'Charlotte & Raleigh, NC',why:'C-suite professionals seeking the most prestigious address in the Myrtle Beach market'},
+      {tier:2,metro:'Philadelphia & South Jersey',why:'Luxury buyers seeking Mediterranean waterfront estate living in warm climate'},
+      {tier:2,metro:'Boston Metro',why:'Ultra-luxury New England buyers drawn to private waterway estate community'},
+      {tier:3,metro:'South Florida',why:'Buyers seeking similar luxury at lower insurance and tax rates'}
+    ],
+    personas:[
+      {type:'Executive Estate Buyer',headline:'"Your private Mediterranean estate on the Intracoastal — the address that says you\'ve arrived."',channels:'WSJ Real Estate, Mansion Global, Luxury Portfolio International'},
+      {type:'Boating Enthusiast',headline:'"Deep-water dock. Private bluff. The ICW at your feet. This is boating life, perfected."',channels:'Yacht World, boat shows, luxury Facebook groups'},
+      {type:'Second-Home Luxury Buyer',headline:'"An estate on the waterway for what a condo costs up north."',channels:'Zillow luxury, Realtor.com, Google Ads "luxury waterfront SC"'}
+    ]
+  },
+  'black-creek':{
+    name:'Black Creek Plantation',
+    tag:'Gated Equestrian & Nature Living',
+    tagline:'Where horse trails meet moss-draped luxury.',
+    bg:'images/long-bay-1.jpg',
+    price:'$500K – $1M+',
+    gated:'Yes',
+    styles:'Estate, Lowcountry, Custom',
+    bestFor:'Equestrian & Nature Buyers',
+    intro:'Black Creek Plantation is one of Carolina Forest\'s most unique luxury communities — a gated, equestrian-friendly enclave set among ancient live oaks, natural wetlands, and miles of riding and walking trails. For buyers who want estate-caliber living in a setting that feels worlds away from the typical coastal subdivision, Black Creek is unmatched.',
+    p2:'The community features generous lot sizes, a private equestrian center, community stables, and a network of nature trails winding through some of the most beautiful preserved landscape in Horry County. Homes are custom-built on spacious lots with architectural standards that ensure a cohesive, upscale aesthetic throughout.',
+    amenities:[
+      {i:'🐎',t:'Equestrian Center',d:'Private community stables, riding arena, and miles of equestrian trails'},
+      {i:'🌳',t:'Nature Preserve',d:'Hundreds of acres of preserved wetlands and live-oak forest'},
+      {i:'🏡',t:'Estate-Size Lots',d:'Generous lot sizes allowing for custom estate homes with privacy'},
+      {i:'🛡️',t:'Gated Entry',d:'Controlled access community with beautifully landscaped entrance'},
+      {i:'🚶',t:'Walking & Riding Trails',d:'Miles of interconnected trails through natural landscape'},
+      {i:'🦅',t:'Wildlife Corridor',d:'Active wildlife habitat with deer, herons, and native species throughout'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte & Raleigh, NC',why:'Equestrian families seeking affordable horse-friendly luxury near the coast'},
+      {tier:1,metro:'Northern Virginia & DC',why:'Horse country buyers finding similar lifestyle at a fraction of Virginia horse country prices'},
+      {tier:2,metro:'NYC Metro & Northern NJ',why:'Nature-loving families seeking escape to gated equestrian estate living'},
+      {tier:2,metro:'Atlanta, GA',why:'Equestrian community buyers seeking coastal access with horse-friendly living'},
+      {tier:2,metro:'Philadelphia & Pittsburgh, PA',why:'Estate buyers drawn to unique equestrian lifestyle with coastal proximity'},
+      {tier:3,metro:'Lexington, KY & Nashville, TN',why:'Horse country families seeking warm-climate equestrian community near the beach'}
+    ],
+    personas:[
+      {type:'Equestrian Family',headline:'"Your horses. Your trails. Your gated estate — five miles from the Atlantic."',channels:'Equestrian magazines, horse community groups, Land.com'},
+      {type:'Nature & Privacy Seekers',headline:'"Moss-draped live oaks, private trails, and not a single cookie-cutter home in sight."',channels:'Nature & outdoor lifestyle groups, Zillow, luxury real estate sites'},
+      {type:'Custom Estate Buyer',headline:'"Build your legacy home on estate-size lots in a gated natural paradise."',channels:'Houzz, custom home builder sites, Facebook luxury groups'}
+    ]
+  },
+  'carolina-waterway':{
+    name:'Carolina Waterway Plantation',
+    tag:'Gated Waterway Elegance',
+    tagline:'Prestigious waterway living with resort-caliber amenities.',
+    bg:'images/barefoot-drone.jpg',
+    price:'$450K – $700K+',
+    gated:'Yes',
+    styles:'Traditional, Lowcountry, Transitional',
+    bestFor:'Waterway Lifestyle Seekers',
+    intro:'Carolina Waterway Plantation is a distinguished gated community offering direct Intracoastal Waterway access and a refined lifestyle that appeals to buyers seeking elegance, privacy, and world-class amenities. Situated along one of the most scenic stretches of the ICW in Carolina Forest, the community combines natural waterway beauty with upscale residential living.',
+    p2:'The community features a private boat launch and dock on the Intracoastal, a beautiful resort-style pool and clubhouse, tennis courts, and lush landscaping throughout. Homes range from well-appointed single-family residences to larger waterway-view estates, all built to high architectural standards.',
+    amenities:[
+      {i:'⚓',t:'Private ICW Dock',d:'Community boat launch and dock with direct Intracoastal Waterway access'},
+      {i:'🏊',t:'Resort-Style Pool',d:'Heated pool, sundeck, and poolside gathering area'},
+      {i:'🎾',t:'Tennis & Recreation',d:'Lighted tennis courts and community recreation areas'},
+      {i:'🛡️',t:'Gated Community',d:'24-hour gated access with beautifully maintained entrance'},
+      {i:'🌊',t:'Waterway Views',d:'Select homesites with stunning Intracoastal Waterway views'},
+      {i:'🏫',t:'Premier Schools',d:'Zoned for top-rated Carolina Forest schools'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte & Raleigh, NC',why:'NC professionals seeking gated waterway lifestyle with reasonable price point'},
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'Northeast buyers attracted to gated ICW access at exceptional value'},
+      {tier:2,metro:'Washington DC / NoVA',why:'Military and government retirees seeking waterway community with boat access'},
+      {tier:2,metro:'Philadelphia & Pittsburgh, PA',why:'Families drawn to gated elegance with waterway recreation'},
+      {tier:2,metro:'Columbus & Cleveland, OH',why:'Water-lovers from the Great Lakes seeking year-round waterway lifestyle'},
+      {tier:3,metro:'Chicago, IL',why:'Midwest buyers seeking premium waterway community without premium pricing'}
+    ],
+    personas:[
+      {type:'Waterway Lifestyle Buyer',headline:'"Your boat on the Intracoastal. Your home behind the gates. Your life, elevated."',channels:'Boating magazines digital, Facebook boating groups, Zillow'},
+      {type:'Relocating Professional',headline:'"Gated community, waterway access, top schools — the trifecta of Carolina Forest living."',channels:'Google Ads, Facebook/IG targeted, Realtor.com'},
+      {type:'Downsizing Empty Nester',headline:'"Trade the big yard for a waterway view and a life of leisure behind the gates."',channels:'Facebook 50+, Zillow, AARP digital'}
+    ]
+  },
+  'waterford':{
+    name:'Waterford Plantation',
+    tag:'Established Family Community',
+    tagline:'The neighborhood where Carolina Forest families grow up.',
+    bg:'images/pelican-bay-1.jpg',
+    price:'$250K – $450K+',
+    gated:'No',
+    styles:'Traditional, Colonial, Craftsman',
+    bestFor:'Growing Families',
+    intro:'Waterford Plantation is one of Carolina Forest\'s most established and beloved family neighborhoods — a community that has been quietly raising families, building friendships, and setting the standard for neighborhood living in the Myrtle Beach area for over two decades.',
+    p2:'Known for its mature landscaping, well-maintained common areas, community pool and clubhouse, and strong homeowner association, Waterford Plantation offers the kind of genuine neighborhood feel that newer developments work years to achieve. The community is zoned for Carolina Forest\'s top-rated schools and offers outstanding value for the quality of life.',
+    amenities:[
+      {i:'🏫',t:'Top-Rated Schools',d:'Walking distance to Carolina Forest\'s highest-rated elementary and middle schools'},
+      {i:'🏊',t:'Community Pool',d:'Well-maintained pool and clubhouse as the community gathering hub'},
+      {i:'🌳',t:'Mature Landscaping',d:'Over 20 years of growth creating a lush, tree-canopied streetscape'},
+      {i:'🚴',t:'Sidewalks & Trails',d:'Connected sidewalk system throughout with walking trails'},
+      {i:'🏘️',t:'Strong HOA',d:'Well-managed homeowner association maintaining community standards'},
+      {i:'💰',t:'Outstanding Value',d:'Some of the best price-per-square-foot value in all of Carolina Forest'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte & Raleigh, NC',why:'Young families finding established neighborhoods with top schools at half the NC price'},
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'First-time luxury buyers getting 3x the house for their budget'},
+      {tier:2,metro:'Philadelphia & Pittsburgh, PA',why:'Families drawn to established community feel with warm-climate upgrade'},
+      {tier:2,metro:'Washington DC / NoVA',why:'Military families and government workers finding stability and value'},
+      {tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest families seeking coastal family community at accessible pricing'},
+      {tier:3,metro:'Hartford & New Haven, CT',why:'Connecticut families seeking dramatic quality-of-life upgrade at lower cost'}
+    ],
+    personas:[
+      {type:'Young Professional Family',headline:'"Top schools, mature trees, real neighbors — the family neighborhood you thought was gone forever."',channels:'Facebook family groups, Zillow, Google Ads "family homes Carolina Forest"'},
+      {type:'First-Time Home Buyer',headline:'"Your first home in one of Carolina Forest\'s most established communities. Starting under $300K."',channels:'Instagram, TikTok, first-time buyer programs, Realtor.com'},
+      {type:'Military Family',headline:'"Stable community, strong schools, and neighbors who understand your lifestyle."',channels:'Military spouse groups, base housing offices, USAA partnership'}
+    ]
+  },
+  'the-farm':{
+    name:'The Farm at Carolina Forest',
+    tag:'Modern New Construction Living',
+    tagline:'Brand-new homes with resort amenities in the heart of Carolina Forest.',
+    bg:'images/barefoot-pool.jpg',
+    price:'$280K – $500K+',
+    gated:'No',
+    styles:'Coastal Modern, Craftsman, Farmhouse',
+    bestFor:'New Home Seekers',
+    intro:'The Farm at Carolina Forest represents the next generation of master-planned community living — featuring brand-new construction homes by D.R. Horton with modern floor plans, energy-efficient features, and resort-caliber amenities that rival communities at twice the price.',
+    p2:'The community features an impressive amenity campus including resort-style pool, fitness center, playground, and extensive walking trails. Homes range from affordable single-family residences to larger premium homes, all with modern open-concept designs, smart home features, and the latest energy-efficient construction standards.',
+    amenities:[
+      {i:'🏠',t:'Brand-New Construction',d:'All-new D.R. Horton homes with modern floor plans and smart features'},
+      {i:'🏊',t:'Resort Pool & Fitness',d:'Community pool, fitness center, and recreation amenities'},
+      {i:'⚡',t:'Energy Efficient',d:'Latest construction standards with smart home technology'},
+      {i:'🌿',t:'Walking Trails',d:'Miles of paved walking and biking trails throughout'},
+      {i:'🎮',t:'Playground & Social',d:'Modern playground, picnic areas, and community gathering spaces'},
+      {i:'🏫',t:'CF School District',d:'Zoned for Carolina Forest\'s award-winning school system'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte & Raleigh, NC',why:'NC buyers finding brand-new homes at 40-50% less than Charlotte new construction'},
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'Northeast buyers getting new construction at 1/3 the cost of comparable NJ/NY homes'},
+      {tier:2,metro:'Philadelphia & Pittsburgh, PA',why:'PA families attracted to modern new homes with resort amenities at accessible pricing'},
+      {tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest movers finding new construction with coastal lifestyle perks'},
+      {tier:2,metro:'Washington DC / NoVA',why:'Young professionals and military families seeking modern new-build homes'},
+      {tier:3,metro:'Hartford & New Haven, CT',why:'New England buyers escaping high costs for brand-new homes near the beach'}
+    ],
+    personas:[
+      {type:'First-Time Buyer',headline:'"Brand-new home, resort pool, top schools — all starting under $300K. This is real."',channels:'Instagram, TikTok, first-time buyer Facebook groups, Zillow'},
+      {type:'Relocating Family',headline:'"Move-in ready. Modern. Energy efficient. Your new life starts the day you close."',channels:'Facebook/IG targeted ads, Google Ads "new homes Myrtle Beach"'},
+      {type:'Remote Worker',headline:'"Finally — a brand-new home office, resort amenities, and the beach 10 minutes away."',channels:'LinkedIn, remote work communities, digital nomad groups'}
+    ]
+  },
+  'avalon':{
+    name:'Avalon at Carolina Forest',
+    tag:'Active Sports-Focused Community',
+    tagline:'Where your backyard is a championship-caliber sports campus.',
+    bg:'images/long-bay-2.jpg',
+    price:'$260K – $420K+',
+    gated:'No',
+    styles:'Traditional, Transitional, Coastal',
+    bestFor:'Active Sports Families',
+    intro:'Avalon at Carolina Forest is the Grand Strand\'s most sports-focused residential community, built around an extraordinary athletic amenity campus that includes championship-quality ball fields, basketball courts, sand volleyball, and resort-style pool complex.',
+    p2:'For families with active kids or adults who love recreational sports, Avalon delivers a lifestyle that few communities anywhere can match. The community regularly hosts travel ball tournaments, swim meets, and community sporting events that bring neighbors together. Combined with top-rated Carolina Forest schools and accessible price points, Avalon is a magnet for active families.',
+    amenities:[
+      {i:'⚾',t:'Championship Ball Fields',d:'Tournament-quality baseball and softball fields hosting travel ball events'},
+      {i:'🏀',t:'Basketball & Volleyball',d:'Full-size courts for basketball and sand volleyball'},
+      {i:'🏊',t:'Competition Pool',d:'Resort-style pool complex with competition lanes and splash features'},
+      {i:'🏃',t:'Walking & Running Trails',d:'Extensive trail system for runners, walkers, and cyclists'},
+      {i:'🎪',t:'Community Events',d:'Regular tournaments, swim meets, and neighborhood social events'},
+      {i:'🏫',t:'Top Schools Nearby',d:'Walking distance to top-rated Carolina Forest schools'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte & Raleigh, NC',why:'Travel ball families finding affordable homes near championship fields'},
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'Sports-oriented families escaping high costs for active community lifestyle'},
+      {tier:2,metro:'Philadelphia & Pittsburgh, PA',why:'Athletic families drawn to year-round outdoor sports community'},
+      {tier:2,metro:'Columbus & Cleveland, OH',why:'Sports families seeking warm-climate community with year-round play'},
+      {tier:2,metro:'Washington DC / NoVA',why:'Active military families and young professionals seeking sports-focused living'},
+      {tier:3,metro:'Boston Metro',why:'New England families drawn to year-round outdoor athletics at accessible pricing'}
+    ],
+    personas:[
+      {type:'Travel Ball Family',headline:'"Championship fields in your backyard. Top schools down the street. Game on."',channels:'Travel ball Facebook groups, youth sports forums, Instagram'},
+      {type:'Active Young Family',headline:'"Pool, ball fields, trails, and the beach — all under $400K. Your kids will never be bored."',channels:'Facebook family groups, Zillow, Google Ads "active community Myrtle Beach"'},
+      {type:'Fitness-Focused Couple',headline:'"Run the trails, swim laps, play volleyball — then walk to the pool. Every day."',channels:'Strava groups, fitness communities, Instagram fitness'}
+    ]
+  },
+  'indigo-bay':{
+    name:'Indigo Bay',
+    tag:'Gated New Construction',
+    tagline:'Brand-new luxury behind the gates — Carolina Forest\'s newest gem.',
+    bg:'images/indigo-bay-sign.jpg',
+    price:'$350K – $550K+',
+    gated:'Yes',
+    styles:'Coastal Contemporary, Craftsman, Transitional',
+    bestFor:'Gated New-Build Buyers',
+    intro:'Indigo Bay is one of Carolina Forest\'s newest gated luxury communities, offering brand-new construction homes with modern architectural styles, resort-caliber amenities, and the security of gated access — all at a price point that has made it one of the fastest-selling communities in the entire Myrtle Beach market.',
+    p2:'The community combines the appeal of new construction — open floor plans, energy efficiency, modern finishes — with the exclusivity of a gated residential community. An impressive amenity campus featuring resort pool, fitness center, and community gathering spaces completes the picture.',
+    amenities:[
+      {i:'🛡️',t:'Gated Access',d:'Controlled entry providing security and exclusivity for residents'},
+      {i:'🏠',t:'New Construction',d:'Modern homes with open floor plans, smart features, and designer finishes'},
+      {i:'🏊',t:'Resort Pool & Fitness',d:'Community pool, modern fitness center, and outdoor gathering spaces'},
+      {i:'🌿',t:'Preserved Green Space',d:'Natural areas and walking trails woven throughout the community'},
+      {i:'⚡',t:'Modern & Efficient',d:'Latest energy-efficient construction with smart home technology'},
+      {i:'🏫',t:'CF Schools',d:'Zoned for award-winning Carolina Forest school system'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte & Raleigh, NC',why:'NC buyers wanting new + gated at pricing impossible to find in the Triangle or Charlotte'},
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'Northeast buyers getting brand-new gated community homes at a fraction of NJ/NY costs'},
+      {tier:1,metro:'Washington DC / NoVA',why:'Young professionals and military families attracted to gated new construction'},
+      {tier:2,metro:'Philadelphia & Pittsburgh, PA',why:'PA families seeking gated security with modern new-build homes'},
+      {tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest movers finding gated luxury new construction with coastal access'},
+      {tier:3,metro:'Chicago, IL',why:'Midwest families seeking gated community with brand-new homes in warm climate'}
+    ],
+    personas:[
+      {type:'Security-Conscious Family',headline:'"Brand-new home. Gated community. Top schools. Starting in the $350s."',channels:'Facebook family groups, Google Ads "gated communities Carolina Forest", Zillow'},
+      {type:'Upgrading Couple',headline:'"Step up to gated luxury — without stepping up to a seven-figure price tag."',channels:'Zillow, Realtor.com, Facebook/IG targeted'},
+      {type:'Relocating Professional',headline:'"New construction, gated access, and 10 minutes to the beach. Welcome to Indigo Bay."',channels:'LinkedIn, Google Ads, Realtor.com'}
+    ]
+  }
+};
+
+/* ── Luxury community card grid HTML ── */
+function luxuryCardsHTML(){
+  const slugs=['waterbridge','plantation-lakes','waterway-palms','the-bluffs','black-creek','carolina-waterway','waterford','the-farm','avalon','indigo-bay'];
+  return slugs.map(s=>{
+    const d=LC[s];
+    return `<div class="lux-card" onclick="showLuxuryCommunity('${s}')">
+      <div class="lux-card-img" style="background-image:url('${d.bg}')">
+        ${d.gated==='Yes'?'<div class="lux-card-gated">Gated</div>':''}
+      </div>
+      <div class="lux-card-body">
+        <div class="lux-card-name">${d.name}</div>
+        <div class="lux-card-tag">${d.tag}</div>
+        <div class="lux-card-price">${d.price}</div>
+        <span class="lux-card-cta">Explore Community →</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ── Render luxury community landing page ── */
+function showLuxuryCommunity(slug){
+  const d=LC[slug]; if(!d) return;
+  const amHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const tgtHtml=d.targets.map(t=>`<div class="lux-t"><div class="lux-t-tier">${t.tier}</div><div><div class="lux-t-metro">${t.metro}</div><div class="lux-t-why">${t.why}</div></div></div>`).join('');
+  const perHtml=d.personas.map(p=>`<div class="lux-persona"><div class="lux-p-type">${p.type}</div><div class="lux-p-headline">${p.headline}</div><div class="lux-p-channels"><strong>Target Channels:</strong> ${p.channels}</div></div>`).join('');
+
+  document.getElementById('commContent').innerHTML=`
+    <section class="lux-hero">
+      <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
+      <div class="lux-hero-body">
+        <a class="lux-hero-back" onclick="showCommunity('carolina-forest');return false">← Back to Carolina Forest</a>
+        <div class="lux-hero-badge">Luxury Community</div>
+        <h1 class="lux-hero-title">${d.name}</h1>
+        <p class="lux-hero-tagline">${d.tagline}</p>
+      </div>
+    </section>
+
+    <div class="lux-facts"><div class="container"><div class="lux-facts-inner">
+      <div class="lux-fact"><div class="lux-fact-label">Price Range</div><div class="lux-fact-val">${d.price}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Gated</div><div class="lux-fact-val">${d.gated}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Home Styles</div><div class="lux-fact-val">${d.styles}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Best For</div><div class="lux-fact-val">${d.bestFor}</div></div>
+    </div></div></div>
+
+    <div class="lux-body"><div class="container"><div class="lux-layout">
+      <div class="lux-main">
+        <div class="lux-about">
+          <h2>About ${d.name}</h2>
+          <p>${d.intro}</p>
+          <p>${d.p2}</p>
+        </div>
+
+        <div class="lux-amenities">
+          <h3>Key Amenities & Selling Points</h3>
+          <div class="lux-am-grid">${amHtml}</div>
+        </div>
+
+        <div class="lux-targets">
+          <h3>Recommended Target Markets</h3>
+          <p>Where to find the ideal buyers for ${d.name}, ranked by priority tier.</p>
+          <div class="lux-t-grid">${tgtHtml}</div>
+        </div>
+
+        <div class="lux-personas">
+          <h3>Buyer Personas & Ad Messaging</h3>
+          <div class="lux-p-grid">${perHtml}</div>
+        </div>
+      </div>
+
+      <div class="lux-sidebar">
+        <div class="lux-sb-card">
+          <h3>Find Your Home in ${d.name}</h3>
+          <p>Our team knows every lot, every builder, and every street. Let us match you with your perfect property.</p>
+          <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
+        </div>
+        <div class="lux-sb-card">
+          <h3>Quick Stats</h3>
+          <div class="lux-sb-stats">
+            <div class="lux-sb-stat"><div class="val">${d.price.split('–')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
+          </div>
+          <p>${d.bestFor} — this community is ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+        </div>
+        <div class="lux-sb-card" style="background:var(--navy)">
+          <h3 style="color:var(--gold)">Myrtle Beach Is #1</h3>
+          <p style="color:rgba(255,255,255,.7)">Myrtle Beach was named the #1 most moved-to city in America in 2025. Carolina Forest luxury communities are leading the demand.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('carolina-forest');return false">View All Luxury Communities</a>
+        </div>
+      </div>
+    </div></div></div>`;
+
+  document.getElementById('listHead').textContent='Available Properties in '+d.name;
+  showPage('community');
+}
+
+/* ── Override showCommunity to add luxury grid for carolina-forest ── */
+const _origShowCommunity = showCommunity;
+showCommunity = function(slug){
+  _origShowCommunity(slug);
+  if(slug==='carolina-forest'){
+    const hook=document.querySelector('#commContent .comm-content');
+    if(hook){
+      const luxSec=document.createElement('div');
+      luxSec.className='lux-comm-sec';
+      luxSec.innerHTML=`<div class="container">
+        <div class="sec-header">
+          <span class="lbl">Explore</span>
+          <h2 class="h2">Luxury Communities in Carolina Forest</h2>
+          <p>From resort-style gated enclaves to custom lakefront estates — discover the finest neighborhoods within Carolina Forest.</p>
+        </div>
+        <div class="lux-grid">${luxuryCardsHTML()}</div>
+      </div>`;
+      hook.appendChild(luxSec);
+    }
+  }
+};
 </script>
 </body>
 </html>
