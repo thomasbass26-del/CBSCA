@@ -53,38 +53,39 @@ img{max-width:100%;display:block}
 /* ══════════════════════════════════════
    TOP BAR
 ══════════════════════════════════════ */
-.topbar{background:var(--navy);padding:7px 0;text-align:center;font-family:var(--fu);font-size:10px;letter-spacing:0.8px;color:rgba(255,255,255,0.6)}
-.topbar a{color:var(--gold);margin:0 10px}
+.topbar{background:var(--navy);padding:7px 0;text-align:center;font-family:var(--fu);font-size:10px;letter-spacing:0.8px;color:rgba(255,255,255,0.6);overflow:hidden}
+.topbar a{color:var(--gold);margin:0 6px;white-space:nowrap}
 .topbar .tb-sep{color:rgba(255,255,255,0.25)}
+.topbar .tb-loc{display:none}
 
 /* ══════════════════════════════════════
    NAVBAR
 ══════════════════════════════════════ */
 .navbar{position:sticky;top:0;z-index:900;background:var(--white);border-bottom:1px solid rgba(0,48,135,0.08);box-shadow:var(--shadow);transition:var(--ease)}
 .navbar.scrolled{backdrop-filter:blur(14px);background:rgba(255,255,255,0.96)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h)}
-.nav-logo{display:flex;flex-direction:column;gap:1px;cursor:pointer}
-.nav-logo .lt{font-family:var(--fd);font-size:17px;font-weight:700;color:var(--navy);line-height:1}
-.nav-logo .ls{font-family:var(--fu);font-size:8px;font-weight:400;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);gap:12px}
+.nav-logo{display:flex;flex-direction:column;gap:1px;cursor:pointer;min-width:0;flex-shrink:1}
+.nav-logo .lt{font-family:var(--fd);font-size:clamp(13px,3.5vw,17px);font-weight:700;color:var(--navy);line-height:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-logo .ls{font-family:var(--fu);font-size:clamp(6px,1.8vw,8px);font-weight:400;letter-spacing:2px;text-transform:uppercase;color:var(--gold);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
-/* Desktop links */
-.nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+/* Desktop links — hidden on mobile by default */
+.nav-links{display:none;align-items:center;gap:2px;list-style:none}
 .nav-links>li{position:relative}
 .nav-links>li>a{display:block;font-family:var(--fu);font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--dark);padding:8px 14px;cursor:pointer;transition:var(--ease)}
 .nav-links>li>a:hover,.nav-links>li>a.active{color:var(--blue)}
 .nav-links>li>a.active{border-bottom:2px solid var(--gold)}
-.dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--white);border:1px solid rgba(0,48,135,0.09);box-shadow:var(--shadow-lg);min-width:210px;padding:10px 0;opacity:0;pointer-events:none;transition:opacity 0.18s ease;z-index:999;margin-top:0}
+.dropdown{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:var(--white);border:1px solid rgba(0,48,135,0.09);box-shadow:var(--shadow-lg);min-width:210px;padding:10px 0;opacity:0;pointer-events:none;transition:opacity 0.18s ease;z-index:999}
 .dropdown::before{content:'';position:absolute;top:-12px;left:0;right:0;height:12px;background:transparent}
 .nav-links>li:hover .dropdown{opacity:1;pointer-events:all}
 .dropdown a{display:block;font-family:var(--fu);font-size:11px;font-weight:400;color:var(--dark);padding:9px 22px;border-left:2px solid transparent;transition:var(--ease)}
 .dropdown a:hover{background:var(--off-white);color:var(--blue);border-left-color:var(--gold);padding-left:26px}
 .dropdown hr{border:none;border-top:1px solid var(--cream);margin:6px 14px}
-.nav-cta{display:flex;align-items:center;gap:10px}
+.nav-cta{display:none;align-items:center;gap:10px}
 .nav-phone{font-family:var(--fd);font-size:14px;font-weight:600;color:var(--navy)}
 .nav-phone:hover{color:var(--blue)}
 
-/* Hamburger */
-.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:6px;z-index:1100;flex-shrink:0}
+/* Hamburger — visible on mobile by default */
+.hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:42px;height:42px;background:none;border:none;cursor:pointer;padding:6px;z-index:1100;flex-shrink:0}
 .hamburger span{display:block;height:2px;border-radius:2px;background:var(--navy);transition:var(--ease)}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
@@ -93,7 +94,7 @@ img{max-width:100%;display:block}
 /* ══════════════════════════════════════
    MOBILE DRAWER
 ══════════════════════════════════════ */
-.mob-nav{position:fixed;inset:0;background:var(--navy);z-index:1050;overflow-y:auto;padding:calc(var(--nav-h) + 20px) 24px 56px;transform:translateX(100%);transition:transform 0.38s cubic-bezier(0.4,0,0.2,1);display:none}
+.mob-nav{position:fixed;inset:0;background:var(--navy);z-index:1050;overflow-y:auto;padding:80px 24px 56px;transform:translateX(100%);transition:transform 0.38s cubic-bezier(0.4,0,0.2,1)}
 .mob-nav.open{transform:translateX(0)}
 .mob-item{border-bottom:1px solid rgba(255,255,255,0.07)}
 .mob-btn{display:flex;justify-content:space-between;align-items:center;font-family:var(--fd);font-size:1.5rem;font-weight:600;color:var(--white);padding:16px 0;background:none;border:none;cursor:pointer;width:100%;text-align:left;transition:color .2s}
@@ -286,9 +287,9 @@ img{max-width:100%;display:block}
 .ls-hero-body h1{font-family:var(--fd);font-size:clamp(2rem,6vw,4rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:16px}
 .ls-hero-body p{font-family:var(--fb);font-size:1.1rem;font-weight:300;color:rgba(255,255,255,.82);line-height:1.8}
 .ls-subnav{background:var(--white);border-bottom:1px solid var(--cream);position:sticky;top:var(--nav-h);z-index:50;box-shadow:var(--shadow)}
-.ls-tabs{display:flex;overflow-x:auto;scrollbar-width:none;gap:0}
+.ls-tabs{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:0;-ms-overflow-style:none}
 .ls-tabs::-webkit-scrollbar{display:none}
-.ls-tab{display:flex;align-items:center;gap:7px;font-family:var(--fu);font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);padding:16px 20px;white-space:nowrap;cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:var(--ease);flex-shrink:0}
+.ls-tab{display:flex;align-items:center;gap:7px;font-family:var(--fu);font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);padding:14px 16px;white-space:nowrap;cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;transition:var(--ease);flex-shrink:0;-webkit-tap-highlight-color:transparent;min-height:48px}
 .ls-tab:hover{color:var(--blue)}
 .ls-tab.active{color:var(--navy);border-bottom-color:var(--gold)}
 .ls-cat{padding:48px 0;background:var(--white)}
@@ -399,6 +400,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 ══════════════════════════════════════ */
 @media(min-width:640px){
   .container{padding:0 24px}
+  .topbar .tb-loc{display:inline}
   .hero-content{padding:0 32px;max-width:640px}
   .comm-grid{grid-template-columns:repeat(2,1fr)}
   .life-grid{grid-template-columns:repeat(3,1fr)}
@@ -510,7 +512,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 
 <!-- TOP BAR -->
 <div class="topbar">
-  <a href="tel:8432720003">(843) 272-0003</a>
+  <a href="tel:8434305201">(843) 430-5201</a>
   <span class="tb-sep"> · </span>
   <a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a>
   <span class="tb-sep tb-loc"> · Myrtle Beach, SC | Grand Strand</span>
@@ -558,7 +560,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <li><a href="#" onclick="showPage('about');return false" id="nav-about">About</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="tel:8432720003" class="nav-phone">📞 (843) 272-0003</a>
+        <a href="tel:8434305201" class="nav-phone">📞 (843) 430-5201</a>
         <a href="#" class="btn btn-navy" onclick="showPage('home-value');return false">Free Home Value</a>
       </div>
       <!-- Mobile hamburger -->
@@ -609,7 +611,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
     <button class="mob-btn" onclick="showPage('about');closeMob()">About</button>
   </div>
   <div class="mob-cta">
-    <a href="tel:8432720003" class="mob-phone">📞 (843) 272-0003</a>
+    <a href="tel:8434305201" class="mob-phone">📞 (843) 430-5201</a>
     <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');closeMob();return false">Get Free Home Value</a>
   </div>
 </div>
@@ -783,7 +785,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
             <div class="agent-name">Your Listing Specialist</div>
             <span class="agent-title">Senior Listing Agent · Grand Strand Expert</span>
             <p class="agent-bio">Our listing specialists bring deep Grand Strand market knowledge, cutting-edge marketing, and a relentless commitment to getting you the best possible outcome. With years of experience across every price point and community, we know how to position your home to sell fast and for top dollar.</p>
-            <div class="agent-links"><a href="tel:8432720003">📞 (843) 272-0003</a><a href="mailto:info@cbseacoast.com">✉️ info@cbseacoast.com</a></div>
+            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a></div>
           </div>
         </div>
         <div class="agent-card">
@@ -792,7 +794,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
             <div class="agent-name">Your Buyer's Specialist</div>
             <span class="agent-title">Buyer's Agent · Relocation Expert</span>
             <p class="agent-bio">Discovering a new home on the South Carolina coast is one of life's great adventures — and our buyer's specialists are the ideal guides. From first-time coastal buyers to seasoned investors, our team provides the local insight, market data, and genuine care that make all the difference.</p>
-            <div class="agent-links"><a href="tel:8432720003">📞 (843) 272-0003</a><a href="mailto:info@cbseacoast.com">✉️ info@cbseacoast.com</a></div>
+            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a></div>
           </div>
         </div>
       </div>
@@ -1032,7 +1034,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
       <div class="foot-col">
         <h4>Contact</h4>
         <ul>
-          <li><a href="tel:8432720003">(843) 272-0003</a></li>
+          <li><a href="tel:8434305201">(843) 430-5201</a></li>
           <li><a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a></li>
           <li><a href="#">Schedule a Consultation</a></li>
           <li><a href="#" onclick="showPage('about');return false">About the Team</a></li>
