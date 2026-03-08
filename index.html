@@ -143,17 +143,31 @@ img{max-width:100%;display:block}
 .oh-det{font-family:var(--fu);font-size:11px;color:var(--gray)}
 .oh-price{font-family:var(--fu);font-size:12px;font-weight:600;color:var(--blue);margin-top:2px}
 
+
 /* ══════════════════════════════════════
    SEARCH BAR
 ══════════════════════════════════════ */
-.search-wrap{background:var(--navy)}
-.search-bar{display:flex;background:var(--white);box-shadow:var(--shadow-lg)}
-.sf{flex:1;display:flex;flex-direction:column;padding:18px 20px;border-right:1px solid var(--cream)}
-.sf:last-of-type{border-right:none}
+.search-wrap{background:var(--navy);padding:0}
+.search-bar{display:flex;flex-direction:column;background:var(--white);box-shadow:var(--shadow-lg)}
+.sf{display:flex;flex-direction:column;padding:14px 16px;border-bottom:1px solid var(--cream)}
 .sf label{font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
-.sf select,.sf input{background:none;border:none;outline:none;font-family:var(--fu);font-size:13px;color:var(--dark);cursor:pointer;width:100%}
-.s-btn{background:var(--gold);color:var(--navy);border:none;cursor:pointer;padding:0 32px;font-family:var(--fu);font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;display:flex;align-items:center;gap:10px;white-space:nowrap;transition:var(--ease);min-height:60px}
+.sf select,.sf input{background:none;border:none;outline:none;font-family:var(--fu);font-size:14px;color:var(--dark);cursor:pointer;width:100%;min-height:28px}
+.s-btn{background:var(--gold);color:var(--navy);border:none;cursor:pointer;padding:18px 24px;font-family:var(--fu);font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;transition:var(--ease);min-height:56px}
 .s-btn:hover{background:var(--gold-light)}
+
+@media(min-width:640px){
+  .search-bar{flex-direction:row;flex-wrap:wrap}
+  .sf{flex:1;min-width:45%;border-bottom:1px solid var(--cream);border-right:1px solid var(--cream)}
+  .s-btn{width:100%;flex:0 0 100%}
+}
+
+@media(min-width:900px){
+  .search-bar{flex-wrap:nowrap;flex-direction:row}
+  .sf{border-bottom:none;min-width:0}
+  .sf:last-of-type{border-right:none}
+  .s-btn{width:auto;flex:0 0 auto}
+}
+
 
 /* ══════════════════════════════════════
    HOME PAGE SECTIONS
@@ -415,8 +429,6 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   .ls-stats{grid-template-columns:repeat(4,1fr)}
   .stats{gap:16px}
   .about-img{height:360px}
-  .search-bar{flex-wrap:wrap}
-  .sf{min-width:45%;border-bottom:1px solid var(--cream)}
 }
 
 /* ══════════════════════════════════════
@@ -438,10 +450,6 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   .hero-actions{flex-wrap:nowrap}
   .oh-panel{display:block}
   .slide-dots{left:80px;bottom:40px}
-
-  /* Search */
-  .search-bar{flex-wrap:nowrap}
-  .sf{border-bottom:none}
 
   /* Sections */
   .intro-sec{padding:100px 0}
@@ -514,7 +522,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 <div class="topbar">
   <a href="tel:8434305201">(843) 430-5201</a>
   <span class="tb-sep"> · </span>
-  <a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a>
+  <a href="/cdn-cgi/l/email-protection#2940474f46694a4b5a4c484a46485a5d074a4644"><span class="__cf_email__" data-cfemail="82ebece4edc2e1e0f1e7e3e1ede3f1f6ace1edef">[email&#160;protected]</span></a>
   <span class="tb-sep tb-loc"> · Myrtle Beach, SC | Grand Strand</span>
 </div>
 
@@ -785,7 +793,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
             <div class="agent-name">Your Listing Specialist</div>
             <span class="agent-title">Senior Listing Agent · Grand Strand Expert</span>
             <p class="agent-bio">Our listing specialists bring deep Grand Strand market knowledge, cutting-edge marketing, and a relentless commitment to getting you the best possible outcome. With years of experience across every price point and community, we know how to position your home to sell fast and for top dollar.</p>
-            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a></div>
+            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="/cdn-cgi/l/email-protection#d2bbbcb4bd92b1b0a1b7b3b1bdb3a1a6fcb1bdbf"><span class="__cf_email__" data-cfemail="f29b9c949db29190819793919d938186dc919d9f">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="agent-card">
@@ -794,7 +802,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
             <div class="agent-name">Your Buyer's Specialist</div>
             <span class="agent-title">Buyer's Agent · Relocation Expert</span>
             <p class="agent-bio">Discovering a new home on the South Carolina coast is one of life's great adventures — and our buyer's specialists are the ideal guides. From first-time coastal buyers to seasoned investors, our team provides the local insight, market data, and genuine care that make all the difference.</p>
-            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a></div>
+            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="/cdn-cgi/l/email-protection#0b62656d644b6869786e6a68646a787f25686466"><span class="__cf_email__" data-cfemail="ff96919990bf9c9d8c9a9e9c909e8c8bd19c9092">[email&#160;protected]</span></a></div>
           </div>
         </div>
       </div>
@@ -1035,7 +1043,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <h4>Contact</h4>
         <ul>
           <li><a href="tel:8434305201">(843) 430-5201</a></li>
-          <li><a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#f59c9b939ab59697869094969a948681db969a98"><span class="__cf_email__" data-cfemail="4f262129200f2c2d3c2a2e2c202e3c3b612c2022">[email&#160;protected]</span></a></li>
           <li><a href="#">Schedule a Consultation</a></li>
           <li><a href="#" onclick="showPage('about');return false">About the Team</a></li>
           <li><a href="#" onclick="showPage('blog');return false">Blog &amp; Resources</a></li>
@@ -1053,7 +1061,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 <!-- ══════════════════════════════════════════
      JAVASCRIPT
 ══════════════════════════════════════════ -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── Community data ── */
 const C = {
   'little-river':{name:'Little River',tag:'Gated Waterway & Marina Living',tagline:'Where the waterway meets the good life.',bg:'https://picsum.photos/seed/lr-hero/1200/600',intro:`Little River sits at the northernmost tip of the Grand Strand, where the Intracoastal Waterway opens into Cherry Grove Inlet and the Atlantic Ocean. This quiet fishing village turned upscale waterway community is one of the most coveted addresses on the South Carolina coast — and one of the best-kept secrets outside of it.`,p2:`Known for its annual Blue Crab Festival, a thriving casino boat scene, and some of the most spectacular waterway frontage in the state, Little River offers a lifestyle that feels like permanent vacation. Gated communities like Pelican Bay, Lightkeepers Village, and Cypress Village draw buyers who want privacy, natural beauty, and serious boating access without sacrificing proximity to shopping, dining, and golf.`,hi:[{i:'⚓',t:'Deep Water Access',d:'Direct ICW and ocean access with deep-water boat slips and private docks'},{i:'🦀',t:'Blue Crab Festival',d:'Annual festival draws 50,000+ visitors each May to this charming waterfront village'},{i:'⛳',t:'20+ Golf Courses',d:'World-class courses minutes from most neighborhoods'},{i:'🎰',t:'Casino Boats',d:'Unique waterfront entertainment at the Big M and other local vessels'},{i:'🍽️',t:'Waterfront Dining',d:'Fresh seafood restaurants lining the waterway with stunning sunset views'},{i:'🛡️',t:'Gated Communities',d:'Multiple premier gated communities including Pelican Bay and Lightkeepers Village'}]},
