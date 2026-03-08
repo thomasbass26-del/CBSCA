@@ -1051,7 +1051,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 <!-- ══════════════════════════════════════════
      JAVASCRIPT
 ══════════════════════════════════════════ -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* ── Community data ── */
 const C = {
   'little-river':{name:'Little River',tag:'Gated Waterway & Marina Living',tagline:'Where the waterway meets the good life.',bg:'https://picsum.photos/seed/lr-hero/1200/600',intro:`Little River sits at the northernmost tip of the Grand Strand, where the Intracoastal Waterway opens into Cherry Grove Inlet and the Atlantic Ocean. This quiet fishing village turned upscale waterway community is one of the most coveted addresses on the South Carolina coast — and one of the best-kept secrets outside of it.`,p2:`Known for its annual Blue Crab Festival, a thriving casino boat scene, and some of the most spectacular waterway frontage in the state, Little River offers a lifestyle that feels like permanent vacation. Gated communities like Pelican Bay, Lightkeepers Village, and Cypress Village draw buyers who want privacy, natural beauty, and serious boating access without sacrificing proximity to shopping, dining, and golf.`,hi:[{i:'⚓',t:'Deep Water Access',d:'Direct ICW and ocean access with deep-water boat slips and private docks'},{i:'🦀',t:'Blue Crab Festival',d:'Annual festival draws 50,000+ visitors each May to this charming waterfront village'},{i:'⛳',t:'20+ Golf Courses',d:'World-class courses minutes from most neighborhoods'},{i:'🎰',t:'Casino Boats',d:'Unique waterfront entertainment at the Big M and other local vessels'},{i:'🍽️',t:'Waterfront Dining',d:'Fresh seafood restaurants lining the waterway with stunning sunset views'},{i:'🛡️',t:'Gated Communities',d:'Multiple premier gated communities including Pelican Bay and Lightkeepers Village'}]},
@@ -1150,6 +1150,7 @@ window.addEventListener('scroll',()=>{
 });
 
 /* ── Desktop OH panel visibility ── */
+/* ── Desktop OH panel visibility ── */
 function checkOH(){
   const p=document.querySelector('.oh-panel');
   if(p) p.style.display=window.innerWidth>=900?'block':'none';
@@ -1170,4 +1171,19 @@ function closeMob(){
 }
 function toggleMobSub(id){
   const sub=document.getElementById(id);
-  const btn=document.getElementById(id.
+  const wasOpen=sub.classList.contains('open');
+  document.querySelectorAll('.mob-sub').forEach(s=>s.classList.remove('open'));
+  document.querySelectorAll('.mob-btn').forEach(b=>b.classList.remove('open'));
+  if(!wasOpen){
+    sub.classList.add('open');
+    sub.previousElementSibling.classList.add('open');
+  }
+}
+document.getElementById('mob-comm-btn').onclick=function(){toggleMobSub('mob-comm')};
+document.getElementById('mob-life-btn').onclick=function(){toggleMobSub('mob-life')};
+
+/* ── Prevent default on # links ── */
+document.querySelectorAll('a[href="#"]').forEach(a=>a.addEventListener('click',e=>e.preventDefault()));
+</script>
+</body>
+</html>
