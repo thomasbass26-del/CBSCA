@@ -1168,6 +1168,50 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         </ul>
       </div>
       <div class="foot-col">
+        <h4>Conway Luxury</h4>
+        <ul>
+          <li><a href="#" onclick="showConwayLuxuryCommunity('wild-wing');return false">Wild Wing Plantation</a></li>
+          <li><a href="#" onclick="showConwayLuxuryCommunity('pottery-landing');return false">Pottery Landing</a></li>
+          <li><a href="#" onclick="showConwayLuxuryCommunity('rivers-edge');return false">Rivers Edge</a></li>
+          <li><a href="#" onclick="showConwayLuxuryCommunity('shaftesbury-glen');return false">Shaftesbury Glen</a></li>
+          <li><a href="#" onclick="showConwayLuxuryCommunity('auberon-woods');return false">Auberon Woods</a></li>
+          <li><a href="#" onclick="showConwayLuxuryCommunity('heritage-preserve');return false">Heritage Preserve</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Myrtle Beach Luxury</h4>
+        <ul>
+          <li><a href="#" onclick="showMbLuxuryCommunity('grande-dunes');return false">Grande Dunes</a></li>
+          <li><a href="#" onclick="showMbLuxuryCommunity('the-dunes-club');return false">The Dunes Club</a></li>
+          <li><a href="#" onclick="showMbLuxuryCommunity('plantation-point');return false">Plantation Point</a></li>
+          <li><a href="#" onclick="showMbLuxuryCommunity('kingston-plantation');return false">Kingston Plantation</a></li>
+          <li><a href="#" onclick="showMbLuxuryCommunity('the-legends');return false">The Legends</a></li>
+          <li><a href="#" onclick="showMbLuxuryCommunity('black-creek-mb');return false">Black Creek Plantation</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Murrells Inlet Luxury</h4>
+        <ul>
+          <li><a href="#" onclick="showMiLuxuryCommunity('wachesaw');return false">Wachesaw Plantation</a></li>
+          <li><a href="#" onclick="showMiLuxuryCommunity('prince-creek');return false">Prince Creek</a></li>
+          <li><a href="#" onclick="showMiLuxuryCommunity('creek-harbour');return false">Creek Harbour</a></li>
+          <li><a href="#" onclick="showMiLuxuryCommunity('blackmoor');return false">Blackmoor</a></li>
+          <li><a href="#" onclick="showMiLuxuryCommunity('bellwood-landing');return false">Bellwood Landing</a></li>
+          <li><a href="#" onclick="showMiLuxuryCommunity('longwood-bluffs');return false">Longwood Bluffs</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>South Strand Luxury</h4>
+        <ul>
+          <li><a href="#" onclick="showLbLuxuryCommunity('litchfield-sea');return false">Litchfield by the Sea</a></li>
+          <li><a href="#" onclick="showLbLuxuryCommunity('reserve-litchfield');return false">The Reserve</a></li>
+          <li><a href="#" onclick="showPiLuxuryCommunity('pawleys-plantation');return false">Pawleys Plantation</a></li>
+          <li><a href="#" onclick="showPiLuxuryCommunity('debordieu');return false">DeBordieu Colony</a></li>
+          <li><a href="#" onclick="showPiLuxuryCommunity('heritage-plantation');return false">Heritage Plantation</a></li>
+          <li><a href="#" onclick="showPiLuxuryCommunity('willbrook');return false">Willbrook Plantation</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
         <h4>Contact</h4>
         <ul>
           <li><a href="tel:8434305201">(843) 430-5201</a></li>
@@ -2232,6 +2276,346 @@ const LRC = {
   }
 };
 
+
+/* ══════════════════════════════════════════
+   CONWAY LUXURY COMMUNITIES
+══════════════════════════════════════════ */
+const CWC = {
+  'wild-wing':{
+    name:'Wild Wing Plantation',tag:'Championship Golf Resort Living',tagline:'27 holes, 180 acres of lakes, and a lifestyle that never gets old.',bg:'images/long-bay-1.jpg',price:'$350K – $800K+',gated:'Partial',styles:'Traditional, Contemporary, Custom',bestFor:'Golf & Lake Lifestyle Buyers',
+    intro:'Wild Wing Plantation is Conway\'s premier golf and lake community, built around a spectacular 27-hole championship course and 180+ acres of freshwater lakes. The Sanctuary section offers gated luxury while the broader community delivers resort-caliber amenities that rival coastal communities at a fraction of the price.',
+    p2:'Three pools, tennis and basketball courts, a modern fitness center, scenic boardwalks, and direct lake access make Wild Wing one of the most amenity-rich communities in all of Horry County. With homes ranging from the mid-$300s to $800K+, there\'s room for every buyer seeking the golf and lake lifestyle.',
+    amenities:[{i:'⛳',t:'27-Hole Championship Golf',d:'Championship course with driving range and practice greens'},{i:'🌊',t:'180+ Acres of Lakes',d:'Freshwater lakes with fishing, kayaking, and scenic boardwalks'},{i:'🏊',t:'3 Swimming Pools',d:'Multiple pools including splash zone and water slide'},{i:'🎾',t:'Tennis & Basketball',d:'Lighted courts for tennis, basketball, and community play'},{i:'🏋️',t:'Fitness Center',d:'Modern fitness facility in the clubhouse'},{i:'🛡️',t:'The Sanctuary (Gated)',d:'Premium gated section for buyers seeking added privacy'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC golfers finding 27-hole resort lifestyle at half the cost of Pinehurst'},{tier:1,metro:'NYC Metro & Northern NJ',why:'Northeast buyers drawn to golf resort living with no state income tax'},{tier:2,metro:'Washington DC / NoVA',why:'Federal retirees seeking warm-climate golf community with lake lifestyle'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest families attracted to affordable resort amenities and top golf'},{tier:2,metro:'Philadelphia, PA',why:'Golf-loving families seeking year-round play and lake recreation'},{tier:3,metro:'Chicago, IL',why:'Midwest exodus to warm-climate golf community with exceptional value'}],
+    personas:[{type:'Golf Enthusiast Couple',headline:'"27 holes in your backyard. 180 acres of lakes at your doorstep. Welcome to Wild Wing."',channels:'Golf Digest digital, Facebook golf groups, Google Ads "golf communities SC"'},{type:'Relocating Family',headline:'"Three pools, 180 acres of lakes, and top-rated schools — your family\'s next chapter starts at Wild Wing."',channels:'Facebook/IG family groups, Zillow, Realtor.com'},{type:'Active Retiree',headline:'"Golf every morning, fish every evening, and never shovel snow again. This is Wild Wing."',channels:'Facebook 55+, AARP digital, golf retirement forums'}]
+  },
+  'pottery-landing':{
+    name:'Pottery Landing',tag:'Gated Waccamaw Riverfront Luxury',tagline:'Where the Waccamaw River meets gated elegance.',bg:'images/long-bay-2.jpg',price:'$400K – $1M+',gated:'Yes',styles:'Custom, Traditional, Contemporary',bestFor:'Waterfront Estate Buyers',
+    intro:'Pottery Landing is Conway\'s most exclusive gated waterfront community — a collection of custom luxury homes positioned directly on the banks of the Waccamaw River. With a community boat lift, floating dock, private boat ramp, and riverside gazebo, this is the premier address for buyers who want serious river access and gated privacy.',
+    p2:'Homes here are substantial — typically 4-5 bedrooms with upscale custom finishes. The community pool, clubhouse, and day docks create a lifestyle that feels like a private river resort. Located just 7 miles from historic downtown Conway, Pottery Landing offers the rare combination of waterfront luxury and small-town charm.',
+    amenities:[{i:'⚓',t:'Community Boat Lift',d:'Floating dock and private boat ramp for direct Waccamaw River access'},{i:'🛡️',t:'Gated Community',d:'Controlled access with 24-hour security for complete privacy'},{i:'🏊',t:'Pool & Clubhouse',d:'Resort-style pool and spacious community clubhouse'},{i:'🌅',t:'Riverside Gazebo',d:'Scenic gathering space overlooking the Waccamaw River'},{i:'🏠',t:'Custom Estate Homes',d:'4-5 bedroom custom-built luxury homes on premium lots'},{i:'📍',t:'7 Miles to Downtown',d:'Easy access to historic downtown Conway dining and culture'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Gated riverfront estate living at a fraction of northeast waterfront prices'},{tier:1,metro:'Washington DC / NoVA',why:'Federal professionals seeking private gated waterfront with boating access'},{tier:2,metro:'Charlotte, NC',why:'River lifestyle enthusiasts finding exclusive waterfront community'},{tier:2,metro:'Philadelphia, PA',why:'Waterfront estate seekers drawn to Waccamaw River access and gated security'},{tier:2,metro:'Richmond, VA',why:'Boating couples attracted to private river access and Southern charm'},{tier:3,metro:'Boston Metro',why:'New England buyers seeking warm-climate waterfront estate living'}],
+    personas:[{type:'The Waterfront Estate Buyer',headline:'"Your own gated estate on the Waccamaw River. Boat lift included."',channels:'Luxury real estate sites, waterfront property specialists, Google Ads "riverfront homes SC"'},{type:'The Boating Executive',headline:'"Private dock. Private gate. Private river. This is how executives live on the Waccamaw."',channels:'Executive lifestyle publications, LinkedIn ads, yacht club networks'},{type:'The Retiring Couple',headline:'"Fish from your dock, float down the river, and come home to gated luxury every night."',channels:'Facebook 55+, Zillow luxury, retirement planning sites'}]
+  },
+  'rivers-edge':{
+    name:'Rivers Edge Plantation',tag:'Gated River Plantation Community',tagline:'Gated living on the Waccamaw — at an exceptional value.',bg:'images/barefoot-landing.jpg',price:'$300K – $600K+',gated:'Yes',styles:'Single-Family, Builder & Custom',bestFor:'Gated Community Value Seekers',
+    intro:'Rivers Edge Plantation offers the increasingly rare combination of gated security and Waccamaw River access at price points that make luxury genuinely accessible. This established community along Highway 90 features a private clubhouse, sparkling outdoor pool, and a boat ramp providing direct access to the Waccamaw River.',
+    p2:'With homes ranging from 1,900 to 3,000+ square feet across 3-5 bedroom floor plans, Rivers Edge serves buyers who want the security of a gated community, the lifestyle of river access, and the value that Conway\'s real estate market uniquely provides.',
+    amenities:[{i:'🛡️',t:'Gated Community',d:'Controlled access gate for security and privacy'},{i:'⚓',t:'Boat Ramp to River',d:'Private boat launch with direct Waccamaw River access'},{i:'🏊',t:'Community Pool',d:'Outdoor pool for year-round enjoyment'},{i:'🏛️',t:'Private Clubhouse',d:'Community gathering space for events and socializing'},{i:'🏠',t:'Spacious Homes',d:'1,900-3,000+ sq ft homes with 3-5 bedrooms'},{i:'💰',t:'Outstanding Value',d:'Gated river living at prices well below coastal alternatives'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC professionals finding gated river access at exceptional value'},{tier:1,metro:'NYC Metro & Northern NJ',why:'Northeast buyers discovering gated luxury for 1/3 the cost of comparable NJ communities'},{tier:2,metro:'Washington DC / NoVA',why:'Federal workers seeking affordable gated community with river lifestyle'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest families attracted to year-round river recreation and security'},{tier:2,metro:'Philadelphia, PA',why:'Value-conscious buyers wanting gated community at accessible price points'},{tier:3,metro:'Pittsburgh, PA',why:'Retirees seeking warm-climate gated living without breaking the budget'}],
+    personas:[{type:'The Value-Conscious Family',headline:'"Gated. River access. Pool and clubhouse. Starting in the $300s. Yes, really."',channels:'Zillow, Realtor.com, Facebook family groups, Google Ads "gated homes Conway SC"'},{type:'The Boating Couple',headline:'"Launch your boat from your own community ramp. Come home to a gated address."',channels:'Facebook boating groups, fishing forums, Google Ads "river homes SC"'},{type:'The First-Time Luxury Buyer',headline:'"Your first gated community doesn\'t have to cost a fortune. Rivers Edge proves it."',channels:'First-time buyer forums, Zillow, Facebook/IG targeted ads'}]
+  },
+  'shaftesbury-glen':{
+    name:'Shaftesbury Glen',tag:'English Country Estate Golf Living',tagline:'300-year-old oaks and championship golf in the Carolina countryside.',bg:'images/waterbridge-entrance.jpg',price:'$300K – $450K+',gated:'No',styles:'English Country Estate, Modern',bestFor:'Golf Lifestyle Enthusiasts',
+    intro:'Shaftesbury Glen brings a touch of English countryside to the South Carolina Lowcountry. Named after Shaftesbury, England, this distinctive golf community features a championship course winding through 300-year-old oak trees, with homes designed to complement the estate-like setting.',
+    p2:'The Olde English Clubhouse with its stone-gated entrance sets the architectural tone, while The Preserve section offers brand-new construction with smart home technology, quartz countertops, and open-concept floor plans. Lifetime golf club membership adds extraordinary value for buyers prioritizing the golf lifestyle.',
+    amenities:[{i:'⛳',t:'Championship Golf Course',d:'Beautiful course through 300-year-old oaks with Waccamaw River views'},{i:'🏛️',t:'Olde English Clubhouse',d:'Stone-gated entrance and clubhouse with old-world character'},{i:'🏠',t:'The Preserve (New)',d:'Brand-new smart homes with modern finishes and technology'},{i:'🌳',t:'300-Year-Old Oaks',d:'Stunning heritage oak canopy throughout the community'},{i:'🎣',t:'Fishing Privileges',d:'River fishing access for residents'},{i:'📱',t:'Smart Home Tech',d:'New homes feature integrated smart home technology'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC golfers seeking unique English country estate setting with lifetime membership'},{tier:2,metro:'NYC Metro & Northern NJ',why:'Anglophile buyers charmed by English country aesthetic at remarkable value'},{tier:2,metro:'Washington DC / NoVA',why:'History-loving professionals drawn to 300-year-old oaks and golf lifestyle'},{tier:2,metro:'Philadelphia, PA',why:'Golf enthusiasts seeking unique architectural character and heritage setting'},{tier:3,metro:'Boston Metro',why:'New England buyers drawn to established trees and English country charm'},{tier:3,metro:'Chicago, IL',why:'Midwest golfers seeking warm-climate championship course with character'}],
+    personas:[{type:'The Golf Purist',headline:'"Fairways through 300-year-old oaks. Lifetime membership included. This is golf the way it should be."',channels:'Golf Digest, golf forums, Facebook golf groups, Google Ads "golf community SC"'},{type:'The Character Seeker',headline:'"An English country estate in South Carolina. With smart home tech. Welcome to Shaftesbury Glen."',channels:'Architectural publications, Southern Living, Houzz, Pinterest'},{type:'The New Home Buyer',headline:'"Brand-new construction with smart home tech — in a community with 300 years of history."',channels:'Zillow new construction, Realtor.com, D.R. Horton channels'}]
+  },
+  'auberon-woods':{
+    name:'Auberon Woods',tag:'Modern Master-Planned Luxury',tagline:'Smart homes, resort amenities, and Conway\'s new gold standard.',bg:'images/nmb-beach-1.jpg',price:'$300K – $500K+',gated:'No',styles:'Contemporary, Smart Home, Modern',bestFor:'Modern Amenity Seekers',
+    intro:'Auberon Woods represents the next generation of master-planned community living in Conway — where smart home technology, resort-caliber amenities, and contemporary design converge at price points that coastal communities simply cannot match.',
+    p2:'Built by D.R. Horton, the community features a spacious clubhouse, two pools, pickleball courts, fitness center, and miles of paved walking trails. Every home comes standard with smart home technology, granite/quartz countertops, and stainless steel appliances. Highway 90 access puts residents minutes from both the beach and downtown Conway.',
+    amenities:[{i:'📱',t:'Smart Home Standard',d:'Every home includes integrated smart home technology'},{i:'🏊',t:'Two Swimming Pools',d:'Dual pool facilities for residents and families'},{i:'🏓',t:'Pickleball Courts',d:'Dedicated courts for the fastest-growing sport in America'},{i:'🏋️',t:'Fitness Center',d:'Modern fitness facility in the community clubhouse'},{i:'🚶',t:'Paved Walking Trails',d:'Miles of scenic trails throughout the community'},{i:'🏠',t:'Contemporary Design',d:'Open floor plans with granite, quartz, and premium finishes'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'Tech-savvy professionals seeking smart home community at exceptional value'},{tier:1,metro:'NYC Metro & Northern NJ',why:'Modern amenity seekers finding contemporary living at 1/4 northeast prices'},{tier:2,metro:'Washington DC / NoVA',why:'Young professionals drawn to smart homes and resort amenities'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest families attracted to modern community with pickleball and pools'},{tier:2,metro:'Philadelphia, PA',why:'Value-conscious buyers wanting contemporary design and smart technology'},{tier:3,metro:'Chicago, IL',why:'Urban professionals seeking modern master-planned living in warm climate'}],
+    personas:[{type:'The Tech-Savvy Buyer',headline:'"Smart home tech. Two pools. Pickleball. Welcome to the future of community living."',channels:'Tech lifestyle sites, smart home forums, Facebook/IG targeted'},{type:'The Active Family',headline:'"Pickleball, two pools, walking trails, and smart homes — all starting in the $300s."',channels:'Zillow, Realtor.com, Facebook family groups, Google Ads "new homes Conway SC"'},{type:'The Modern Retiree',headline:'"You didn\'t retire to live in yesterday\'s house. Auberon Woods is retirement, reimagined."',channels:'Facebook 55+, AARP digital, modern retirement publications'}]
+  },
+  'heritage-preserve':{
+    name:'Heritage Preserve',tag:'Lakefront Smart Home Estates',tagline:'Where luxury meets technology on the lakefront.',bg:'images/pelican-bay-4.jpg',price:'$350K – $550K+',gated:'No',styles:'Modern Luxury, Smart Home, Contemporary',bestFor:'Luxury Smart Home Buyers',
+    intro:'Heritage Preserve — encompassing the Heritage Oaks and Heritage Downs sections — is Conway\'s premier smart home community, featuring modern luxury residences with integrated technology, designer kitchens, and premium finishes throughout. Lakefront and wooded properties offer privacy and natural beauty.',
+    p2:'Homes range from 1,775 to 2,670+ square feet with 3-5 bedrooms, trey ceilings, gas fireplaces, and smartphone-controlled home systems. Less than 10 miles to Myrtle Beach with Highway 90 access, Heritage Preserve delivers the lifestyle of a luxury coastal community with the value and space of Conway\'s premier neighborhoods.',
+    amenities:[{i:'📱',t:'Smart Home Systems',d:'Integrated smartphone-controlled home technology in every residence'},{i:'🌊',t:'Lakefront Properties',d:'Premium lakefront homesites with water views and natural beauty'},{i:'🏠',t:'Designer Kitchens',d:'Granite countertops, premium appliances, and luxury fixtures'},{i:'🔥',t:'Gas Fireplaces',d:'Elegant gas fireplaces adding warmth and character'},{i:'🌳',t:'Wooded Lots',d:'Mature tree canopy and natural landscaping for privacy'},{i:'📍',t:'10 Min to Beach',d:'Highway 90 provides quick access to Myrtle Beach and the coast'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'Tech-forward professionals seeking lakefront smart homes near the coast'},{tier:1,metro:'NYC Metro & Northern NJ',why:'Luxury buyers finding smart home estates at a fraction of northeast lakefront prices'},{tier:2,metro:'Washington DC / NoVA',why:'Technology-oriented families drawn to smart home integration and lakefront living'},{tier:2,metro:'Philadelphia, PA',why:'Modern luxury seekers attracted to designer homes with lake views'},{tier:2,metro:'Atlanta, GA',why:'Coastal retreat seekers finding smart home luxury 10 minutes from the beach'},{tier:3,metro:'Boston Metro',why:'New England buyers drawn to warm-climate lakefront with smart technology'}],
+    personas:[{type:'The Smart Home Buyer',headline:'"Control your home from your phone. Enjoy your lake from your porch. Heritage Preserve."',channels:'Smart home publications, tech forums, Google Ads "smart homes SC"'},{type:'The Lakefront Family',headline:'"Lakefront living with designer kitchens, gas fireplaces, and smart home tech."',channels:'Zillow, Realtor.com, Facebook/IG, Google Ads "lakefront homes Conway SC"'},{type:'The Luxury Value Seeker',headline:'"Every luxury feature you\'d expect in a $700K home — in Conway\'s best-kept secret starting in the $350s."',channels:'Zillow luxury, Realtor.com, luxury real estate sites'}]
+  }
+};
+
+/* ══════════════════════════════════════════
+   MYRTLE BEACH LUXURY COMMUNITIES
+══════════════════════════════════════════ */
+const MBC = {
+  'grande-dunes':{
+    name:'Grande Dunes',tag:'The Grand Strand\'s Premier Address',tagline:'2,200 acres of oceanfront, marina, and championship golf.',bg:'images/nmb-beach-drone.jpg',price:'$500K – $3M+',gated:'Yes',styles:'Coastal Estate, Mediterranean, Resort',bestFor:'Ultra-Luxury Lifestyle Buyers',
+    intro:'Grande Dunes is, without question, the premier luxury community in the entire Grand Strand. Spanning over 2,200 acres from the Atlantic Ocean to the Carolina Bays Preserve, this master-planned resort community offers an unmatched combination of oceanfront living, championship golf, and full-service marina facilities.',
+    p2:'The 25,000-square-foot Ocean Club features oceanfront pools and fine dining. Two 18-hole championship golf courses, a deep-water marina accommodating yachts up to 120 feet, Har-Tru tennis courts, on-site restaurants and spa facilities create a lifestyle experience that competes with the finest resort communities in the Southeast.',
+    amenities:[{i:'🏖️',t:'25,000 SF Ocean Club',d:'Oceanfront pools, fine dining, and cabana service'},{i:'⛳',t:'Two Championship Courses',d:'36 holes of world-class golf across two stunning courses'},{i:'🛥️',t:'Full-Service Marina',d:'126 slips accommodating yachts up to 120 feet with fuel and service'},{i:'🎾',t:'Har-Tru Tennis',d:'Premium Har-Tru courts with professional instruction'},{i:'🍽️',t:'On-Site Dining & Spa',d:'Multiple restaurants, spa services, and social venues'},{i:'🛡️',t:'Gated & Secured',d:'Multiple gated neighborhoods with 24/7 security'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Ultra-luxury buyers seeking oceanfront resort living with marina and golf'},{tier:1,metro:'Washington DC / NoVA',why:'High-net-worth professionals drawn to the Grand Strand\'s most prestigious address'},{tier:1,metro:'Charlotte, NC',why:'Charlotte executives seeking coastal estate with world-class amenities'},{tier:2,metro:'Philadelphia, PA',why:'Affluent buyers attracted to oceanfront luxury with deep-water marina'},{tier:2,metro:'Boston Metro',why:'Northeast wealth seeking warm-climate resort community of this caliber'},{tier:3,metro:'Chicago, IL',why:'Midwest executives discovering the Southeast\'s premier oceanfront community'}],
+    personas:[{type:'The Ultra-Luxury Buyer',headline:'"Ocean Club. Championship golf. 120-foot yacht slips. Grande Dunes is in a class of its own."',channels:'Luxury real estate platforms, private wealth advisors, WSJ Real Estate'},{type:'The Executive Couple',headline:'"Oceanfront pools by day, fine dining by night, championship golf every weekend."',channels:'Executive lifestyle publications, LinkedIn premium, country club networks'},{type:'The Yacht Owner',headline:'"Park your yacht in a 126-slip marina, then walk to your oceanfront estate."',channels:'Yachting magazines, marina networks, luxury broker referrals'}]
+  },
+  'the-dunes-club':{
+    name:'The Dunes Club',tag:'Historic Prestige & Championship Golf',tagline:'The original home of Myrtle Beach luxury since 1948.',bg:'images/long-bay-1.jpg',price:'$500K – $3M+',gated:'No',styles:'Custom Estate, Traditional Luxury',bestFor:'Prestige & Golf Buyers',
+    intro:'The Dunes Golf and Tennis Club is where Myrtle Beach luxury began. Established in 1948, this is the oldest and most prestigious golf community in the area — home to a nationally ranked course, world-class tennis, and some of the most significant estate homes on the entire Grand Strand.',
+    p2:'The 700+ foot oceanfront pool complex, professional tennis with USTA-sanctioned tournaments, fine dining clubhouse, and moss-draped centuries-old oaks create an atmosphere of timeless elegance. With no HOA fees and custom estate homes ranging from the mid-$500s to multi-millions, The Dunes Club offers historic prestige that newer communities simply cannot replicate.',
+    amenities:[{i:'⛳',t:'Nationally Ranked Course',d:'Historic championship course consistently ranked among the nation\'s finest'},{i:'🎾',t:'8 Professional Courts',d:'World-class tennis with USTA-sanctioned tournaments and instruction'},{i:'🏖️',t:'700+ FT Oceanfront Pool',d:'Massive oceanfront pool complex with panoramic Atlantic views'},{i:'🍽️',t:'Fine Dining Clubhouse',d:'Elegant clubhouse with world-class dining and social events'},{i:'🌳',t:'Century-Old Oaks',d:'Stunning moss-draped oaks creating unmatched natural beauty'},{i:'💰',t:'No HOA Fees',d:'Historic community with no homeowners association fees'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Prestige-focused buyers seeking the Grand Strand\'s most historic luxury address'},{tier:1,metro:'Washington DC / NoVA',why:'Government executives drawn to historic club community with championship golf'},{tier:1,metro:'Charlotte, NC',why:'Charlotte wealth seeking established prestige not available in newer developments'},{tier:2,metro:'Philadelphia, PA',why:'History-loving affluent buyers attracted to 75+ years of club tradition'},{tier:2,metro:'Atlanta, GA',why:'Southern elite drawn to Myrtle Beach\'s original luxury community'},{tier:3,metro:'Boston Metro',why:'New England old-money buyers appreciating established club character'}],
+    personas:[{type:'The Prestige Buyer',headline:'"Since 1948, The Dunes Club has been the address in Myrtle Beach. Some things never change."',channels:'Country club referral networks, luxury broker relationships, WSJ Real Estate'},{type:'The Golf Legacy Buyer',headline:'"A nationally ranked course with 75 years of history. No HOA. No compromises."',channels:'Golf Digest, PGA networks, luxury golf community sites'},{type:'The Oceanfront Entertainer',headline:'"700 feet of oceanfront pool, fine dining, and the most storied address on the coast."',channels:'Social club publications, event planning networks, luxury lifestyle media'}]
+  },
+  'plantation-point':{
+    name:'Plantation Point',tag:'Custom Waterway Estates',tagline:'Custom-built luxury on the Intracoastal Waterway.',bg:'images/pelican-bay-2.jpg',price:'$500K – $1M+',gated:'Yes',styles:'Custom Lowcountry, Waterfront Estate',bestFor:'Custom Waterfront Buyers',
+    intro:'Plantation Point is a distinguished gated enclave of custom-built luxury homes positioned directly on the Intracoastal Waterway with views of the Myrtlewood Golf Course. Every home is architect-designed and custom-built, resulting in a community of unique residences that reflect individual taste and the highest standards of craftsmanship.',
+    p2:'With 4-6 bedroom floor plans, ICW boat access, and golf course views, Plantation Point attracts serious waterfront buyers who demand customization, privacy, and a premier Myrtle Beach address. The gated entry ensures exclusivity while the waterway frontage delivers a lifestyle that few communities can match.',
+    amenities:[{i:'🚤',t:'ICW Waterfront',d:'Direct Intracoastal Waterway frontage with boat access'},{i:'⛳',t:'Golf Course Views',d:'Overlooking Myrtlewood Golf Course fairways and greens'},{i:'🛡️',t:'Gated Community',d:'Controlled access ensuring privacy and exclusivity'},{i:'🏗️',t:'100% Custom Built',d:'Every home architect-designed and custom-crafted'},{i:'🏠',t:'4-6 Bedroom Estates',d:'Substantial homes with spacious floor plans and luxury finishes'},{i:'🌅',t:'Waterway Sunsets',d:'West-facing ICW views with spectacular sunset panoramas'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Custom home buyers seeking waterway estate at 1/5 the cost of comparable NJ waterfront'},{tier:1,metro:'Washington DC / NoVA',why:'Senior professionals seeking custom-built waterfront with golf course views'},{tier:2,metro:'Charlotte, NC',why:'Custom home enthusiasts drawn to ICW frontage and gated exclusivity'},{tier:2,metro:'Philadelphia, PA',why:'Waterfront estate seekers attracted to architect-designed custom homes'},{tier:2,metro:'Atlanta, GA',why:'Second-home buyers wanting custom waterfront with golf access'},{tier:3,metro:'Boston Metro',why:'Northeast buyers seeking warm-climate custom waterway estates'}],
+    personas:[{type:'The Custom Home Buyer',headline:'"Every home is one of a kind. Every view is the Intracoastal. Welcome to Plantation Point."',channels:'Houzz, custom home builder networks, Google Ads "custom waterfront homes MB"'},{type:'The Waterway Executive',headline:'"Gated. Custom-built. Waterway frontage. Golf course views. Your Myrtle Beach estate awaits."',channels:'LinkedIn premium, executive lifestyle publications, luxury broker networks'},{type:'The Golf & Boat Couple',headline:'"Golf course in your front yard. Intracoastal in your backyard. Both from your custom estate."',channels:'Golf/boating lifestyle publications, Facebook targeted, Zillow luxury'}]
+  },
+  'kingston-plantation':{
+    name:'Kingston Plantation',tag:'145-Acre Oceanfront Resort',tagline:'Where 145 oceanfront acres become your private resort.',bg:'images/nmb-beach-access.jpg',price:'$400K – $1.5M+',gated:'Yes',styles:'Resort, Oceanfront Contemporary, Luxury',bestFor:'Oceanfront Resort Lifestyle',
+    intro:'Kingston Plantation is a multi-million dollar master-planned oceanfront resort community spanning 145 acres of pristine beachfront. With soft golden dunes, freshwater lakes, rolling wooded terrain, and a spectacular spa and fitness center, Kingston delivers a resort lifestyle that few communities anywhere can match.',
+    p2:'Four tennis courts, four pickleball courts, multiple pools, secluded beach access, and a full calendar of resort programming create an experience closer to a five-star resort than a residential community. This is for buyers who want to wake up to the Atlantic Ocean every morning and never run out of things to do.',
+    amenities:[{i:'🏖️',t:'Oceanfront Location',d:'145 acres of pristine beachfront with soft golden dunes'},{i:'💆',t:'State-of-the-Art Spa',d:'Full-service spa and fitness center on the oceanfront'},{i:'🎾',t:'Tennis & Pickleball',d:'4 tennis courts and 4 pickleball courts with ocean breezes'},{i:'🏊',t:'Multiple Pools',d:'Indoor and outdoor pools, hot tubs, and splash areas'},{i:'🌳',t:'Lakes & Woodlands',d:'Freshwater lakes and rolling wooded terrain within the community'},{i:'🛡️',t:'Gated Oceanfront',d:'Secured oceanfront resort with controlled access'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Oceanfront resort living with spa and fitness at a fraction of Hamptons prices'},{tier:1,metro:'Washington DC / NoVA',why:'Resort-lifestyle professionals seeking oceanfront community with full amenity package'},{tier:2,metro:'Charlotte, NC',why:'Weekend-to-permanent oceanfront resort community just 3.5 hours away'},{tier:2,metro:'Philadelphia, PA',why:'Beach lovers seeking year-round oceanfront resort lifestyle'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest families drawn to oceanfront resort amenities they can enjoy year-round'},{tier:3,metro:'Chicago, IL',why:'Midwest escape to 145-acre oceanfront resort community'}],
+    personas:[{type:'The Resort Lifestyle Buyer',headline:'"145 oceanfront acres. Spa. Tennis. Pools. This isn\'t a vacation — it\'s your address."',channels:'Resort lifestyle publications, luxury travel to luxury living crossover ads'},{type:'The Oceanfront Investor',headline:'"Oceanfront resort property in Myrtle Beach with strong rental demand and appreciation."',channels:'Investment property sites, BiggerPockets, Google Ads "oceanfront investment SC"'},{type:'The Active Beach Couple',headline:'"Pickleball at 8, spa at 10, beach at noon, tennis at 4. Every single day."',channels:'Active lifestyle sites, Facebook 45+, AARP digital, pickleball communities'}]
+  },
+  'the-legends':{
+    name:'The Legends',tag:'Championship Golf Resort Estate',tagline:'Three courses. 1,300 acres. One legendary lifestyle.',bg:'images/long-bay-2.jpg',price:'$450K – $1.5M+',gated:'Yes',styles:'Contemporary Upscale, Custom Estate',bestFor:'Serious Golf Lifestyle Buyers',
+    intro:'The Legends is the Grand Strand\'s ultimate golf lifestyle community — 1,300 acres built around three 18-hole championship courses (Heathland, Moorland, and Parkland) that consistently rank among the finest in South Carolina. Custom homes range from 2,000 to 6,000+ square feet with fairway and course views.',
+    p2:'The clubhouse features two pools, tennis courts, fitness center, walking trails, and an on-site pub and restaurant. Homes feature custom cabinetry, granite and stone counters, trey ceilings, hardwood flooring, fireplaces, and jacuzzi tubs. For serious golfers, The Legends is simply unmatched.',
+    amenities:[{i:'⛳',t:'54 Holes of Golf',d:'Three 18-hole championship courses — Heathland, Moorland, and Parkland'},{i:'🏊',t:'2 Pools & Clubhouse',d:'Resort-style pools, clubhouse with pub and restaurant'},{i:'🎾',t:'Tennis Courts',d:'Well-maintained courts for tennis enthusiasts'},{i:'🏋️',t:'Fitness & Trails',d:'Fitness center and walking trails through 1,300 acres'},{i:'🍺',t:'On-Site Pub & Dining',d:'Clubhouse restaurant and pub for residents and members'},{i:'🏠',t:'2,000-6,000 SF Homes',d:'Custom estates with premium finishes and course views'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Golfers seeking 54-hole resort estate living at a fraction of northeast club costs'},{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC golf enthusiasts finding three championship courses and gated estate living'},{tier:2,metro:'Washington DC / NoVA',why:'Golf-obsessed professionals seeking the ultimate retirement golf address'},{tier:2,metro:'Philadelphia, PA',why:'Golf club members seeking year-round access to 54 holes'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest golfers dreaming of warm-climate 54-hole resort community'},{tier:3,metro:'Chicago, IL',why:'Serious golfers ready to trade snow for 1,300 acres of championship fairways'}],
+    personas:[{type:'The Serious Golfer',headline:'"54 holes. Three championship courses. Custom homes on the fairway. This is golf heaven."',channels:'Golf Digest, PGA Tour digital, golf travel publications, golf group chats'},{type:'The Golf Estate Buyer',headline:'"Build your dream home on 1,300 acres of championship golf. Starting in the mid-$400s."',channels:'Luxury golf communities, Houzz, custom home builder networks'},{type:'The Golf Retiree',headline:'"Three courses in your backyard, a pub in your clubhouse, and zero snow days. Forever."',channels:'Golf retirement forums, AARP, Facebook golf groups 55+'}]
+  },
+  'harbor-oaks':{
+    name:'Harbor Oaks Marina',tag:'Private Boat Slip Community',tagline:'Your boat slip and your home — in one exclusive address.',bg:'images/barefoot-cabana.jpg',price:'$400K – $700K+',gated:'Yes',styles:'Elevated Coastal, Beach Contemporary',bestFor:'Serious Boating Enthusiasts',
+    intro:'Harbor Oaks Marina is a small, exclusive gated community in the Socastee area designed specifically for boating enthusiasts. Many homes include private boat slips — a rarity in Grand Strand communities — along with Intracoastal Waterway views, a posh clubhouse, and a resort-style swimming pool.',
+    p2:'Elevated beach-style homes feature custom cabinetry, granite countertops, fireplaces, and spacious bedrooms with stunning waterway views. The intimate community size ensures true exclusivity while the private slips mean your boat is always ready when you are.',
+    amenities:[{i:'🚤',t:'Private Boat Slips',d:'Many homes include their own private boat slip — extremely rare'},{i:'🛡️',t:'Gated & Exclusive',d:'Small gated community ensuring privacy and exclusivity'},{i:'🏊',t:'Resort-Style Pool',d:'Community pool for residents and guests'},{i:'🏛️',t:'Posh Clubhouse',d:'Elegant community clubhouse for gatherings and events'},{i:'🌅',t:'ICW Views',d:'Intracoastal Waterway panoramas from homes and common areas'},{i:'🏠',t:'Elevated Coastal Homes',d:'Beach-style architecture with premium finishes and waterway views'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Boaters seeking private slip community at a fraction of northeast marina costs'},{tier:1,metro:'Washington DC / NoVA',why:'Boat owners drawn to private slip ownership in a gated waterway community'},{tier:2,metro:'Charlotte, NC',why:'Boating enthusiasts seeking coastal community with guaranteed slip access'},{tier:2,metro:'Philadelphia, PA',why:'Waterway lifestyle seekers attracted to the rare private slip feature'},{tier:2,metro:'Richmond, VA',why:'Chesapeake boaters looking to upgrade to year-round ICW lifestyle'},{tier:3,metro:'Boston Metro',why:'New England boaters seeking warm-climate marina living'}],
+    personas:[{type:'The Avid Boater',headline:'"Your private boat slip. Your gated address. Your Intracoastal lifestyle. All in one."',channels:'Boating magazines, marina networks, yacht club referrals, Google Ads "boat slip homes SC"'},{type:'The Waterway Couple',headline:'"Wake up to waterway views, walk to your slip, and spend the day on the water."',channels:'Coastal lifestyle publications, boating forums, Facebook boating groups'},{type:'The Exclusive Buyer',headline:'"Small. Gated. Private slips. Harbor Oaks is how a select few live on the waterway."',channels:'Luxury broker referrals, private property networks, exclusive listings'}]
+  },
+  'arrowhead-grand':{
+    name:'Arrowhead Grand',tag:'Mediterranean Golf Community',tagline:'Mediterranean elegance between two championship courses.',bg:'images/barefoot-landing.jpg',price:'$350K – $500K+',gated:'Yes',styles:'Mediterranean Stucco, Ranch, Two-Story',bestFor:'Mediterranean Architecture Fans',
+    intro:'Arrowhead Grand holds one of the most enviable positions in all of Myrtle Beach — nestled between the Waterway Golf Course and the 27-hole Arrowhead Golf Course, with day docks on the Intracoastal Waterway. The Mediterranean-stucco architectural style creates a distinctive look unlike anything else on the Grand Strand.',
+    p2:'Homes range from 1,800 to 3,000 square feet with 3-4 bedrooms, fully landscaped yards with sod and irrigation included. The community features a new pool and pool house, picnic and grill areas, tennis courts, and ICW day docks — all within a gated setting that ensures privacy and exclusivity.',
+    amenities:[{i:'⛳',t:'Between Two Courses',d:'Positioned between Waterway Golf and 27-hole Arrowhead Golf Course'},{i:'🏛️',t:'Mediterranean Architecture',d:'Distinctive stucco styling unique to the Grand Strand'},{i:'🏊',t:'New Pool & Pool House',d:'Recently built pool complex with entertaining areas'},{i:'🚤',t:'ICW Day Docks',d:'Day docks on the Intracoastal Waterway for boating access'},{i:'🎾',t:'Tennis & Recreation',d:'Courts, picnic areas, and grill stations throughout'},{i:'🛡️',t:'Gated Community',d:'Controlled access with fully landscaped streets and homes'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Mediterranean architecture lovers finding gated golf community at exceptional value'},{tier:2,metro:'Charlotte, NC',why:'Golfers seeking unique architectural style between two championship courses'},{tier:2,metro:'Washington DC / NoVA',why:'Style-conscious buyers drawn to Mediterranean design and dual golf access'},{tier:2,metro:'Philadelphia, PA',why:'Architecture enthusiasts attracted to Mediterranean stucco community'},{tier:2,metro:'Atlanta, GA',why:'Southern buyers seeking unique coastal style with golf and waterway access'},{tier:3,metro:'Chicago, IL',why:'Midwest buyers drawn to Mediterranean warmth and year-round golf lifestyle'}],
+    personas:[{type:'The Architecture Lover',headline:'"Mediterranean elegance on the Grand Strand. Between two golf courses. On the Intracoastal."',channels:'Architectural publications, Houzz, Pinterest, design-focused social media'},{type:'The Dual-Course Golfer',headline:'"Two championship courses — one on each side. Plus ICW docks. Arrowhead Grand has it all."',channels:'Golf publications, golf groups, Google Ads "golf homes Myrtle Beach"'},{type:'The Style-Conscious Couple',headline:'"Gated. Mediterranean. Pool. Waterway docks. Nothing else on the Grand Strand looks like this."',channels:'Luxury lifestyle publications, Zillow, Facebook/IG targeted'}]
+  },
+  'black-creek-mb':{
+    name:'Black Creek Plantation',tag:'Equestrian Estate Community',tagline:'1-5 acre estates where horses and luxury coexist.',bg:'images/pelican-bay-4.jpg',price:'$900K – $2M+',gated:'Yes',styles:'Custom Estate, Lowcountry, Equestrian',bestFor:'Estate & Equestrian Buyers',
+    intro:'Black Creek Plantation is the Grand Strand\'s most exclusive estate community — gated acreage homesites ranging from 1 to 5+ acres, designed for buyers who demand space, privacy, and the freedom to build their ultimate custom estate. This is one of the few communities in the Myrtle Beach area that welcomes horses.',
+    p2:'Custom luxury homes with detached garages, horse barns, private pools, and lush landscaping define the Black Creek lifestyle. The oversized homesites and equestrian-friendly policies create a rural estate atmosphere just minutes from the beach — a combination that is essentially impossible to find anywhere else on the Grand Strand.',
+    amenities:[{i:'🐴',t:'Equestrian Friendly',d:'Horse barns, pastures, and equestrian infrastructure welcome'},{i:'🛡️',t:'Gated Estate Community',d:'Controlled access with minimal home count for ultimate privacy'},{i:'🏠',t:'1-5+ Acre Homesites',d:'Oversized lots allowing custom estates, pools, and outbuildings'},{i:'🏗️',t:'Full Custom Build',d:'Complete architectural freedom for your dream estate'},{i:'🏊',t:'Private Pool Homes',d:'Many homes feature private pools and outdoor living spaces'},{i:'🌳',t:'Lush Natural Setting',d:'Mature trees, natural landscaping, and rural estate character'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Estate buyers seeking 5-acre gated luxury at 1/10 the cost of comparable NJ horse country'},{tier:1,metro:'Washington DC / NoVA',why:'Virginia horse country buyers seeking warm-climate equestrian estate near the beach'},{tier:2,metro:'Charlotte, NC',why:'Estate seekers finding gated acreage with equestrian options near the coast'},{tier:2,metro:'Philadelphia, PA',why:'Brandywine Valley estate buyers drawn to equestrian-friendly gated community'},{tier:2,metro:'Atlanta, GA',why:'Georgia equestrian community buyers seeking coastal estate living'},{tier:3,metro:'Boston Metro',why:'New England estate buyers seeking warm-climate gated acreage with horse facilities'}],
+    personas:[{type:'The Equestrian Buyer',headline:'"Bring your horses. Build your barn. 5 acres behind a gate, minutes from the beach."',channels:'Equestrian publications, horse community networks, luxury rural estate sites'},{type:'The Estate Builder',headline:'"1 to 5 acres. Gated. Full custom freedom. Black Creek Plantation is the Grand Strand\'s finest canvas."',channels:'Houzz, custom home builder networks, luxury architect referrals'},{type:'The Privacy Seeker',headline:'"Gated acres. Zero compromises. The Grand Strand\'s most private luxury address."',channels:'Luxury broker networks, private property listings, executive referral networks'}]
+  }
+};
+
+/* ══════════════════════════════════════════
+   MURRELLS INLET LUXURY COMMUNITIES
+══════════════════════════════════════════ */
+const MIC = {
+  'wachesaw':{
+    name:'Wachesaw Plantation',tag:'Historic Gated Golf Estate',tagline:'700 acres of riverfront history, golf, and gated luxury.',bg:'images/barefoot-cabana.jpg',price:'$400K – $1M+',gated:'Yes',styles:'Lowcountry, Estate, Contemporary',bestFor:'Golf & History Enthusiasts',
+    intro:'Wachesaw Plantation is a 700-acre gated masterpiece — a historic rice plantation transformed into one of the most prestigious golf and residential communities in the Lowcountry. With 24/7 security guards, a world-class golf course, riverfront dining, and 463 premium properties, Wachesaw delivers a lifestyle rooted in history and defined by luxury.',
+    p2:'The community features a Tom Fazio-designed championship course, 8 Har-Tru tennis courts, equestrian center affiliation, and "Kimbels" — an acclaimed waterfront restaurant overlooking the Waccamaw River. Oceanfront, riverfront, and creek-front lot options provide diverse waterfront living experiences within a single prestigious address.',
+    amenities:[{i:'⛳',t:'Fazio Championship Golf',d:'Tom Fazio-designed course through historic plantation landscape'},{i:'🎾',t:'8 Har-Tru Courts',d:'Professional tennis facility with teaching staff and tournaments'},{i:'🍽️',t:'Kimbels Restaurant',d:'Acclaimed waterfront dining overlooking the Waccamaw River'},{i:'🛡️',t:'24/7 Security Guards',d:'Staffed gate with round-the-clock security personnel'},{i:'🏊',t:'Pool, Sauna & Spa',d:'Pool, sauna, steam room, and full locker room facilities'},{i:'🐴',t:'Equestrian Access',d:'Equestrian center affiliation for riding enthusiasts'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'History-loving luxury buyers finding 700-acre gated plantation at fraction of northeast costs'},{tier:1,metro:'Washington DC / NoVA',why:'Government executives drawn to historic estate living with championship golf'},{tier:1,metro:'Charlotte, NC',why:'Charlotte professionals seeking prestigious Lowcountry golf plantation community'},{tier:2,metro:'Philadelphia, PA',why:'History and golf enthusiasts attracted to Fazio course and plantation character'},{tier:2,metro:'Atlanta, GA',why:'Southern luxury seekers finding Lowcountry plantation living near the coast'},{tier:3,metro:'Boston Metro',why:'New England buyers drawn to historic plantation setting with full luxury amenities'}],
+    personas:[{type:'The Plantation Estate Buyer',headline:'"700 acres. 24/7 security. Fazio golf. Riverfront dining. Wachesaw is the Lowcountry at its finest."',channels:'Luxury real estate platforms, historic property networks, Southern Living digital'},{type:'The Golf & Tennis Couple',headline:'"Fazio championship golf and 8 Har-Tru courts — all behind a 24/7 guarded gate."',channels:'Golf and tennis publications, country club referrals, luxury lifestyle media'},{type:'The History Lover',headline:'"Live on a historic rice plantation. Play Fazio golf. Dine on the Waccamaw. This is Wachesaw."',channels:'Historic home publications, Preservation Society networks, Southern heritage media'}]
+  },
+  'prince-creek':{
+    name:'Prince Creek',tag:'TPC Golf Master-Planned Community',tagline:'Home of TPC Myrtle Beach — the Grand Strand\'s premier golf address.',bg:'images/long-bay-1.jpg',price:'$460K – $965K+',gated:'Multiple Sections',styles:'Lowcountry, Contemporary, Custom',bestFor:'Golf Community Families',
+    intro:'Prince Creek is a sprawling master-planned community anchored by TPC Myrtle Beach — the PGA Tour-caliber championship course designed by Tom Fazio that puts this address on the national golf map. Multiple gated neighborhoods within Prince Creek serve every lifestyle, from active 55+ to ultra-luxury waterfront estates.',
+    p2:'The Bays, Creek Harbour, Bellwood Landing, Seasons at Prince Creek West, and other neighborhoods offer distinct living experiences united by access to the TPC course and shared amenities including clubhouses, pools, tennis courts, fitness facilities, and nature trails. Prince Creek is where serious golfers come to live.',
+    amenities:[{i:'⛳',t:'TPC Myrtle Beach',d:'PGA Tour-caliber Tom Fazio championship course'},{i:'🏊',t:'Multiple Pool Complexes',d:'Each neighborhood features its own pool and amenity center'},{i:'🎾',t:'Tennis & Recreation',d:'Courts, fitness centers, and recreation facilities throughout'},{i:'🚤',t:'Waterway Access',d:'Creek Harbour offers direct ICW and Collins Creek boat access'},{i:'🏛️',t:'Multiple Clubhouses',d:'Community clubhouses with event spaces and gathering areas'},{i:'🌳',t:'Nature Trails',d:'Walking and biking trails through preserved natural areas'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'TPC-caliber golf community at a fraction of northeast country club costs'},{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC golfers seeking TPC championship course and master-planned community'},{tier:2,metro:'Washington DC / NoVA',why:'Golf-focused professionals drawn to PGA Tour-caliber community living'},{tier:2,metro:'Philadelphia, PA',why:'Serious golfers seeking TPC Myrtle Beach access with diverse housing options'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest golf families attracted to TPC community with multiple lifestyle options'},{tier:3,metro:'Chicago, IL',why:'Chicagoland golfers seeking year-round TPC course access and resort amenities'}],
+    personas:[{type:'The TPC Golfer',headline:'"Live on a PGA Tour-caliber course. Play Tom Fazio\'s masterpiece every day. This is Prince Creek."',channels:'PGA digital, Golf Digest, Golf Channel, Google Ads "TPC homes Myrtle Beach"'},{type:'The Master-Plan Family',headline:'"Multiple neighborhoods. Championship golf. Pools, trails, and top schools. Prince Creek has everything."',channels:'Zillow, Realtor.com, Facebook family groups, Google Ads "Prince Creek homes"'},{type:'The Active Senior',headline:'"Seasons at Prince Creek West: 55+, 29,000 SF clubhouse, TPC golf, and the MarshWalk minutes away."',channels:'55+ community sites, AARP digital, golf retirement forums'}]
+  },
+  'creek-harbour':{
+    name:'Creek Harbour',tag:'Ultra-Luxury Gated Waterfront',tagline:'1-3 acre estates on the Intracoastal — the inlet\'s most exclusive address.',bg:'images/nmb-beach-drone.jpg',price:'$500K – $1.2M+',gated:'Yes',styles:'Custom Lowcountry, Estate, Waterfront',bestFor:'Ultra-Luxury Waterfront Buyers',
+    intro:'Creek Harbour at Prince Creek is the crown jewel of Murrells Inlet luxury real estate — an ultra-exclusive gated community of custom waterfront estates on 1/2 to 3-acre wooded lots with direct Intracoastal Waterway and Collins Creek access. Homes range from 2,000 to 6,000+ square feet with private docks.',
+    p2:'The community features a pool, boat launch and storage, clubhouse with grill-out gazebo, and playground — all behind a gated entry that ensures absolute privacy. With TPC Myrtle Beach access and the MarshWalk just minutes away, Creek Harbour delivers ultra-luxury waterfront living in the heart of Murrells Inlet.',
+    amenities:[{i:'🚤',t:'Boat Launch & Storage',d:'Private boat launch and storage with direct ICW and Collins Creek access'},{i:'🛡️',t:'Gated Estate Community',d:'Secured entry with ultra-exclusive community of custom estates'},{i:'🏊',t:'Pool & Clubhouse',d:'Community pool and clubhouse with grill-out gazebo'},{i:'🏠',t:'1/2 to 3-Acre Lots',d:'Oversized wooded homesites for custom estate construction'},{i:'⛳',t:'TPC Golf Access',d:'Minutes from TPC Myrtle Beach championship course'},{i:'🦐',t:'MarshWalk Proximity',d:'Minutes from the famous MarshWalk restaurants and nightlife'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Ultra-luxury waterfront estate buyers at 1/5 the cost of comparable NJ waterfront'},{tier:1,metro:'Washington DC / NoVA',why:'High-net-worth buyers seeking gated 3-acre waterfront estates near TPC golf'},{tier:1,metro:'Charlotte, NC',why:'Charlotte wealth seeking exclusive waterfront estate community on the coast'},{tier:2,metro:'Philadelphia, PA',why:'Mainline estate buyers drawn to gated waterfront acres with private docks'},{tier:2,metro:'Atlanta, GA',why:'Georgia affluent seeking coastal waterfront estate with privacy and boat access'},{tier:3,metro:'Boston Metro',why:'New England estate buyers finding warm-climate gated waterfront luxury'}],
+    personas:[{type:'The Estate Buyer',headline:'"3 acres. Gated. Waterfront. Private dock. Creek Harbour is as exclusive as the inlet gets."',channels:'Luxury real estate platforms, private wealth referrals, WSJ Real Estate section'},{type:'The Boating Executive',headline:'"Private boat launch to the ICW. TPC golf next door. Gated estate living. Creek Harbour."',channels:'Executive lifestyle publications, yacht club networks, marina referrals'},{type:'The Custom Builder',headline:'"Up to 3 acres of wooded waterfront. Build your masterpiece behind a gate at Creek Harbour."',channels:'Houzz, custom builder networks, architect referrals, luxury design publications'}]
+  },
+  'blackmoor':{
+    name:'Blackmoor',tag:'Gary Player Championship Golf',tagline:'Gary Player\'s signature — your front yard.',bg:'images/waterbridge-entrance.jpg',price:'$350K – $600K+',gated:'No',styles:'Traditional, Brick, Golf Contemporary',bestFor:'Golf Community Value Seekers',
+    intro:'Blackmoor is built around a premier Gary Player-designed championship golf course — one of the most respected names in the history of the game. The community delivers an exceptional golf lifestyle with quality-built homes, a welcoming community pool, tennis courts, and a clubhouse just steps from most residences.',
+    p2:'Energy-efficient homes ranging from 1,900 to 3,000 square feet with 3-4 bedrooms offer comfortable living with golf course views. The Marcliffe at Blackmoor condominiums and Marcliffe West townhouses provide additional entry points for buyers wanting the Gary Player golf lifestyle at accessible price points.',
+    amenities:[{i:'⛳',t:'Gary Player Golf Course',d:'Championship course designed by the legendary Gary Player'},{i:'🏊',t:'Community Pool',d:'Swimming pool for residents and families'},{i:'🎾',t:'Tennis Courts',d:'Well-maintained courts for competitive and recreational play'},{i:'🏛️',t:'Walkable Clubhouse',d:'Clubhouse and pro shop within walking distance of homes'},{i:'⚡',t:'Energy Efficient',d:'Homes built with energy efficiency and quality construction standards'},{i:'🏠',t:'Multiple Options',d:'Single-family, condos, and townhomes for diverse budgets'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC golfers seeking Gary Player course at exceptional value near the coast'},{tier:2,metro:'NYC Metro & Northern NJ',why:'Golf enthusiasts finding championship course living at 1/4 northeast prices'},{tier:2,metro:'Washington DC / NoVA',why:'Government retirees seeking affordable Gary Player golf community'},{tier:2,metro:'Philadelphia, PA',why:'Golf lovers attracted to legendary designer course and quality homes'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest golfers drawn to year-round Gary Player course access'},{tier:3,metro:'Chicago, IL',why:'Budget-conscious golfers seeking championship lifestyle in warm climate'}],
+    personas:[{type:'The Gary Player Fan',headline:'"Live on a Gary Player masterpiece. Play it every day. Blackmoor is golf history, lived."',channels:'Golf Digest, golf forums, Gary Player merchandise/community channels'},{type:'The Golf Value Buyer',headline:'"Championship Gary Player course. Quality homes. Starting in the $350s. Blackmoor delivers."',channels:'Zillow, Realtor.com, Facebook golf groups, Google Ads "golf homes Murrells Inlet"'},{type:'The Condo Golfer',headline:'"Marcliffe at Blackmoor: golf course condo living on a Gary Player course."',channels:'Condo living publications, 55+ sites, Google Ads "golf condos SC"'}]
+  },
+  'bellwood-landing':{
+    name:'Bellwood Landing',tag:'Custom Lowcountry Estate Living',tagline:'Half-acre estates and Collins Creek — gated perfection.',bg:'images/pelican-bay-2.jpg',price:'$500K – $900K+',gated:'Yes',styles:'Custom Lowcountry, Estate, Traditional',bestFor:'Custom Estate Buyers',
+    intro:'Bellwood Landing is a distinguished gated community of just 102 custom Lowcountry estates on half-acre+ wooded lots within the Prince Creek master plan. Collins Creek meanders through the community, and select estate homes feature private docks for direct waterway access.',
+    p2:'Homes range from 2,500 to 4,000+ heated square feet with classic Lowcountry architectural styling. The community features a pool, tennis courts, playground, and walking trails — all enhanced by TPC Myrtle Beach golf access. The intimate 102-home size ensures genuine community character while the gated entry provides security and exclusivity.',
+    amenities:[{i:'🛡️',t:'Gated — 102 Homes',d:'Intimate gated community with just 102 custom estates'},{i:'🏠',t:'Half-Acre+ Wooded Lots',d:'Oversized lots with mature trees and natural privacy'},{i:'🚤',t:'Collins Creek & Docks',d:'Creek-front lots with private dock access to the waterway'},{i:'🏊',t:'Pool & Tennis',d:'Community pool, tennis courts, and walking trails'},{i:'⛳',t:'TPC Golf Access',d:'TPC Myrtle Beach championship course within Prince Creek'},{i:'🌳',t:'Nature Preserve Views',d:'Wooded setting with lake and preserve panoramas'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Custom estate buyers seeking gated Lowcountry living at remarkable value'},{tier:1,metro:'Washington DC / NoVA',why:'Senior professionals drawn to intimate 102-home gated community with TPC access'},{tier:2,metro:'Charlotte, NC',why:'Custom home enthusiasts seeking Lowcountry estate community near the coast'},{tier:2,metro:'Philadelphia, PA',why:'Estate buyers attracted to half-acre gated lots with creek-front options'},{tier:2,metro:'Atlanta, GA',why:'Lowcountry architecture lovers finding custom estate community with golf'},{tier:3,metro:'Boston Metro',why:'New England buyers drawn to Lowcountry charm and gated privacy'}],
+    personas:[{type:'The Custom Estate Buyer',headline:'"102 homes. Half-acre lots. Collins Creek. TPC golf. Bellwood Landing is gated Lowcountry perfection."',channels:'Luxury real estate sites, custom home builder networks, Houzz'},{type:'The Creek-Front Buyer',headline:'"Your private dock on Collins Creek. Your gated estate in Bellwood Landing."',channels:'Waterfront property specialists, boating forums, Google Ads "waterfront homes Murrells Inlet"'},{type:'The Lowcountry Seeker',headline:'"True Lowcountry architecture on wooded half-acre lots — behind a gate at Prince Creek."',channels:'Southern Living, Lowcountry architecture forums, Zillow luxury'}]
+  },
+  'longwood-bluffs':{
+    name:'Longwood Bluffs',tag:'Toll Brothers Modern Luxury',tagline:'Toll Brothers craftsmanship meets Lowcountry living.',bg:'images/nmb-beach-1.jpg',price:'$440K – $580K+',gated:'No',styles:'Coastal Contemporary, Modern Lowcountry',bestFor:'New Construction Luxury Seekers',
+    intro:'Longwood Bluffs represents the newest luxury living option in the Prince Creek community — premium homes by nationally acclaimed builder Toll Brothers. Two distinct collections (Coastal and Wilderness) offer 1,670 to 2,964 square feet of thoughtfully designed, low-maintenance living just 3 miles from the MarshWalk.',
+    p2:'As the last new construction community within Prince Creek West, Longwood Bluffs offers TPC Myrtle Beach access, multiple pools, tennis courts, and all Prince Creek amenities. Located 5 miles from the beach and 8 miles from Brookgreen Gardens, this is modern luxury perfectly positioned in the heart of the Lowcountry.',
+    amenities:[{i:'🏗️',t:'Toll Brothers Quality',d:'Nationally acclaimed builder with premium finishes and craftsmanship'},{i:'⛳',t:'TPC Golf Access',d:'TPC Myrtle Beach championship course within the community'},{i:'🏊',t:'Prince Creek Pools',d:'Access to all Prince Creek pools, clubhouses, and amenities'},{i:'🦐',t:'3 Miles to MarshWalk',d:'Famous Murrells Inlet dining and nightlife just minutes away'},{i:'🌿',t:'Brookgreen Gardens',d:'World-class botanical gardens just 8 miles from home'},{i:'🏠',t:'Two Collections',d:'Coastal and Wilderness designs from 1,670-2,964 sq ft'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Toll Brothers fans finding their builder\'s quality in a TPC golf community'},{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC professionals seeking brand-new Toll Brothers construction near the coast'},{tier:2,metro:'Washington DC / NoVA',why:'New construction enthusiasts drawn to Toll Brothers and TPC access'},{tier:2,metro:'Philadelphia, PA',why:'Mainline buyers familiar with Toll Brothers quality in a Lowcountry setting'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest families attracted to new construction with resort amenities'},{tier:3,metro:'Chicago, IL',why:'Downsizers seeking quality new construction in warm-climate golf community'}],
+    personas:[{type:'The Toll Brothers Buyer',headline:'"The builder you trust. The golf course you dream about. Longwood Bluffs by Toll Brothers."',channels:'Toll Brothers buyer networks, new construction sites, Google Ads "Toll Brothers SC"'},{type:'The Low-Maintenance Seeker',headline:'"New construction. TPC golf. MarshWalk dining. Low maintenance. Longwood Bluffs has it all."',channels:'Zillow new construction, Realtor.com, Facebook/IG targeted'},{type:'The Downsizing Couple',headline:'"Trade your big-house headaches for Toll Brothers quality on a TPC golf course."',channels:'Facebook 55+, downsizing forums, AARP digital'}]
+  },
+  'collins-creek-landing':{
+    name:'Collins Creek Landing',tag:'Gated Waterfront Community',tagline:'Direct waterway access behind a gated entrance.',bg:'images/pelican-bay-4.jpg',price:'$450K – $750K+',gated:'Yes',styles:'Grand Southern, Lowcountry, Contemporary',bestFor:'Gated Waterfront Families',
+    intro:'Collins Creek Landing is a gated waterfront community with an 8-acre amenity campus, private boat landing, and day dock providing direct Intracoastal Waterway access. The community clubhouse features a covered, screened room with wood-burning fireplace and climate-controlled kitchen.',
+    p2:'The combination of gated security, direct waterway boat access, community pool, walking trails, and playground creates a family-friendly waterfront lifestyle that balances luxury with livability. Grand Southern and Lowcountry architectural styles give the community a distinguished aesthetic character.',
+    amenities:[{i:'🚤',t:'Private Boat Landing',d:'Community boat launch and day dock with direct ICW access'},{i:'🛡️',t:'Gated Community',d:'Controlled access ensuring security and privacy'},{i:'🏛️',t:'Clubhouse & Fireplace',d:'Community clubhouse with screened room and wood-burning fireplace'},{i:'🏊',t:'Community Pool',d:'Swimming pool within the 8-acre amenity campus'},{i:'🌳',t:'Walking Trails',d:'Scenic trails through the community and natural areas'},{i:'👨‍👩‍👧‍👦',t:'Family Amenities',d:'Playground and recreation areas for families with children'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC families seeking gated waterfront community with boat access near the coast'},{tier:1,metro:'NYC Metro & Northern NJ',why:'Waterfront family buyers finding gated ICW community at exceptional value'},{tier:2,metro:'Washington DC / NoVA',why:'Federal families drawn to gated waterfront with boat access and amenities'},{tier:2,metro:'Philadelphia, PA',why:'Boating families attracted to gated community with private boat landing'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest families seeking warm-climate gated waterfront with year-round boating'},{tier:3,metro:'Pittsburgh, PA',why:'River-loving families seeking coastal waterfront upgrade with gated security'}],
+    personas:[{type:'The Waterfront Family',headline:'"Gated. Boat launch. Pool. Playground. Collins Creek Landing is the waterfront family dream."',channels:'Zillow, Realtor.com, Facebook family groups, Google Ads "gated waterfront homes SC"'},{type:'The Boating Family',headline:'"Your own community boat landing on the ICW. Behind a gate. With a pool and clubhouse."',channels:'Boating family forums, Facebook boating groups, Google Ads "boat access homes Murrells Inlet"'},{type:'The Relocating Couple',headline:'"Gated waterfront living in the heart of Murrells Inlet — the Seafood Capital of SC."',channels:'Relocation specialists, Zillow, Realtor.com, Google Ads "Murrells Inlet homes"'}]
+  }
+};
+
+
+/* ══════════════════════════════════════════
+   SURFSIDE BEACH LUXURY COMMUNITIES
+══════════════════════════════════════════ */
+const SBC = {
+  'surfside-club':{
+    name:'Surfside Beach Club',tag:'Resort-Style Family Community',tagline:'200 acres of resort living, two miles from the sand.',bg:'images/nmb-beach-access.jpg',price:'$400K – $650K+',gated:'Yes',styles:'Contemporary, Single-Family, Coastal',bestFor:'Resort Family Lifestyle',
+    intro:'Surfside Beach Club is the flagship residential community of "The Family Beach" — over 500 single-family homes on 200+ acres with resort-caliber amenities that rival gated coastal communities costing twice as much. Thirteen scenic lakes, a state-of-the-art fitness center, and a lakeside gazebo create a lifestyle that families never want to leave.',
+    p2:'Golf cart access to the beach and Surfside Pier means the ocean is always just minutes away. Multiple neighborhoods within the community — including Chalet, Landings, Lake Forest, Coral Springs, and Clearwater Lakes — offer diverse housing options from the low $400s to $650K+.',
+    amenities:[{i:'🏊',t:'Large Outdoor Pool & Spa',d:'Resort-style pool complex with hot tub and sun deck'},{i:'🏋️',t:'Fitness Center',d:'State-of-the-art fitness facility in the clubhouse'},{i:'🌊',t:'13 Scenic Lakes',d:'Lakes throughout with fountains, gazebo, and water features'},{i:'🛒',t:'Golf Cart to Beach',d:'Golf cart accessible — ride directly to the beach and pier'},{i:'🚤',t:'Boat Storage',d:'On-site boat storage for residents'},{i:'🛡️',t:'24-Hour Security',d:'Gated entry with security for peace of mind'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC families seeking resort beach community with outstanding value'},{tier:1,metro:'NYC Metro & Northern NJ',why:'Northeast families finding gated beach resort living at 1/3 the cost'},{tier:2,metro:'Washington DC / NoVA',why:'Federal families drawn to "The Family Beach" with resort amenities'},{tier:2,metro:'Philadelphia, PA',why:'Family-focused buyers attracted to 200-acre resort community near the beach'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest families seeking affordable beach resort community living'},{tier:3,metro:'Chicago, IL',why:'Family relocation to warm-climate beach resort community'}],
+    personas:[{type:'The Beach Family',headline:'"Golf cart to the beach. 13 lakes. Resort pool. Surfside Beach Club is family paradise."',channels:'Zillow, Realtor.com, Facebook family groups, Google Ads "family beach homes SC"'},{type:'The Resort Lifestyle Couple',headline:'"500 families. 200 acres. 13 lakes. Two miles from the best family beach in SC."',channels:'Beach lifestyle publications, Facebook 45+, Google Ads "Surfside Beach homes"'},{type:'The Value Seeker',headline:'"Gated resort community, 2 miles from the beach, starting in the $400s. Welcome to Surfside."',channels:'Value-oriented real estate sites, Zillow, Facebook home buyer groups'}]
+  },
+  'oceanside-village':{
+    name:'Oceanside Village',tag:'Gated Seaside Golf Cart Community',tagline:'180 acres of seaside living — three blocks from the ocean.',bg:'images/nmb-beach-1.jpg',price:'$350K – $600K+',gated:'Yes',styles:'Beach Home, Coastal, Contemporary',bestFor:'Beach Lifestyle Enthusiasts',
+    intro:'Oceanside Village is a 180-acre gated seaside community with 30+ years of established character and an amenity package that reads like a resort brochure. Two outdoor oceanfront pools, an indoor heated pool, splash pad, fitness center, tennis and basketball courts, bocce ball, fishing lakes, and a library — all behind 24-hour security.',
+    p2:'Located just three blocks from the ocean with Tupelo Bay Golf Center directly across the street, Oceanside Village has become one of the most sought-after golf cart communities on the Grand Strand. The 30-year community history means mature landscaping, established relationships, and a genuine neighborhood spirit.',
+    amenities:[{i:'🏊',t:'3 Pools (Indoor/Outdoor)',d:'Two outdoor pools plus indoor heated pool and splash pad'},{i:'🎾',t:'Tennis & Basketball',d:'Courts for tennis, basketball, and bocce ball'},{i:'⛳',t:'Tupelo Bay Golf',d:'18-hole golf course directly across the street'},{i:'🛡️',t:'24-Hour Security',d:'Gated with round-the-clock security'},{i:'🎣',t:'Fishing Lakes',d:'Community fishing lakes and recreational areas'},{i:'📚',t:'Library & More',d:'Community library, softball field, and social programming'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC families seeking established seaside community with incredible amenities'},{tier:1,metro:'NYC Metro & Northern NJ',why:'Beach lovers finding 180-acre gated seaside community at remarkable value'},{tier:2,metro:'Washington DC / NoVA',why:'Beach lifestyle seekers drawn to 3-blocks-from-ocean gated living'},{tier:2,metro:'Philadelphia, PA',why:'Golf cart community enthusiasts attracted to 30 years of beach character'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest families seeking warm-climate beach community with resort amenities'},{tier:3,metro:'Pittsburgh, PA',why:'Retirees seeking established beach community with indoor pool and activities'}],
+    personas:[{type:'The Beach Lifestyle Buyer',headline:'"Three blocks from the ocean. 30 years of community. 180 gated acres. Oceanside Village."',channels:'Beach lifestyle publications, Facebook beach community groups, Google Ads "gated beach homes SC"'},{type:'The Active Family',headline:'"3 pools, tennis, basketball, fishing, golf across the street — all behind a 24-hour gate."',channels:'Zillow, Realtor.com, Facebook family groups, active lifestyle media'},{type:'The Established Community Seeker',headline:'"30 years of established character. Three pools. 24-hour security. This is Oceanside Village."',channels:'Community review sites, Facebook 55+, established community forums'}]
+  },
+  'prestwick':{
+    name:'Prestwick Golf & Tennis',tag:'Championship Pete Dye Golf',tagline:'Pete Dye golf and the Grand Strand\'s best tennis — all behind a gate.',bg:'images/long-bay-2.jpg',price:'$350K – $600K+',gated:'Yes',styles:'Traditional, Golf Community, Contemporary',bestFor:'Golf & Tennis Enthusiasts',
+    intro:'Prestwick Golf and Tennis Club combines championship Pete and P.B. Dye-designed golf with the best tennis facilities on the entire Grand Strand — 11 clay courts plus 2 hard courts. The gated community with 24-hour security offers multiple subdivisions including Manchester Place, Wynfield, Highgrove, and Pipers Glen.',
+    p2:'The large swimming pool, private cabana areas, pro shop, and full locker room facilities create a country club atmosphere just minutes from the beach, Market Common, and Myrtle Beach State Park. Prestwick is for serious athletes and families who want championship recreational facilities as part of their daily life.',
+    amenities:[{i:'⛳',t:'Pete Dye Championship Golf',d:'18-hole course designed by legendary Pete and P.B. Dye'},{i:'🎾',t:'13 Tennis Courts',d:'11 clay + 2 hard courts — best tennis on the Grand Strand'},{i:'🏊',t:'Large Pool & Cabanas',d:'Community pool with private cabana areas for entertaining'},{i:'🛡️',t:'24-Hour Gated Security',d:'Controlled access with round-the-clock security staff'},{i:'🏌️',t:'Pro Shop & Lockers',d:'Full-service pro shop and locker room facilities'},{i:'📍',t:'Near Market Common',d:'Minutes from the award-winning Market Common walkable village'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Tennis and golf enthusiasts finding 13-court facility at a fraction of Hamptons club costs'},{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC athletes seeking Pete Dye golf and premier tennis in a gated community'},{tier:2,metro:'Washington DC / NoVA',why:'Tennis-focused professionals drawn to 13-court facility with championship golf'},{tier:2,metro:'Philadelphia, PA',why:'Mainline tennis players attracted to the Grand Strand\'s best court facilities'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest athletes seeking year-round access to 13 courts and championship golf'},{tier:3,metro:'Boston Metro',why:'New England tennis players seeking warm-climate court access year-round'}],
+    personas:[{type:'The Tennis Player',headline:'"13 courts — 11 clay, 2 hard. The best tennis on the Grand Strand is your daily commute."',channels:'Tennis publications, USTA channels, tennis club networks, Google Ads "tennis community SC"'},{type:'The Dual-Sport Couple',headline:'"Pete Dye golf and 13 tennis courts. One gate. One community. Prestwick."',channels:'Golf and tennis dual-sport publications, country club referrals'},{type:'The Active Family',headline:'"Gated. Championship golf. 13 courts. Pool and cabanas. Near Market Common."',channels:'Zillow, Realtor.com, Facebook family groups, active lifestyle media'}]
+  },
+  'deerfield':{
+    name:'Deerfield Plantation',tag:'Golf Course Community Living',tagline:'Live among the fairways — one mile from the beach.',bg:'images/waterbridge-entrance.jpg',price:'$300K – $450K+',gated:'Yes',styles:'Traditional, Single-Family, Condo',bestFor:'Accessible Golf Community',
+    intro:'Deerfield Plantation offers gated golf course community living just one mile from Surfside Beach. Built around the former Deer Track Golf and Country Club, the community retains the stunning golf course landscaping — tree-lined fairways, manicured grounds, and a park-like atmosphere that defines every street and cul-de-sac.',
+    p2:'A tree-lined pool, tennis courts, and multiple amenity areas serve residents in a range of housing options from single-family homes to condominiums. The one-mile proximity to the beach, combined with gated security and golf course grounds, creates exceptional value for buyers seeking beach-adjacent community living.',
+    amenities:[{i:'⛳',t:'Golf Course Grounds',d:'Community built on former championship golf course landscape'},{i:'🏊',t:'Tree-Lined Pool',d:'Community pool shaded by mature trees and landscaping'},{i:'🎾',t:'Tennis Courts',d:'Courts for recreational and competitive play'},{i:'🛡️',t:'Gated Community',d:'Controlled access for security and privacy'},{i:'🏖️',t:'1 Mile to Beach',d:'Golf cart distance to Surfside Beach and pier'},{i:'🌳',t:'Park-Like Setting',d:'Manicured former fairways creating stunning landscapes'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC buyers seeking gated golf course community one mile from the beach at accessible prices'},{tier:2,metro:'NYC Metro & Northern NJ',why:'Northeast buyers finding gated beach-adjacent community at remarkable value'},{tier:2,metro:'Washington DC / NoVA',why:'Value-focused families drawn to gated community with golf course grounds'},{tier:2,metro:'Philadelphia, PA',why:'Budget-conscious buyers wanting gated golf community near the beach'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest families attracted to warm-climate gated community at exceptional prices'},{tier:3,metro:'Pittsburgh, PA',why:'Retirees seeking affordable gated beach-adjacent living with golf character'}],
+    personas:[{type:'The Beach-Adjacent Buyer',headline:'"Gated. Golf course grounds. One mile to Surfside Beach. Starting in the $300s."',channels:'Zillow, Realtor.com, Facebook groups, Google Ads "Surfside Beach gated homes"'},{type:'The Value Golfer',headline:'"Live among championship fairways, one mile from the beach — at prices that make sense."',channels:'Golf value publications, Facebook golf groups, Zillow'},{type:'The Downsizing Retiree',headline:'"Trade the big house for a gated golf community one mile from the beach."',channels:'Facebook 55+, AARP digital, retirement community sites'}]
+  }
+};
+
+/* ══════════════════════════════════════════
+   GARDEN CITY LUXURY COMMUNITIES
+══════════════════════════════════════════ */
+const GCC = {
+  'one-ocean':{
+    name:'One Ocean Place',tag:'Premier Oceanfront High-Rise',tagline:'12 stories of oceanfront luxury on Garden City Beach.',bg:'images/nmb-beach-drone.jpg',price:'$500K – $1M+',gated:'No',styles:'Modern Oceanfront High-Rise, Luxury Condo',bestFor:'Oceanfront Condo Buyers',
+    intro:'One Ocean Place is Garden City Beach\'s premier oceanfront condominium — a 12-story luxury tower positioned on pristine beachfront just 1.4 miles north of the Garden City Pier. With 2-3 bedroom units plus penthouses, two oceanfront pools, two jacuzzis, and a full fitness center, this is oceanfront living at its finest.',
+    p2:'The private lounge, covered parking, and high-speed internet throughout create a lifestyle of modern convenience with direct oceanfront access. Strong rental demand makes One Ocean Place both a lifestyle choice and an exceptional investment opportunity in one of the Grand Strand\'s most authentic beach communities.',
+    amenities:[{i:'🏖️',t:'Direct Oceanfront',d:'12-story tower with panoramic Atlantic Ocean views from every unit'},{i:'🏊',t:'2 Oceanfront Pools',d:'Dual pools overlooking the beach with jacuzzi facilities'},{i:'🏋️',t:'Full Fitness Center',d:'Modern fitness facility for residents and guests'},{i:'🍷',t:'Private Lounge',d:'Exclusive residents\' lounge for entertaining and gatherings'},{i:'🅿️',t:'Covered Parking',d:'Secure covered parking for all residents'},{i:'📈',t:'Strong Rental Demand',d:'Exceptional rental income potential in a high-demand market'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Oceanfront condo buyers seeking 12-story luxury at 1/5 Manhattan waterfront prices'},{tier:1,metro:'Charlotte, NC',why:'Charlotte professionals seeking premier oceanfront second home'},{tier:2,metro:'Washington DC / NoVA',why:'Federal professionals drawn to oceanfront investment with rental income'},{tier:2,metro:'Philadelphia, PA',why:'Oceanfront condo seekers attracted to premier tower in authentic beach town'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest investors drawn to oceanfront property with strong rental returns'},{tier:3,metro:'Chicago, IL',why:'Midwest buyers seeking oceanfront luxury condo as investment/second home'}],
+    personas:[{type:'The Oceanfront Buyer',headline:'"12 stories of oceanfront luxury. Two pools. Private lounge. One Ocean Place."',channels:'Luxury condo publications, Zillow oceanfront filter, Google Ads "oceanfront condos Garden City"'},{type:'The Investor Buyer',headline:'"Oceanfront luxury with exceptional rental demand. One Ocean Place delivers both lifestyle and returns."',channels:'BiggerPockets, investment property sites, Google Ads "oceanfront investment SC"'},{type:'The Second Home Buyer',headline:'"Your oceanfront escape. 2-3 bedrooms with Atlantic views from every room."',channels:'Second home publications, Zillow, Realtor.com, Facebook targeted ads'}]
+  },
+  'salters-cove':{
+    name:'Salter\'s Cove',tag:'Luxury Lakefront Community',tagline:'Lakefront mansions and resort amenities — no short-term rentals.',bg:'images/pelican-bay-4.jpg',price:'$450K – $900K+',gated:'No',styles:'Ranch Estate, Raised Beach, Luxury Custom',bestFor:'Permanent Luxury Residents',
+    intro:'Salter\'s Cove is one of the most sought-after luxury communities in the Garden City and Murrells Inlet area — featuring resort-style amenities, lakefront estate homes, and a strict no short-term rental policy that ensures genuine neighborhood character and community stability.',
+    p2:'The large community pool, tennis and pickleball courts, clubhouse with lake views, playground, and picnic areas create a family-friendly atmosphere enhanced by landscaped streets and golf cart proximity to the beach. Luxury mansions on inlet lakes command premium prices and deliver a lifestyle that few communities south of Myrtle Beach can match.',
+    amenities:[{i:'🌊',t:'Lakefront Properties',d:'Premium lakefront estate homes with stunning water views'},{i:'🏊',t:'Resort-Style Pool',d:'Large community pool with sun deck and gathering areas'},{i:'🎾',t:'Tennis & Pickleball',d:'Courts for tennis and pickleball enthusiasts'},{i:'🏛️',t:'Clubhouse & Lake Views',d:'Community clubhouse overlooking the lake'},{i:'🚫',t:'No Short-Term Rentals',d:'Strict policy ensuring permanent community character'},{i:'🛒',t:'Golf Cart to Beach',d:'Beach access via golf cart from the community'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC families seeking permanent luxury community with no rental traffic'},{tier:1,metro:'NYC Metro & Northern NJ',why:'Northeast buyers drawn to lakefront luxury with permanent-resident-only policy'},{tier:2,metro:'Washington DC / NoVA',why:'Federal families seeking established luxury community without rental turnover'},{tier:2,metro:'Philadelphia, PA',why:'Permanent residence seekers attracted to lakefront mansions and community stability'},{tier:2,metro:'Atlanta, GA',why:'Coastal permanent-home buyers wanting luxury without short-term rental neighbors'},{tier:3,metro:'Boston Metro',why:'New England families seeking warm-climate permanent luxury community'}],
+    personas:[{type:'The Permanent Resident',headline:'"No rentals. No turnover. Just families and lakefront luxury. Salter\'s Cove."',channels:'Permanent residence community sites, Zillow, Google Ads "no rental community SC"'},{type:'The Lakefront Family',headline:'"Lakefront mansion. Resort pool. Tennis and pickleball. Golf cart to the beach."',channels:'Zillow luxury, Realtor.com, Facebook family groups, lakefront living sites'},{type:'The Community-First Buyer',headline:'"Know your neighbors. Love your lake. Walk to the beach. This is Salter\'s Cove."',channels:'Community-focused real estate sites, Facebook neighborhood groups'}]
+  },
+  'gulf-stream':{
+    name:'Gulf Stream Villas',tag:'Oceanfront Townhome Living',tagline:'Intimate oceanfront townhomes on Garden City\'s quietest stretch.',bg:'images/nmb-beach-access.jpg',price:'$450K – $650K+',gated:'No',styles:'2-Story Oceanfront Townhome',bestFor:'Intimate Oceanfront Buyers',
+    intro:'Gulf Stream Villas offers something increasingly rare on the Grand Strand — intimate, low-rise oceanfront townhome living at the quiet south end of Garden City Beach. These 2-3 bedroom, 2-story oceanfront units provide direct beach access and stunning ocean views without the high-rise condo experience.',
+    p2:'A community swimming pool, private balconies, and fully-equipped kitchens create comfortable oceanfront living in a small, quiet beach town setting. For buyers who want to own oceanfront property in an authentic, uncommercial beach community, Gulf Stream Villas delivers a lifestyle that larger resort towers cannot replicate.',
+    amenities:[{i:'🏖️',t:'Direct Oceanfront',d:'2-story units with direct beach access and ocean views'},{i:'🏊',t:'Community Pool',d:'Swimming pool for residents and guests'},{i:'🌅',t:'Private Balconies',d:'Personal outdoor spaces with oceanfront panoramas'},{i:'🤫',t:'Quiet Beach Setting',d:'South end of Garden City — peaceful and uncommercial'},{i:'🏠',t:'Townhome Privacy',d:'2-story design with more space and privacy than condos'},{i:'🎣',t:'Garden City Pier',d:'Walking distance to the iconic Garden City Pier'}],
+    targets:[{tier:1,metro:'Charlotte, NC',why:'Families seeking intimate oceanfront alternative to high-rise condos'},{tier:2,metro:'NYC Metro & Northern NJ',why:'Quiet beach seekers finding oceanfront townhome at accessible price'},{tier:2,metro:'Washington DC / NoVA',why:'Buyers drawn to low-rise oceanfront in authentic beach community'},{tier:2,metro:'Philadelphia, PA',why:'Shore lovers seeking SC oceanfront townhome at fraction of NJ shore prices'},{tier:2,metro:'Raleigh, NC',why:'NC professionals wanting intimate oceanfront weekend/permanent property'},{tier:3,metro:'Columbus, OH',why:'Midwest buyers seeking affordable oceanfront in quiet beach town'}],
+    personas:[{type:'The Quiet Beach Buyer',headline:'"Two stories of oceanfront. No high-rises. No crowds. Gulf Stream Villas."',channels:'Quiet beach community sites, Zillow, Google Ads "oceanfront townhomes SC"'},{type:'The Intimate Oceanfront Seeker',headline:'"Skip the 12th-floor elevator. Walk out your door to the sand. Gulf Stream Villas."',channels:'Beach lifestyle publications, Realtor.com, Facebook beach groups'},{type:'The Weekend Escape Buyer',headline:'"Your oceanfront townhome in South Carolina\'s most authentic beach town."',channels:'Second home publications, Zillow, Google Ads "Garden City Beach homes"'}]
+  },
+  'tupelo-bay':{
+    name:'Tupelo Bay',tag:'Executive Golf Community',tagline:'18 holes of well-lit golf and a lifestyle built around the game.',bg:'images/long-bay-1.jpg',price:'$300K – $500K+',gated:'No',styles:'Golf Community, Contemporary, Traditional',bestFor:'Golf Lifestyle Seekers',
+    intro:'Tupelo Bay offers golf community living centered around an 18-hole well-lit executive golf course — one of the few illuminated courses in the area, allowing play well into the evening. The Quick Fix Golf Academy with PGA instruction, driving range, par-3 course, and foot golf course create a complete golf lifestyle destination.',
+    p2:'The 18-hole executive course is playable in approximately 3 hours, making it ideal for busy professionals and retirees who want daily golf without the full-day commitment. Located directly across from Oceanside Village with easy beach access, Tupelo Bay combines golf community living with beach town convenience.',
+    amenities:[{i:'⛳',t:'18-Hole Lit Course',d:'Executive course with lighting for evening play — rare on the Grand Strand'},{i:'🏌️',t:'PGA Academy',d:'Quick Fix Golf Academy with PGA professional instruction'},{i:'🎯',t:'Driving Range',d:'3/4-mile grass hitting area for practice sessions'},{i:'⛳',t:'Par-3 Course',d:'9-hole par-3 course for quick rounds and practice'},{i:'🏖️',t:'Beach Proximity',d:'Easy access to Surfside Beach and Garden City Beach'},{i:'🥏',t:'Foot & Disc Golf',d:'Alternative golf formats for family fun and recreation'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC golfers seeking daily-play executive course near the beach'},{tier:2,metro:'NYC Metro & Northern NJ',why:'Golf enthusiasts finding lit course community at exceptional beach-town value'},{tier:2,metro:'Washington DC / NoVA',why:'Busy professionals drawn to 3-hour rounds and evening golf capability'},{tier:2,metro:'Philadelphia, PA',why:'Golfers attracted to unique lit course and PGA instruction'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest golfers seeking year-round evening-capable golf near the beach'},{tier:3,metro:'Pittsburgh, PA',why:'Retirees wanting accessible golf with PGA instruction and beach lifestyle'}],
+    personas:[{type:'The Evening Golfer',headline:'"Play 18 after dinner. Under the lights. Three hours. Tupelo Bay is golf, reimagined."',channels:'Golf publications, Google Ads "evening golf SC", Facebook golf groups'},{type:'The Golf Learner',headline:'"PGA instruction. Driving range. Par-3. Executive course. Tupelo Bay is where golfers grow."',channels:'Beginning golfer sites, PGA channels, Google Ads "golf community SC"'},{type:'The Beach Golfer',headline:'"Golf in the morning, beach by noon. Tupelo Bay — where the course meets the coast."',channels:'Beach golf publications, Zillow, Google Ads "golf homes Surfside Beach"'}]
+  }
+};
+
+/* ══════════════════════════════════════════
+   LITCHFIELD BEACH LUXURY COMMUNITIES
+══════════════════════════════════════════ */
+const LBC = {
+  'litchfield-sea':{
+    name:'Litchfield by the Sea',tag:'Gated Oceanfront Resort',tagline:'7 miles of private beach behind a guarded gate.',bg:'images/nmb-beach-drone.jpg',price:'$400K – $900K+',gated:'Yes',styles:'Resort Contemporary, Oceanfront Villa',bestFor:'Private Beach Resort Buyers',
+    intro:'Litchfield by the Sea is a gated oceanfront resort community with 7 miles of private beach access — one of the longest private beach stretches on the entire East Coast. Behind a 24-hour guard gate, residents enjoy four Somerset pools, an oceanfront clubhouse, tennis and pickleball courts, and saltwater fishing lakes.',
+    p2:'Multiple premier condo buildings — The Cambridge, Warwick, Fordham, Hamilton, Paget, and Whitney Parish — offer diverse oceanfront living options. Walking and biking paths wind through private marshland with stunning vistas. For buyers seeking private beach access with resort amenities in an uncommercial setting, Litchfield by the Sea is unmatched.',
+    amenities:[{i:'🏖️',t:'7 Miles Private Beach',d:'One of the longest private beach stretches on the East Coast'},{i:'🛡️',t:'24-Hour Guard Gate',d:'Staffed security gate with controlled access for residents'},{i:'🏊',t:'4 Somerset Pools',d:'Four pool complexes throughout the community'},{i:'🎾',t:'Tennis & Pickleball',d:'Lighted courts for tennis and pickleball play'},{i:'🏛️',t:'Oceanfront Clubhouse',d:'Community clubhouse directly on the oceanfront'},{i:'🎣',t:'Saltwater Fishing Lakes',d:'On-site saltwater lakes for fishing and recreation'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC professionals seeking private beach resort community with 7 miles of exclusivity'},{tier:1,metro:'NYC Metro & Northern NJ',why:'Northeast buyers finding gated oceanfront resort at fraction of Hamptons prices'},{tier:1,metro:'Washington DC / NoVA',why:'Federal professionals drawn to 24-hour guarded oceanfront with resort amenities'},{tier:2,metro:'Philadelphia, PA',why:'Beach resort seekers attracted to 7 miles of private beach access'},{tier:2,metro:'Atlanta, GA',why:'Southeast families seeking private oceanfront community with understated luxury'},{tier:3,metro:'Boston Metro',why:'New England buyers drawn to guarded oceanfront resort in peaceful setting'}],
+    personas:[{type:'The Private Beach Buyer',headline:'"7 miles of private beach. 24-hour guard gate. 4 pools. Litchfield by the Sea."',channels:'Luxury beach resort publications, Zillow oceanfront, Google Ads "private beach community SC"'},{type:'The Resort Investor',headline:'"Gated oceanfront resort with strong rental demand and 7 miles of private beach."',channels:'Investment property sites, BiggerPockets, Google Ads "oceanfront investment Litchfield"'},{type:'The Peaceful Beach Seeker',headline:'"No crowds. No commercials. Just 7 miles of guarded beach and pure Lowcountry beauty."',channels:'Southern Living, Coastal Living, quiet beach community sites'}]
+  },
+  'reserve-litchfield':{
+    name:'The Reserve at Litchfield',tag:'Greg Norman Signature Golf Estate',tagline:'700 acres from the Waccamaw River to the Atlantic Ocean.',bg:'images/long-bay-1.jpg',price:'$450K – $1.9M+',gated:'Yes',styles:'Estate, Lowcountry, Multi-Family',bestFor:'Premier Golf Estate Buyers',
+    intro:'The Reserve at Litchfield is a 700-acre gated community stretching from the Waccamaw River to the Atlantic Ocean, centered around a Greg Norman signature golf course ranked #5 in the Grand Strand. The Reserve Harbor Marina, tennis courts, biking trails, and dual water access create the most complete luxury lifestyle south of Myrtle Beach.',
+    p2:'Single-family estates, multi-family residences, and premium homesites range from the low $400s to $1.9M+. The Greg Norman course winds through pristine Lowcountry landscape, while the marina provides direct river and ocean access. For buyers seeking a premier golf estate address with both beach and river lifestyle, The Reserve is the definitive choice.',
+    amenities:[{i:'⛳',t:'Greg Norman Signature Golf',d:'#5 ranked Grand Strand course designed by the Great White Shark'},{i:'🛥️',t:'Reserve Harbor Marina',d:'Full-service marina with river and ocean access'},{i:'🏖️',t:'Beach & River Access',d:'700 acres stretching from Waccamaw River to the Atlantic'},{i:'🎾',t:'Tennis Courts',d:'Well-maintained courts within the community'},{i:'🚴',t:'Biking Trails',d:'Scenic trails through 700 acres of Lowcountry landscape'},{i:'🛡️',t:'Gated Community',d:'Controlled access ensuring privacy and exclusivity'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Golf estate buyers seeking Greg Norman course and marina at fraction of northeast costs'},{tier:1,metro:'Washington DC / NoVA',why:'High-net-worth buyers drawn to 700 acres with both river and ocean access'},{tier:1,metro:'Charlotte, NC',why:'Charlotte wealth seeking premier Lowcountry golf estate with marina'},{tier:2,metro:'Philadelphia, PA',why:'Golf enthusiasts attracted to Greg Norman signature course and marina lifestyle'},{tier:2,metro:'Atlanta, GA',why:'Southern affluent seeking dual-waterfront golf estate in the Lowcountry'},{tier:3,metro:'Boston Metro',why:'New England buyers drawn to 700-acre gated golf and marina community'}],
+    personas:[{type:'The Golf Estate Buyer',headline:'"Greg Norman signature golf. Harbor marina. 700 acres. River to ocean. The Reserve."',channels:'Golf estate publications, Greg Norman brand channels, luxury golf community sites'},{type:'The Marina Lifestyle Buyer',headline:'"Your marina slip, your Greg Norman tee time, your 700-acre gated estate."',channels:'Marina networks, boating publications, luxury waterfront sites'},{type:'The Dual-Waterfront Buyer',headline:'"River on one side. Ocean on the other. 700 gated acres in between. The Reserve at Litchfield."',channels:'Waterfront property specialists, luxury real estate platforms, WSJ Real Estate'}]
+  },
+  'litchfield-plantation':{
+    name:'Litchfield Plantation',tag:'Historic Gated Plantation Estate',tagline:'Lowcountry plantation elegance with a private beach house.',bg:'images/pelican-bay-4.jpg',price:'$400K – $1.5M+',gated:'Yes',styles:'Plantation Lowcountry, Historic Estate',bestFor:'Historic Plantation Buyers',
+    intro:'Litchfield Plantation is a gated community of unparalleled historic character — Lowcountry plantation-style homes with massive front porches, white Hardie siding, brick accents, and expansive verandas set among centuries-old oaks and lush landscaping. The community includes an exclusive private beach house for residents.',
+    p2:'This is Lowcountry living in its purest architectural form. The gated entry, community pool, and private beach house create a lifestyle that feels like stepping into a beautifully maintained chapter of Carolina plantation history — with every modern luxury discreetly integrated.',
+    amenities:[{i:'🏛️',t:'Plantation Architecture',d:'Authentic Lowcountry plantation homes with verandas and porches'},{i:'🏖️',t:'Private Beach House',d:'Exclusive beach house for residents\' use'},{i:'🛡️',t:'Gated Community',d:'Controlled access preserving privacy and character'},{i:'🏊',t:'Community Pool',d:'Swimming pool surrounded by lush plantation landscaping'},{i:'🌳',t:'Century-Old Oaks',d:'Stunning live oak canopy creating iconic Lowcountry setting'},{i:'🏠',t:'Historic Character',d:'Architectural standards ensuring timeless plantation aesthetic'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'History-loving luxury buyers seeking authentic plantation living near the beach'},{tier:1,metro:'Washington DC / NoVA',why:'Federal professionals drawn to historic Lowcountry plantation community'},{tier:2,metro:'Charlotte, NC',why:'Buyers seeking authentic plantation character with private beach access'},{tier:2,metro:'Philadelphia, PA',why:'History enthusiasts attracted to genuine Lowcountry plantation estate living'},{tier:2,metro:'Atlanta, GA',why:'Southern plantation architecture lovers finding coastal Lowcountry gem'},{tier:3,metro:'Boston Metro',why:'New England buyers drawn to historic Southern plantation elegance'}],
+    personas:[{type:'The History Buyer',headline:'"Live on a Lowcountry plantation. Walk to your private beach house. This is Litchfield Plantation."',channels:'Historic property networks, Preservation Society, Southern Living, Coastal Living'},{type:'The Architecture Lover',headline:'"Massive porches. Century-old oaks. Plantation elegance behind a gate."',channels:'Architectural Digest, Houzz, plantation architecture forums'},{type:'The Exclusive Beach Buyer',headline:'"Gated plantation living with your own private beach house. Litchfield Plantation."',channels:'Luxury real estate platforms, exclusive property networks, Zillow luxury'}]
+  },
+  'litchfield-cc':{
+    name:'Litchfield Country Club',tag:'Classic Golf Community',tagline:'Championship golf since 1966 with optional beach club access.',bg:'images/long-bay-2.jpg',price:'$350K – $550K+',gated:'No',styles:'Raised Beach, Ranch, Traditional',bestFor:'Golf & Beach Lifestyle',
+    intro:'Litchfield Country Club has been the heart of the Litchfield Beach golf community since 1966 — a mature, character-rich neighborhood built around a championship course with optional club membership that includes beach access through Litchfield by the Sea.',
+    p2:'Homes range from 1,600 to 3,800 square feet in raised beach and ranch styles with mature landscaping and established neighborhood character. The optional club membership adds beach access, transforming a golf community into a complete beach-and-golf lifestyle at one of the most reasonable price points in the Litchfield area.',
+    amenities:[{i:'⛳',t:'Championship Golf (1966)',d:'Historic championship course with decades of character'},{i:'🏖️',t:'Optional Beach Access',d:'Club membership includes Litchfield by the Sea beach privileges'},{i:'🏛️',t:'Country Club',d:'Traditional clubhouse with dining and social events'},{i:'🌳',t:'Mature Landscaping',d:'Decades of established trees and neighborhood character'},{i:'🏠',t:'Diverse Home Styles',d:'Raised beach, ranch, and traditional from 1,600-3,800 SF'},{i:'💰',t:'Outstanding Value',d:'Golf and beach lifestyle at Litchfield\'s most accessible prices'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC golfers seeking established golf community with beach access at great value'},{tier:2,metro:'NYC Metro & Northern NJ',why:'Golf-and-beach buyers finding dual lifestyle at fraction of northeast costs'},{tier:2,metro:'Washington DC / NoVA',why:'Retirees drawn to established golf community with optional beach privileges'},{tier:2,metro:'Philadelphia, PA',why:'Country club lovers attracted to 60-year-old course with beach access option'},{tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest golfers seeking year-round golf with beach lifestyle bonus'},{tier:3,metro:'Pittsburgh, PA',why:'Golf retirees wanting established community character and beach access'}],
+    personas:[{type:'The Classic Golfer',headline:'"Championship golf since 1966. Beach access included. Litchfield Country Club."',channels:'Golf heritage publications, country club networks, Google Ads "golf community Litchfield"'},{type:'The Golf & Beach Couple',headline:'"Golf your course, then walk to the beach. Litchfield Country Club makes both possible."',channels:'Lifestyle publications, Zillow, Facebook golf/beach groups'},{type:'The Value Seeker',headline:'"60 years of golf heritage. Beach club access. Starting in the $350s."',channels:'Zillow, Realtor.com, golf community value sites'}]
+  }
+};
+
+/* ══════════════════════════════════════════
+   PAWLEYS ISLAND LUXURY COMMUNITIES
+══════════════════════════════════════════ */
+const PIC = {
+  'pawleys-plantation':{
+    name:'Pawleys Plantation',tag:'Jack Nicklaus Golf & Waterfront',tagline:'2,700 acres and a Jack Nicklaus course on the Lowcountry coast.',bg:'images/pelican-bay-2.jpg',price:'$400K – $1M+',gated:'Yes',styles:'Traditional Southern, Modern Contemporary, Lowcountry',bestFor:'Premier Golf Estate Buyers',
+    intro:'Pawleys Plantation Golf & Country Club spans 2,700 acres and features a Jack Nicklaus-designed championship course — one of the most celebrated golf addresses in South Carolina. Six miles of waterfront, gated security, and a mix of traditional Southern to modern contemporary homes create a lifestyle defined by natural beauty and legendary golf.',
+    p2:'The combination of Jack Nicklaus golf, extensive waterfront, and the understated elegance that defines Pawleys Island makes this one of the most prestigious residential communities in the entire Lowcountry. From the first fairway to the last marsh vista, Pawleys Plantation delivers an experience rooted in excellence.',
+    amenities:[{i:'⛳',t:'Jack Nicklaus Golf',d:'Championship course designed by the Golden Bear himself'},{i:'🌊',t:'6 Miles of Waterfront',d:'Extensive waterfront along marsh, creek, and river'},{i:'🛡️',t:'Gated Community',d:'Controlled access ensuring privacy and exclusivity'},{i:'🏛️',t:'Country Club',d:'Full-service clubhouse with dining and social programming'},{i:'🏊',t:'Pool & Recreation',d:'Community pool and recreational facilities for residents'},{i:'🌿',t:'2,700 Acres',d:'Massive community with preserved natural Lowcountry landscape'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Jack Nicklaus devotees seeking his course at fraction of northeast country club costs'},{tier:1,metro:'Charlotte, NC',why:'Charlotte executives seeking prestigious Nicklaus golf address on the coast'},{tier:1,metro:'Washington DC / NoVA',why:'Senior professionals drawn to 2,700-acre Nicklaus golf plantation'},{tier:2,metro:'Philadelphia, PA',why:'Golf enthusiasts attracted to Jack Nicklaus signature course and waterfront'},{tier:2,metro:'Atlanta, GA',why:'Southern golfers seeking the Nicklaus experience in understated Lowcountry setting'},{tier:3,metro:'Boston Metro',why:'New England buyers drawn to Nicklaus golf and Lowcountry waterfront elegance'}],
+    personas:[{type:'The Nicklaus Golfer',headline:'"Jack Nicklaus designed your course. 2,700 acres surround your home. This is Pawleys Plantation."',channels:'Golf Digest, PGA channels, Nicklaus brand networks, luxury golf community sites'},{type:'The Waterfront Estate Buyer',headline:'"6 miles of waterfront. Nicklaus golf. 2,700 gated acres. The Lowcountry\'s finest address."',channels:'Luxury real estate platforms, waterfront specialists, WSJ Real Estate'},{type:'The Plantation Lifestyle Buyer',headline:'"Gated Lowcountry plantation living with Jack Nicklaus golf. Pawleys Plantation."',channels:'Southern Living, plantation lifestyle publications, luxury broker referrals'}]
+  },
+  'heritage-plantation':{
+    name:'Heritage Plantation',tag:'Waccamaw River Golf Estate',tagline:'Championship golf, river marina, and 12,000 SF of clubhouse luxury.',bg:'images/barefoot-cabana.jpg',price:'$350K – $1M+',gated:'Yes',styles:'Southern Lowcountry, Contemporary Mansion',bestFor:'Golf & River Lifestyle',
+    intro:'Heritage Plantation is a gated golf community along the Waccamaw River featuring the Heritage Golf Club — consistently ranked among the Top 100 public courses in America. The 12,000-square-foot Southern Colonial clubhouse with a 75-foot pool, hot tubs, spa, fitness facility, and riverfront restaurant creates an amenity experience of exceptional caliber.',
+    p2:'A private Waccamaw River boat launch and marina add a waterfront dimension that most golf communities simply cannot offer. From traditional Southern Lowcountry homes to contemporary mansions, Heritage Plantation serves buyers who want championship golf, river access, and resort amenities in a single gated address.',
+    amenities:[{i:'⛳',t:'Top 100 Golf Course',d:'Heritage Golf Club ranked among America\'s Top 100 public courses'},{i:'🏛️',t:'12,000 SF Clubhouse',d:'Southern Colonial clubhouse with fine dining and pro shop'},{i:'🏊',t:'75-Foot Pool & Spa',d:'Resort-style 75-foot pool, hot tubs, and full spa facilities'},{i:'🛥️',t:'River Marina & Launch',d:'Private Waccamaw River boat launch and marina for residents'},{i:'🏋️',t:'Fitness Center',d:'Full fitness facility within the clubhouse complex'},{i:'🛡️',t:'Gated Community',d:'Controlled access along the Waccamaw River corridor'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Top-100 course enthusiasts seeking gated golf and marina at exceptional value'},{tier:1,metro:'Charlotte, NC',why:'Charlotte golfers drawn to Top 100 course with river marina and 12,000 SF clubhouse'},{tier:2,metro:'Washington DC / NoVA',why:'Federal retirees seeking championship golf and river lifestyle behind a gate'},{tier:2,metro:'Philadelphia, PA',why:'Golf and boating enthusiasts attracted to dual-lifestyle community'},{tier:2,metro:'Atlanta, GA',why:'Southern golfers finding Top 100 course with river access and gated luxury'},{tier:3,metro:'Boston Metro',why:'New England buyers drawn to warm-climate championship golf with marina'}],
+    personas:[{type:'The Championship Golfer',headline:'"A Top 100 course. 12,000 SF clubhouse. River marina. Heritage Plantation is golf excellence."',channels:'Golf Digest Top 100, PGA channels, golf travel publications, luxury golf sites'},{type:'The River & Golf Couple',headline:'"Tee time at sunrise. Boat launch at noon. The Waccamaw and Heritage Golf — one gated address."',channels:'Golf and boating lifestyle publications, Facebook dual-sport groups'},{type:'The Clubhouse Socialite',headline:'"75-foot pool. Spa. Fine dining. 12,000 square feet of clubhouse luxury. Heritage Plantation."',channels:'Country club referral networks, social club publications, luxury lifestyle media'}]
+  },
+  'willbrook':{
+    name:'Willbrook Plantation',tag:'Historic First Gated Golf Community',tagline:'Pawleys Island\'s original — and finest — gated golf address.',bg:'images/waterbridge-entrance.jpg',price:'$400K – $800K+',gated:'Yes',styles:'Varied Residential, Patio Home, Estate',bestFor:'Established Golf Community Buyers',
+    intro:'Willbrook Plantation holds a special place in Pawleys Island history as the first gated golf community in the area. Built on the historic sites of the Willbrook and Litchfield Rice Plantations, the community features the legendary Willbrook Golf Course designed by Dan Maples, with approximately 500 single-family homes.',
+    p2:'Beach access through Litchfield by the Sea, optional membership at Litchfield Country Club, and beautifully landscaped streets with full security create a lifestyle that honors the Lowcountry\'s plantation heritage while delivering every modern amenity. From patio homes to sprawling estates, Willbrook serves diverse luxury lifestyles.',
+    amenities:[{i:'⛳',t:'Willbrook Golf Course',d:'Legendary Dan Maples-designed course on historic plantation grounds'},{i:'🏖️',t:'Beach via Litchfield',d:'Beach access through Litchfield by the Sea community'},{i:'🛡️',t:'First Gated Community',d:'Pawleys Island\'s original gated golf address with full security'},{i:'🏊',t:'Community Pool',d:'Swimming pool for residents and families'},{i:'🏛️',t:'Historic Plantation Site',d:'Built on Willbrook and Litchfield Rice Plantation grounds'},{i:'🏠',t:'500 Homes / Diverse',d:'Patio homes to estates — approximately 500 residences'}],
+    targets:[{tier:1,metro:'Charlotte & Raleigh, NC',why:'NC golfers seeking Pawleys Island\'s original gated golf community with beach access'},{tier:1,metro:'NYC Metro & Northern NJ',why:'Established community seekers finding historic gated golf at remarkable value'},{tier:2,metro:'Washington DC / NoVA',why:'Federal retirees drawn to historic plantation setting with golf and beach'},{tier:2,metro:'Philadelphia, PA',why:'History and golf lovers attracted to first gated community in Pawleys'},{tier:2,metro:'Atlanta, GA',why:'Southern buyers seeking established Lowcountry golf plantation community'},{tier:3,metro:'Boston Metro',why:'New England buyers drawn to historic character and dual golf/beach lifestyle'}],
+    personas:[{type:'The History-Loving Golfer',headline:'"Rice plantation history. Dan Maples golf. The first gated community in Pawleys Island."',channels:'Golf heritage sites, historic community networks, Southern Living'},{type:'The Golf & Beach Couple',headline:'"Golf your course. Walk to Litchfield beach. Live on historic plantation grounds."',channels:'Golf and beach lifestyle sites, Zillow, Facebook golf/beach groups'},{type:'The Established Community Buyer',headline:'"500 families. Historic grounds. Full security. Willbrook Plantation — the original."',channels:'Established community sites, Zillow, Realtor.com, word-of-mouth referrals'}]
+  },
+  'debordieu':{
+    name:'DeBordieu Colony',tag:'Ultra-Private Oceanfront Estate',tagline:'2,700 acres of private beach, Pete Dye golf, and absolute exclusivity.',bg:'images/nmb-beach-access.jpg',price:'$500K – $5M+',gated:'Yes',styles:'Lowcountry Estate, Oceanfront Custom',bestFor:'Ultra-Luxury Privacy Seekers',
+    intro:'DeBordieu Colony is the crown jewel of South Carolina\'s residential communities — 2,700+ acres of private, gated oceanfront with miles of pristine beach, a Pete Dye championship golf course, private Beach Club with oceanfront pools, and 24/7 security. This is understated luxury at its absolute pinnacle.',
+    p2:'Homes range from condominiums in the $400s to oceanfront estates exceeding $5M. Four membership tiers at the DeBordieu Club offer golf, tennis, fitness, oceanfront dining, and a social calendar befitting one of the oldest and most prestigious beachside communities on the East Coast. This is for buyers who value privacy, exclusivity, and natural beauty above all else.',
+    amenities:[{i:'🏖️',t:'Miles of Private Beach',d:'Pristine private beach stretching along the Atlantic coastline'},{i:'⛳',t:'Pete Dye Championship Golf',d:'World-class Pete Dye course through Lowcountry landscape'},{i:'🏛️',t:'Private Beach Club',d:'Oceanfront pools, dining, and social events for members'},{i:'🎾',t:'Tennis & Pickleball',d:'Courts and facilities for racquet sport enthusiasts'},{i:'🛡️',t:'24/7 Gated Security',d:'Round-the-clock security ensuring absolute privacy'},{i:'🏋️',t:'Fitness & Dining',d:'Full fitness center and multiple dining venues'}],
+    targets:[{tier:1,metro:'NYC Metro & Northern NJ',why:'Ultra-luxury privacy seekers finding 2,700-acre private beach estate at fraction of Hamptons'},{tier:1,metro:'Washington DC / NoVA',why:'Senior government and executive buyers seeking absolute privacy with oceanfront'},{tier:1,metro:'Charlotte, NC',why:'Charlotte\'s most affluent seeking the Carolinas\' most exclusive beach address'},{tier:2,metro:'Philadelphia, PA',why:'Old-money buyers drawn to understated oceanfront exclusivity'},{tier:2,metro:'Atlanta, GA',why:'Southeast wealth seeking private beach community of unmatched prestige'},{tier:3,metro:'Boston Metro',why:'Northeast established wealth seeking warm-climate private oceanfront estate'}],
+    personas:[{type:'The Ultra-Private Buyer',headline:'"2,700 private acres. Miles of private beach. 24/7 security. DeBordieu Colony."',channels:'Private wealth referral networks, family office connections, WSJ Mansion section'},{type:'The Pete Dye Golfer',headline:'"Pete Dye championship golf on a private estate with miles of your own beach."',channels:'Ultra-luxury golf communities, private club referrals, Golf Digest Luxury'},{type:'The Legacy Estate Buyer',headline:'"One of the oldest beachside communities on the East Coast. The most exclusive. DeBordieu."',channels:'Legacy property networks, historic estate publications, private broker referrals'}]
+  }
+};
+
 /* ── Luxury community card grid HTML ── */
 function luxuryCardsHTML(){
   const slugs=['waterbridge','plantation-lakes','waterway-palms','the-bluffs','black-creek','carolina-waterway','waterford','the-farm','avalon','indigo-bay'];
@@ -2519,6 +2903,522 @@ function showLRLuxuryCommunity(slug){
   showPage('community');
 }
 
+
+/* ══════════════════════════════════════════
+   NEW AREA LUXURY CARD GRIDS & SHOW FUNCTIONS
+══════════════════════════════════════════ */
+function conwayLuxuryCardsHTML(){
+  const slugs=["wild-wing","pottery-landing","rivers-edge","shaftesbury-glen","auberon-woods","heritage-preserve"];
+  return slugs.map(s=>{
+    const d=CWC[s];
+    return `<div class="lux-card" onclick="showConwayLuxuryCommunity('${s}')">
+      <div class="lux-card-img" style="background-image:url('${d.bg}')">
+        ${d.gated==='Yes'?'<div class="lux-card-gated">Gated</div>':''}
+      </div>
+      <div class="lux-card-body">
+        <div class="lux-card-name">${d.name}</div>
+        <div class="lux-card-tag">${d.tag}</div>
+        <div class="lux-card-price">${d.price}</div>
+      </div></div>`;
+  }).join('');
+}
+
+function showConwayLuxuryCommunity(slug){
+  const d=CWC[slug]; if(!d) return;
+  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
+  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  document.getElementById('commContent').innerHTML=`
+    <div class="lux-hero" style="background-image:url('${d.bg}')">
+      <div class="lux-hero-body">
+        <a class="lux-hero-back" onclick="showCommunity('conway');return false">← Back to Conway</a>
+        <span class="lbl">Luxury Community</span>
+        <h1>${d.name}</h1>
+        <p>${d.tagline}</p>
+      </div>
+    </div>
+    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
+      <div class="lux-facts-bar">
+        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+      </div>
+      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
+      <p>${d.intro}</p><p>${d.p2}</p>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
+      <div class="lux-amen-grid">${amenHtml}</div>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
+      <table class="lux-target-table">
+        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier1}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier2}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier3}</tbody>
+      </table>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
+      <div class="lux-personas">${persHtml}</div>
+    </div>
+    <div class="lux-sidebar">
+      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
+      <div class="lux-sb-card" style="background:var(--navy)">
+        <h3 style="color:var(--gold)">Conway: Premium Living</h3>
+        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Conway — from gated golf estates to waterfront retreats.</p>
+        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('conway');return false">View All Conway Luxury Communities</a>
+      </div>
+    </div>
+    </div></div></div>`;
+
+  document.getElementById('listHead').textContent='Available Properties in '+d.name;
+  showPage('community');
+}
+
+function mbLuxuryCardsHTML(){
+  const slugs=["grande-dunes","the-dunes-club","plantation-point","kingston-plantation","the-legends","harbor-oaks","arrowhead-grand","black-creek-mb"];
+  return slugs.map(s=>{
+    const d=MBC[s];
+    return `<div class="lux-card" onclick="showMbLuxuryCommunity('${s}')">
+      <div class="lux-card-img" style="background-image:url('${d.bg}')">
+        ${d.gated==='Yes'?'<div class="lux-card-gated">Gated</div>':''}
+      </div>
+      <div class="lux-card-body">
+        <div class="lux-card-name">${d.name}</div>
+        <div class="lux-card-tag">${d.tag}</div>
+        <div class="lux-card-price">${d.price}</div>
+      </div></div>`;
+  }).join('');
+}
+
+function showMbLuxuryCommunity(slug){
+  const d=MBC[slug]; if(!d) return;
+  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
+  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  document.getElementById('commContent').innerHTML=`
+    <div class="lux-hero" style="background-image:url('${d.bg}')">
+      <div class="lux-hero-body">
+        <a class="lux-hero-back" onclick="showCommunity('myrtle-beach');return false">← Back to Myrtle Beach</a>
+        <span class="lbl">Luxury Community</span>
+        <h1>${d.name}</h1>
+        <p>${d.tagline}</p>
+      </div>
+    </div>
+    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
+      <div class="lux-facts-bar">
+        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+      </div>
+      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
+      <p>${d.intro}</p><p>${d.p2}</p>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
+      <div class="lux-amen-grid">${amenHtml}</div>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
+      <table class="lux-target-table">
+        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier1}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier2}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier3}</tbody>
+      </table>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
+      <div class="lux-personas">${persHtml}</div>
+    </div>
+    <div class="lux-sidebar">
+      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
+      <div class="lux-sb-card" style="background:var(--navy)">
+        <h3 style="color:var(--gold)">Myrtle Beach: Premium Living</h3>
+        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Myrtle Beach — from gated golf estates to waterfront retreats.</p>
+        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('myrtle-beach');return false">View All Myrtle Beach Luxury Communities</a>
+      </div>
+    </div>
+    </div></div></div>`;
+
+  document.getElementById('listHead').textContent='Available Properties in '+d.name;
+  showPage('community');
+}
+
+function miLuxuryCardsHTML(){
+  const slugs=["wachesaw","prince-creek","creek-harbour","blackmoor","bellwood-landing","longwood-bluffs","collins-creek-landing"];
+  return slugs.map(s=>{
+    const d=MIC[s];
+    return `<div class="lux-card" onclick="showMiLuxuryCommunity('${s}')">
+      <div class="lux-card-img" style="background-image:url('${d.bg}')">
+        ${d.gated==='Yes'?'<div class="lux-card-gated">Gated</div>':''}
+      </div>
+      <div class="lux-card-body">
+        <div class="lux-card-name">${d.name}</div>
+        <div class="lux-card-tag">${d.tag}</div>
+        <div class="lux-card-price">${d.price}</div>
+      </div></div>`;
+  }).join('');
+}
+
+function showMiLuxuryCommunity(slug){
+  const d=MIC[slug]; if(!d) return;
+  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
+  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  document.getElementById('commContent').innerHTML=`
+    <div class="lux-hero" style="background-image:url('${d.bg}')">
+      <div class="lux-hero-body">
+        <a class="lux-hero-back" onclick="showCommunity('murrells-inlet');return false">← Back to Murrells Inlet</a>
+        <span class="lbl">Luxury Community</span>
+        <h1>${d.name}</h1>
+        <p>${d.tagline}</p>
+      </div>
+    </div>
+    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
+      <div class="lux-facts-bar">
+        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+      </div>
+      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
+      <p>${d.intro}</p><p>${d.p2}</p>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
+      <div class="lux-amen-grid">${amenHtml}</div>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
+      <table class="lux-target-table">
+        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier1}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier2}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier3}</tbody>
+      </table>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
+      <div class="lux-personas">${persHtml}</div>
+    </div>
+    <div class="lux-sidebar">
+      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
+      <div class="lux-sb-card" style="background:var(--navy)">
+        <h3 style="color:var(--gold)">Murrells Inlet: Premium Living</h3>
+        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Murrells Inlet — from gated golf estates to waterfront retreats.</p>
+        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('murrells-inlet');return false">View All Murrells Inlet Luxury Communities</a>
+      </div>
+    </div>
+    </div></div></div>`;
+
+  document.getElementById('listHead').textContent='Available Properties in '+d.name;
+  showPage('community');
+}
+
+function sbLuxuryCardsHTML(){
+  const slugs=["surfside-club","oceanside-village","prestwick","deerfield"];
+  return slugs.map(s=>{
+    const d=SBC[s];
+    return `<div class="lux-card" onclick="showSbLuxuryCommunity('${s}')">
+      <div class="lux-card-img" style="background-image:url('${d.bg}')">
+        ${d.gated==='Yes'?'<div class="lux-card-gated">Gated</div>':''}
+      </div>
+      <div class="lux-card-body">
+        <div class="lux-card-name">${d.name}</div>
+        <div class="lux-card-tag">${d.tag}</div>
+        <div class="lux-card-price">${d.price}</div>
+      </div></div>`;
+  }).join('');
+}
+
+function showSbLuxuryCommunity(slug){
+  const d=SBC[slug]; if(!d) return;
+  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
+  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  document.getElementById('commContent').innerHTML=`
+    <div class="lux-hero" style="background-image:url('${d.bg}')">
+      <div class="lux-hero-body">
+        <a class="lux-hero-back" onclick="showCommunity('surfside');return false">← Back to Surfside Beach</a>
+        <span class="lbl">Luxury Community</span>
+        <h1>${d.name}</h1>
+        <p>${d.tagline}</p>
+      </div>
+    </div>
+    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
+      <div class="lux-facts-bar">
+        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+      </div>
+      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
+      <p>${d.intro}</p><p>${d.p2}</p>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
+      <div class="lux-amen-grid">${amenHtml}</div>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
+      <table class="lux-target-table">
+        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier1}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier2}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier3}</tbody>
+      </table>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
+      <div class="lux-personas">${persHtml}</div>
+    </div>
+    <div class="lux-sidebar">
+      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
+      <div class="lux-sb-card" style="background:var(--navy)">
+        <h3 style="color:var(--gold)">Surfside Beach: Premium Living</h3>
+        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Surfside Beach — from gated golf estates to waterfront retreats.</p>
+        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('surfside');return false">View All Surfside Beach Luxury Communities</a>
+      </div>
+    </div>
+    </div></div></div>`;
+
+  document.getElementById('listHead').textContent='Available Properties in '+d.name;
+  showPage('community');
+}
+
+function gcLuxuryCardsHTML(){
+  const slugs=["one-ocean","salters-cove","gulf-stream","tupelo-bay"];
+  return slugs.map(s=>{
+    const d=GCC[s];
+    return `<div class="lux-card" onclick="showGcLuxuryCommunity('${s}')">
+      <div class="lux-card-img" style="background-image:url('${d.bg}')">
+        ${d.gated==='Yes'?'<div class="lux-card-gated">Gated</div>':''}
+      </div>
+      <div class="lux-card-body">
+        <div class="lux-card-name">${d.name}</div>
+        <div class="lux-card-tag">${d.tag}</div>
+        <div class="lux-card-price">${d.price}</div>
+      </div></div>`;
+  }).join('');
+}
+
+function showGcLuxuryCommunity(slug){
+  const d=GCC[slug]; if(!d) return;
+  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
+  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  document.getElementById('commContent').innerHTML=`
+    <div class="lux-hero" style="background-image:url('${d.bg}')">
+      <div class="lux-hero-body">
+        <a class="lux-hero-back" onclick="showCommunity('garden-city');return false">← Back to Garden City</a>
+        <span class="lbl">Luxury Community</span>
+        <h1>${d.name}</h1>
+        <p>${d.tagline}</p>
+      </div>
+    </div>
+    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
+      <div class="lux-facts-bar">
+        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+      </div>
+      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
+      <p>${d.intro}</p><p>${d.p2}</p>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
+      <div class="lux-amen-grid">${amenHtml}</div>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
+      <table class="lux-target-table">
+        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier1}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier2}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier3}</tbody>
+      </table>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
+      <div class="lux-personas">${persHtml}</div>
+    </div>
+    <div class="lux-sidebar">
+      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
+      <div class="lux-sb-card" style="background:var(--navy)">
+        <h3 style="color:var(--gold)">Garden City: Premium Living</h3>
+        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Garden City — from gated golf estates to waterfront retreats.</p>
+        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('garden-city');return false">View All Garden City Luxury Communities</a>
+      </div>
+    </div>
+    </div></div></div>`;
+
+  document.getElementById('listHead').textContent='Available Properties in '+d.name;
+  showPage('community');
+}
+
+function lbLuxuryCardsHTML(){
+  const slugs=["litchfield-sea","reserve-litchfield","litchfield-plantation","litchfield-cc"];
+  return slugs.map(s=>{
+    const d=LBC[s];
+    return `<div class="lux-card" onclick="showLbLuxuryCommunity('${s}')">
+      <div class="lux-card-img" style="background-image:url('${d.bg}')">
+        ${d.gated==='Yes'?'<div class="lux-card-gated">Gated</div>':''}
+      </div>
+      <div class="lux-card-body">
+        <div class="lux-card-name">${d.name}</div>
+        <div class="lux-card-tag">${d.tag}</div>
+        <div class="lux-card-price">${d.price}</div>
+      </div></div>`;
+  }).join('');
+}
+
+function showLbLuxuryCommunity(slug){
+  const d=LBC[slug]; if(!d) return;
+  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
+  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  document.getElementById('commContent').innerHTML=`
+    <div class="lux-hero" style="background-image:url('${d.bg}')">
+      <div class="lux-hero-body">
+        <a class="lux-hero-back" onclick="showCommunity('litchfield');return false">← Back to Litchfield Beach</a>
+        <span class="lbl">Luxury Community</span>
+        <h1>${d.name}</h1>
+        <p>${d.tagline}</p>
+      </div>
+    </div>
+    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
+      <div class="lux-facts-bar">
+        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+      </div>
+      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
+      <p>${d.intro}</p><p>${d.p2}</p>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
+      <div class="lux-amen-grid">${amenHtml}</div>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
+      <table class="lux-target-table">
+        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier1}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier2}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier3}</tbody>
+      </table>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
+      <div class="lux-personas">${persHtml}</div>
+    </div>
+    <div class="lux-sidebar">
+      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
+      <div class="lux-sb-card" style="background:var(--navy)">
+        <h3 style="color:var(--gold)">Litchfield Beach: Premium Living</h3>
+        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Litchfield Beach — from gated golf estates to waterfront retreats.</p>
+        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('litchfield');return false">View All Litchfield Beach Luxury Communities</a>
+      </div>
+    </div>
+    </div></div></div>`;
+
+  document.getElementById('listHead').textContent='Available Properties in '+d.name;
+  showPage('community');
+}
+
+function piLuxuryCardsHTML(){
+  const slugs=["pawleys-plantation","heritage-plantation","willbrook","debordieu"];
+  return slugs.map(s=>{
+    const d=PIC[s];
+    return `<div class="lux-card" onclick="showPiLuxuryCommunity('${s}')">
+      <div class="lux-card-img" style="background-image:url('${d.bg}')">
+        ${d.gated==='Yes'?'<div class="lux-card-gated">Gated</div>':''}
+      </div>
+      <div class="lux-card-body">
+        <div class="lux-card-name">${d.name}</div>
+        <div class="lux-card-tag">${d.tag}</div>
+        <div class="lux-card-price">${d.price}</div>
+      </div></div>`;
+  }).join('');
+}
+
+function showPiLuxuryCommunity(slug){
+  const d=PIC[slug]; if(!d) return;
+  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
+  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
+  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  document.getElementById('commContent').innerHTML=`
+    <div class="lux-hero" style="background-image:url('${d.bg}')">
+      <div class="lux-hero-body">
+        <a class="lux-hero-back" onclick="showCommunity('pawleys-island');return false">← Back to Pawleys Island</a>
+        <span class="lbl">Luxury Community</span>
+        <h1>${d.name}</h1>
+        <p>${d.tagline}</p>
+      </div>
+    </div>
+    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
+      <div class="lux-facts-bar">
+        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
+        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+      </div>
+      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
+      <p>${d.intro}</p><p>${d.p2}</p>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
+      <div class="lux-amen-grid">${amenHtml}</div>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
+      <table class="lux-target-table">
+        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier1}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier2}</tbody>
+      </table>
+      <table class="lux-target-table" style="margin-top:12px">
+        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
+        <tbody>${tier3}</tbody>
+      </table>
+      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
+      <div class="lux-personas">${persHtml}</div>
+    </div>
+    <div class="lux-sidebar">
+      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
+      <div class="lux-sb-card" style="background:var(--navy)">
+        <h3 style="color:var(--gold)">Pawleys Island: Premium Living</h3>
+        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Pawleys Island — from gated golf estates to waterfront retreats.</p>
+        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('pawleys-island');return false">View All Pawleys Island Luxury Communities</a>
+      </div>
+    </div>
+    </div></div></div>`;
+
+  document.getElementById('listHead').textContent='Available Properties in '+d.name;
+  showPage('community');
+}
+
+
 /* ── Override showCommunity to add luxury grids for carolina-forest, north-myrtle-beach, AND little-river ── */
 const _origShowCommunity = showCommunity;
 showCommunity = function(slug){
@@ -2571,6 +3471,119 @@ showCommunity = function(slug){
       hook.appendChild(luxSec);
     }
   }
+  if(slug==='conway'){
+    const hook=document.querySelector('#commContent .comm-content');
+    if(hook){
+      const luxSec=document.createElement('div');
+      luxSec.className='lux-comm-sec';
+      luxSec.innerHTML=`<div class="container">
+        <div class="sec-header">
+          <span class="lbl">Explore</span>
+          <h2 class="h2">Luxury Communities in Conway</h2>
+          <p>Discover the premier luxury neighborhoods and communities in the Conway corridor.</p>
+        </div>
+        <div class="lux-grid">${conwayLuxuryCardsHTML()}</div>
+      </div>`;
+      hook.appendChild(luxSec);
+    }
+  }
+  if(slug==='myrtle-beach'){
+    const hook=document.querySelector('#commContent .comm-content');
+    if(hook){
+      const luxSec=document.createElement('div');
+      luxSec.className='lux-comm-sec';
+      luxSec.innerHTML=`<div class="container">
+        <div class="sec-header">
+          <span class="lbl">Explore</span>
+          <h2 class="h2">Luxury Communities in Myrtle Beach</h2>
+          <p>Discover the premier luxury neighborhoods and communities in the Myrtle Beach corridor.</p>
+        </div>
+        <div class="lux-grid">${mbLuxuryCardsHTML()}</div>
+      </div>`;
+      hook.appendChild(luxSec);
+    }
+  }
+  if(slug==='murrells-inlet'){
+    const hook=document.querySelector('#commContent .comm-content');
+    if(hook){
+      const luxSec=document.createElement('div');
+      luxSec.className='lux-comm-sec';
+      luxSec.innerHTML=`<div class="container">
+        <div class="sec-header">
+          <span class="lbl">Explore</span>
+          <h2 class="h2">Luxury Communities in Murrells Inlet</h2>
+          <p>Discover the premier luxury neighborhoods and communities in the Murrells Inlet corridor.</p>
+        </div>
+        <div class="lux-grid">${miLuxuryCardsHTML()}</div>
+      </div>`;
+      hook.appendChild(luxSec);
+    }
+  }
+  if(slug==='surfside'){
+    const hook=document.querySelector('#commContent .comm-content');
+    if(hook){
+      const luxSec=document.createElement('div');
+      luxSec.className='lux-comm-sec';
+      luxSec.innerHTML=`<div class="container">
+        <div class="sec-header">
+          <span class="lbl">Explore</span>
+          <h2 class="h2">Luxury Communities in Surfside Beach</h2>
+          <p>Discover the premier luxury neighborhoods and communities in the Surfside Beach corridor.</p>
+        </div>
+        <div class="lux-grid">${sbLuxuryCardsHTML()}</div>
+      </div>`;
+      hook.appendChild(luxSec);
+    }
+  }
+  if(slug==='garden-city'){
+    const hook=document.querySelector('#commContent .comm-content');
+    if(hook){
+      const luxSec=document.createElement('div');
+      luxSec.className='lux-comm-sec';
+      luxSec.innerHTML=`<div class="container">
+        <div class="sec-header">
+          <span class="lbl">Explore</span>
+          <h2 class="h2">Luxury Communities in Garden City</h2>
+          <p>Discover the premier luxury neighborhoods and communities in the Garden City corridor.</p>
+        </div>
+        <div class="lux-grid">${gcLuxuryCardsHTML()}</div>
+      </div>`;
+      hook.appendChild(luxSec);
+    }
+  }
+  if(slug==='litchfield'){
+    const hook=document.querySelector('#commContent .comm-content');
+    if(hook){
+      const luxSec=document.createElement('div');
+      luxSec.className='lux-comm-sec';
+      luxSec.innerHTML=`<div class="container">
+        <div class="sec-header">
+          <span class="lbl">Explore</span>
+          <h2 class="h2">Luxury Communities in Litchfield Beach</h2>
+          <p>Discover the premier luxury neighborhoods and communities in the Litchfield Beach corridor.</p>
+        </div>
+        <div class="lux-grid">${lbLuxuryCardsHTML()}</div>
+      </div>`;
+      hook.appendChild(luxSec);
+    }
+  }
+  if(slug==='pawleys-island'){
+    const hook=document.querySelector('#commContent .comm-content');
+    if(hook){
+      const luxSec=document.createElement('div');
+      luxSec.className='lux-comm-sec';
+      luxSec.innerHTML=`<div class="container">
+        <div class="sec-header">
+          <span class="lbl">Explore</span>
+          <h2 class="h2">Luxury Communities in Pawleys Island</h2>
+          <p>Discover the premier luxury neighborhoods and communities in the Pawleys Island corridor.</p>
+        </div>
+        <div class="lux-grid">${piLuxuryCardsHTML()}</div>
+      </div>`;
+      hook.appendChild(luxSec);
+    }
+  }
+
 };
 </script>
 </body>
