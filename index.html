@@ -2638,15 +2638,13 @@ function luxuryCardsHTML(){
 /* ── Render luxury community landing page ── */
 function showLuxuryCommunity(slug){
   const d=LC[slug]; if(!d) return;
-  const amHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
-  const tgtHtml=d.targets.map(t=>`<div class="lux-t"><div class="lux-t-tier">${t.tier}</div><div><div class="lux-t-metro">${t.metro}</div><div class="lux-t-why">${t.why}</div></div></div>`).join('');
-  const perHtml=d.personas.map(p=>`<div class="lux-persona"><div class="lux-p-type">${p.type}</div><div class="lux-p-headline">${p.headline}</div><div class="lux-p-channels"><strong>Target Channels:</strong> ${p.channels}</div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
       <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
       <div class="lux-hero-body">
-        <a class="lux-hero-back" onclick="showCommunity('carolina-forest');return false">← Back to Carolina Forest</a>
+        <a class="lux-hero-back" onclick="showCommunity('carolina-forest');return false">\u2190 Back to Carolina Forest</a>
         <div class="lux-hero-badge">Luxury Community</div>
         <h1 class="lux-hero-title">${d.name}</h1>
         <p class="lux-hero-tagline">${d.tagline}</p>
@@ -2662,6 +2660,7 @@ function showLuxuryCommunity(slug){
 
     <div class="lux-body"><div class="container"><div class="lux-layout">
       <div class="lux-main">
+
         <div class="lux-about">
           <h2>About ${d.name}</h2>
           <p>${d.intro}</p>
@@ -2669,40 +2668,58 @@ function showLuxuryCommunity(slug){
         </div>
 
         <div class="lux-amenities">
-          <h3>Key Amenities & Selling Points</h3>
-          <div class="lux-am-grid">${amHtml}</div>
+          <h3>Community Amenities & Features</h3>
+          <div class="lux-am-grid">${amenHtml}</div>
         </div>
 
-        <div class="lux-targets">
-          <h3>Recommended Target Markets</h3>
-          <p>Where to find the ideal buyers for ${d.name}, ranked by priority tier.</p>
-          <div class="lux-t-grid">${tgtHtml}</div>
+        <div class="lux-lifestyle" style="margin-top:40px">
+          <h3 style="font-family:var(--fd);font-size:1.35rem;color:var(--navy);margin-bottom:16px">The ${d.name} Lifestyle</h3>
+          <p style="font-size:1.05rem;line-height:1.75;color:#444">From ${d.amenities[0].t.toLowerCase()} to ${d.amenities[1].t.toLowerCase()}, ${d.name} offers a lifestyle that blends comfort, community, and coastal living. Whether you\u2019re looking for a primary residence, a second home, or an investment property, this community delivers the quality of life that draws buyers from across the country.</p>
+          <div class="lux-lifestyle-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:24px">
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udfe0</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.styles.split(',')[0].trim()}</h4>
+              <p style="font-size:.9rem;color:#666">Architectural excellence with premium finishes throughout</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udf1f</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.bestFor}</h4>
+              <p style="font-size:.9rem;color:#666">Tailored for those who appreciate the finer things in coastal living</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83d\udccd</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">Carolina Forest</h4>
+              <p style="font-size:.9rem;color:#666">Carolina Forest\'s master-planned communities offer top-rated schools, resort amenities, and proximity to the beach.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="lux-personas">
-          <h3>Buyer Personas & Ad Messaging</h3>
-          <div class="lux-p-grid">${perHtml}</div>
+        <div class="lux-cta-section" style="margin-top:40px;background:linear-gradient(135deg,var(--navy),var(--dark));border-radius:16px;padding:40px;text-align:center">
+          <h3 style="font-family:var(--fd);color:var(--gold);font-size:1.4rem;margin-bottom:12px">Schedule a Private Tour</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto">Experience ${d.name} firsthand. Our luxury specialists will give you an exclusive tour of available homes and amenities.</p>
+          <a href="#" class="btn btn-gold" onclick="showPage('home-value');return false" style="display:inline-block;padding:14px 36px;font-size:1rem">Schedule Your Tour</a>
         </div>
+
       </div>
 
       <div class="lux-sidebar">
         <div class="lux-sb-card">
           <h3>Find Your Home in ${d.name}</h3>
-          <p>Our team knows every lot, every builder, and every street. Let us match you with your perfect property.</p>
+          <p>Our luxury team knows every home and every opportunity in this community. Let us match you with your dream property.</p>
           <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
         </div>
         <div class="lux-sb-card">
           <h3>Quick Stats</h3>
           <div class="lux-sb-stats">
-            <div class="lux-sb-stat"><div class="val">${d.price.split('–')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.price.split('\u2013')[0].trim()}</div><div class="lab">Starting</div></div>
             <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
           </div>
-          <p>${d.bestFor} — this community is ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+          <p>${d.bestFor} \u2014 ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
         </div>
         <div class="lux-sb-card" style="background:var(--navy)">
-          <h3 style="color:var(--gold)">Myrtle Beach Is #1</h3>
-          <p style="color:rgba(255,255,255,.7)">Myrtle Beach was named the #1 most moved-to city in America in 2025. Carolina Forest luxury communities are leading the demand.</p>
-          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('carolina-forest');return false">View All Luxury Communities</a>
+          <h3 style="color:var(--gold)">Explore Carolina Forest</h3>
+          <p style="color:rgba(255,255,255,.7)">Carolina Forest\'s master-planned communities offer top-rated schools, resort amenities, and proximity to the beach.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('carolina-forest');return false">View All Carolina Forest Communities</a>
         </div>
       </div>
     </div></div></div>`;
@@ -2733,15 +2750,13 @@ function nmbLuxuryCardsHTML(){
 /* ── Render NMB luxury community landing page ── */
 function showNMBLuxuryCommunity(slug){
   const d=NLC[slug]; if(!d) return;
-  const amHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
-  const tgtHtml=d.targets.map(t=>`<div class="lux-t"><div class="lux-t-tier">${t.tier}</div><div><div class="lux-t-metro">${t.metro}</div><div class="lux-t-why">${t.why}</div></div></div>`).join('');
-  const perHtml=d.personas.map(p=>`<div class="lux-persona"><div class="lux-p-type">${p.type}</div><div class="lux-p-headline">${p.headline}</div><div class="lux-p-channels"><strong>Target Channels:</strong> ${p.channels}</div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
       <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
       <div class="lux-hero-body">
-        <a class="lux-hero-back" onclick="showCommunity('north-myrtle-beach');return false">← Back to North Myrtle Beach</a>
+        <a class="lux-hero-back" onclick="showCommunity('north-myrtle-beach');return false">\u2190 Back to North Myrtle Beach</a>
         <div class="lux-hero-badge">Luxury Community</div>
         <h1 class="lux-hero-title">${d.name}</h1>
         <p class="lux-hero-tagline">${d.tagline}</p>
@@ -2757,6 +2772,7 @@ function showNMBLuxuryCommunity(slug){
 
     <div class="lux-body"><div class="container"><div class="lux-layout">
       <div class="lux-main">
+
         <div class="lux-about">
           <h2>About ${d.name}</h2>
           <p>${d.intro}</p>
@@ -2764,40 +2780,58 @@ function showNMBLuxuryCommunity(slug){
         </div>
 
         <div class="lux-amenities">
-          <h3>Key Amenities & Selling Points</h3>
-          <div class="lux-am-grid">${amHtml}</div>
+          <h3>Community Amenities & Features</h3>
+          <div class="lux-am-grid">${amenHtml}</div>
         </div>
 
-        <div class="lux-targets">
-          <h3>Recommended Target Markets</h3>
-          <p>Where to find the ideal buyers for ${d.name}, ranked by priority tier.</p>
-          <div class="lux-t-grid">${tgtHtml}</div>
+        <div class="lux-lifestyle" style="margin-top:40px">
+          <h3 style="font-family:var(--fd);font-size:1.35rem;color:var(--navy);margin-bottom:16px">The ${d.name} Lifestyle</h3>
+          <p style="font-size:1.05rem;line-height:1.75;color:#444">From ${d.amenities[0].t.toLowerCase()} to ${d.amenities[1].t.toLowerCase()}, ${d.name} offers a lifestyle that blends comfort, community, and coastal living. Whether you\u2019re looking for a primary residence, a second home, or an investment property, this community delivers the quality of life that draws buyers from across the country.</p>
+          <div class="lux-lifestyle-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:24px">
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udfe0</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.styles.split(',')[0].trim()}</h4>
+              <p style="font-size:.9rem;color:#666">Architectural excellence with premium finishes throughout</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udf1f</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.bestFor}</h4>
+              <p style="font-size:.9rem;color:#666">Tailored for those who appreciate the finer things in coastal living</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83d\udccd</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">North Myrtle Beach</h4>
+              <p style="font-size:.9rem;color:#666">North Myrtle Beach combines oceanfront luxury with championship golf and a vibrant coastal lifestyle.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="lux-personas">
-          <h3>Buyer Personas & Ad Messaging</h3>
-          <div class="lux-p-grid">${perHtml}</div>
+        <div class="lux-cta-section" style="margin-top:40px;background:linear-gradient(135deg,var(--navy),var(--dark));border-radius:16px;padding:40px;text-align:center">
+          <h3 style="font-family:var(--fd);color:var(--gold);font-size:1.4rem;margin-bottom:12px">Schedule a Private Tour</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto">Experience ${d.name} firsthand. Our luxury specialists will give you an exclusive tour of available homes and amenities.</p>
+          <a href="#" class="btn btn-gold" onclick="showPage('home-value');return false" style="display:inline-block;padding:14px 36px;font-size:1rem">Schedule Your Tour</a>
         </div>
+
       </div>
 
       <div class="lux-sidebar">
         <div class="lux-sb-card">
           <h3>Find Your Home in ${d.name}</h3>
-          <p>Our team knows every neighborhood and every listing. Let us match you with your perfect property.</p>
+          <p>Our luxury team knows every home and every opportunity in this community. Let us match you with your dream property.</p>
           <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
         </div>
         <div class="lux-sb-card">
           <h3>Quick Stats</h3>
           <div class="lux-sb-stats">
-            <div class="lux-sb-stat"><div class="val">${d.price.split('–')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.price.split('\u2013')[0].trim()}</div><div class="lab">Starting</div></div>
             <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
           </div>
-          <p>${d.bestFor} — this community is ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+          <p>${d.bestFor} \u2014 ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
         </div>
         <div class="lux-sb-card" style="background:var(--navy)">
-          <h3 style="color:var(--gold)">NMB Is Booming</h3>
-          <p style="color:rgba(255,255,255,.7)">North Myrtle Beach luxury communities are seeing record demand from out-of-state buyers seeking golf, waterway, and oceanfront lifestyles.</p>
-          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('north-myrtle-beach');return false">View All NMB Luxury Communities</a>
+          <h3 style="color:var(--gold)">Explore North Myrtle Beach</h3>
+          <p style="color:rgba(255,255,255,.7)">North Myrtle Beach combines oceanfront luxury with championship golf and a vibrant coastal lifestyle.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('north-myrtle-beach');return false">View All North Myrtle Beach Communities</a>
         </div>
       </div>
     </div></div></div>`;
@@ -2830,15 +2864,13 @@ function lrLuxuryCardsHTML(){
 /* ── Render Little River luxury community landing page ── */
 function showLRLuxuryCommunity(slug){
   const d=LRC[slug]; if(!d) return;
-  const amHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
-  const tgtHtml=d.targets.map(t=>`<div class="lux-t"><div class="lux-t-tier">${t.tier}</div><div><div class="lux-t-metro">${t.metro}</div><div class="lux-t-why">${t.why}</div></div></div>`).join('');
-  const perHtml=d.personas.map(p=>`<div class="lux-persona"><div class="lux-p-type">${p.type}</div><div class="lux-p-headline">${p.headline}</div><div class="lux-p-channels"><strong>Target Channels:</strong> ${p.channels}</div></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
 
   document.getElementById('commContent').innerHTML=`
     <section class="lux-hero">
       <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
       <div class="lux-hero-body">
-        <a class="lux-hero-back" onclick="showCommunity('little-river');return false">← Back to Little River</a>
+        <a class="lux-hero-back" onclick="showCommunity('little-river');return false">\u2190 Back to Little River</a>
         <div class="lux-hero-badge">Luxury Community</div>
         <h1 class="lux-hero-title">${d.name}</h1>
         <p class="lux-hero-tagline">${d.tagline}</p>
@@ -2854,6 +2886,7 @@ function showLRLuxuryCommunity(slug){
 
     <div class="lux-body"><div class="container"><div class="lux-layout">
       <div class="lux-main">
+
         <div class="lux-about">
           <h2>About ${d.name}</h2>
           <p>${d.intro}</p>
@@ -2861,40 +2894,58 @@ function showLRLuxuryCommunity(slug){
         </div>
 
         <div class="lux-amenities">
-          <h3>Key Amenities & Selling Points</h3>
-          <div class="lux-am-grid">${amHtml}</div>
+          <h3>Community Amenities & Features</h3>
+          <div class="lux-am-grid">${amenHtml}</div>
         </div>
 
-        <div class="lux-targets">
-          <h3>Recommended Target Markets</h3>
-          <p>Where to find the ideal buyers for ${d.name}, ranked by priority tier.</p>
-          <div class="lux-t-grid">${tgtHtml}</div>
+        <div class="lux-lifestyle" style="margin-top:40px">
+          <h3 style="font-family:var(--fd);font-size:1.35rem;color:var(--navy);margin-bottom:16px">The ${d.name} Lifestyle</h3>
+          <p style="font-size:1.05rem;line-height:1.75;color:#444">From ${d.amenities[0].t.toLowerCase()} to ${d.amenities[1].t.toLowerCase()}, ${d.name} offers a lifestyle that blends comfort, community, and coastal living. Whether you\u2019re looking for a primary residence, a second home, or an investment property, this community delivers the quality of life that draws buyers from across the country.</p>
+          <div class="lux-lifestyle-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:24px">
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udfe0</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.styles.split(',')[0].trim()}</h4>
+              <p style="font-size:.9rem;color:#666">Architectural excellence with premium finishes throughout</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udf1f</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.bestFor}</h4>
+              <p style="font-size:.9rem;color:#666">Tailored for those who appreciate the finer things in coastal living</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83d\udccd</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">Little River</h4>
+              <p style="font-size:.9rem;color:#666">Little River\'s waterway communities offer authentic coastal living with a charming fishing village atmosphere.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="lux-personas">
-          <h3>Buyer Personas & Ad Messaging</h3>
-          <div class="lux-p-grid">${perHtml}</div>
+        <div class="lux-cta-section" style="margin-top:40px;background:linear-gradient(135deg,var(--navy),var(--dark));border-radius:16px;padding:40px;text-align:center">
+          <h3 style="font-family:var(--fd);color:var(--gold);font-size:1.4rem;margin-bottom:12px">Schedule a Private Tour</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto">Experience ${d.name} firsthand. Our luxury specialists will give you an exclusive tour of available homes and amenities.</p>
+          <a href="#" class="btn btn-gold" onclick="showPage('home-value');return false" style="display:inline-block;padding:14px 36px;font-size:1rem">Schedule Your Tour</a>
         </div>
+
       </div>
 
       <div class="lux-sidebar">
         <div class="lux-sb-card">
           <h3>Find Your Home in ${d.name}</h3>
-          <p>Our team knows every waterway community and every listing in Little River. Let us match you with your perfect property.</p>
+          <p>Our luxury team knows every home and every opportunity in this community. Let us match you with your dream property.</p>
           <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
         </div>
         <div class="lux-sb-card">
           <h3>Quick Stats</h3>
           <div class="lux-sb-stats">
-            <div class="lux-sb-stat"><div class="val">${d.price.split('–')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.price.split('\u2013')[0].trim()}</div><div class="lab">Starting</div></div>
             <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
           </div>
-          <p>${d.bestFor} — this community is ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+          <p>${d.bestFor} \u2014 ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
         </div>
         <div class="lux-sb-card" style="background:var(--navy)">
-          <h3 style="color:var(--gold)">Little River: Hidden Gem</h3>
-          <p style="color:rgba(255,255,255,.7)">Little River's waterway communities offer the most authentic coastal living on the Grand Strand — with prices that still surprise buyers from bigger markets.</p>
-          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('little-river');return false">View All LR Luxury Communities</a>
+          <h3 style="color:var(--gold)">Explore Little River</h3>
+          <p style="color:rgba(255,255,255,.7)">Little River\'s waterway communities offer authentic coastal living with a charming fishing village atmosphere.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('little-river');return false">View All Little River Communities</a>
         </div>
       </div>
     </div></div></div>`;
@@ -2925,55 +2976,90 @@ function conwayLuxuryCardsHTML(){
 
 function showConwayLuxuryCommunity(slug){
   const d=CWC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
-  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+
   document.getElementById('commContent').innerHTML=`
-    <div class="lux-hero" style="background-image:url('${d.bg}')">
+    <section class="lux-hero">
+      <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
       <div class="lux-hero-body">
-        <a class="lux-hero-back" onclick="showCommunity('conway');return false">← Back to Conway</a>
-        <span class="lbl">Luxury Community</span>
-        <h1>${d.name}</h1>
-        <p>${d.tagline}</p>
+        <a class="lux-hero-back" onclick="showCommunity('conway');return false">\u2190 Back to Conway</a>
+        <div class="lux-hero-badge">Luxury Community</div>
+        <h1 class="lux-hero-title">${d.name}</h1>
+        <p class="lux-hero-tagline">${d.tagline}</p>
       </div>
-    </div>
-    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
-      <div class="lux-facts-bar">
-        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+    </section>
+
+    <div class="lux-facts"><div class="container"><div class="lux-facts-inner">
+      <div class="lux-fact"><div class="lux-fact-label">Price Range</div><div class="lux-fact-val">${d.price}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Gated</div><div class="lux-fact-val">${d.gated}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Home Styles</div><div class="lux-fact-val">${d.styles}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Best For</div><div class="lux-fact-val">${d.bestFor}</div></div>
+    </div></div></div>
+
+    <div class="lux-body"><div class="container"><div class="lux-layout">
+      <div class="lux-main">
+
+        <div class="lux-about">
+          <h2>About ${d.name}</h2>
+          <p>${d.intro}</p>
+          <p>${d.p2}</p>
+        </div>
+
+        <div class="lux-amenities">
+          <h3>Community Amenities & Features</h3>
+          <div class="lux-am-grid">${amenHtml}</div>
+        </div>
+
+        <div class="lux-lifestyle" style="margin-top:40px">
+          <h3 style="font-family:var(--fd);font-size:1.35rem;color:var(--navy);margin-bottom:16px">The ${d.name} Lifestyle</h3>
+          <p style="font-size:1.05rem;line-height:1.75;color:#444">From ${d.amenities[0].t.toLowerCase()} to ${d.amenities[1].t.toLowerCase()}, ${d.name} offers a lifestyle that blends comfort, community, and coastal living. Whether you\u2019re looking for a primary residence, a second home, or an investment property, this community delivers the quality of life that draws buyers from across the country.</p>
+          <div class="lux-lifestyle-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:24px">
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udfe0</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.styles.split(',')[0].trim()}</h4>
+              <p style="font-size:.9rem;color:#666">Architectural excellence with premium finishes throughout</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udf1f</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.bestFor}</h4>
+              <p style="font-size:.9rem;color:#666">Tailored for those who appreciate the finer things in coastal living</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83d\udccd</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">Conway</h4>
+              <p style="font-size:.9rem;color:#666">Conway offers spacious estate living along the Waccamaw River with historic Southern charm.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lux-cta-section" style="margin-top:40px;background:linear-gradient(135deg,var(--navy),var(--dark));border-radius:16px;padding:40px;text-align:center">
+          <h3 style="font-family:var(--fd);color:var(--gold);font-size:1.4rem;margin-bottom:12px">Schedule a Private Tour</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto">Experience ${d.name} firsthand. Our luxury specialists will give you an exclusive tour of available homes and amenities.</p>
+          <a href="#" class="btn btn-gold" onclick="showPage('home-value');return false" style="display:inline-block;padding:14px 36px;font-size:1rem">Schedule Your Tour</a>
+        </div>
+
       </div>
-      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
-      <p>${d.intro}</p><p>${d.p2}</p>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
-      <div class="lux-amen-grid">${amenHtml}</div>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
-      <table class="lux-target-table">
-        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier1}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier2}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier3}</tbody>
-      </table>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
-      <div class="lux-personas">${persHtml}</div>
-    </div>
-    <div class="lux-sidebar">
-      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
-      <div class="lux-sb-card" style="background:var(--navy)">
-        <h3 style="color:var(--gold)">Conway: Premium Living</h3>
-        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Conway — from gated golf estates to waterfront retreats.</p>
-        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('conway');return false">View All Conway Luxury Communities</a>
+
+      <div class="lux-sidebar">
+        <div class="lux-sb-card">
+          <h3>Find Your Home in ${d.name}</h3>
+          <p>Our luxury team knows every home and every opportunity in this community. Let us match you with your dream property.</p>
+          <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
+        </div>
+        <div class="lux-sb-card">
+          <h3>Quick Stats</h3>
+          <div class="lux-sb-stats">
+            <div class="lux-sb-stat"><div class="val">${d.price.split('\u2013')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
+          </div>
+          <p>${d.bestFor} \u2014 ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+        </div>
+        <div class="lux-sb-card" style="background:var(--navy)">
+          <h3 style="color:var(--gold)">Explore Conway</h3>
+          <p style="color:rgba(255,255,255,.7)">Conway offers spacious estate living along the Waccamaw River with historic Southern charm.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('conway');return false">View All Conway Communities</a>
+        </div>
       </div>
-    </div>
     </div></div></div>`;
 
   document.getElementById('listHead').textContent='Available Properties in '+d.name;
@@ -2998,55 +3084,90 @@ function mbLuxuryCardsHTML(){
 
 function showMbLuxuryCommunity(slug){
   const d=MBC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
-  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+
   document.getElementById('commContent').innerHTML=`
-    <div class="lux-hero" style="background-image:url('${d.bg}')">
+    <section class="lux-hero">
+      <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
       <div class="lux-hero-body">
-        <a class="lux-hero-back" onclick="showCommunity('myrtle-beach');return false">← Back to Myrtle Beach</a>
-        <span class="lbl">Luxury Community</span>
-        <h1>${d.name}</h1>
-        <p>${d.tagline}</p>
+        <a class="lux-hero-back" onclick="showCommunity('myrtle-beach');return false">\u2190 Back to Myrtle Beach</a>
+        <div class="lux-hero-badge">Luxury Community</div>
+        <h1 class="lux-hero-title">${d.name}</h1>
+        <p class="lux-hero-tagline">${d.tagline}</p>
       </div>
-    </div>
-    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
-      <div class="lux-facts-bar">
-        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+    </section>
+
+    <div class="lux-facts"><div class="container"><div class="lux-facts-inner">
+      <div class="lux-fact"><div class="lux-fact-label">Price Range</div><div class="lux-fact-val">${d.price}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Gated</div><div class="lux-fact-val">${d.gated}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Home Styles</div><div class="lux-fact-val">${d.styles}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Best For</div><div class="lux-fact-val">${d.bestFor}</div></div>
+    </div></div></div>
+
+    <div class="lux-body"><div class="container"><div class="lux-layout">
+      <div class="lux-main">
+
+        <div class="lux-about">
+          <h2>About ${d.name}</h2>
+          <p>${d.intro}</p>
+          <p>${d.p2}</p>
+        </div>
+
+        <div class="lux-amenities">
+          <h3>Community Amenities & Features</h3>
+          <div class="lux-am-grid">${amenHtml}</div>
+        </div>
+
+        <div class="lux-lifestyle" style="margin-top:40px">
+          <h3 style="font-family:var(--fd);font-size:1.35rem;color:var(--navy);margin-bottom:16px">The ${d.name} Lifestyle</h3>
+          <p style="font-size:1.05rem;line-height:1.75;color:#444">From ${d.amenities[0].t.toLowerCase()} to ${d.amenities[1].t.toLowerCase()}, ${d.name} offers a lifestyle that blends comfort, community, and coastal living. Whether you\u2019re looking for a primary residence, a second home, or an investment property, this community delivers the quality of life that draws buyers from across the country.</p>
+          <div class="lux-lifestyle-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:24px">
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udfe0</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.styles.split(',')[0].trim()}</h4>
+              <p style="font-size:.9rem;color:#666">Architectural excellence with premium finishes throughout</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udf1f</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.bestFor}</h4>
+              <p style="font-size:.9rem;color:#666">Tailored for those who appreciate the finer things in coastal living</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83d\udccd</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">Myrtle Beach</h4>
+              <p style="font-size:.9rem;color:#666">Myrtle Beach delivers oceanfront luxury, championship golf, and the energy of the Grand Strand\'s entertainment capital.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lux-cta-section" style="margin-top:40px;background:linear-gradient(135deg,var(--navy),var(--dark));border-radius:16px;padding:40px;text-align:center">
+          <h3 style="font-family:var(--fd);color:var(--gold);font-size:1.4rem;margin-bottom:12px">Schedule a Private Tour</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto">Experience ${d.name} firsthand. Our luxury specialists will give you an exclusive tour of available homes and amenities.</p>
+          <a href="#" class="btn btn-gold" onclick="showPage('home-value');return false" style="display:inline-block;padding:14px 36px;font-size:1rem">Schedule Your Tour</a>
+        </div>
+
       </div>
-      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
-      <p>${d.intro}</p><p>${d.p2}</p>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
-      <div class="lux-amen-grid">${amenHtml}</div>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
-      <table class="lux-target-table">
-        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier1}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier2}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier3}</tbody>
-      </table>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
-      <div class="lux-personas">${persHtml}</div>
-    </div>
-    <div class="lux-sidebar">
-      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
-      <div class="lux-sb-card" style="background:var(--navy)">
-        <h3 style="color:var(--gold)">Myrtle Beach: Premium Living</h3>
-        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Myrtle Beach — from gated golf estates to waterfront retreats.</p>
-        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('myrtle-beach');return false">View All Myrtle Beach Luxury Communities</a>
+
+      <div class="lux-sidebar">
+        <div class="lux-sb-card">
+          <h3>Find Your Home in ${d.name}</h3>
+          <p>Our luxury team knows every home and every opportunity in this community. Let us match you with your dream property.</p>
+          <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
+        </div>
+        <div class="lux-sb-card">
+          <h3>Quick Stats</h3>
+          <div class="lux-sb-stats">
+            <div class="lux-sb-stat"><div class="val">${d.price.split('\u2013')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
+          </div>
+          <p>${d.bestFor} \u2014 ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+        </div>
+        <div class="lux-sb-card" style="background:var(--navy)">
+          <h3 style="color:var(--gold)">Explore Myrtle Beach</h3>
+          <p style="color:rgba(255,255,255,.7)">Myrtle Beach delivers oceanfront luxury, championship golf, and the energy of the Grand Strand\'s entertainment capital.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('myrtle-beach');return false">View All Myrtle Beach Communities</a>
+        </div>
       </div>
-    </div>
     </div></div></div>`;
 
   document.getElementById('listHead').textContent='Available Properties in '+d.name;
@@ -3071,55 +3192,90 @@ function miLuxuryCardsHTML(){
 
 function showMiLuxuryCommunity(slug){
   const d=MIC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
-  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+
   document.getElementById('commContent').innerHTML=`
-    <div class="lux-hero" style="background-image:url('${d.bg}')">
+    <section class="lux-hero">
+      <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
       <div class="lux-hero-body">
-        <a class="lux-hero-back" onclick="showCommunity('murrells-inlet');return false">← Back to Murrells Inlet</a>
-        <span class="lbl">Luxury Community</span>
-        <h1>${d.name}</h1>
-        <p>${d.tagline}</p>
+        <a class="lux-hero-back" onclick="showCommunity('murrells-inlet');return false">\u2190 Back to Murrells Inlet</a>
+        <div class="lux-hero-badge">Luxury Community</div>
+        <h1 class="lux-hero-title">${d.name}</h1>
+        <p class="lux-hero-tagline">${d.tagline}</p>
       </div>
-    </div>
-    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
-      <div class="lux-facts-bar">
-        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+    </section>
+
+    <div class="lux-facts"><div class="container"><div class="lux-facts-inner">
+      <div class="lux-fact"><div class="lux-fact-label">Price Range</div><div class="lux-fact-val">${d.price}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Gated</div><div class="lux-fact-val">${d.gated}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Home Styles</div><div class="lux-fact-val">${d.styles}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Best For</div><div class="lux-fact-val">${d.bestFor}</div></div>
+    </div></div></div>
+
+    <div class="lux-body"><div class="container"><div class="lux-layout">
+      <div class="lux-main">
+
+        <div class="lux-about">
+          <h2>About ${d.name}</h2>
+          <p>${d.intro}</p>
+          <p>${d.p2}</p>
+        </div>
+
+        <div class="lux-amenities">
+          <h3>Community Amenities & Features</h3>
+          <div class="lux-am-grid">${amenHtml}</div>
+        </div>
+
+        <div class="lux-lifestyle" style="margin-top:40px">
+          <h3 style="font-family:var(--fd);font-size:1.35rem;color:var(--navy);margin-bottom:16px">The ${d.name} Lifestyle</h3>
+          <p style="font-size:1.05rem;line-height:1.75;color:#444">From ${d.amenities[0].t.toLowerCase()} to ${d.amenities[1].t.toLowerCase()}, ${d.name} offers a lifestyle that blends comfort, community, and coastal living. Whether you\u2019re looking for a primary residence, a second home, or an investment property, this community delivers the quality of life that draws buyers from across the country.</p>
+          <div class="lux-lifestyle-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:24px">
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udfe0</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.styles.split(',')[0].trim()}</h4>
+              <p style="font-size:.9rem;color:#666">Architectural excellence with premium finishes throughout</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udf1f</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.bestFor}</h4>
+              <p style="font-size:.9rem;color:#666">Tailored for those who appreciate the finer things in coastal living</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83d\udccd</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">Murrells Inlet</h4>
+              <p style="font-size:.9rem;color:#666">Murrells Inlet is the seafood capital of South Carolina, with marsh views, creek access, and laid-back luxury.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lux-cta-section" style="margin-top:40px;background:linear-gradient(135deg,var(--navy),var(--dark));border-radius:16px;padding:40px;text-align:center">
+          <h3 style="font-family:var(--fd);color:var(--gold);font-size:1.4rem;margin-bottom:12px">Schedule a Private Tour</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto">Experience ${d.name} firsthand. Our luxury specialists will give you an exclusive tour of available homes and amenities.</p>
+          <a href="#" class="btn btn-gold" onclick="showPage('home-value');return false" style="display:inline-block;padding:14px 36px;font-size:1rem">Schedule Your Tour</a>
+        </div>
+
       </div>
-      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
-      <p>${d.intro}</p><p>${d.p2}</p>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
-      <div class="lux-amen-grid">${amenHtml}</div>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
-      <table class="lux-target-table">
-        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier1}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier2}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier3}</tbody>
-      </table>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
-      <div class="lux-personas">${persHtml}</div>
-    </div>
-    <div class="lux-sidebar">
-      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
-      <div class="lux-sb-card" style="background:var(--navy)">
-        <h3 style="color:var(--gold)">Murrells Inlet: Premium Living</h3>
-        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Murrells Inlet — from gated golf estates to waterfront retreats.</p>
-        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('murrells-inlet');return false">View All Murrells Inlet Luxury Communities</a>
+
+      <div class="lux-sidebar">
+        <div class="lux-sb-card">
+          <h3>Find Your Home in ${d.name}</h3>
+          <p>Our luxury team knows every home and every opportunity in this community. Let us match you with your dream property.</p>
+          <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
+        </div>
+        <div class="lux-sb-card">
+          <h3>Quick Stats</h3>
+          <div class="lux-sb-stats">
+            <div class="lux-sb-stat"><div class="val">${d.price.split('\u2013')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
+          </div>
+          <p>${d.bestFor} \u2014 ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+        </div>
+        <div class="lux-sb-card" style="background:var(--navy)">
+          <h3 style="color:var(--gold)">Explore Murrells Inlet</h3>
+          <p style="color:rgba(255,255,255,.7)">Murrells Inlet is the seafood capital of South Carolina, with marsh views, creek access, and laid-back luxury.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('murrells-inlet');return false">View All Murrells Inlet Communities</a>
+        </div>
       </div>
-    </div>
     </div></div></div>`;
 
   document.getElementById('listHead').textContent='Available Properties in '+d.name;
@@ -3144,55 +3300,90 @@ function sbLuxuryCardsHTML(){
 
 function showSbLuxuryCommunity(slug){
   const d=SBC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
-  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+
   document.getElementById('commContent').innerHTML=`
-    <div class="lux-hero" style="background-image:url('${d.bg}')">
+    <section class="lux-hero">
+      <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
       <div class="lux-hero-body">
-        <a class="lux-hero-back" onclick="showCommunity('surfside');return false">← Back to Surfside Beach</a>
-        <span class="lbl">Luxury Community</span>
-        <h1>${d.name}</h1>
-        <p>${d.tagline}</p>
+        <a class="lux-hero-back" onclick="showCommunity('surfside');return false">\u2190 Back to Surfside Beach</a>
+        <div class="lux-hero-badge">Luxury Community</div>
+        <h1 class="lux-hero-title">${d.name}</h1>
+        <p class="lux-hero-tagline">${d.tagline}</p>
       </div>
-    </div>
-    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
-      <div class="lux-facts-bar">
-        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+    </section>
+
+    <div class="lux-facts"><div class="container"><div class="lux-facts-inner">
+      <div class="lux-fact"><div class="lux-fact-label">Price Range</div><div class="lux-fact-val">${d.price}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Gated</div><div class="lux-fact-val">${d.gated}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Home Styles</div><div class="lux-fact-val">${d.styles}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Best For</div><div class="lux-fact-val">${d.bestFor}</div></div>
+    </div></div></div>
+
+    <div class="lux-body"><div class="container"><div class="lux-layout">
+      <div class="lux-main">
+
+        <div class="lux-about">
+          <h2>About ${d.name}</h2>
+          <p>${d.intro}</p>
+          <p>${d.p2}</p>
+        </div>
+
+        <div class="lux-amenities">
+          <h3>Community Amenities & Features</h3>
+          <div class="lux-am-grid">${amenHtml}</div>
+        </div>
+
+        <div class="lux-lifestyle" style="margin-top:40px">
+          <h3 style="font-family:var(--fd);font-size:1.35rem;color:var(--navy);margin-bottom:16px">The ${d.name} Lifestyle</h3>
+          <p style="font-size:1.05rem;line-height:1.75;color:#444">From ${d.amenities[0].t.toLowerCase()} to ${d.amenities[1].t.toLowerCase()}, ${d.name} offers a lifestyle that blends comfort, community, and coastal living. Whether you\u2019re looking for a primary residence, a second home, or an investment property, this community delivers the quality of life that draws buyers from across the country.</p>
+          <div class="lux-lifestyle-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:24px">
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udfe0</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.styles.split(',')[0].trim()}</h4>
+              <p style="font-size:.9rem;color:#666">Architectural excellence with premium finishes throughout</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udf1f</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.bestFor}</h4>
+              <p style="font-size:.9rem;color:#666">Tailored for those who appreciate the finer things in coastal living</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83d\udccd</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">Surfside Beach</h4>
+              <p style="font-size:.9rem;color:#666">Surfside Beach is the Family Beach, offering a quieter pace with direct ocean access and strong community bonds.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lux-cta-section" style="margin-top:40px;background:linear-gradient(135deg,var(--navy),var(--dark));border-radius:16px;padding:40px;text-align:center">
+          <h3 style="font-family:var(--fd);color:var(--gold);font-size:1.4rem;margin-bottom:12px">Schedule a Private Tour</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto">Experience ${d.name} firsthand. Our luxury specialists will give you an exclusive tour of available homes and amenities.</p>
+          <a href="#" class="btn btn-gold" onclick="showPage('home-value');return false" style="display:inline-block;padding:14px 36px;font-size:1rem">Schedule Your Tour</a>
+        </div>
+
       </div>
-      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
-      <p>${d.intro}</p><p>${d.p2}</p>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
-      <div class="lux-amen-grid">${amenHtml}</div>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
-      <table class="lux-target-table">
-        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier1}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier2}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier3}</tbody>
-      </table>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
-      <div class="lux-personas">${persHtml}</div>
-    </div>
-    <div class="lux-sidebar">
-      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
-      <div class="lux-sb-card" style="background:var(--navy)">
-        <h3 style="color:var(--gold)">Surfside Beach: Premium Living</h3>
-        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Surfside Beach — from gated golf estates to waterfront retreats.</p>
-        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('surfside');return false">View All Surfside Beach Luxury Communities</a>
+
+      <div class="lux-sidebar">
+        <div class="lux-sb-card">
+          <h3>Find Your Home in ${d.name}</h3>
+          <p>Our luxury team knows every home and every opportunity in this community. Let us match you with your dream property.</p>
+          <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
+        </div>
+        <div class="lux-sb-card">
+          <h3>Quick Stats</h3>
+          <div class="lux-sb-stats">
+            <div class="lux-sb-stat"><div class="val">${d.price.split('\u2013')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
+          </div>
+          <p>${d.bestFor} \u2014 ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+        </div>
+        <div class="lux-sb-card" style="background:var(--navy)">
+          <h3 style="color:var(--gold)">Explore Surfside Beach</h3>
+          <p style="color:rgba(255,255,255,.7)">Surfside Beach is the Family Beach, offering a quieter pace with direct ocean access and strong community bonds.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('surfside');return false">View All Surfside Beach Communities</a>
+        </div>
       </div>
-    </div>
     </div></div></div>`;
 
   document.getElementById('listHead').textContent='Available Properties in '+d.name;
@@ -3217,55 +3408,90 @@ function gcLuxuryCardsHTML(){
 
 function showGcLuxuryCommunity(slug){
   const d=GCC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
-  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+
   document.getElementById('commContent').innerHTML=`
-    <div class="lux-hero" style="background-image:url('${d.bg}')">
+    <section class="lux-hero">
+      <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
       <div class="lux-hero-body">
-        <a class="lux-hero-back" onclick="showCommunity('garden-city');return false">← Back to Garden City</a>
-        <span class="lbl">Luxury Community</span>
-        <h1>${d.name}</h1>
-        <p>${d.tagline}</p>
+        <a class="lux-hero-back" onclick="showCommunity('garden-city');return false">\u2190 Back to Garden City</a>
+        <div class="lux-hero-badge">Luxury Community</div>
+        <h1 class="lux-hero-title">${d.name}</h1>
+        <p class="lux-hero-tagline">${d.tagline}</p>
       </div>
-    </div>
-    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
-      <div class="lux-facts-bar">
-        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+    </section>
+
+    <div class="lux-facts"><div class="container"><div class="lux-facts-inner">
+      <div class="lux-fact"><div class="lux-fact-label">Price Range</div><div class="lux-fact-val">${d.price}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Gated</div><div class="lux-fact-val">${d.gated}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Home Styles</div><div class="lux-fact-val">${d.styles}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Best For</div><div class="lux-fact-val">${d.bestFor}</div></div>
+    </div></div></div>
+
+    <div class="lux-body"><div class="container"><div class="lux-layout">
+      <div class="lux-main">
+
+        <div class="lux-about">
+          <h2>About ${d.name}</h2>
+          <p>${d.intro}</p>
+          <p>${d.p2}</p>
+        </div>
+
+        <div class="lux-amenities">
+          <h3>Community Amenities & Features</h3>
+          <div class="lux-am-grid">${amenHtml}</div>
+        </div>
+
+        <div class="lux-lifestyle" style="margin-top:40px">
+          <h3 style="font-family:var(--fd);font-size:1.35rem;color:var(--navy);margin-bottom:16px">The ${d.name} Lifestyle</h3>
+          <p style="font-size:1.05rem;line-height:1.75;color:#444">From ${d.amenities[0].t.toLowerCase()} to ${d.amenities[1].t.toLowerCase()}, ${d.name} offers a lifestyle that blends comfort, community, and coastal living. Whether you\u2019re looking for a primary residence, a second home, or an investment property, this community delivers the quality of life that draws buyers from across the country.</p>
+          <div class="lux-lifestyle-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:24px">
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udfe0</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.styles.split(',')[0].trim()}</h4>
+              <p style="font-size:.9rem;color:#666">Architectural excellence with premium finishes throughout</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udf1f</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.bestFor}</h4>
+              <p style="font-size:.9rem;color:#666">Tailored for those who appreciate the finer things in coastal living</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83d\udccd</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">Garden City</h4>
+              <p style="font-size:.9rem;color:#666">Garden City Beach is a hidden gem between Surfside and Murrells Inlet with oceanfront living and classic beach charm.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lux-cta-section" style="margin-top:40px;background:linear-gradient(135deg,var(--navy),var(--dark));border-radius:16px;padding:40px;text-align:center">
+          <h3 style="font-family:var(--fd);color:var(--gold);font-size:1.4rem;margin-bottom:12px">Schedule a Private Tour</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto">Experience ${d.name} firsthand. Our luxury specialists will give you an exclusive tour of available homes and amenities.</p>
+          <a href="#" class="btn btn-gold" onclick="showPage('home-value');return false" style="display:inline-block;padding:14px 36px;font-size:1rem">Schedule Your Tour</a>
+        </div>
+
       </div>
-      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
-      <p>${d.intro}</p><p>${d.p2}</p>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
-      <div class="lux-amen-grid">${amenHtml}</div>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
-      <table class="lux-target-table">
-        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier1}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier2}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier3}</tbody>
-      </table>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
-      <div class="lux-personas">${persHtml}</div>
-    </div>
-    <div class="lux-sidebar">
-      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
-      <div class="lux-sb-card" style="background:var(--navy)">
-        <h3 style="color:var(--gold)">Garden City: Premium Living</h3>
-        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Garden City — from gated golf estates to waterfront retreats.</p>
-        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('garden-city');return false">View All Garden City Luxury Communities</a>
+
+      <div class="lux-sidebar">
+        <div class="lux-sb-card">
+          <h3>Find Your Home in ${d.name}</h3>
+          <p>Our luxury team knows every home and every opportunity in this community. Let us match you with your dream property.</p>
+          <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
+        </div>
+        <div class="lux-sb-card">
+          <h3>Quick Stats</h3>
+          <div class="lux-sb-stats">
+            <div class="lux-sb-stat"><div class="val">${d.price.split('\u2013')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
+          </div>
+          <p>${d.bestFor} \u2014 ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+        </div>
+        <div class="lux-sb-card" style="background:var(--navy)">
+          <h3 style="color:var(--gold)">Explore Garden City</h3>
+          <p style="color:rgba(255,255,255,.7)">Garden City Beach is a hidden gem between Surfside and Murrells Inlet with oceanfront living and classic beach charm.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('garden-city');return false">View All Garden City Communities</a>
+        </div>
       </div>
-    </div>
     </div></div></div>`;
 
   document.getElementById('listHead').textContent='Available Properties in '+d.name;
@@ -3290,55 +3516,90 @@ function lbLuxuryCardsHTML(){
 
 function showLbLuxuryCommunity(slug){
   const d=LBC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
-  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+
   document.getElementById('commContent').innerHTML=`
-    <div class="lux-hero" style="background-image:url('${d.bg}')">
+    <section class="lux-hero">
+      <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
       <div class="lux-hero-body">
-        <a class="lux-hero-back" onclick="showCommunity('litchfield');return false">← Back to Litchfield Beach</a>
-        <span class="lbl">Luxury Community</span>
-        <h1>${d.name}</h1>
-        <p>${d.tagline}</p>
+        <a class="lux-hero-back" onclick="showCommunity('litchfield');return false">\u2190 Back to Litchfield Beach</a>
+        <div class="lux-hero-badge">Luxury Community</div>
+        <h1 class="lux-hero-title">${d.name}</h1>
+        <p class="lux-hero-tagline">${d.tagline}</p>
       </div>
-    </div>
-    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
-      <div class="lux-facts-bar">
-        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+    </section>
+
+    <div class="lux-facts"><div class="container"><div class="lux-facts-inner">
+      <div class="lux-fact"><div class="lux-fact-label">Price Range</div><div class="lux-fact-val">${d.price}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Gated</div><div class="lux-fact-val">${d.gated}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Home Styles</div><div class="lux-fact-val">${d.styles}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Best For</div><div class="lux-fact-val">${d.bestFor}</div></div>
+    </div></div></div>
+
+    <div class="lux-body"><div class="container"><div class="lux-layout">
+      <div class="lux-main">
+
+        <div class="lux-about">
+          <h2>About ${d.name}</h2>
+          <p>${d.intro}</p>
+          <p>${d.p2}</p>
+        </div>
+
+        <div class="lux-amenities">
+          <h3>Community Amenities & Features</h3>
+          <div class="lux-am-grid">${amenHtml}</div>
+        </div>
+
+        <div class="lux-lifestyle" style="margin-top:40px">
+          <h3 style="font-family:var(--fd);font-size:1.35rem;color:var(--navy);margin-bottom:16px">The ${d.name} Lifestyle</h3>
+          <p style="font-size:1.05rem;line-height:1.75;color:#444">From ${d.amenities[0].t.toLowerCase()} to ${d.amenities[1].t.toLowerCase()}, ${d.name} offers a lifestyle that blends comfort, community, and coastal living. Whether you\u2019re looking for a primary residence, a second home, or an investment property, this community delivers the quality of life that draws buyers from across the country.</p>
+          <div class="lux-lifestyle-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:24px">
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udfe0</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.styles.split(',')[0].trim()}</h4>
+              <p style="font-size:.9rem;color:#666">Architectural excellence with premium finishes throughout</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udf1f</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.bestFor}</h4>
+              <p style="font-size:.9rem;color:#666">Tailored for those who appreciate the finer things in coastal living</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83d\udccd</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">Litchfield Beach</h4>
+              <p style="font-size:.9rem;color:#666">Litchfield Beach offers exclusive plantation-style communities with pristine beaches and world-class golf.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lux-cta-section" style="margin-top:40px;background:linear-gradient(135deg,var(--navy),var(--dark));border-radius:16px;padding:40px;text-align:center">
+          <h3 style="font-family:var(--fd);color:var(--gold);font-size:1.4rem;margin-bottom:12px">Schedule a Private Tour</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto">Experience ${d.name} firsthand. Our luxury specialists will give you an exclusive tour of available homes and amenities.</p>
+          <a href="#" class="btn btn-gold" onclick="showPage('home-value');return false" style="display:inline-block;padding:14px 36px;font-size:1rem">Schedule Your Tour</a>
+        </div>
+
       </div>
-      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
-      <p>${d.intro}</p><p>${d.p2}</p>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
-      <div class="lux-amen-grid">${amenHtml}</div>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
-      <table class="lux-target-table">
-        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier1}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier2}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier3}</tbody>
-      </table>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
-      <div class="lux-personas">${persHtml}</div>
-    </div>
-    <div class="lux-sidebar">
-      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
-      <div class="lux-sb-card" style="background:var(--navy)">
-        <h3 style="color:var(--gold)">Litchfield Beach: Premium Living</h3>
-        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Litchfield Beach — from gated golf estates to waterfront retreats.</p>
-        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('litchfield');return false">View All Litchfield Beach Luxury Communities</a>
+
+      <div class="lux-sidebar">
+        <div class="lux-sb-card">
+          <h3>Find Your Home in ${d.name}</h3>
+          <p>Our luxury team knows every home and every opportunity in this community. Let us match you with your dream property.</p>
+          <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
+        </div>
+        <div class="lux-sb-card">
+          <h3>Quick Stats</h3>
+          <div class="lux-sb-stats">
+            <div class="lux-sb-stat"><div class="val">${d.price.split('\u2013')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
+          </div>
+          <p>${d.bestFor} \u2014 ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+        </div>
+        <div class="lux-sb-card" style="background:var(--navy)">
+          <h3 style="color:var(--gold)">Explore Litchfield Beach</h3>
+          <p style="color:rgba(255,255,255,.7)">Litchfield Beach offers exclusive plantation-style communities with pristine beaches and world-class golf.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('litchfield');return false">View All Litchfield Beach Communities</a>
+        </div>
       </div>
-    </div>
     </div></div></div>`;
 
   document.getElementById('listHead').textContent='Available Properties in '+d.name;
@@ -3363,55 +3624,90 @@ function piLuxuryCardsHTML(){
 
 function showPiLuxuryCommunity(slug){
   const d=PIC[slug]; if(!d) return;
-  const amenHtml=d.amenities.map(a=>`<div class="lux-amen"><div class="lux-amen-icon">${a.i}</div><h4>${a.t}</h4><p>${a.d}</p></div>`).join('');
-  const tier1=d.targets.filter(t=>t.tier===1).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier2=d.targets.filter(t=>t.tier===2).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const tier3=d.targets.filter(t=>t.tier===3).map(t=>`<tr><td><strong>${t.metro}</strong></td><td>${t.why}</td></tr>`).join('');
-  const persHtml=d.personas.map(p=>`<div class="lux-persona"><h4>${p.type}</h4><blockquote>${p.headline}</blockquote><p><strong>Channels:</strong> ${p.channels}</p></div>`).join('');
+  const amenHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+
   document.getElementById('commContent').innerHTML=`
-    <div class="lux-hero" style="background-image:url('${d.bg}')">
+    <section class="lux-hero">
+      <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
       <div class="lux-hero-body">
-        <a class="lux-hero-back" onclick="showCommunity('pawleys-island');return false">← Back to Pawleys Island</a>
-        <span class="lbl">Luxury Community</span>
-        <h1>${d.name}</h1>
-        <p>${d.tagline}</p>
+        <a class="lux-hero-back" onclick="showCommunity('pawleys-island');return false">\u2190 Back to Pawleys Island</a>
+        <div class="lux-hero-badge">Luxury Community</div>
+        <h1 class="lux-hero-title">${d.name}</h1>
+        <p class="lux-hero-tagline">${d.tagline}</p>
       </div>
-    </div>
-    <div class="lux-content"><div class="container"><div class="lux-layout"><div class="lux-main">
-      <div class="lux-facts-bar">
-        <div class="lux-fact"><span class="lux-fact-label">Price Range</span><span class="lux-fact-val">${d.price}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Gated</span><span class="lux-fact-val">${d.gated}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Styles</span><span class="lux-fact-val">${d.styles}</span></div>
-        <div class="lux-fact"><span class="lux-fact-label">Best For</span><span class="lux-fact-val">${d.bestFor}</span></div>
+    </section>
+
+    <div class="lux-facts"><div class="container"><div class="lux-facts-inner">
+      <div class="lux-fact"><div class="lux-fact-label">Price Range</div><div class="lux-fact-val">${d.price}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Gated</div><div class="lux-fact-val">${d.gated}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Home Styles</div><div class="lux-fact-val">${d.styles}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Best For</div><div class="lux-fact-val">${d.bestFor}</div></div>
+    </div></div></div>
+
+    <div class="lux-body"><div class="container"><div class="lux-layout">
+      <div class="lux-main">
+
+        <div class="lux-about">
+          <h2>About ${d.name}</h2>
+          <p>${d.intro}</p>
+          <p>${d.p2}</p>
+        </div>
+
+        <div class="lux-amenities">
+          <h3>Community Amenities & Features</h3>
+          <div class="lux-am-grid">${amenHtml}</div>
+        </div>
+
+        <div class="lux-lifestyle" style="margin-top:40px">
+          <h3 style="font-family:var(--fd);font-size:1.35rem;color:var(--navy);margin-bottom:16px">The ${d.name} Lifestyle</h3>
+          <p style="font-size:1.05rem;line-height:1.75;color:#444">From ${d.amenities[0].t.toLowerCase()} to ${d.amenities[1].t.toLowerCase()}, ${d.name} offers a lifestyle that blends comfort, community, and coastal living. Whether you\u2019re looking for a primary residence, a second home, or an investment property, this community delivers the quality of life that draws buyers from across the country.</p>
+          <div class="lux-lifestyle-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin-top:24px">
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udfe0</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.styles.split(',')[0].trim()}</h4>
+              <p style="font-size:.9rem;color:#666">Architectural excellence with premium finishes throughout</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83c\udf1f</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">${d.bestFor}</h4>
+              <p style="font-size:.9rem;color:#666">Tailored for those who appreciate the finer things in coastal living</p>
+            </div>
+            <div style="background:var(--off-white);border-radius:12px;padding:24px;text-align:center">
+              <div style="font-size:2rem;margin-bottom:8px">\ud83d\udccd</div>
+              <h4 style="font-family:var(--fd);color:var(--navy);margin-bottom:6px">Pawleys Island</h4>
+              <p style="font-size:.9rem;color:#666">Pawleys Island is one of the oldest beach resorts on the East Coast \u2014 refined, timeless, and beautifully understated.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lux-cta-section" style="margin-top:40px;background:linear-gradient(135deg,var(--navy),var(--dark));border-radius:16px;padding:40px;text-align:center">
+          <h3 style="font-family:var(--fd);color:var(--gold);font-size:1.4rem;margin-bottom:12px">Schedule a Private Tour</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:1.05rem;margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto">Experience ${d.name} firsthand. Our luxury specialists will give you an exclusive tour of available homes and amenities.</p>
+          <a href="#" class="btn btn-gold" onclick="showPage('home-value');return false" style="display:inline-block;padding:14px 36px;font-size:1rem">Schedule Your Tour</a>
+        </div>
+
       </div>
-      <h2 style="font-family:var(--fd);font-size:1.6rem;color:var(--navy);margin:32px 0 12px">About ${d.name}</h2>
-      <p>${d.intro}</p><p>${d.p2}</p>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Community Amenities</h3>
-      <div class="lux-amen-grid">${amenHtml}</div>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Target Markets</h3>
-      <table class="lux-target-table">
-        <thead><tr><th>Tier 1 — Primary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier1}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 2 — Secondary Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier2}</tbody>
-      </table>
-      <table class="lux-target-table" style="margin-top:12px">
-        <thead><tr><th>Tier 3 — Emerging Markets</th><th>Why They Buy Here</th></tr></thead>
-        <tbody>${tier3}</tbody>
-      </table>
-      <h3 style="font-family:var(--fd);font-size:1.3rem;color:var(--navy);margin:28px 0 16px">Buyer Personas & Ad Strategy</h3>
-      <div class="lux-personas">${persHtml}</div>
-    </div>
-    <div class="lux-sidebar">
-      <div class="sb-card"><h3>Interested in ${d.name}?</h3><p>Our luxury team knows every home, every street, and every opportunity. Let\'s find your perfect match.</p><a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Schedule a Consultation</a></div>
-      <div class="lux-sb-card" style="background:var(--navy)">
-        <h3 style="color:var(--gold)">Pawleys Island: Premium Living</h3>
-        <p style="color:rgba(255,255,255,.7)">Explore all luxury communities in Pawleys Island — from gated golf estates to waterfront retreats.</p>
-        <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('pawleys-island');return false">View All Pawleys Island Luxury Communities</a>
+
+      <div class="lux-sidebar">
+        <div class="lux-sb-card">
+          <h3>Find Your Home in ${d.name}</h3>
+          <p>Our luxury team knows every home and every opportunity in this community. Let us match you with your dream property.</p>
+          <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
+        </div>
+        <div class="lux-sb-card">
+          <h3>Quick Stats</h3>
+          <div class="lux-sb-stats">
+            <div class="lux-sb-stat"><div class="val">${d.price.split('\u2013')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
+          </div>
+          <p>${d.bestFor} \u2014 ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+        </div>
+        <div class="lux-sb-card" style="background:var(--navy)">
+          <h3 style="color:var(--gold)">Explore Pawleys Island</h3>
+          <p style="color:rgba(255,255,255,.7)">Pawleys Island is one of the oldest beach resorts on the East Coast \u2014 refined, timeless, and beautifully understated.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('pawleys-island');return false">View All Pawleys Island Communities</a>
+        </div>
       </div>
-    </div>
     </div></div></div>`;
 
   document.getElementById('listHead').textContent='Available Properties in '+d.name;
