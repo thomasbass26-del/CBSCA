@@ -1141,6 +1141,33 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         </ul>
       </div>
       <div class="foot-col">
+        <h4>LR Luxury Communities</h4>
+        <ul>
+          <li><a href="#" onclick="showLRLuxuryCommunity('serenity-point');return false">Serenity Point</a></li>
+          <li><a href="#" onclick="showLRLuxuryCommunity('paradise-island');return false">Paradise Island</a></li>
+          <li><a href="#" onclick="showLRLuxuryCommunity('big-landing');return false">Big Landing</a></li>
+          <li><a href="#" onclick="showLRLuxuryCommunity('crystal-pointe');return false">Crystal Pointe</a></li>
+          <li><a href="#" onclick="showLRLuxuryCommunity('river-hills');return false">River Hills Golf</a></li>
+          <li><a href="#" onclick="showLRLuxuryCommunity('mariners-pointe');return false">Mariner's Pointe</a></li>
+          <li><a href="#" onclick="showLRLuxuryCommunity('bridgewater');return false">Bridgewater</a></li>
+          <li><a href="#" onclick="showLRLuxuryCommunity('windjammer-village');return false">Windjammer Village</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>NMB Luxury Communities</h4>
+        <ul>
+          <li><a href="#" onclick="showNMBLuxuryCommunity('barefoot-resort');return false">Barefoot Resort</a></li>
+          <li><a href="#" onclick="showNMBLuxuryCommunity('tidewater-plantation');return false">Tidewater Plantation</a></li>
+          <li><a href="#" onclick="showNMBLuxuryCommunity('seabrook-plantation');return false">Seabrook Plantation</a></li>
+          <li><a href="#" onclick="showNMBLuxuryCommunity('tilghman-estates');return false">Tilghman Estates</a></li>
+          <li><a href="#" onclick="showNMBLuxuryCommunity('grande-dunes-north');return false">Grande Dunes North</a></li>
+          <li><a href="#" onclick="showNMBLuxuryCommunity('ocean-bay-club');return false">Ocean Bay Club</a></li>
+          <li><a href="#" onclick="showNMBLuxuryCommunity('pelican-bay');return false">Pelican Bay</a></li>
+          <li><a href="#" onclick="showNMBLuxuryCommunity('waterfall');return false">Waterfall</a></li>
+          <li><a href="#" onclick="showNMBLuxuryCommunity('sea-trail');return false">Sea Trail Plantation</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
         <h4>Contact</h4>
         <ul>
           <li><a href="tel:8434305201">(843) 430-5201</a></li>
@@ -1632,6 +1659,579 @@ const LC = {
   }
 };
 
+/* ══════════════════════════════════════════
+   NMB LUXURY COMMUNITIES DATA
+══════════════════════════════════════════ */
+const NLC = {
+  'barefoot-resort':{
+    name:'Barefoot Resort & Golf',
+    tag:'Premier Golf Resort Living',
+    tagline:'Four championship courses. One legendary lifestyle.',
+    bg:'images/barefoot-drone.jpg',
+    price:'$350K – $1.2M+',
+    gated:'Partially',
+    styles:'Resort, Contemporary, Traditional',
+    bestFor:'Golf & Resort Lifestyle',
+    intro:'Barefoot Resort is the crown jewel of North Myrtle Beach luxury living, spanning 2,300 acres along the Intracoastal Waterway. Featuring four championship golf courses designed by legends Greg Norman, Davis Love III, Tom Fazio, and Pete Dye, it offers an unmatched resort lifestyle with Barefoot Landing at its doorstep.',
+    p2:'The community includes a premier shopping and entertainment destination, a private beach cabana with shuttle service, and a full-service marina on the ICW. From luxury condos to custom single-family homes, Barefoot Resort blends world-class golf, waterway living, and resort amenities into one extraordinary address.',
+    amenities:[
+      {i:'⛳',t:'4 Championship Courses',d:'Greg Norman, Davis Love III, Tom Fazio, and Pete Dye signature courses'},
+      {i:'🛍️',t:'Barefoot Landing',d:'Premier shopping, dining, and entertainment right in the community'},
+      {i:'🏖️',t:'Private Beach Cabana',d:'Exclusive oceanfront cabana with complimentary shuttle service'},
+      {i:'⚓',t:'ICW Marina',d:'Full-service marina with deep-water boat slips on the Intracoastal'},
+      {i:'🏊',t:'Resort Pool Complex',d:'Resort-style pools, swim complex, and waterpark features'},
+      {i:'🎾',t:'Tennis & Pickleball',d:'Lighted courts with clinics and social play'}
+    ],
+    targets:[
+      {tier:1,metro:'Washington DC / NoVA',why:'Affluent retirees and federal execs seeking championship golf resort living'},
+      {tier:1,metro:'Philadelphia & South Jersey',why:'Northeast golfers drawn to four courses and resort lifestyle at strong value'},
+      {tier:1,metro:'Charlotte & Raleigh, NC',why:'Corporate executives seeking resort second homes or retirement addresses'},
+      {tier:2,metro:'Pittsburgh, PA',why:'Retirees trading harsh winters for year-round golf at a world-class resort'},
+      {tier:2,metro:'NYC Metro & Northern NJ',why:'Vacation investors drawn to strong rental income and Barefoot Landing traffic'},
+      {tier:3,metro:'Richmond, VA',why:'Snowbirds and golf enthusiasts seeking warm-weather resort base'}
+    ],
+    personas:[
+      {type:'The Golf Retiree',headline:'"Four championship courses at your doorstep. Retire where legends designed every fairway."',channels:'Golf Digest digital, Facebook 55+, Zillow luxury, retirement planning sites'},
+      {type:'The Vacation Investor',headline:'"Barefoot Resort condos generate $40K+ annual rental income. Play golf and build equity."',channels:'BiggerPockets, real estate investment groups, Google Ads "Myrtle Beach rental property"'},
+      {type:'The Snowbird Couple',headline:'"Escape the northeast. Land at the resort. Your beach cabana is waiting."',channels:'AARP digital, Facebook targeted, Realtor.com luxury filter'}
+    ]
+  },
+  'tidewater-plantation':{
+    name:'Tidewater Plantation',
+    tag:'Exclusive Gated Peninsula Golf',
+    tagline:'A private peninsula where championship golf meets the Intracoastal.',
+    bg:'images/nmb-beach-drone.jpg',
+    price:'$450K – $950K',
+    gated:'Yes',
+    styles:'Traditional, Lowcountry, Custom',
+    bestFor:'Prestige Golf Address',
+    intro:'Tidewater Plantation is an exclusive gated golf community situated on a stunning peninsula between the Intracoastal Waterway and Cherry Grove marsh. The signature Ken Tomlinson-designed course consistently ranks among the top courses in the Carolinas, and the community exudes exclusivity from the guarded gatehouse to the private oceanfront beach cabana.',
+    p2:'Residents enjoy a rare combination of waterway views, ocean proximity, and world-class golf in a private, secure setting. The clubhouse offers fine dining, and the community includes a fitness center, tennis courts, pools, and a kayak launch on the ICW. For buyers seeking the most prestigious golf address in NMB, Tidewater is without equal.',
+    amenities:[
+      {i:'⛳',t:'Top-100 Golf Course',d:'Ken Tomlinson championship course ranked among the best in the Carolinas'},
+      {i:'🏖️',t:'Private Beach Cabana',d:'Exclusive oceanfront beach access for residents only'},
+      {i:'🍽️',t:'Fine Dining Clubhouse',d:'Elegant clubhouse with upscale dining and social events'},
+      {i:'🏋️',t:'Fitness & Tennis',d:'Full fitness center and lighted tennis courts'},
+      {i:'🛡️',t:'Guard-Gated Entry',d:'Staffed gatehouse providing 24/7 security and privacy'},
+      {i:'🛶',t:'ICW Kayak Launch',d:'Direct Intracoastal access for kayaking and paddleboarding'}
+    ],
+    targets:[
+      {tier:1,metro:'Northern Virginia & Maryland',why:'Federal retirees and military officers seeking exclusive golf address'},
+      {tier:1,metro:'Raleigh-Durham, NC',why:'Active professionals and retirees prioritizing prestige and golf'},
+      {tier:2,metro:'Columbus, OH',why:'Upper-middle-class retirees drawn to gated peninsula lifestyle'},
+      {tier:2,metro:'Pittsburgh, PA',why:'Downsizers seeking private golf community with oceanfront perks'},
+      {tier:2,metro:'Hartford, CT',why:'New England retirees seeking exclusive warm-climate golf address'},
+      {tier:3,metro:'Boston Metro',why:'Golf-loving empty nesters ready for a premier Southern lifestyle'}
+    ],
+    personas:[
+      {type:'The Federal Retiree',headline:'"Your years of service earned this — a private peninsula, a top-100 course, and the ocean waiting."',channels:'Federal retirement communities, military spouse groups, Facebook 55+, USAA'},
+      {type:'The Active Golf Couple',headline:'"Morning round on a top-rated course. Afternoon at the beach cabana. Every single day."',channels:'Golf Digest digital, Zillow luxury, Google Ads "gated golf community NMB"'},
+      {type:'The Prestigious Downsizer',headline:'"Trade the big suburban house for a villa on the most exclusive peninsula on the Grand Strand."',channels:'Realtor.com luxury, Facebook targeted 60+, Wall Street Journal real estate'}
+    ]
+  },
+  'seabrook-plantation':{
+    name:'Seabrook Plantation',
+    tag:'Exclusive Waterfront Living',
+    tagline:'Deep-water docks, custom homes, and Intracoastal privacy.',
+    bg:'images/little-river-1.jpg',
+    price:'$500K – $850K',
+    gated:'Yes',
+    styles:'Custom, Lowcountry, Estate',
+    bestFor:'Boating & Waterfront Buyers',
+    intro:'Seabrook Plantation offers an exclusive waterfront lifestyle on the Intracoastal Waterway in Little River. Known for its spacious homesites and custom-built homes, this community attracts buyers seeking privacy, direct water access, and upscale living without golf course premiums.',
+    p2:'Many lots offer direct ICW views and deep-water dock access, making Seabrook the top choice for serious boating enthusiasts. The community dock and boat launch provide easy access to both the Intracoastal and the Atlantic beyond. Walking trails through natural preserves and a gated entrance ensure tranquility and security.',
+    amenities:[
+      {i:'⚓',t:'Deep-Water Docks',d:'Direct ICW access with community dock and private boat launch'},
+      {i:'🏡',t:'Custom Homesites',d:'Large lots perfect for custom-built estate homes'},
+      {i:'🏊',t:'Pool & Clubhouse',d:'Community pool and gathering spaces for residents'},
+      {i:'🌿',t:'Nature Trails',d:'Walking paths through preserved wetlands and maritime forest'},
+      {i:'🛡️',t:'Gated Entrance',d:'Controlled access providing security and exclusivity'},
+      {i:'🎾',t:'Tennis Courts',d:'Lighted courts for residents and guests'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte, NC',why:'Successful business owners seeking deep-water dock for their boat'},
+      {tier:1,metro:'Raleigh-Durham, NC',why:'Custom-home enthusiasts wanting waterfront lots in a gated setting'},
+      {tier:2,metro:'Atlanta, GA',why:'Affluent couples seeking coastal waterfront they can design from scratch'},
+      {tier:2,metro:'Greenville, SC',why:'Upstate professionals drawn to ICW boating lifestyle'},
+      {tier:2,metro:'Washington DC / NoVA',why:'Boating enthusiasts seeking warm-climate waterway access'},
+      {tier:3,metro:'Asheville, NC',why:'Mountain dwellers seeking their coastal waterfront counterpart'}
+    ],
+    personas:[
+      {type:'The Boating Enthusiast',headline:'"Your 30-footer. Your deep-water dock. Your private waterway paradise."',channels:'Boating magazines, yacht club newsletters, Facebook boating groups'},
+      {type:'The Custom Builder',headline:'"Design your dream waterfront home on an estate-size lot with ICW views."',channels:'Houzz, custom home builder forums, Pinterest, Land.com'},
+      {type:'The Nature-Loving Retiree',headline:'"Gated serenity on the Intracoastal — kayak, fish, and watch the herons from your porch."',channels:'Nature & outdoor groups, Zillow, Facebook 55+, AARP digital'}
+    ]
+  },
+  'tilghman-estates':{
+    name:'Tilghman Estates',
+    tag:'Premium Custom Beach Living',
+    tagline:'Walk to the beach from your architecturally distinct estate.',
+    bg:'images/nmb-beach-1.jpg',
+    price:'$550K – $1M+',
+    gated:'No',
+    styles:'Custom, Coastal Contemporary, Estate',
+    bestFor:'Beach Proximity Luxury',
+    intro:'Tilghman Estates represents some of the finest custom-built homes in the North Myrtle Beach area. Located near Tilghman Beach, this community features large lots with mature landscaping and architecturally distinct homes — many within walking or golf cart distance to the ocean.',
+    p2:'The community appeals to buyers who want a prestigious address without restrictive HOA rules or mandatory golf memberships. Freedom to build or buy a statement home near the ocean, combined with mature tree-lined streets and an established neighborhood feel, make Tilghman Estates the choice for discerning buyers who value individuality.',
+    amenities:[
+      {i:'🏖️',t:'Beach Proximity',d:'Walking and golf cart distance to Tilghman Beach'},
+      {i:'🏡',t:'Large Custom Lots',d:'Quarter-acre to half-acre homesites for estate-caliber homes'},
+      {i:'🌳',t:'Mature Landscaping',d:'Established tree-lined streets with genuine neighborhood character'},
+      {i:'🚗',t:'Golf Cart to Beach',d:'Easy beach access without fighting for parking'},
+      {i:'🍽️',t:'Near Dining & Shopping',d:'Minutes from NMB Main Street and Ocean Drive restaurants'},
+      {i:'🔓',t:'No Mandatory Memberships',d:'Freedom from golf club dues and restrictive HOA requirements'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte, NC',why:'Successful professionals seeking a custom showcase home near the beach'},
+      {tier:1,metro:'Raleigh-Durham, NC',why:'Executives wanting a primary or second home in an upscale beach community'},
+      {tier:2,metro:'Nashville, TN',why:'Relocating executives drawn to custom beach living without HOA constraints'},
+      {tier:2,metro:'Richmond, VA',why:'Affluent buyers seeking architecturally distinctive beach neighborhood'},
+      {tier:2,metro:'Greenville, SC',why:'Upstate professionals wanting large-lot beach area home'},
+      {tier:3,metro:'Winston-Salem & Knoxville',why:'Piedmont and mountain buyers seeking premium beach proximity'}
+    ],
+    personas:[
+      {type:'The Beach Estate Buyer',headline:'"Your custom estate, your rules — steps from the Atlantic with no mandatory memberships."',channels:'Luxury real estate sites, Architectural Digest digital, Southern Living'},
+      {type:'The Relocating Executive',headline:'"Trade the suburban commute for a Tilghman Beach address. Custom-built on your terms."',channels:'LinkedIn, Google Ads "luxury homes NMB", Realtor.com luxury'},
+      {type:'The Freedom Seeker',headline:'"Large lots. No HOA golf dues. Architecture you choose. Welcome to Tilghman."',channels:'Facebook homeowner groups, Zillow, custom home builder forums'}
+    ]
+  },
+  'grande-dunes-north':{
+    name:'Grande Dunes North Village',
+    tag:'Luxury Brand. Accessible Price.',
+    tagline:'The Grande Dunes lifestyle — now in North Myrtle Beach.',
+    bg:'images/barefoot-pool.jpg',
+    price:'$400K – $750K',
+    gated:'Yes',
+    styles:'Luxury Villa, Townhome, Single-Family',
+    bestFor:'Brand-Conscious Buyers',
+    intro:'Grande Dunes North Village extends the prestigious Grande Dunes brand into the North Myrtle Beach corridor. This section offers luxury villas, townhomes, and single-family homes with access to the full Grande Dunes amenity package — including the legendary Ocean Club, championship golf courses, and full-service marina.',
+    p2:'For buyers who have always wanted the Grande Dunes address but found the main community above budget, North Village delivers the same prestige and world-class amenities at a more attainable price point. The gated community offers the security, social scene, and resort-quality lifestyle that define the Grande Dunes name.',
+    amenities:[
+      {i:'🏖️',t:'Ocean Club Access',d:'Full membership to the legendary Grande Dunes Ocean Club'},
+      {i:'⛳',t:'Championship Golf',d:'Access to two world-class Grande Dunes golf courses'},
+      {i:'⚓',t:'Full-Service Marina',d:'Deep-water marina with slips for residents'},
+      {i:'🏊',t:'Resort Pool Complex',d:'Multiple pool areas with resort-caliber features'},
+      {i:'🎾',t:'Tennis Center',d:'Dedicated tennis facility with pro instruction'},
+      {i:'🍽️',t:'Member Club Dining',d:'Fine dining at exclusive Grande Dunes member restaurants'}
+    ],
+    targets:[
+      {tier:1,metro:'Washington DC / NoVA',why:'Brand-conscious buyers seeking Grande Dunes prestige at accessible pricing'},
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'Northeast buyers attracted to Ocean Club and marina at a fraction of Hamptons cost'},
+      {tier:2,metro:'Philadelphia, PA',why:'Second-home seekers wanting luxury brand recognition with resort amenities'},
+      {tier:2,metro:'Charlotte & Raleigh, NC',why:'Professional couples drawn to Grande Dunes name and full amenity access'},
+      {tier:2,metro:'Boston Metro',why:'Amenity-loving retirees wanting Ocean Club, golf, and marina in one address'},
+      {tier:3,metro:'Richmond, VA',why:'Golf and beach enthusiasts seeking premier branded community'}
+    ],
+    personas:[
+      {type:'The Brand Buyer',headline:'"Grande Dunes. Ocean Club. Championship golf. Now starting in the $400s."',channels:'WSJ real estate, Zillow luxury, Google Ads "Grande Dunes homes", Facebook 50+'},
+      {type:'The Second-Home Seeker',headline:'"Your vacation address comes with a marina, two golf courses, and an oceanfront club."',channels:'BiggerPockets, vacation home forums, Realtor.com, Instagram luxury travel'},
+      {type:'The Amenity Lover',headline:'"Ocean Club at sunrise. Golf at noon. Marina sunset cruise. Every amenity, one address."',channels:'Facebook lifestyle groups, Golf Digest digital, AARP luxury travel'}
+    ]
+  },
+  'ocean-bay-club':{
+    name:'Ocean Bay Club',
+    tag:'Luxury Oceanfront High-Rise',
+    tagline:'Wake up to the Atlantic every morning.',
+    bg:'images/nmb-beach-access.jpg',
+    price:'$350K – $650K',
+    gated:'Secured',
+    styles:'Luxury Condo, Oceanfront',
+    bestFor:'Oceanfront Living & Investment',
+    intro:'Ocean Bay Club offers luxury oceanfront living in North Myrtle Beach with direct beach access and stunning Atlantic Ocean views. These high-rise condominiums feature upscale finishes, private balconies, and resort-style amenities that make them ideal for full-time residents and vacation rental investors alike.',
+    p2:'With on-site management handling rental operations, Ocean Bay Club delivers strong annual rental returns while providing owners with a world-class oceanfront retreat. The property includes indoor and outdoor pools, lazy river, fitness center, and covered parking — everything needed for maintenance-free beachfront living.',
+    amenities:[
+      {i:'🌊',t:'Direct Oceanfront',d:'Step from your building directly onto the beach'},
+      {i:'🏊',t:'Indoor & Outdoor Pools',d:'Multiple pool options including heated indoor pool for year-round use'},
+      {i:'🌀',t:'Lazy River & Hot Tubs',d:'Resort-style water features for relaxation'},
+      {i:'🏋️',t:'Fitness Center & Spa',d:'Full fitness facility and wellness amenities'},
+      {i:'🅿️',t:'Covered Parking',d:'Protected parking garage for residents and guests'},
+      {i:'📊',t:'On-Site Rental Mgmt',d:'Professional rental management generating strong annual returns'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte, NC',why:'Inland professionals seeking oceanfront vacation unit with $40K+ annual rental income'},
+      {tier:1,metro:'Raleigh-Durham, NC',why:'Investment-savvy buyers drawn to maintenance-free oceanfront with rental program'},
+      {tier:2,metro:'Nashville, TN',why:'Growing market of vacation property buyers seeking Atlantic oceanfront'},
+      {tier:2,metro:'Atlanta, GA',why:'Coastal investment buyers wanting strong rental returns and personal use'},
+      {tier:2,metro:'Washington DC / NoVA',why:'Retirees seeking lock-and-leave oceanfront lifestyle'},
+      {tier:3,metro:'Columbus & Pittsburgh',why:'Midwest and PA buyers seeking affordable oceanfront ownership'}
+    ],
+    personas:[
+      {type:'The Rental Investor',headline:'"Oceanfront condo generating $40K+ a year. Your investment works while you vacation."',channels:'BiggerPockets, real estate investment groups, Google Ads "oceanfront investment NMB"'},
+      {type:'The Condo Downsizer',headline:'"Trade the yard work for a balcony over the Atlantic. Lock the door and live."',channels:'AARP digital, Facebook 60+, Zillow, Realtor.com condo filter'},
+      {type:'The Vacation Buyer',headline:'"Your own oceanfront retreat — use it when you want, rent it when you don\'t."',channels:'Vrbo/Airbnb investor groups, Instagram travel, Facebook targeted'}
+    ]
+  },
+  'pelican-bay':{
+    name:'Pelican Bay',
+    tag:'Upscale Value Near Cherry Grove',
+    tagline:'Quality living minutes from the best beach in NMB.',
+    bg:'images/pelican-bay-1.jpg',
+    price:'$300K – $500K',
+    gated:'No',
+    styles:'Traditional, Coastal, Craftsman',
+    bestFor:'Families & Value Seekers',
+    intro:'Pelican Bay is a well-established upscale community in North Myrtle Beach offering a range of single-family homes and townhomes. Known for beautiful landscaping, community lakes, and a convenient location near Cherry Grove Beach and Barefoot Landing, Pelican Bay provides excellent value without sacrificing quality.',
+    p2:'For buyers seeking quality construction and community amenities at a strong price point — without the premiums of gated luxury communities — Pelican Bay delivers. The community pool and clubhouse anchor an active social scene, while walking trails around the lakes provide daily serenity.',
+    amenities:[
+      {i:'🏊',t:'Pool & Clubhouse',d:'Community pool and gathering spaces for residents'},
+      {i:'🚶',t:'Lake Walking Trails',d:'Scenic trails winding around community lakes'},
+      {i:'🎮',t:'Playground & Greens',d:'Family-friendly playground and maintained green spaces'},
+      {i:'🏖️',t:'Near Cherry Grove',d:'Minutes from Cherry Grove Beach — NMB\'s most beloved stretch'},
+      {i:'🛍️',t:'Near Barefoot Landing',d:'Quick access to premier shopping and entertainment'},
+      {i:'🌳',t:'Mature Landscaping',d:'Well-maintained common areas with established plantings'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte, NC',why:'Families seeking quality beach-area homes at strong value compared to Charlotte suburbs'},
+      {tier:1,metro:'Raleigh-Durham, NC',why:'Young retirees and families wanting NMB lifestyle without luxury premiums'},
+      {tier:2,metro:'Greenville, SC',why:'Upstate families drawn to Cherry Grove proximity and Barefoot Landing access'},
+      {tier:2,metro:'Columbia, SC',why:'State capital families seeking permanent beach-area address'},
+      {tier:2,metro:'Fayetteville, NC',why:'Military families seeking established community near beach'},
+      {tier:3,metro:'Winston-Salem & Asheville',why:'NC mountain and Piedmont families wanting coastal value'}
+    ],
+    personas:[
+      {type:'The Relocating Family',headline:'"Beach lifestyle, great schools nearby, and homes starting in the $300s. Your family belongs here."',channels:'Facebook family groups, Zillow, Google Ads "homes near Cherry Grove"'},
+      {type:'The Value Buyer',headline:'"Quality community. Cherry Grove minutes away. No country club price tag required."',channels:'Realtor.com, Zillow, Facebook targeted by income and interests'},
+      {type:'The Early Retiree',headline:'"Retire near the beach and Barefoot Landing — without the gated community premiums."',channels:'Facebook 50+, AARP digital, retirement planning communities'}
+    ]
+  },
+  'waterfall':{
+    name:'Waterfall',
+    tag:'Gated Nature-Integrated Living',
+    tagline:'Signature water features and serene gated luxury.',
+    bg:'images/pelican-bay-4.jpg',
+    price:'$320K – $520K',
+    gated:'Yes',
+    styles:'Traditional, Transitional, Coastal',
+    bestFor:'Nature & Tranquility Seekers',
+    intro:'Waterfall is a distinctive gated community in North Myrtle Beach that integrates natural water features and lush landscaping throughout. Named for its signature waterfall features, the community offers a tranquil, resort-like atmosphere with quality-built homes and a genuine sense of escape.',
+    p2:'Its location provides easy access to both NMB beaches and the Little River waterfront dining district. For buyers who value aesthetic beauty, gated security, and a peaceful atmosphere over typical resort amenities, Waterfall offers something genuinely unique in the NMB market.',
+    amenities:[
+      {i:'💧',t:'Signature Waterfalls',d:'Distinctive water features creating a resort-like atmosphere throughout'},
+      {i:'🛡️',t:'Gated Entrance',d:'Controlled access community with beautifully landscaped entry'},
+      {i:'🏊',t:'Pool & Pavilion',d:'Community pool and covered gathering pavilion'},
+      {i:'🌿',t:'Nature Trails & Ponds',d:'Walking trails through natural landscape with scenic ponds'},
+      {i:'🍽️',t:'Near Little River',d:'Minutes from Little River waterfront dining and marina district'},
+      {i:'🏖️',t:'Near Cherry Grove',d:'Quick access to Cherry Grove Beach'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte, NC',why:'Nature-loving professionals seeking gated serenity near the coast'},
+      {tier:1,metro:'Asheville, NC',why:'Mountain dwellers wanting coastal counterpart with natural beauty and tranquility'},
+      {tier:2,metro:'Greenville, SC',why:'Upstate couples drawn to unique water features and gated privacy'},
+      {tier:2,metro:'Raleigh-Durham, NC',why:'Retirees seeking peaceful gated community away from tourist crowds'},
+      {tier:2,metro:'Atlanta, GA',why:'Nature enthusiasts wanting gated coastal living with aesthetic beauty'},
+      {tier:3,metro:'Knoxville, TN',why:'Mountain region buyers seeking warm-climate natural community'}
+    ],
+    personas:[
+      {type:'The Nature Seeker',headline:'"Waterfalls, walking trails, and wildlife — all behind the gates, minutes from the beach."',channels:'Garden & nature groups, Facebook outdoor enthusiasts, Zillow'},
+      {type:'The Peaceful Retiree',headline:'"Gated tranquility. No tourist crowds. Just the sound of water and birdsong."',channels:'Facebook 55+, AARP digital, retirement lifestyle magazines'},
+      {type:'The Aesthetic Buyer',headline:'"A community designed around beauty — signature waterfalls, manicured landscapes, and quiet luxury."',channels:'Houzz, Pinterest, Southern Living digital, Instagram home design'}
+    ]
+  },
+  'sea-trail':{
+    name:'Sea Trail Plantation',
+    tag:'Three-Course Golf Resort',
+    tagline:'Three championship courses and the quiet side of the coast.',
+    bg:'images/long-bay-2.jpg',
+    price:'$280K – $600K',
+    gated:'Partially',
+    styles:'Resort, Traditional, Custom',
+    bestFor:'Value Golf Lifestyle',
+    intro:'Sea Trail Plantation is a sprawling golf resort community straddling the NC/SC border in Sunset Beach, just minutes from North Myrtle Beach. With three championship courses designed by Dan Maples, Rees Jones, and Willard Byrd, it offers tremendous variety for golf enthusiasts — all at prices that make other resort communities seem overpriced.',
+    p2:'The community provides a quieter, more affordable alternative to NMB resort communities while still delivering full resort amenities including pools, tennis, fitness, and on-site dining. NC tax advantages and the peaceful Sunset Beach atmosphere add to the appeal for buyers who want resort living without the resort price tag.',
+    amenities:[
+      {i:'⛳',t:'3 Championship Courses',d:'Dan Maples, Rees Jones, and Willard Byrd signature designs'},
+      {i:'🏖️',t:'Beach Access',d:'Community beach access at nearby Sunset Beach'},
+      {i:'🏊',t:'Resort Pool Complex',d:'Multiple pools, sundeck, and resort-style water features'},
+      {i:'🎾',t:'Tennis & Pickleball',d:'Courts and organized play for residents'},
+      {i:'🍽️',t:'On-Site Dining',d:'Restaurants and bars within the community'},
+      {i:'🏋️',t:'Fitness & Spa',d:'Full fitness center and wellness amenities'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte, NC',why:'Piedmont golfers seeking affordable three-course resort community'},
+      {tier:1,metro:'Greensboro & Winston-Salem, NC',why:'Piedmont retirees wanting golf resort close to NC family'},
+      {tier:2,metro:'Raleigh-Durham, NC',why:'Value-conscious golfers drawn to three courses and NC tax advantages'},
+      {tier:2,metro:'Fayetteville, NC',why:'Military retirees seeking accessible golf resort lifestyle'},
+      {tier:2,metro:'Columbia, SC',why:'SC buyers attracted to quiet resort living near the border'},
+      {tier:3,metro:'Virginia Beach, VA',why:'Coastal residents seeking quieter, more affordable beach community'}
+    ],
+    personas:[
+      {type:'The Piedmont Golfer',headline:'"Three championship courses. Homes from the $280s. Your golf retirement just got very affordable."',channels:'Golf Digest digital, NC golf associations, Facebook golfer groups'},
+      {type:'The NC Tax Saver',headline:'"Resort living on the NC side — golf, beach, and tax advantages all in one address."',channels:'NC retirement planning groups, AARP, Google Ads "retirement homes Sunset Beach"'},
+      {type:'The Quiet Life Seeker',headline:'"Three courses, a quiet beach, and none of the tourist traffic. This is how resort living should feel."',channels:'Southern Living digital, Facebook 55+, Zillow, Realtor.com'}
+    ]
+  }
+};
+
+/* ══════════════════════════════════════════
+   LITTLE RIVER LUXURY COMMUNITIES DATA
+══════════════════════════════════════════ */
+const LRC = {
+  'serenity-point':{
+    name:'Serenity Point',
+    tag:'Ultra-Luxury Waterfront Enclave',
+    tagline:'Sixteen estates. One incomparable waterway address.',
+    bg:'images/little-river-1.jpg',
+    price:'$1.5M – $4.5M',
+    gated:'Yes',
+    styles:'Custom Architectural, Multi-Story Estate',
+    bestFor:'Ultra-Luxury Buyers',
+    intro:'Serenity Point is the most exclusive residential community in Little River — and arguably one of the most prestigious addresses in the entire Grand Strand. With only 16 homesites directly on the Intracoastal Waterway, this gated enclave offers a level of privacy, craftsmanship, and waterfront access that simply cannot be replicated.',
+    p2:'Homes here average over 3,700 square feet with flawless design, top-tier finishes, elevators, and custom swimming pools. Private boat slips accommodate vessels up to 26 feet, and the gated entrance ensures absolute exclusivity. For buyers seeking the pinnacle of coastal luxury, Serenity Point stands alone.',
+    amenities:[
+      {i:'🚤',t:'Private Boat Slips',d:'Individual deep-water slips for boats up to 26 feet with direct ICW access'},
+      {i:'🛡️',t:'Gated Enclave',d:'Only 16 homesites — the ultimate in privacy and exclusivity'},
+      {i:'🏊',t:'Custom Pools',d:'Individual resort-style pools with premium finishes'},
+      {i:'🌅',t:'Panoramic ICW Views',d:'Every home positioned for stunning Intracoastal Waterway vistas'},
+      {i:'🏛️',t:'Architectural Excellence',d:'Multi-story custom designs with elevators and top-tier materials'},
+      {i:'⚓',t:'Boat Ramp & Dock',d:'Community boat ramp and dock for easy waterway access'}
+    ],
+    targets:[
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'Ultra-luxury buyers finding waterfront estates at 1/5 the price of the Hamptons'},
+      {tier:1,metro:'Washington DC / NoVA',why:'Senior executives and diplomats seeking the most exclusive waterway address'},
+      {tier:1,metro:'Charlotte, NC',why:'C-suite professionals wanting an incomparable second home or primary residence'},
+      {tier:2,metro:'Boston Metro',why:'Northeast ultra-luxury buyers drawn to private waterfront enclave living'},
+      {tier:2,metro:'South Florida',why:'Waterfront buyers seeking lower insurance and hurricane risk with equal luxury'},
+      {tier:3,metro:'Chicago, IL',why:'Midwest ultra-high-net-worth buyers seeking private waterway estate'}
+    ],
+    personas:[
+      {type:'The Estate Collector',headline:'"Only 16 estates will ever exist at Serenity Point. This is your invitation."',channels:'WSJ Real Estate, Mansion Global, Luxury Portfolio International, Sotheby\'s digital'},
+      {type:'The Boating Executive',headline:'"Your private dock. Your private waterway. Your private paradise — population: 16 families."',channels:'Yacht World, boat shows, luxury real estate events, concierge referrals'},
+      {type:'The Privacy Seeker',headline:'"Gated. Waterfront. Sixteen homes. The most exclusive address on the Grand Strand."',channels:'Private wealth advisors, luxury lifestyle publications, invitation-only events'}
+    ]
+  },
+  'paradise-island':{
+    name:'Paradise Island',
+    tag:'Private Island Living',
+    tagline:'An entire island. A gated bridge. Your private waterfront world.',
+    bg:'images/barefoot-drone.jpg',
+    price:'$800K – $2.5M+',
+    gated:'Yes',
+    styles:'Luxury Custom, Island Estate',
+    bestFor:'Island & Privacy Buyers',
+    intro:'Paradise Island is exactly what the name promises — a private island community in Little River accessible only by a gated bridge over the Intracoastal Waterway. Every home is surrounded by water, offering 100% waterfront living with private docks, boat lifts, and unobstructed waterway views in every direction.',
+    p2:'This exclusive enclave attracts buyers who demand the ultimate in privacy and waterfront access. The island setting creates a sense of escape that no mainland community can match, while remaining just minutes from NMB beaches, dining, and entertainment. For those who have dreamed of island living on the East Coast, Paradise Island delivers.',
+    amenities:[
+      {i:'🏝️',t:'Private Island Setting',d:'Completely surrounded by water — 100% waterfront living'},
+      {i:'🚤',t:'Private Docks & Lifts',d:'Individual boat docks with lifts for direct ICW access'},
+      {i:'🌉',t:'Gated Bridge Entry',d:'Accessible only by gated bridge — ultimate privacy and security'},
+      {i:'🌊',t:'360° Water Views',d:'Panoramic waterway and marsh views from every home'},
+      {i:'🏊',t:'Private Pools',d:'Custom swimming pools on individual properties'},
+      {i:'🐬',t:'Wildlife & Nature',d:'Dolphins, herons, and coastal wildlife right from your backyard'}
+    ],
+    targets:[
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'Island-living dreamers finding their own private waterfront world for a fraction of island costs'},
+      {tier:1,metro:'Washington DC / NoVA',why:'Privacy-focused executives drawn to gated island exclusivity'},
+      {tier:2,metro:'Charlotte & Raleigh, NC',why:'Affluent professionals seeking unique island estate as primary or second home'},
+      {tier:2,metro:'Philadelphia, PA',why:'Luxury buyers attracted to the rarity of true island living on the East Coast'},
+      {tier:2,metro:'Atlanta, GA',why:'Coastal investors seeking irreplaceable island property with appreciation potential'},
+      {tier:3,metro:'South Florida',why:'Island buyers looking north for lower costs, lower insurance, and quieter lifestyle'}
+    ],
+    personas:[
+      {type:'The Island Dreamer',headline:'"Your own private island. A gated bridge. Dolphins at your dock. This isn\'t a vacation — it\'s home."',channels:'Luxury travel publications, Islands magazine digital, Mansion Global, Zillow luxury'},
+      {type:'The Privacy Executive',headline:'"Cross the gated bridge. Leave the world behind. Welcome to your island estate."',channels:'WSJ Real Estate, LinkedIn luxury, private wealth networks, concierge referrals'},
+      {type:'The Waterfront Collector',headline:'"There is no waterfront property like island waterfront. Paradise Island is irreplaceable."',channels:'Sotheby\'s digital, Christie\'s, luxury real estate auctions, yacht club networks'}
+    ]
+  },
+  'big-landing':{
+    name:'Big Landing Plantation',
+    tag:'Hidden Gem Waterway Community',
+    tagline:'Little River\'s best-kept secret on the Intracoastal.',
+    bg:'images/long-bay-1.jpg',
+    price:'$300K – $1M+',
+    gated:'Yes',
+    styles:'Custom Brick, Traditional, Lowcountry',
+    bestFor:'Waterway Lifestyle Seekers',
+    intro:'Big Landing Plantation is the hidden gem of Little River — a gated community where large custom-built homes sit among natural marshland and mature live oaks, with direct access to the Intracoastal Waterway. The community features a large fishing pier with day docks, making it a paradise for boating and fishing enthusiasts.',
+    p2:'Unlike flashier resort communities, Big Landing offers quiet luxury — the kind of place where neighbors wave from their porches and the sunset over the marsh is the evening entertainment. The community pool, clubhouse with full kitchen, and marsh boardwalks provide gathering spaces, while the gated entrance ensures privacy and security.',
+    amenities:[
+      {i:'🎣',t:'Fishing Pier & Day Docks',d:'Large community pier with two day docks on the Intracoastal Waterway'},
+      {i:'🛡️',t:'Gated Community',d:'Controlled access with secure gated entrance'},
+      {i:'🏊',t:'Pool & Clubhouse',d:'Community pool and clubhouse with full kitchen for events'},
+      {i:'🌿',t:'Marsh Boardwalks',d:'Private boardwalk trails through pristine marsh landscape'},
+      {i:'🏡',t:'Large Custom Homes',d:'Predominantly custom-built brick homes on generous lots'},
+      {i:'🌅',t:'Creek & Marsh Views',d:'Stunning creek, marsh, and waterway views throughout'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte, NC',why:'Professionals seeking hidden-gem waterway community away from tourist crowds'},
+      {tier:1,metro:'Raleigh-Durham, NC',why:'Retirees drawn to quiet gated waterway living with fishing and boating'},
+      {tier:2,metro:'Greenville, SC',why:'Upstate buyers wanting genuine waterway lifestyle without resort pricing'},
+      {tier:2,metro:'Washington DC / NoVA',why:'Federal retirees seeking peaceful gated community with ICW access'},
+      {tier:2,metro:'Columbus, OH',why:'Midwest buyers drawn to authentic coastal living and fishing lifestyle'},
+      {tier:3,metro:'Asheville, NC',why:'Mountain dwellers seeking waterway counterpart with natural beauty'}
+    ],
+    personas:[
+      {type:'The Hidden Gem Seeker',headline:'"They don\'t put Big Landing in the tourist brochures. That\'s exactly why you\'ll love it."',channels:'Fishing forums, boating groups, Facebook community groups, Zillow'},
+      {type:'The Fishing Retiree',headline:'"Your own fishing pier. Your own day dock. Your own gated marsh paradise."',channels:'Fishing magazines digital, Facebook 55+, outdoor lifestyle groups, AARP'},
+      {type:'The Quiet Luxury Buyer',headline:'"Gated. Waterfront. Custom homes. And neighbors who still wave from the porch."',channels:'Southern Living digital, Zillow, Realtor.com, Google Ads "Little River gated homes"'}
+    ]
+  },
+  'crystal-pointe':{
+    name:'Crystal Pointe',
+    tag:'Intimate Gated Waterway Enclave',
+    tagline:'Twenty homes. One unforgettable waterway address.',
+    bg:'images/nmb-beach-drone.jpg',
+    price:'$700K – $1M+',
+    gated:'Yes',
+    styles:'Raised Beach, Coastal, Custom',
+    bestFor:'Exclusive Small-Community Buyers',
+    intro:'Crystal Pointe is one of Little River\'s most intimate gated communities — just 20 custom homes positioned on the Intracoastal Waterway. These sophisticated raised 2-3 story beach homes feature premium finishes, covered parking underneath, and direct waterway access via a private boat ramp and dock.',
+    p2:'The community\'s small size creates an intimate neighborhood feel where every family knows their neighbors. Low HOA fees, pet-friendly policies, and golf cart access add to the relaxed waterway lifestyle. For buyers who want gated waterfront exclusivity without the scale of larger resort communities, Crystal Pointe is a rare find.',
+    amenities:[
+      {i:'🚤',t:'Private Boat Ramp',d:'Community boat ramp with dock for direct ICW access'},
+      {i:'🛡️',t:'Gated — 20 Homes Only',d:'Ultra-intimate community with controlled access'},
+      {i:'🏠',t:'Raised Beach Architecture',d:'Sophisticated 2-3 story homes with covered parking below'},
+      {i:'🛥️',t:'Private Dock Access',d:'Community dock for fishing, kayaking, and boat access'},
+      {i:'🏌️',t:'Golf Cart Friendly',d:'Navigate the community and nearby areas by golf cart'},
+      {i:'🐕',t:'Pet Friendly',d:'Welcoming community for pet owners with low HOA fees'}
+    ],
+    targets:[
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'Exclusive small-community seekers finding gated waterfront at a fraction of northeast costs'},
+      {tier:1,metro:'Washington DC / NoVA',why:'Privacy-focused professionals drawn to intimate 20-home enclave'},
+      {tier:2,metro:'Charlotte, NC',why:'Luxury buyers seeking rare small-scale gated waterfront community'},
+      {tier:2,metro:'Philadelphia, PA',why:'Waterfront enthusiasts attracted to intimate community size and low HOA'},
+      {tier:2,metro:'Richmond, VA',why:'Boating couples drawn to private dock and small-community feel'},
+      {tier:3,metro:'Pittsburgh, PA',why:'Retirees seeking intimate waterway community with year-round boating'}
+    ],
+    personas:[
+      {type:'The Exclusive Buyer',headline:'"Only 20 homes share this gated waterway. Your neighbors will know your name."',channels:'Luxury real estate sites, private broker networks, Google Ads "exclusive Little River homes"'},
+      {type:'The Boating Couple',headline:'"Your private dock. Your private ramp. Your gated ICW address — shared with just 19 other families."',channels:'Boating magazines, yacht club newsletters, Facebook boating groups'},
+      {type:'The Downsizer',headline:'"Leave the big community behind. Twenty homes, one gate, and the waterway at your feet."',channels:'Zillow luxury, Realtor.com, Facebook 55+, AARP digital'}
+    ]
+  },
+  'river-hills':{
+    name:'River Hills Golf & Country Club',
+    tag:'Championship Golf Estate Living',
+    tagline:'Where rolling hills meet championship fairways.',
+    bg:'images/long-bay-2.jpg',
+    price:'$300K – $700K+',
+    gated:'No',
+    styles:'Estate, Traditional, Golf Villa',
+    bestFor:'Golf Community Buyers',
+    intro:'River Hills Golf & Country Club offers a premier golf lifestyle in Little River, built around an 18-hole championship course set among heavily wooded terrain, rolling hills, and scenic lakes. Unlike the flat coastal courses that dominate the Grand Strand, River Hills offers dramatic elevation changes and a parkland-style experience that feels more like the Carolinas foothills.',
+    p2:'The 6,000-square-foot clubhouse features a pro shop, bar and grill, and serves as the social hub for a community that lives and breathes golf. Multiple subdivisions including the premium Woodberry section offer everything from golf villas to custom estate homes, all with easy access to the course and club amenities.',
+    amenities:[
+      {i:'⛳',t:'18-Hole Championship Course',d:'Dramatic rolling terrain with elevation changes rare on the Grand Strand'},
+      {i:'🏌️',t:'6,000 SF Clubhouse',d:'Full-service clubhouse with pro shop, bar & grill, and social events'},
+      {i:'🏊',t:'Community Pool',d:'Pool and recreation areas for residents'},
+      {i:'🌳',t:'Wooded Estate Setting',d:'Heavily wooded lots with mature trees and natural beauty'},
+      {i:'🏠',t:'Woodberry Premium Section',d:'Exclusive subdivision with the finest homes and views'},
+      {i:'🌊',t:'Lakes & Ponds',d:'Scenic water features throughout the course and community'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte, NC',why:'Golfers seeking affordable championship community close to the coast'},
+      {tier:1,metro:'Raleigh-Durham, NC',why:'Retirees drawn to parkland-style course with wooded estate living'},
+      {tier:2,metro:'Greenville, SC',why:'Upstate golfers wanting foothills-style course in a coastal setting'},
+      {tier:2,metro:'Columbia, SC',why:'State capital retirees seeking golf community near the beach'},
+      {tier:2,metro:'Fayetteville, NC',why:'Military retirees drawn to accessible championship golf lifestyle'},
+      {tier:3,metro:'Winston-Salem & Greensboro, NC',why:'Piedmont golfers seeking year-round play near the coast'}
+    ],
+    personas:[
+      {type:'The Daily Golfer',headline:'"Championship course outside your door. Rolling hills, wooded fairways, and year-round play."',channels:'Golf Digest digital, local golf associations, Facebook golfer groups'},
+      {type:'The Clubhouse Social',headline:'"Pro shop in the morning. Bar & grill at lunch. The 19th hole is your living room."',channels:'Country club networks, golf social groups, Google Ads "golf homes Little River"'},
+      {type:'The Estate Buyer',headline:'"Wooded estate lots on a championship course — starting in the $300s."',channels:'Zillow, Realtor.com, Southern Living digital, Facebook 50+'}
+    ]
+  },
+  'mariners-pointe':{
+    name:'Mariner\'s Pointe',
+    tag:'Nantucket-Style Marina Living',
+    tagline:'A 116-slip marina and the charm of coastal New England — in Little River.',
+    bg:'images/barefoot-landing.jpg',
+    price:'$280K – $380K',
+    gated:'Yes',
+    styles:'Nantucket Townhome, Coastal',
+    bestFor:'Marina & Boating Lifestyle',
+    intro:'Mariner\'s Pointe is a one-of-a-kind gated waterfront community on the Intracoastal Waterway, featuring Nantucket-style architecture and a private 116-slip marina that makes it the premier boating address in Little River. The community combines New England coastal charm with Southern waterway living in a way that no other community on the Grand Strand can match.',
+    p2:'The recently renovated clubhouse features a resident bar, and the community is undergoing major upgrades including a new marina bulkhead, renovated pool, hot tub, and fire pit. Tennis, pickleball, and basketball courts round out the amenities. Individually owned marina slips can be purchased or rented, making this a true boater\'s paradise.',
+    amenities:[
+      {i:'⚓',t:'116-Slip Private Marina',d:'Individually owned/deeded slips with direct ICW access'},
+      {i:'🏛️',t:'Nantucket Architecture',d:'Distinctive New England coastal design unique to the Grand Strand'},
+      {i:'🍸',t:'Clubhouse & Bar',d:'Recently renovated clubhouse with resident bar and social events'},
+      {i:'🏊',t:'Pool & Hot Tub',d:'Renovated pool complex with hot tub and fire pit (2026)'},
+      {i:'🎾',t:'Tennis & Pickleball',d:'Courts for tennis, pickleball, and basketball'},
+      {i:'🛡️',t:'Gated Community',d:'Controlled access with secure waterfront setting'}
+    ],
+    targets:[
+      {tier:1,metro:'Boston & New England',why:'New Englanders finding their Nantucket-style marina community in warm weather'},
+      {tier:1,metro:'NYC Metro & Northern NJ',why:'Northeast boaters drawn to 116-slip marina at accessible price point'},
+      {tier:2,metro:'Washington DC / NoVA',why:'Boating enthusiasts seeking affordable gated marina community'},
+      {tier:2,metro:'Philadelphia, PA',why:'East Coast boat owners drawn to year-round waterway access and slip ownership'},
+      {tier:2,metro:'Charlotte, NC',why:'Inland professionals seeking affordable waterway entry with private marina'},
+      {tier:3,metro:'Pittsburgh, PA',why:'Waterway dreamers finding marina living at an accessible price point'}
+    ],
+    personas:[
+      {type:'The New England Transplant',headline:'"Nantucket charm. Carolina warmth. Your own marina slip. Starting in the $280s."',channels:'New England boating forums, Cape Cod/Nantucket lifestyle groups, Facebook'},
+      {type:'The Boat Owner',headline:'"116 slips. Your own deeded dock. Year-round boating on the Intracoastal."',channels:'Boating magazines, marina newsletters, Facebook boating groups, Yacht World'},
+      {type:'The Social Boater',headline:'"Marina by day. Clubhouse bar by night. The boating social life you\'ve been looking for."',channels:'Facebook boating lifestyle groups, Zillow, Google Ads "marina homes Little River"'}
+    ]
+  },
+  'bridgewater':{
+    name:'Bridgewater',
+    tag:'Active Luxury New Construction',
+    tagline:'950 acres of resort-style active living — brand new.',
+    bg:'images/pelican-bay-2.jpg',
+    price:'$300K – $700K',
+    gated:'No',
+    styles:'Coastal Modern, Craftsman, Contemporary',
+    bestFor:'Active Lifestyle Buyers',
+    intro:'Bridgewater is Little River\'s largest and most ambitious active lifestyle community — a 950-acre development with 1,550 planned homes, an impressive 5,000-square-foot clubhouse, and resort-caliber amenities that rival communities at twice the price. Built by Chesapeake Homes, Bridgewater is attracting buyers from across the East Coast.',
+    p2:'The community features a fitness center, resort-style pools with fire pit and outdoor grills, dog park, community garden, bocce ball, pickleball courts, and extensive walking trails. All homes are brand-new construction with modern floor plans, energy efficiency, and contemporary finishes. For active buyers seeking community engagement and modern living, Bridgewater leads the market.',
+    amenities:[
+      {i:'🏠',t:'Brand-New Construction',d:'All-new Chesapeake Homes with modern floor plans and energy efficiency'},
+      {i:'🏊',t:'Resort Pool Complex',d:'Resort-style pools, patios, fire pit, and outdoor grills'},
+      {i:'🏋️',t:'5,000 SF Clubhouse',d:'Fitness center, great room, community kitchen, and multipurpose rooms'},
+      {i:'🐕',t:'Dog Park & Gardens',d:'Dedicated dog park and community garden for residents'},
+      {i:'🎾',t:'Bocce & Pickleball',d:'Bocce ball courts and pickleball courts for active residents'},
+      {i:'🚶',t:'Walking Trails',d:'Extensive paved walking and biking trail system throughout'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte, NC',why:'Active retirees and professionals finding new construction at 40% less than Charlotte suburbs'},
+      {tier:1,metro:'Raleigh-Durham, NC',why:'55+ buyers drawn to resort amenities and active community lifestyle'},
+      {tier:2,metro:'Greenville, SC',why:'Upstate active adults seeking modern coastal community with social scene'},
+      {tier:2,metro:'Washington DC / NoVA',why:'Federal retirees wanting brand-new active lifestyle community near the beach'},
+      {tier:2,metro:'Columbus & Cleveland, OH',why:'Midwest retirees seeking warm-climate active community with resort amenities'},
+      {tier:3,metro:'Hartford & New Haven, CT',why:'New England retirees escaping high costs for brand-new active luxury'}
+    ],
+    personas:[
+      {type:'The Active Retiree',headline:'"Pickleball at 9. Pool at noon. Community garden by 3. Brand-new home from the $300s."',channels:'55+ lifestyle groups, AARP digital, Facebook active retirement, Zillow'},
+      {type:'The Social Buyer',headline:'"1,550 neighbors, a resort clubhouse, and the kind of community you thought didn\'t exist anymore."',channels:'Facebook community groups, Nextdoor, Google Ads "active community Little River SC"'},
+      {type:'The New Home Seeker',headline:'"Modern. Energy-efficient. Resort amenities. Starting in the $300s near the beach."',channels:'Chesapeake Homes website, new construction portals, Realtor.com, Zillow new builds'}
+    ]
+  },
+  'windjammer-village':{
+    name:'Windjammer Village',
+    tag:'Established Waterway Resort Community',
+    tagline:'399 homes, Vereen Gardens, and the Intracoastal at your doorstep.',
+    bg:'images/nmb-sign.jpg',
+    price:'$250K – $500K+',
+    gated:'Yes',
+    styles:'Traditional, Coastal, Ranch',
+    bestFor:'Established Community Living',
+    intro:'Windjammer Village is one of Little River\'s most established and beloved gated waterway communities, featuring 399 homesites along the Intracoastal Waterway with private access to the stunning Vereen Memorial Gardens. The community has cultivated a true resort atmosphere over decades, with a robust amenity package and active social scene.',
+    p2:'The community boat ramp, fishing pier, and marsh boardwalk make waterway living accessible to every resident. A pool, clubhouse, game room, fitness center, and tennis courts provide gathering spaces, while private access to Vereen Gardens — one of the most beautiful coastal parks in South Carolina — sets Windjammer apart from every other community in the area.',
+    amenities:[
+      {i:'🌿',t:'Vereen Gardens Access',d:'Private connection to the stunning Vereen Memorial Gardens with beach on ICW'},
+      {i:'🚤',t:'Boat Ramp & Pier',d:'Community boat ramp, fishing pier, and marsh boardwalk'},
+      {i:'🏊',t:'Pool & Fitness',d:'Community pool, fitness center, and game room'},
+      {i:'🎾',t:'Tennis Courts',d:'Lighted courts for residents'},
+      {i:'🛡️',t:'Gated Community',d:'399 homes within a secure gated setting'},
+      {i:'🏘️',t:'Active Social Scene',d:'Established community with clubs, events, and engaged neighbors'}
+    ],
+    targets:[
+      {tier:1,metro:'Charlotte, NC',why:'Families and retirees seeking established waterway community at accessible prices'},
+      {tier:1,metro:'Raleigh-Durham, NC',why:'Value-conscious buyers drawn to gated ICW living with Vereen Gardens access'},
+      {tier:2,metro:'Greenville, SC',why:'Upstate buyers wanting established waterway community near the coast'},
+      {tier:2,metro:'Columbia, SC',why:'State capital retirees seeking gated waterway lifestyle'},
+      {tier:2,metro:'Fayetteville, NC',why:'Military retirees drawn to secure, established waterway community'},
+      {tier:3,metro:'Winston-Salem & Asheville, NC',why:'NC residents seeking affordable gated waterway community with natural beauty'}
+    ],
+    personas:[
+      {type:'The Nature Lover',headline:'"Your backyard is Vereen Gardens. Your front view is the Intracoastal. This is Windjammer."',channels:'Nature and garden groups, Southern Living digital, Facebook outdoor enthusiasts'},
+      {type:'The Value Seeker',headline:'"Gated. Waterway. Boat ramp. Vereen Gardens. Starting in the $250s."',channels:'Zillow, Realtor.com, Facebook home buyer groups, Google Ads "Little River gated homes"'},
+      {type:'The Established Community Buyer',headline:'"399 families. Decades of community. The waterway lifestyle — already perfected."',channels:'Community review sites, Facebook community groups, retirement forums'}
+    ]
+  }
+};
+
 /* ── Luxury community card grid HTML ── */
 function luxuryCardsHTML(){
   const slugs=['waterbridge','plantation-lakes','waterway-palms','the-bluffs','black-creek','carolina-waterway','waterford','the-farm','avalon','indigo-bay'];
@@ -1727,7 +2327,199 @@ function showLuxuryCommunity(slug){
   showPage('community');
 }
 
-/* ── Override showCommunity to add luxury grid for carolina-forest ── */
+/* ── NMB Luxury community card grid HTML ── */
+function nmbLuxuryCardsHTML(){
+  const slugs=['barefoot-resort','tidewater-plantation','seabrook-plantation','tilghman-estates','grande-dunes-north','ocean-bay-club','pelican-bay','waterfall','sea-trail'];
+  return slugs.map(s=>{
+    const d=NLC[s];
+    return `<div class="lux-card" onclick="showNMBLuxuryCommunity('${s}')">
+      <div class="lux-card-img" style="background-image:url('${d.bg}')">
+        ${d.gated==='Yes'||d.gated==='Partially'?`<div class="lux-card-gated">${d.gated==='Yes'?'Gated':'Semi-Gated'}</div>`:''}
+      </div>
+      <div class="lux-card-body">
+        <div class="lux-card-name">${d.name}</div>
+        <div class="lux-card-tag">${d.tag}</div>
+        <div class="lux-card-price">${d.price}</div>
+        <span class="lux-card-cta">Explore Community →</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ── Render NMB luxury community landing page ── */
+function showNMBLuxuryCommunity(slug){
+  const d=NLC[slug]; if(!d) return;
+  const amHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const tgtHtml=d.targets.map(t=>`<div class="lux-t"><div class="lux-t-tier">${t.tier}</div><div><div class="lux-t-metro">${t.metro}</div><div class="lux-t-why">${t.why}</div></div></div>`).join('');
+  const perHtml=d.personas.map(p=>`<div class="lux-persona"><div class="lux-p-type">${p.type}</div><div class="lux-p-headline">${p.headline}</div><div class="lux-p-channels"><strong>Target Channels:</strong> ${p.channels}</div></div>`).join('');
+
+  document.getElementById('commContent').innerHTML=`
+    <section class="lux-hero">
+      <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
+      <div class="lux-hero-body">
+        <a class="lux-hero-back" onclick="showCommunity('north-myrtle-beach');return false">← Back to North Myrtle Beach</a>
+        <div class="lux-hero-badge">Luxury Community</div>
+        <h1 class="lux-hero-title">${d.name}</h1>
+        <p class="lux-hero-tagline">${d.tagline}</p>
+      </div>
+    </section>
+
+    <div class="lux-facts"><div class="container"><div class="lux-facts-inner">
+      <div class="lux-fact"><div class="lux-fact-label">Price Range</div><div class="lux-fact-val">${d.price}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Gated</div><div class="lux-fact-val">${d.gated}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Home Styles</div><div class="lux-fact-val">${d.styles}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Best For</div><div class="lux-fact-val">${d.bestFor}</div></div>
+    </div></div></div>
+
+    <div class="lux-body"><div class="container"><div class="lux-layout">
+      <div class="lux-main">
+        <div class="lux-about">
+          <h2>About ${d.name}</h2>
+          <p>${d.intro}</p>
+          <p>${d.p2}</p>
+        </div>
+
+        <div class="lux-amenities">
+          <h3>Key Amenities & Selling Points</h3>
+          <div class="lux-am-grid">${amHtml}</div>
+        </div>
+
+        <div class="lux-targets">
+          <h3>Recommended Target Markets</h3>
+          <p>Where to find the ideal buyers for ${d.name}, ranked by priority tier.</p>
+          <div class="lux-t-grid">${tgtHtml}</div>
+        </div>
+
+        <div class="lux-personas">
+          <h3>Buyer Personas & Ad Messaging</h3>
+          <div class="lux-p-grid">${perHtml}</div>
+        </div>
+      </div>
+
+      <div class="lux-sidebar">
+        <div class="lux-sb-card">
+          <h3>Find Your Home in ${d.name}</h3>
+          <p>Our team knows every neighborhood and every listing. Let us match you with your perfect property.</p>
+          <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
+        </div>
+        <div class="lux-sb-card">
+          <h3>Quick Stats</h3>
+          <div class="lux-sb-stats">
+            <div class="lux-sb-stat"><div class="val">${d.price.split('–')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
+          </div>
+          <p>${d.bestFor} — this community is ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+        </div>
+        <div class="lux-sb-card" style="background:var(--navy)">
+          <h3 style="color:var(--gold)">NMB Is Booming</h3>
+          <p style="color:rgba(255,255,255,.7)">North Myrtle Beach luxury communities are seeing record demand from out-of-state buyers seeking golf, waterway, and oceanfront lifestyles.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('north-myrtle-beach');return false">View All NMB Luxury Communities</a>
+        </div>
+      </div>
+    </div></div></div>`;
+
+  document.getElementById('listHead').textContent='Available Properties in '+d.name;
+  showPage('community');
+}
+
+/* ── Little River Luxury community card grid HTML ── */
+function lrLuxuryCardsHTML(){
+  const slugs=['serenity-point','paradise-island','big-landing','crystal-pointe','river-hills','mariners-pointe','bridgewater','windjammer-village'];
+  return slugs.map(s=>{
+    const d=LRC[s];
+    return `<div class="lux-card" onclick="showLRLuxuryCommunity('${s}')">
+      <div class="lux-card-img" style="background-image:url('${d.bg}')">
+        ${d.gated==='Yes'?'<div class="lux-card-gated">Gated</div>':''}
+        ${d.gated==='Partially'?'<div class="lux-card-gated">Semi-Gated</div>':''}
+        ${d.gated==='Secured'?'<div class="lux-card-gated">Secured</div>':''}
+      </div>
+      <div class="lux-card-body">
+        <div class="lux-card-name">${d.name}</div>
+        <div class="lux-card-tag">${d.tag}</div>
+        <div class="lux-card-price">${d.price}</div>
+        <span class="lux-card-cta">Explore Community →</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ── Render Little River luxury community landing page ── */
+function showLRLuxuryCommunity(slug){
+  const d=LRC[slug]; if(!d) return;
+  const amHtml=d.amenities.map(a=>`<div class="lux-am"><div class="lux-am-icon">${a.i}</div><div><h4>${a.t}</h4><p>${a.d}</p></div></div>`).join('');
+  const tgtHtml=d.targets.map(t=>`<div class="lux-t"><div class="lux-t-tier">${t.tier}</div><div><div class="lux-t-metro">${t.metro}</div><div class="lux-t-why">${t.why}</div></div></div>`).join('');
+  const perHtml=d.personas.map(p=>`<div class="lux-persona"><div class="lux-p-type">${p.type}</div><div class="lux-p-headline">${p.headline}</div><div class="lux-p-channels"><strong>Target Channels:</strong> ${p.channels}</div></div>`).join('');
+
+  document.getElementById('commContent').innerHTML=`
+    <section class="lux-hero">
+      <div class="lux-hero-bg" style="background-image:url('${d.bg}')"></div>
+      <div class="lux-hero-body">
+        <a class="lux-hero-back" onclick="showCommunity('little-river');return false">← Back to Little River</a>
+        <div class="lux-hero-badge">Luxury Community</div>
+        <h1 class="lux-hero-title">${d.name}</h1>
+        <p class="lux-hero-tagline">${d.tagline}</p>
+      </div>
+    </section>
+
+    <div class="lux-facts"><div class="container"><div class="lux-facts-inner">
+      <div class="lux-fact"><div class="lux-fact-label">Price Range</div><div class="lux-fact-val">${d.price}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Gated</div><div class="lux-fact-val">${d.gated}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Home Styles</div><div class="lux-fact-val">${d.styles}</div></div>
+      <div class="lux-fact"><div class="lux-fact-label">Best For</div><div class="lux-fact-val">${d.bestFor}</div></div>
+    </div></div></div>
+
+    <div class="lux-body"><div class="container"><div class="lux-layout">
+      <div class="lux-main">
+        <div class="lux-about">
+          <h2>About ${d.name}</h2>
+          <p>${d.intro}</p>
+          <p>${d.p2}</p>
+        </div>
+
+        <div class="lux-amenities">
+          <h3>Key Amenities & Selling Points</h3>
+          <div class="lux-am-grid">${amHtml}</div>
+        </div>
+
+        <div class="lux-targets">
+          <h3>Recommended Target Markets</h3>
+          <p>Where to find the ideal buyers for ${d.name}, ranked by priority tier.</p>
+          <div class="lux-t-grid">${tgtHtml}</div>
+        </div>
+
+        <div class="lux-personas">
+          <h3>Buyer Personas & Ad Messaging</h3>
+          <div class="lux-p-grid">${perHtml}</div>
+        </div>
+      </div>
+
+      <div class="lux-sidebar">
+        <div class="lux-sb-card">
+          <h3>Find Your Home in ${d.name}</h3>
+          <p>Our team knows every waterway community and every listing in Little River. Let us match you with your perfect property.</p>
+          <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Request a Consultation</a>
+        </div>
+        <div class="lux-sb-card">
+          <h3>Quick Stats</h3>
+          <div class="lux-sb-stats">
+            <div class="lux-sb-stat"><div class="val">${d.price.split('–')[0].trim()}</div><div class="lab">Starting</div></div>
+            <div class="lux-sb-stat"><div class="val">${d.gated}</div><div class="lab">Gated</div></div>
+          </div>
+          <p>${d.bestFor} — this community is ideally suited for buyers who value ${d.amenities[0].t.toLowerCase()} and ${d.amenities[1].t.toLowerCase()}.</p>
+        </div>
+        <div class="lux-sb-card" style="background:var(--navy)">
+          <h3 style="color:var(--gold)">Little River: Hidden Gem</h3>
+          <p style="color:rgba(255,255,255,.7)">Little River's waterway communities offer the most authentic coastal living on the Grand Strand — with prices that still surprise buyers from bigger markets.</p>
+          <a href="#" class="btn btn-outline btn-full" onclick="showCommunity('little-river');return false">View All LR Luxury Communities</a>
+        </div>
+      </div>
+    </div></div></div>`;
+
+  document.getElementById('listHead').textContent='Available Properties in '+d.name;
+  showPage('community');
+}
+
+/* ── Override showCommunity to add luxury grids for carolina-forest, north-myrtle-beach, AND little-river ── */
 const _origShowCommunity = showCommunity;
 showCommunity = function(slug){
   _origShowCommunity(slug);
@@ -1743,6 +2535,38 @@ showCommunity = function(slug){
           <p>From resort-style gated enclaves to custom lakefront estates — discover the finest neighborhoods within Carolina Forest.</p>
         </div>
         <div class="lux-grid">${luxuryCardsHTML()}</div>
+      </div>`;
+      hook.appendChild(luxSec);
+    }
+  }
+  if(slug==='north-myrtle-beach'){
+    const hook=document.querySelector('#commContent .comm-content');
+    if(hook){
+      const luxSec=document.createElement('div');
+      luxSec.className='lux-comm-sec';
+      luxSec.innerHTML=`<div class="container">
+        <div class="sec-header">
+          <span class="lbl">Explore</span>
+          <h2 class="h2">Luxury Communities in North Myrtle Beach</h2>
+          <p>From championship golf resorts to oceanfront high-rises — discover the premier luxury neighborhoods in the NMB corridor.</p>
+        </div>
+        <div class="lux-grid">${nmbLuxuryCardsHTML()}</div>
+      </div>`;
+      hook.appendChild(luxSec);
+    }
+  }
+  if(slug==='little-river'){
+    const hook=document.querySelector('#commContent .comm-content');
+    if(hook){
+      const luxSec=document.createElement('div');
+      luxSec.className='lux-comm-sec';
+      luxSec.innerHTML=`<div class="container">
+        <div class="sec-header">
+          <span class="lbl">Explore</span>
+          <h2 class="h2">Luxury Communities in Little River</h2>
+          <p>From ultra-exclusive waterway enclaves to private island estates — discover the finest communities in Little River.</p>
+        </div>
+        <div class="lux-grid">${lrLuxuryCardsHTML()}</div>
       </div>`;
       hook.appendChild(luxSec);
     }
