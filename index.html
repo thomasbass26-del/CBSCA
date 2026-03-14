@@ -857,11 +857,11 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
     <div class="container">
       <div class="intro-grid">
         <div>
-          <span class="lbl intro-lbl">Welcome to the Grand Strand</span>
-          <h2 class="h2 intro-h">Life Is Better<br>By the Water</h2>
-          <p class="intro-p">The Grand Strand stretches over 60 miles of pristine Atlantic coastline — from the quiet marinas of Little River to the undisturbed marshes of Pawleys Island. This is a place where neighbors know each other by name, golf courses meet the tide, and every sunset reminds you why you chose to live here.</p>
-          <p class="intro-p">Coldwell Banker Sea Coast Advantage brings unmatched local knowledge and a genuine passion for this coast to every transaction. We're not just your agents — we're your neighbors.</p>
-          <div class="stats">
+          <span class="lbl intro-lbl" id="introLabelEl">Welcome to the Grand Strand</span>
+          <h2 class="h2 intro-h" id="introHeadEl">Life Is Better<br>By the Water</h2>
+          <p class="intro-p" id="introP1El">The Grand Strand stretches over 60 miles of pristine Atlantic coastline — from the quiet marinas of Little River to the undisturbed marshes of Pawleys Island. This is a place where neighbors know each other by name, golf courses meet the tide, and every sunset reminds you why you chose to live here.</p>
+          <p class="intro-p" id="introP2El">Coldwell Banker Sea Coast Advantage brings unmatched local knowledge and a genuine passion for this coast to every transaction. We're not just your agents — we're your neighbors.</p>
+          <div class="stats" id="introStatsEl">
             <div class="stat"><span class="stat-n">$2.1B+</span><span class="stat-l">Sales Volume</span></div>
             <div class="stat"><span class="stat-n">1,400+</span><span class="stat-l">Families Served</span></div>
             <div class="stat"><span class="stat-n">20+</span><span class="stat-l">Years Local</span></div>
@@ -901,31 +901,8 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <h2 class="h2">Featured Communities</h2>
         <p>From oceanfront estates to gated golf retreats — South Carolina's most sought-after neighborhoods.</p>
       </div>
-      <div class="comm-grid">
-        <div class="comm-card large" onclick="showCommunity('murrells-inlet')">
-          <div class="comm-bg" style="background-image:url('images/barefoot-cabana.jpg')"></div>
-          <div class="comm-info"><div class="comm-name">Murrells Inlet</div><span class="comm-tag">The Seafood Capital of SC</span><button class="comm-explore">Explore →</button></div>
-        </div>
-        <div class="comm-card" onclick="showCommunity('north-myrtle-beach')">
-          <div class="comm-bg" style="background-image:url('images/nmb-sign.jpg')"></div>
-          <div class="comm-info"><div class="comm-name">North Myrtle Beach</div><span class="comm-tag">Oceanfront Living</span><button class="comm-explore">Explore →</button></div>
-        </div>
-        <div class="comm-card" onclick="showCommunity('pawleys-island')">
-          <div class="comm-bg" style="background-image:url('images/pelican-bay-4.jpg')"></div>
-          <div class="comm-info"><div class="comm-name">Pawleys Island</div><span class="comm-tag">Understated Elegance</span><button class="comm-explore">Explore →</button></div>
-        </div>
-        <div class="comm-card" onclick="showCommunity('little-river')">
-          <div class="comm-bg" style="background-image:url('images/pelican-bay-4.jpg')"></div>
-          <div class="comm-info"><div class="comm-name">Little River</div><span class="comm-tag">Waterway &amp; Marina Living</span><button class="comm-explore">Explore →</button></div>
-        </div>
-        <div class="comm-card" onclick="showCommunity('carolina-forest')">
-          <div class="comm-bg" style="background-image:url('images/waterbridge-entrance.jpg')"></div>
-          <div class="comm-info"><div class="comm-name">Carolina Forest</div><span class="comm-tag">Master-Planned Living</span><button class="comm-explore">Explore →</button></div>
-        </div>
-        <div class="comm-card" onclick="showCommunity('litchfield')">
-          <div class="comm-bg" style="background-image:url('images/little-river-1.jpg')"></div>
-          <div class="comm-info"><div class="comm-name">Litchfield Beach</div><span class="comm-tag">Pristine &amp; Peaceful</span><button class="comm-explore">Explore →</button></div>
-        </div>
+      <div class="comm-grid" id="commGrid">
+        <!-- Loaded from Firestore -->
       </div>
     </div>
   </section>
@@ -965,11 +942,11 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   </section>
 
   <!-- Home Value CTA -->
-  <section class="hv-cta">
+  <section class="hv-cta" id="ctaSection">
     <div class="container">
-      <h2>Curious What Your Home Is Worth?</h2>
-      <p>Get a complimentary, no-obligation market valuation from our local experts — usually within 24 hours.</p>
-      <a href="#" class="btn btn-gold" onclick="showPage('home-value');return false">Request Your Free Home Value</a>
+      <h2 id="ctaHeadEl">Curious What Your Home Is Worth?</h2>
+      <p id="ctaDescEl">Get a complimentary, no-obligation market valuation from our local experts — usually within 24 hours.</p>
+      <a href="#" class="btn btn-gold" id="ctaBtnEl" onclick="showPage('home-value');return false">Request Your Free Home Value</a>
     </div>
   </section>
 
@@ -1156,6 +1133,13 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
           <button class="blog-cat-btn" onclick="switchAdminTab('hero',this)">🖼️ Hero Slides</button>
           <button class="blog-cat-btn" onclick="switchAdminTab('agents',this)">👤 Agents</button>
           <button class="blog-cat-btn" onclick="switchAdminTab('testimonials',this)">💬 Testimonials</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('communities',this)">🗺️ Communities</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('settings',this)">⚙️ Settings</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('intro',this)">🏠 Intro</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('about',this)">📄 About</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('cta',this)">📢 CTA</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('footer',this)">🦶 Footer</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('commpages',this)">📍 Community Pages</button>
           <div style="flex:1"></div>
           <span class="admin-user" id="adminUserEmail" style="align-self:center"></span>
           <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream);padding:8px 16px;font-size:10px" onclick="adminSignOut()">Sign Out</button>
@@ -1226,8 +1210,169 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
           </div>
           <div class="admin-posts-list" id="adminTestList"></div>
         </div>
+
+        <!-- TAB: Featured Communities -->
+        <div class="admin-tab" id="adminTab-communities" style="display:none">
+          <div class="admin-bar">
+            <h2>🗺️ Featured Communities</h2>
+            <div class="admin-bar-actions">
+              <button class="btn btn-gold" onclick="openCommEditor()">+ Add Community</button>
+            </div>
+          </div>
+          <div class="admin-posts-list" id="adminCommList"></div>
+        </div>
+
+        <!-- TAB: Site Settings -->
+        <div class="admin-tab" id="adminTab-settings" style="display:none">
+          <div class="admin-bar"><h2>⚙️ Site Settings</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveSettings()">Save Settings</button></div></div>
+          <div class="editor-wrap">
+            <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+              <div class="fg"><label>Phone Number</label><input type="text" id="setPhone" placeholder="(843) 430-5201"></div>
+              <div class="fg"><label>Email</label><input type="email" id="setEmail" placeholder="info@cbsca.com"></div>
+            </div>
+            <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+              <div class="fg"><label>Facebook URL</label><input type="text" id="setFB" placeholder="https://facebook.com/..."></div>
+              <div class="fg"><label>Instagram URL</label><input type="text" id="setIG" placeholder="https://instagram.com/..."></div>
+            </div>
+            <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+              <div class="fg"><label>LinkedIn URL</label><input type="text" id="setLI" placeholder="https://linkedin.com/..."></div>
+              <div class="fg"><label>YouTube URL</label><input type="text" id="setYT" placeholder="https://youtube.com/..."></div>
+            </div>
+            <div class="fg"><label>Location Text (topbar)</label><input type="text" id="setLocation" placeholder="Myrtle Beach, SC | Grand Strand"></div>
+            <p id="setMsg" style="font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+          </div>
+        </div>
+
+        <!-- TAB: Homepage Intro -->
+        <div class="admin-tab" id="adminTab-intro" style="display:none">
+          <div class="admin-bar"><h2>🏠 Homepage Intro</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveIntro()">Save Intro</button></div></div>
+          <div class="editor-wrap">
+            <div class="fg"><label>Section Label</label><input type="text" id="introLabel" placeholder="Welcome to the Grand Strand"></div>
+            <div class="fg"><label>Headline</label><input type="text" id="introHead" placeholder="Life Is Better By the Water"></div>
+            <div class="fg"><label>Paragraph 1</label><textarea id="introP1" rows="4" placeholder="Main intro paragraph..."></textarea></div>
+            <div class="fg"><label>Paragraph 2</label><textarea id="introP2" rows="3" placeholder="Second paragraph..."></textarea></div>
+            <div class="form-row" style="grid-template-columns:1fr 1fr 1fr;gap:16px">
+              <div class="fg"><label>Stat 1 Number</label><input type="text" id="introStat1N" placeholder="$2.1B+"></div>
+              <div class="fg"><label>Stat 2 Number</label><input type="text" id="introStat2N" placeholder="1,400+"></div>
+              <div class="fg"><label>Stat 3 Number</label><input type="text" id="introStat3N" placeholder="20+"></div>
+            </div>
+            <div class="form-row" style="grid-template-columns:1fr 1fr 1fr;gap:16px">
+              <div class="fg"><label>Stat 1 Label</label><input type="text" id="introStat1L" placeholder="Sales Volume"></div>
+              <div class="fg"><label>Stat 2 Label</label><input type="text" id="introStat2L" placeholder="Families Served"></div>
+              <div class="fg"><label>Stat 3 Label</label><input type="text" id="introStat3L" placeholder="Years Local"></div>
+            </div>
+            <p id="introMsg" style="font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+          </div>
+        </div>
+
+        <!-- TAB: About Page -->
+        <div class="admin-tab" id="adminTab-about" style="display:none">
+          <div class="admin-bar"><h2>📄 About Page</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveAbout()">Save About</button></div></div>
+          <div class="editor-wrap">
+            <div class="fg"><label>Hero Headline (use &lt;em&gt; for gold italic)</label><input type="text" id="aboutHead" placeholder='Local Roots. <em>Global Reach.</em>'></div>
+            <div class="fg"><label>Section Label</label><input type="text" id="aboutLabel" placeholder="Who We Are"></div>
+            <div class="fg"><label>Section Heading</label><input type="text" id="aboutSubhead" placeholder="More Than Agents — Neighbors"></div>
+            <div class="fg"><label>Paragraph 1</label><textarea id="aboutP1" rows="4" placeholder="Main about text..."></textarea></div>
+            <div class="fg"><label>Paragraph 2</label><textarea id="aboutP2" rows="3" placeholder="Second paragraph..."></textarea></div>
+            <div class="fg">
+              <label>Team Photo</label>
+              <div style="display:flex;gap:8px;align-items:flex-start">
+                <input type="text" id="aboutImage" placeholder="images/photo.jpg or full URL" style="flex:1">
+                <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">📷 Upload<input type="file" accept="image/*" onchange="uploadToField(this,'aboutImage')" style="display:none"></label>
+              </div>
+            </div>
+            <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--cream)"><label style="font-family:var(--fd);font-size:1rem;font-weight:600;color:var(--navy);display:block;margin-bottom:14px">Awards (up to 4)</label></div>
+            <div class="form-row" style="grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
+              <div class="fg"><label>Award 1 Icon</label><input type="text" id="aw1Icon" placeholder="🏆"></div>
+              <div class="fg"><label>Award 1 Text</label><input type="text" id="aw1Text" placeholder="Diamond Society Top Producer"></div>
+              <div class="fg"><label>Award 1 Year</label><input type="text" id="aw1Year" placeholder="2024"></div>
+              <div></div>
+            </div>
+            <div class="form-row" style="grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
+              <div class="fg"><label>Award 2 Icon</label><input type="text" id="aw2Icon" placeholder="⭐"></div>
+              <div class="fg"><label>Award 2 Text</label><input type="text" id="aw2Text" placeholder="Five Star Award Winner"></div>
+              <div class="fg"><label>Award 2 Year</label><input type="text" id="aw2Year" placeholder="8 Years"></div>
+              <div></div>
+            </div>
+            <div class="form-row" style="grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
+              <div class="fg"><label>Award 3 Icon</label><input type="text" id="aw3Icon" placeholder="📈"></div>
+              <div class="fg"><label>Award 3 Text</label><input type="text" id="aw3Text" placeholder="Top 1% Grand Strand"></div>
+              <div class="fg"><label>Award 3 Year</label><input type="text" id="aw3Year" placeholder="2019–2025"></div>
+              <div></div>
+            </div>
+            <div class="form-row" style="grid-template-columns:1fr 1fr 1fr 1fr;gap:12px">
+              <div class="fg"><label>Award 4 Icon</label><input type="text" id="aw4Icon" placeholder="🤝"></div>
+              <div class="fg"><label>Award 4 Text</label><input type="text" id="aw4Text" placeholder="Certified Luxury Home Marketing"></div>
+              <div class="fg"><label>Award 4 Year</label><input type="text" id="aw4Year" placeholder="CLHMS"></div>
+              <div></div>
+            </div>
+            <p id="aboutMsg" style="font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+          </div>
+        </div>
+
+        <!-- TAB: Home Value CTA -->
+        <div class="admin-tab" id="adminTab-cta" style="display:none">
+          <div class="admin-bar"><h2>📢 Home Value CTA Banner</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveCTA()">Save CTA</button></div></div>
+          <div class="editor-wrap">
+            <div class="fg"><label>Headline</label><input type="text" id="ctaHead" placeholder="Curious What Your Home Is Worth?"></div>
+            <div class="fg"><label>Description</label><textarea id="ctaDesc" rows="2" placeholder="Get a complimentary valuation..."></textarea></div>
+            <div class="fg"><label>Button Text</label><input type="text" id="ctaBtnText" placeholder="Request Your Free Valuation"></div>
+            <div class="fg"><label>Button Link (page name or URL)</label><input type="text" id="ctaBtnLink" placeholder="home-value"></div>
+            <p id="ctaMsg" style="font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+          </div>
+        </div>
+
+        <!-- TAB: Footer -->
+        <div class="admin-tab" id="adminTab-footer" style="display:none">
+          <div class="admin-bar"><h2>🦶 Footer Content</h2><div class="admin-bar-actions"><button class="btn btn-gold" onclick="saveFooter()">Save Footer</button></div></div>
+          <div class="editor-wrap">
+            <div class="fg"><label>Brand Description</label><textarea id="footDesc" rows="3" placeholder="Short brand description for footer..."></textarea></div>
+            <div class="fg"><label>Copyright Text</label><input type="text" id="footCopy" placeholder="© 2026 Coldwell Banker Sea Coast Advantage..."></div>
+            <p id="footMsg" style="font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+          </div>
+        </div>
+
+        <!-- TAB: Community Pages -->
+        <div class="admin-tab" id="adminTab-commpages" style="display:none">
+          <div class="admin-bar"><h2>📍 Community Page Content</h2><div class="admin-bar-actions"><span style="font-family:var(--fu);font-size:11px;color:var(--gray)">Edit each community's landing page content</span></div></div>
+          <div class="admin-posts-list" id="adminCommPagesList"></div>
+        </div>
       </div>
     </div>
+  </div>
+
+  <!-- Community Page Editor -->
+  <div id="adminCommPageEditor" style="display:none">
+    <div class="blog-body"><div class="container"><div class="editor-wrap">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+        <a href="#" class="blog-single-back" onclick="closeCommPageEditor();return false">← Back to Communities</a>
+        <span id="commPageEditorTitle" style="font-family:var(--fd);font-size:1.2rem;font-weight:600;color:var(--navy)">Edit Community</span>
+      </div>
+      <input type="hidden" id="cpSlug">
+      <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+        <div class="fg"><label>Community Name</label><input type="text" id="cpName" placeholder="Little River"></div>
+        <div class="fg"><label>Tag / Badge</label><input type="text" id="cpTag" placeholder="Gated Waterway & Marina Living"></div>
+      </div>
+      <div class="fg"><label>Tagline</label><input type="text" id="cpTagline" placeholder="Where the waterway meets the good life."></div>
+      <div class="fg">
+        <label>Hero Background Image</label>
+        <div style="display:flex;gap:8px;align-items:flex-start">
+          <input type="text" id="cpImage" placeholder="images/photo.jpg or full URL" style="flex:1">
+          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">📷 Upload<input type="file" accept="image/*" onchange="uploadToField(this,'cpImage')" style="display:none"></label>
+        </div>
+      </div>
+      <div class="fg"><label>Intro Paragraph</label><textarea id="cpIntro" rows="5" placeholder="Main community description..."></textarea></div>
+      <div class="fg"><label>Second Paragraph</label><textarea id="cpP2" rows="4" placeholder="Additional description..."></textarea></div>
+      <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--cream)">
+        <label style="font-family:var(--fd);font-size:1rem;font-weight:600;color:var(--navy);display:block;margin-bottom:14px">Highlights (up to 6)</label>
+      </div>
+      <div id="cpHighlights"></div>
+      <div class="editor-actions" style="margin-top:24px">
+        <button class="btn btn-navy" onclick="saveCommPage()">Save Community</button>
+        <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream)" onclick="closeCommPageEditor()">Cancel</button>
+      </div>
+      <p id="cpEditorError" style="color:#c0392b;font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+    </div></div></div>
   </div>
 
   <!-- Editor -->
@@ -1374,6 +1519,17 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
       <div class="fg"><label>Title (use &lt;em&gt; for gold italic)</label><input type="text" id="heroTitle" placeholder='Find Your <em>Perfect</em> Coastal Retreat'></div>
       <div class="fg"><label>Subtitle</label><textarea id="heroSub" rows="2" placeholder="Short description..."></textarea></div>
       <div class="fg"><label>Sort Order</label><input type="number" id="heroOrder" placeholder="1" value="0"></div>
+      <div style="margin-top:20px;padding-top:20px;border-top:1px solid var(--cream)">
+        <label class="fg" style="margin-bottom:14px"><span style="font-family:var(--fd);font-size:1rem;font-weight:600;color:var(--navy)">Action Buttons</span></label>
+        <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+          <div class="fg"><label>Button 1 Text</label><input type="text" id="heroBtn1Text" placeholder="Explore by Lifestyle"></div>
+          <div class="fg"><label>Button 1 URL or Page</label><input type="text" id="heroBtn1Link" placeholder="lifestyle (page name or full URL)"></div>
+        </div>
+        <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+          <div class="fg"><label>Button 2 Text</label><input type="text" id="heroBtn2Text" placeholder="What's My Home Worth?"></div>
+          <div class="fg"><label>Button 2 URL or Page</label><input type="text" id="heroBtn2Link" placeholder="home-value (page name or full URL)"></div>
+        </div>
+      </div>
       <div class="editor-actions">
         <button class="btn btn-navy" onclick="saveHero()">Save Slide</button>
         <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream)" onclick="closeHeroEditor()">Cancel</button>
@@ -1434,6 +1590,48 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
       <p id="testEditorError" style="color:#c0392b;font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
     </div></div></div>
   </div>
+
+  <!-- Community Editor -->
+  <div id="adminCommEditor" style="display:none">
+    <div class="blog-body"><div class="container"><div class="editor-wrap">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+        <a href="#" class="blog-single-back" onclick="closeCommEditor();return false">← Back to Communities</a>
+        <span id="commEditorTitle" style="font-family:var(--fd);font-size:1.2rem;font-weight:600;color:var(--navy)">New Featured Community</span>
+      </div>
+      <div class="fg"><label>Community Name</label><input type="text" id="commName" placeholder="Murrells Inlet"></div>
+      <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+        <div class="fg"><label>Tagline</label><input type="text" id="commTag" placeholder="The Seafood Capital of SC"></div>
+        <div class="fg"><label>Community Slug (links to community page)</label>
+          <select id="commSlug">
+            <option value="little-river">Little River</option>
+            <option value="north-myrtle-beach">North Myrtle Beach</option>
+            <option value="conway">Conway</option>
+            <option value="carolina-forest">Carolina Forest</option>
+            <option value="myrtle-beach">Myrtle Beach</option>
+            <option value="murrells-inlet">Murrells Inlet</option>
+            <option value="surfside">Surfside Beach</option>
+            <option value="garden-city">Garden City</option>
+            <option value="litchfield">Litchfield Beach</option>
+            <option value="pawleys-island">Pawleys Island</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg">
+        <label>Background Image</label>
+        <div style="display:flex;gap:8px;align-items:flex-start">
+          <input type="text" id="commImage" placeholder="images/photo.jpg or full URL" style="flex:1">
+          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">📷 Upload<input type="file" accept="image/*" onchange="uploadToField(this,'commImage')" style="display:none"></label>
+        </div>
+      </div>
+      <label class="editor-check"><input type="checkbox" id="commLarge"> Large card (spans two columns)</label>
+      <div class="fg" style="margin-top:14px"><label>Sort Order</label><input type="number" id="commOrder" placeholder="1" value="0"></div>
+      <div class="editor-actions">
+        <button class="btn btn-navy" onclick="saveComm()">Save Community</button>
+        <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream)" onclick="closeCommEditor()">Cancel</button>
+      </div>
+      <p id="commEditorError" style="color:#c0392b;font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+    </div></div></div>
+  </div>
 </div>
 
 
@@ -1444,23 +1642,23 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   <div class="about-hero">
     <div class="container">
       <span class="lbl">Our Story</span>
-      <h1>We Don't Just Sell Homes.<br><em>We Sell This Life.</em></h1>
+      <h1 id="aboutHeadEl">We Don't Just Sell Homes.<br><em>We Sell This Life.</em></h1>
     </div>
   </div>
   <div class="about-body">
     <div class="container">
       <div class="about-grid">
         <div class="about-text">
-          <span class="lbl">Coldwell Banker Sea Coast Advantage</span>
-          <h2>Two Decades of Grand Strand Expertise</h2>
-          <p>Coldwell Banker Sea Coast Advantage was built on a simple belief: the best real estate experience comes from agents who genuinely love where they live. Our team has spent over two decades building careers — and lives — along this remarkable stretch of South Carolina coastline.</p>
-          <p>Our approach is personal. Before any property changes hands, we take the time to understand not just what you're looking for in a home, but how you want to feel when you live there.</p>
+          <span class="lbl" id="aboutLabelEl">Coldwell Banker Sea Coast Advantage</span>
+          <h2 id="aboutSubheadEl">Two Decades of Grand Strand Expertise</h2>
+          <p id="aboutP1El">Coldwell Banker Sea Coast Advantage was built on a simple belief: the best real estate experience comes from agents who genuinely love where they live. Our team has spent over two decades building careers — and lives — along this remarkable stretch of South Carolina coastline.</p>
+          <p id="aboutP2El">Our approach is personal. Before any property changes hands, we take the time to understand not just what you're looking for in a home, but how you want to feel when you live there.</p>
           <p>Operating under the nationally recognized banner of Coldwell Banker, our agents combine deep local knowledge with world-class marketing tools, global listing reach, and the backing of one of the most trusted names in American real estate.</p>
           <a href="#" class="btn btn-navy" style="margin-top:20px">Meet the Full Team</a>
         </div>
-        <div class="about-img" style="background-image:url('images/nmb-main-street.jpg')"></div>
+        <div class="about-img" id="aboutImgEl" style="background-image:url('images/nmb-main-street.jpg')"></div>
       </div>
-      <div class="awards">
+      <div class="awards" id="awardsEl">
         <div class="award"><span class="award-icon">🏆</span><div class="award-text">Diamond Society<br>Top Producer</div><span class="award-yr">2024</span></div>
         <div class="award"><span class="award-icon">⭐</span><div class="award-text">Five Star Real Estate<br>Award Winner</div><span class="award-yr">8 Years</span></div>
         <div class="award"><span class="award-icon">📈</span><div class="award-text">Top 1% Grand Strand<br>Agents by Volume</div><span class="award-yr">2019–2025</span></div>
@@ -1478,9 +1676,9 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
       <div class="foot-brand">
         <span class="lt">Sea Coast Advantage</span>
         <span class="ls">Coldwell Banker · Myrtle Beach &amp; Grand Strand</span>
-        <p>Serving the Grand Strand and North Strand communities of South Carolina with integrity, expertise, and a genuine love for this coast.</p>
+        <p id="footDescEl">Serving the Grand Strand and North Strand communities of South Carolina with integrity, expertise, and a genuine love for this coast.</p>
         <p style="margin-top:8px">Licensed in South Carolina · Equal Housing Opportunity</p>
-        <div class="foot-social"><div class="soc">f</div><div class="soc">in</div><div class="soc">▶</div><div class="soc">📸</div></div>
+        <div class="foot-social" id="footSocialEl"><div class="soc">f</div><div class="soc">in</div><div class="soc">▶</div><div class="soc">📸</div></div>
       </div>
       <div class="foot-col">
         <h4>Communities</h4>
@@ -1594,7 +1792,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
       </div>
     </div>
     <div class="foot-bottom">
-      <p>© 2026 Coldwell Banker Sea Coast Advantage · All Rights Reserved · SC License #12345</p>
+      <p id="footCopyEl">© 2026 Coldwell Banker Sea Coast Advantage · All Rights Reserved · SC License #12345</p>
       <span><a href="#" onclick="showPage('admin');return false" style="color:rgba(255,255,255,.15);transition:color .2s" onmouseover="this.style.color='rgba(255,255,255,.4)'" onmouseout="this.style.color='rgba(255,255,255,.15)'">Admin</a> · Coldwell Banker ®</span>
     </div>
   </div>
@@ -4395,7 +4593,7 @@ function copyPostLink(){
 ══════════════════════════════════════════ */
 function checkAdminAuth(){
   const u=auth.currentUser;
-  const editors=['adminEditor','adminOHEditor','adminListingEditor','adminHeroEditor','adminAgentEditor','adminTestEditor'];
+  const editors=['adminEditor','adminOHEditor','adminListingEditor','adminHeroEditor','adminAgentEditor','adminTestEditor','adminCommEditor','adminCommPageEditor'];
   if(u){showAdminDash(u);}
   else{document.getElementById('adminLogin').style.display='block';document.getElementById('adminDash').style.display='none';editors.forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});}
 }
@@ -4417,7 +4615,7 @@ function adminSignOut(){
 }
 async function showAdminDash(user){
   document.getElementById('adminLogin').style.display='none';
-  ['adminEditor','adminOHEditor','adminListingEditor','adminHeroEditor','adminAgentEditor','adminTestEditor'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});
+  ['adminEditor','adminOHEditor','adminListingEditor','adminHeroEditor','adminAgentEditor','adminTestEditor','adminCommEditor','adminCommPageEditor'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});
   document.getElementById('adminDash').style.display='block';
   document.getElementById('adminUserEmail').textContent=user.email;
   await loadAdminPosts();
@@ -4437,6 +4635,13 @@ function switchAdminTab(tab,btn){
   if(tab==='hero') loadAdminHero();
   if(tab==='agents') loadAdminAgents();
   if(tab==='testimonials') loadAdminTests();
+  if(tab==='communities') loadAdminComm();
+  if(tab==='settings') loadSettingsForm();
+  if(tab==='intro') loadIntroForm();
+  if(tab==='about') loadAboutForm();
+  if(tab==='cta') loadCTAForm();
+  if(tab==='footer') loadFooterForm();
+  if(tab==='commpages') loadAdminCommPages();
 }
 
 /* ── Generic image upload to any field ── */
@@ -4701,12 +4906,12 @@ async function loadAdminHero(){
     list.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="admin-post-row"><div><div class="title">${p.title||'(No title)'}</div><div class="meta">Badge: ${p.badge||'none'} · Order: ${p.order||0}</div></div><div class="admin-post-actions"><button onclick="editHero('${d.id}')">Edit</button><button class="del" onclick="deleteHero('${d.id}')">Delete</button></div></div>`;}).join('');
   }catch(e){console.error(e);}
 }
-function openHeroEditor(id){editingHeroId=id||null;document.getElementById('adminDash').style.display='none';document.getElementById('adminHeroEditor').style.display='block';document.getElementById('heroEditorTitle').textContent=id?'Edit Slide':'New Slide';document.getElementById('heroEditorError').style.display='none';if(!id){['heroImage','heroBadge','heroTitle','heroSub'].forEach(f=>document.getElementById(f).value='');document.getElementById('heroOrder').value='0';}}
-async function editHero(id){try{const d=await db.collection('hero_slides').doc(id).get();if(!d.exists)return;const p=d.data();openHeroEditor(id);document.getElementById('heroImage').value=p.image||'';document.getElementById('heroBadge').value=p.badge||'';document.getElementById('heroTitle').value=p.title||'';document.getElementById('heroSub').value=p.subtitle||'';document.getElementById('heroOrder').value=p.order||0;}catch(e){console.error(e);}}
+function openHeroEditor(id){editingHeroId=id||null;document.getElementById('adminDash').style.display='none';document.getElementById('adminHeroEditor').style.display='block';document.getElementById('heroEditorTitle').textContent=id?'Edit Slide':'New Slide';document.getElementById('heroEditorError').style.display='none';if(!id){['heroImage','heroBadge','heroTitle','heroSub','heroBtn1Text','heroBtn1Link','heroBtn2Text','heroBtn2Link'].forEach(f=>document.getElementById(f).value='');document.getElementById('heroOrder').value='0';}}
+async function editHero(id){try{const d=await db.collection('hero_slides').doc(id).get();if(!d.exists)return;const p=d.data();openHeroEditor(id);document.getElementById('heroImage').value=p.image||'';document.getElementById('heroBadge').value=p.badge||'';document.getElementById('heroTitle').value=p.title||'';document.getElementById('heroSub').value=p.subtitle||'';document.getElementById('heroBtn1Text').value=p.btn1Text||'';document.getElementById('heroBtn1Link').value=p.btn1Link||'';document.getElementById('heroBtn2Text').value=p.btn2Text||'';document.getElementById('heroBtn2Link').value=p.btn2Link||'';document.getElementById('heroOrder').value=p.order||0;}catch(e){console.error(e);}}
 function closeHeroEditor(){editingHeroId=null;document.getElementById('adminHeroEditor').style.display='none';document.getElementById('adminDash').style.display='block';loadAdminHero();}
 async function saveHero(){
   const errEl=document.getElementById('heroEditorError');errEl.style.display='none';
-  const data={image:document.getElementById('heroImage').value.trim(),badge:document.getElementById('heroBadge').value.trim(),title:document.getElementById('heroTitle').value.trim(),subtitle:document.getElementById('heroSub').value.trim(),order:parseInt(document.getElementById('heroOrder').value)||0};
+  const data={image:document.getElementById('heroImage').value.trim(),badge:document.getElementById('heroBadge').value.trim(),title:document.getElementById('heroTitle').value.trim(),subtitle:document.getElementById('heroSub').value.trim(),btn1Text:document.getElementById('heroBtn1Text').value.trim(),btn1Link:document.getElementById('heroBtn1Link').value.trim(),btn2Text:document.getElementById('heroBtn2Text').value.trim(),btn2Link:document.getElementById('heroBtn2Link').value.trim(),order:parseInt(document.getElementById('heroOrder').value)||0};
   if(!data.image){errEl.textContent='Background image is required.';errEl.style.display='block';return;}
   try{if(editingHeroId)await db.collection('hero_slides').doc(editingHeroId).update(data);else await db.collection('hero_slides').add(data);closeHeroEditor();}catch(e){errEl.textContent='Save failed: '+e.message;errEl.style.display='block';}
 }
@@ -4733,9 +4938,7 @@ async function loadHeroSlides(){
       section.insertBefore(div,content);
     });
     // Update content from first slide
-    if(heroSlides[0].badge) content.querySelector('.hero-badge').textContent=heroSlides[0].badge;
-    if(heroSlides[0].title) content.querySelector('.hero-title').innerHTML=heroSlides[0].title;
-    if(heroSlides[0].subtitle) content.querySelector('.hero-sub').textContent=heroSlides[0].subtitle;
+    updateHeroContent(heroSlides[0],content);
     // Dots
     dotsEl.innerHTML=heroSlides.map((s,i)=>`<button class="dot${i===0?' active':''}" onclick="goToHeroSlide(${i})"></button>`).join('');
     // Start slideshow
@@ -4743,6 +4946,21 @@ async function loadHeroSlides(){
     if(heroInterval)clearInterval(heroInterval);
     heroInterval=setInterval(()=>goToHeroSlide((heroCur+1)%heroSlides.length),5500);
   }catch(e){console.error('Hero load error:',e);}
+}
+function heroButtonHTML(text,link,style){
+  if(!text)return '';
+  const isPage=!link.startsWith('http')&&!link.startsWith('/');
+  if(isPage) return `<a href="#" class="btn ${style}" onclick="showPage('${link}');return false">${text}</a>`;
+  return `<a href="${link}" class="btn ${style}" target="_blank">${text}</a>`;
+}
+function updateHeroContent(s,content){
+  if(s.badge) content.querySelector('.hero-badge').textContent=s.badge;
+  if(s.title) content.querySelector('.hero-title').innerHTML=s.title;
+  if(s.subtitle) content.querySelector('.hero-sub').textContent=s.subtitle;
+  const actionsEl=content.querySelector('.hero-actions');
+  if(s.btn1Text||s.btn2Text){
+    actionsEl.innerHTML=heroButtonHTML(s.btn1Text,s.btn1Link||'#','btn-gold')+heroButtonHTML(s.btn2Text,s.btn2Link||'#','btn-outline');
+  }
 }
 function goToHeroSlide(n){
   const section=document.getElementById('heroSection');
@@ -4753,11 +4971,7 @@ function goToHeroSlide(n){
   slides[heroCur]?.classList.remove('active');dots[heroCur]?.classList.remove('active');
   heroCur=n;
   slides[heroCur]?.classList.add('active');dots[heroCur]?.classList.add('active');
-  if(heroSlides[heroCur]){
-    if(heroSlides[heroCur].badge) content.querySelector('.hero-badge').textContent=heroSlides[heroCur].badge;
-    if(heroSlides[heroCur].title) content.querySelector('.hero-title').innerHTML=heroSlides[heroCur].title;
-    if(heroSlides[heroCur].subtitle) content.querySelector('.hero-sub').textContent=heroSlides[heroCur].subtitle;
-  }
+  if(heroSlides[heroCur]) updateHeroContent(heroSlides[heroCur],content);
 }
 
 /* ══════════════════════════════════════════
@@ -4827,6 +5041,323 @@ async function loadTestimonials(){
 }
 
 /* ══════════════════════════════════════════
+   FEATURED COMMUNITIES — Admin CRUD + Front-end
+══════════════════════════════════════════ */
+let editingCommId=null;
+async function loadAdminComm(){
+  try{
+    const snap=await db.collection('featured_communities').orderBy('order').get();
+    const list=document.getElementById('adminCommList');
+    if(snap.empty){list.innerHTML='<p style="font-family:var(--fb);color:var(--gray);padding:20px;text-align:center">No featured communities yet.</p>';return;}
+    list.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="admin-post-row"><div><div class="title">${p.name}</div><div class="meta">${p.tag||''} · ${p.slug} ${p.large?'· <span class="pinned">★ Large</span>':''}</div></div><div class="admin-post-actions"><button onclick="editComm('${d.id}')">Edit</button><button class="del" onclick="deleteComm('${d.id}','${p.name.replace(/'/g,"\\'")}')">Delete</button></div></div>`;}).join('');
+  }catch(e){console.error(e);}
+}
+function openCommEditor(id){editingCommId=id||null;document.getElementById('adminDash').style.display='none';document.getElementById('adminCommEditor').style.display='block';document.getElementById('commEditorTitle').textContent=id?'Edit Community':'New Featured Community';document.getElementById('commEditorError').style.display='none';if(!id){['commName','commTag','commImage'].forEach(f=>document.getElementById(f).value='');document.getElementById('commSlug').value='little-river';document.getElementById('commLarge').checked=false;document.getElementById('commOrder').value='0';}}
+async function editComm(id){try{const d=await db.collection('featured_communities').doc(id).get();if(!d.exists)return;const p=d.data();openCommEditor(id);document.getElementById('commName').value=p.name||'';document.getElementById('commTag').value=p.tag||'';document.getElementById('commSlug').value=p.slug||'little-river';document.getElementById('commImage').value=p.image||'';document.getElementById('commLarge').checked=!!p.large;document.getElementById('commOrder').value=p.order||0;}catch(e){console.error(e);}}
+function closeCommEditor(){editingCommId=null;document.getElementById('adminCommEditor').style.display='none';document.getElementById('adminDash').style.display='block';loadAdminComm();}
+async function saveComm(){
+  const errEl=document.getElementById('commEditorError');errEl.style.display='none';
+  const data={name:document.getElementById('commName').value.trim(),tag:document.getElementById('commTag').value.trim(),slug:document.getElementById('commSlug').value,image:document.getElementById('commImage').value.trim(),large:document.getElementById('commLarge').checked,order:parseInt(document.getElementById('commOrder').value)||0};
+  if(!data.name){errEl.textContent='Community name is required.';errEl.style.display='block';return;}
+  try{if(editingCommId)await db.collection('featured_communities').doc(editingCommId).update(data);else await db.collection('featured_communities').add(data);closeCommEditor();}catch(e){errEl.textContent='Save failed: '+e.message;errEl.style.display='block';}
+}
+async function deleteComm(id,name){if(!confirm('Remove "'+name+'" from featured?'))return;try{await db.collection('featured_communities').doc(id).delete();loadAdminComm();}catch(e){alert('Delete failed.');}}
+
+/* ── Front-end: Load featured communities ── */
+async function loadCommunities(){
+  try{
+    const snap=await db.collection('featured_communities').orderBy('order').get();
+    const grid=document.getElementById('commGrid');
+    if(snap.empty){grid.innerHTML='<p style="text-align:center;padding:40px;font-family:var(--fb);color:var(--gray)">Featured communities coming soon.</p>';return;}
+    grid.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="comm-card${p.large?' large':''}" onclick="showCommunity('${p.slug}')"><div class="comm-bg" style="background-image:url('${p.image||'images/barefoot-landing.jpg'}')"></div><div class="comm-info"><div class="comm-name">${p.name}</div><span class="comm-tag">${p.tag||''}</span><button class="comm-explore">Explore →</button></div></div>`;}).join('');
+  }catch(e){console.error('Communities load error:',e);}
+}
+
+/* ══════════════════════════════════════════
+   SITE SETTINGS — Single doc in Firestore
+══════════════════════════════════════════ */
+async function loadSettings(){
+  try{
+    const doc=await db.collection('site_config').doc('settings').get();
+    if(!doc.exists)return;const d=doc.data();
+    // Apply to all phone/email instances
+    document.querySelectorAll('a[href^="tel:"]').forEach(a=>{if(d.phone){a.href='tel:'+d.phone.replace(/\D/g,'');a.textContent=a.textContent.includes('📞')?'📞 '+d.phone:d.phone;}});
+    if(d.location){const loc=document.querySelector('.tb-loc');if(loc)loc.textContent=' · '+d.location;}
+    // Social links
+    if(d.fb||d.ig||d.li||d.yt){
+      const socEl=document.getElementById('footSocialEl');
+      if(socEl) socEl.innerHTML=
+        (d.fb?`<a href="${d.fb}" target="_blank" rel="noopener" class="soc">f</a>`:'<div class="soc">f</div>')+
+        (d.li?`<a href="${d.li}" target="_blank" rel="noopener" class="soc">in</a>`:'<div class="soc">in</div>')+
+        (d.yt?`<a href="${d.yt}" target="_blank" rel="noopener" class="soc">▶</a>`:'<div class="soc">▶</div>')+
+        (d.ig?`<a href="${d.ig}" target="_blank" rel="noopener" class="soc">📸</a>`:'<div class="soc">📸</div>');
+    }
+  }catch(e){console.error('Settings load error:',e);}
+}
+async function loadSettingsForm(){
+  try{const doc=await db.collection('site_config').doc('settings').get();if(!doc.exists)return;const d=doc.data();
+  document.getElementById('setPhone').value=d.phone||'';document.getElementById('setEmail').value=d.email||'';
+  document.getElementById('setFB').value=d.fb||'';document.getElementById('setIG').value=d.ig||'';
+  document.getElementById('setLI').value=d.li||'';document.getElementById('setYT').value=d.yt||'';
+  document.getElementById('setLocation').value=d.location||'';}catch(e){console.error(e);}
+}
+async function saveSettings(){
+  const msg=document.getElementById('setMsg');msg.style.display='none';
+  const data={phone:document.getElementById('setPhone').value.trim(),email:document.getElementById('setEmail').value.trim(),fb:document.getElementById('setFB').value.trim(),ig:document.getElementById('setIG').value.trim(),li:document.getElementById('setLI').value.trim(),yt:document.getElementById('setYT').value.trim(),location:document.getElementById('setLocation').value.trim()};
+  try{await db.collection('site_config').doc('settings').set(data,{merge:true});msg.textContent='Settings saved!';msg.style.color='#27ae60';msg.style.display='block';loadSettings();}catch(e){msg.textContent='Save failed: '+e.message;msg.style.color='#c0392b';msg.style.display='block';}
+}
+
+/* ══════════════════════════════════════════
+   HOMEPAGE INTRO — Single doc
+══════════════════════════════════════════ */
+async function loadIntro(){
+  try{const doc=await db.collection('site_config').doc('intro').get();if(!doc.exists)return;const d=doc.data();
+  const lbl=document.getElementById('introLabelEl');if(lbl&&d.label)lbl.textContent=d.label;
+  const head=document.getElementById('introHeadEl');if(head&&d.headline)head.innerHTML=d.headline;
+  const p1=document.getElementById('introP1El');if(p1&&d.p1)p1.textContent=d.p1;
+  const p2=document.getElementById('introP2El');if(p2&&d.p2)p2.textContent=d.p2;
+  const stats=document.getElementById('introStatsEl');
+  if(stats&&d.stat1N) stats.innerHTML=`<div class="stat"><span class="stat-n">${d.stat1N}</span><span class="stat-l">${d.stat1L||''}</span></div><div class="stat"><span class="stat-n">${d.stat2N||''}</span><span class="stat-l">${d.stat2L||''}</span></div><div class="stat"><span class="stat-n">${d.stat3N||''}</span><span class="stat-l">${d.stat3L||''}</span></div>`;
+  }catch(e){console.error('Intro load error:',e);}
+}
+async function loadIntroForm(){
+  try{const doc=await db.collection('site_config').doc('intro').get();if(!doc.exists)return;const d=doc.data();
+  document.getElementById('introLabel').value=d.label||'';document.getElementById('introHead').value=d.headline||'';
+  document.getElementById('introP1').value=d.p1||'';document.getElementById('introP2').value=d.p2||'';
+  document.getElementById('introStat1N').value=d.stat1N||'';document.getElementById('introStat1L').value=d.stat1L||'';
+  document.getElementById('introStat2N').value=d.stat2N||'';document.getElementById('introStat2L').value=d.stat2L||'';
+  document.getElementById('introStat3N').value=d.stat3N||'';document.getElementById('introStat3L').value=d.stat3L||'';}catch(e){console.error(e);}
+}
+async function saveIntro(){
+  const msg=document.getElementById('introMsg');msg.style.display='none';
+  const data={label:document.getElementById('introLabel').value.trim(),headline:document.getElementById('introHead').value.trim(),p1:document.getElementById('introP1').value.trim(),p2:document.getElementById('introP2').value.trim(),stat1N:document.getElementById('introStat1N').value.trim(),stat1L:document.getElementById('introStat1L').value.trim(),stat2N:document.getElementById('introStat2N').value.trim(),stat2L:document.getElementById('introStat2L').value.trim(),stat3N:document.getElementById('introStat3N').value.trim(),stat3L:document.getElementById('introStat3L').value.trim()};
+  try{await db.collection('site_config').doc('intro').set(data,{merge:true});msg.textContent='Intro saved!';msg.style.color='#27ae60';msg.style.display='block';loadIntro();}catch(e){msg.textContent='Save failed: '+e.message;msg.style.color='#c0392b';msg.style.display='block';}
+}
+
+/* ══════════════════════════════════════════
+   ABOUT PAGE — Single doc
+══════════════════════════════════════════ */
+async function loadAbout(){
+  try{const doc=await db.collection('site_config').doc('about').get();if(!doc.exists)return;const d=doc.data();
+  const head=document.getElementById('aboutHeadEl');if(head&&d.headline)head.innerHTML=d.headline;
+  const lbl=document.getElementById('aboutLabelEl');if(lbl&&d.label)lbl.textContent=d.label;
+  const sub=document.getElementById('aboutSubheadEl');if(sub&&d.subhead)sub.textContent=d.subhead;
+  const p1=document.getElementById('aboutP1El');if(p1&&d.p1)p1.textContent=d.p1;
+  const p2=document.getElementById('aboutP2El');if(p2&&d.p2)p2.textContent=d.p2;
+  const img=document.getElementById('aboutImgEl');if(img&&d.image)img.style.backgroundImage='url('+d.image+')';
+  const aw=document.getElementById('awardsEl');
+  if(aw&&d.awards&&d.awards.length) aw.innerHTML=d.awards.map(a=>`<div class="award"><span class="award-icon">${a.icon||''}</span><div class="award-text">${a.text||''}</div><span class="award-yr">${a.year||''}</span></div>`).join('');
+  }catch(e){console.error('About load error:',e);}
+}
+async function loadAboutForm(){
+  try{const doc=await db.collection('site_config').doc('about').get();if(!doc.exists)return;const d=doc.data();
+  document.getElementById('aboutHead').value=d.headline||'';document.getElementById('aboutLabel').value=d.label||'';
+  document.getElementById('aboutSubhead').value=d.subhead||'';document.getElementById('aboutP1').value=d.p1||'';
+  document.getElementById('aboutP2').value=d.p2||'';document.getElementById('aboutImage').value=d.image||'';
+  if(d.awards&&d.awards.length){for(let i=0;i<4;i++){const a=d.awards[i]||{};document.getElementById('aw'+(i+1)+'Icon').value=a.icon||'';document.getElementById('aw'+(i+1)+'Text').value=a.text||'';document.getElementById('aw'+(i+1)+'Year').value=a.year||'';}}
+  }catch(e){console.error(e);}
+}
+async function saveAbout(){
+  const msg=document.getElementById('aboutMsg');msg.style.display='none';
+  const awards=[];for(let i=1;i<=4;i++){const icon=document.getElementById('aw'+i+'Icon').value.trim();const text=document.getElementById('aw'+i+'Text').value.trim();const year=document.getElementById('aw'+i+'Year').value.trim();if(text)awards.push({icon,text,year});}
+  const data={headline:document.getElementById('aboutHead').value.trim(),label:document.getElementById('aboutLabel').value.trim(),subhead:document.getElementById('aboutSubhead').value.trim(),p1:document.getElementById('aboutP1').value.trim(),p2:document.getElementById('aboutP2').value.trim(),image:document.getElementById('aboutImage').value.trim(),awards};
+  try{await db.collection('site_config').doc('about').set(data,{merge:true});msg.textContent='About page saved!';msg.style.color='#27ae60';msg.style.display='block';loadAbout();}catch(e){msg.textContent='Save failed: '+e.message;msg.style.color='#c0392b';msg.style.display='block';}
+}
+
+/* ══════════════════════════════════════════
+   HOME VALUE CTA — Single doc
+══════════════════════════════════════════ */
+async function loadCTA(){
+  try{const doc=await db.collection('site_config').doc('cta').get();if(!doc.exists)return;const d=doc.data();
+  const h=document.getElementById('ctaHeadEl');if(h&&d.headline)h.textContent=d.headline;
+  const p=document.getElementById('ctaDescEl');if(p&&d.description)p.textContent=d.description;
+  const btn=document.getElementById('ctaBtnEl');
+  if(btn&&d.btnText){btn.textContent=d.btnText;
+    const link=d.btnLink||'home-value';const isPage=!link.startsWith('http')&&!link.startsWith('/');
+    if(isPage){btn.setAttribute('onclick',"showPage('"+link+"');return false");btn.removeAttribute('target');}
+    else{btn.href=link;btn.setAttribute('target','_blank');btn.removeAttribute('onclick');}
+  }
+  }catch(e){console.error('CTA load error:',e);}
+}
+async function loadCTAForm(){
+  try{const doc=await db.collection('site_config').doc('cta').get();if(!doc.exists)return;const d=doc.data();
+  document.getElementById('ctaHead').value=d.headline||'';document.getElementById('ctaDesc').value=d.description||'';
+  document.getElementById('ctaBtnText').value=d.btnText||'';document.getElementById('ctaBtnLink').value=d.btnLink||'';}catch(e){console.error(e);}
+}
+async function saveCTA(){
+  const msg=document.getElementById('ctaMsg');msg.style.display='none';
+  const data={headline:document.getElementById('ctaHead').value.trim(),description:document.getElementById('ctaDesc').value.trim(),btnText:document.getElementById('ctaBtnText').value.trim(),btnLink:document.getElementById('ctaBtnLink').value.trim()};
+  try{await db.collection('site_config').doc('cta').set(data,{merge:true});msg.textContent='CTA saved!';msg.style.color='#27ae60';msg.style.display='block';loadCTA();}catch(e){msg.textContent='Save failed: '+e.message;msg.style.color='#c0392b';msg.style.display='block';}
+}
+
+/* ══════════════════════════════════════════
+   FOOTER — Single doc
+══════════════════════════════════════════ */
+async function loadFooter(){
+  try{const doc=await db.collection('site_config').doc('footer').get();if(!doc.exists)return;const d=doc.data();
+  const desc=document.getElementById('footDescEl');if(desc&&d.description)desc.textContent=d.description;
+  const copy=document.getElementById('footCopyEl');if(copy&&d.copyright)copy.textContent=d.copyright;
+  }catch(e){console.error('Footer load error:',e);}
+}
+async function loadFooterForm(){
+  try{const doc=await db.collection('site_config').doc('footer').get();if(!doc.exists)return;const d=doc.data();
+  document.getElementById('footDesc').value=d.description||'';document.getElementById('footCopy').value=d.copyright||'';}catch(e){console.error(e);}
+}
+async function saveFooter(){
+  const msg=document.getElementById('footMsg');msg.style.display='none';
+  const data={description:document.getElementById('footDesc').value.trim(),copyright:document.getElementById('footCopy').value.trim()};
+  try{await db.collection('site_config').doc('footer').set(data,{merge:true});msg.textContent='Footer saved!';msg.style.color='#27ae60';msg.style.display='block';loadFooter();}catch(e){msg.textContent='Save failed: '+e.message;msg.style.color='#c0392b';msg.style.display='block';}
+}
+
+/* ══════════════════════════════════════════
+   COMMUNITY PAGES — Admin CRUD + Front-end Override
+══════════════════════════════════════════ */
+const COMM_SLUGS=['little-river','north-myrtle-beach','conway','carolina-forest','myrtle-beach','murrells-inlet','surfside','garden-city','litchfield','pawleys-island'];
+
+async function loadAdminCommPages(){
+  const list=document.getElementById('adminCommPagesList');
+  let html='';
+  for(const slug of COMM_SLUGS){
+    const name=C[slug]?C[slug].name:slug;
+    let hasFirestore=false;
+    try{const doc=await db.collection('community_data').doc(slug).get();hasFirestore=doc.exists;}catch(e){}
+    html+=`<div class="admin-post-row"><div><div class="title">${name}</div><div class="meta">${slug} ${hasFirestore?'· <span class="pinned">✓ Customized</span>':'· Using default content'}</div></div><div class="admin-post-actions"><button onclick="editCommPage('${slug}')">${hasFirestore?'Edit':'Customize'}</button>${hasFirestore?'<button class="del" onclick="resetCommPage(\''+slug+'\',\''+name.replace(/'/g,"\\'")+'\')">Reset</button>':''}</div></div>`;
+  }
+  list.innerHTML=html;
+}
+
+function renderCPHighlights(highlights){
+  const el=document.getElementById('cpHighlights');
+  const hi=highlights||[{},{},{},{},{},{}];
+  el.innerHTML=Array.from({length:6},(_, i)=>{
+    const h=hi[i]||{};
+    return `<div class="form-row" style="grid-template-columns:60px 1fr 2fr;gap:10px;margin-bottom:8px"><div class="fg"><label>Icon ${i+1}</label><input type="text" id="cpHi${i}I" value="${h.i||h.icon||''}" placeholder="⚓" style="text-align:center"></div><div class="fg"><label>Title</label><input type="text" id="cpHi${i}T" value="${(h.t||h.title||'').replace(/"/g,'&quot;')}" placeholder="Highlight title"></div><div class="fg"><label>Description</label><input type="text" id="cpHi${i}D" value="${(h.d||h.desc||'').replace(/"/g,'&quot;')}" placeholder="Short description"></div></div>`;
+  }).join('');
+}
+
+async function editCommPage(slug){
+  document.getElementById('adminDash').style.display='none';
+  document.getElementById('adminCommPageEditor').style.display='block';
+  document.getElementById('cpSlug').value=slug;
+  document.getElementById('cpEditorError').style.display='none';
+  const name=C[slug]?C[slug].name:slug;
+  document.getElementById('commPageEditorTitle').textContent='Edit: '+name;
+
+  // Try Firestore first, fall back to hardcoded
+  let d=null;
+  try{const doc=await db.collection('community_data').doc(slug).get();if(doc.exists)d=doc.data();}catch(e){}
+  if(!d&&C[slug]){
+    const c=C[slug];
+    d={name:c.name,tag:c.tag,tagline:c.tagline,image:c.bg,intro:c.intro,p2:c.p2,highlights:c.hi.map(h=>({icon:h.i,title:h.t,desc:h.d}))};
+  }
+  if(!d) d={};
+
+  document.getElementById('cpName').value=d.name||'';
+  document.getElementById('cpTag').value=d.tag||'';
+  document.getElementById('cpTagline').value=d.tagline||'';
+  document.getElementById('cpImage').value=d.image||'';
+  document.getElementById('cpIntro').value=d.intro||'';
+  document.getElementById('cpP2').value=d.p2||'';
+  renderCPHighlights(d.highlights||[]);
+}
+
+function closeCommPageEditor(){
+  document.getElementById('adminCommPageEditor').style.display='none';
+  document.getElementById('adminDash').style.display='block';
+  loadAdminCommPages();
+}
+
+async function saveCommPage(){
+  const errEl=document.getElementById('cpEditorError');errEl.style.display='none';
+  const slug=document.getElementById('cpSlug').value;
+  const highlights=[];
+  for(let i=0;i<6;i++){
+    const icon=document.getElementById('cpHi'+i+'I').value.trim();
+    const title=document.getElementById('cpHi'+i+'T').value.trim();
+    const desc=document.getElementById('cpHi'+i+'D').value.trim();
+    if(title) highlights.push({icon,title,desc});
+  }
+  const data={
+    name:document.getElementById('cpName').value.trim(),
+    tag:document.getElementById('cpTag').value.trim(),
+    tagline:document.getElementById('cpTagline').value.trim(),
+    image:document.getElementById('cpImage').value.trim(),
+    intro:document.getElementById('cpIntro').value.trim(),
+    p2:document.getElementById('cpP2').value.trim(),
+    highlights
+  };
+  if(!data.name){errEl.textContent='Community name is required.';errEl.style.display='block';return;}
+  try{
+    await db.collection('community_data').doc(slug).set(data);
+    closeCommPageEditor();
+  }catch(e){errEl.textContent='Save failed: '+e.message;errEl.style.display='block';}
+}
+
+async function resetCommPage(slug,name){
+  if(!confirm('Reset "'+name+'" to default content? Your customizations will be deleted.'))return;
+  try{await db.collection('community_data').doc(slug).delete();loadAdminCommPages();}catch(e){alert('Reset failed.');}
+}
+
+/* ── Override showCommunity to use Firestore data when available ── */
+const _origShowCommunity=showCommunity;
+showCommunity=async function(slug){
+  let d=null;
+  try{
+    const doc=await db.collection('community_data').doc(slug).get();
+    if(doc.exists){
+      const fd=doc.data();
+      d={name:fd.name,tag:fd.tag,tagline:fd.tagline,bg:fd.image,intro:fd.intro,p2:fd.p2,hi:(fd.highlights||[]).map(h=>({i:h.icon,t:h.title,d:h.desc}))};
+    }
+  }catch(e){console.warn('Firestore community fetch failed, using default',e);}
+  if(!d) d=C[slug];
+  if(!d) return;
+
+  const hiHtml=d.hi.map(h=>`<div class="hl"><div class="hl-icon">${h.i}</div><div><h4>${h.t}</h4><p>${h.d}</p></div></div>`).join('');
+  document.getElementById('commContent').innerHTML=`
+    <div class="comm-hero" style="background-image:url('${d.bg}')">
+      <div class="comm-hero-body">
+        <span class="lbl">Grand Strand Community</span>
+        <h1>${d.name}</h1>
+        <p>${d.tagline}</p>
+      </div>
+    </div>
+    <div class="comm-content">
+      <div class="container">
+        <div class="comm-layout">
+          <div class="comm-desc">
+            <div class="comm-tag-pill">${d.tag}</div>
+            <h2>About ${d.name}</h2>
+            <p>${d.intro}</p>
+            <p>${d.p2}</p>
+            <h3 style="font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--navy);margin:28px 0 16px">Why ${d.name}?</h3>
+            <div class="highlights">${hiHtml}</div>
+          </div>
+          <div class="comm-sidebar">
+            <div class="sb-card">
+              <h3>Ready to Find Your Home in ${d.name}?</h3>
+              <p>Our team knows every neighborhood, every builder, and every street. Let us help you find the perfect property.</p>
+              <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Get a Free Consultation</a>
+            </div>
+            <div class="sb-prices">
+              <h3>Search by Price Range</h3>
+              <a href="#" class="price-link">$600K – $1,000,000 <span>→</span></a>
+              <a href="#" class="price-link">$1,000,000 – $3,000,000 <span>→</span></a>
+              <a href="#" class="price-link">$3,000,000+ <span>→</span></a>
+            </div>
+            <div class="sb-oh">
+              <h3>Open Houses in ${d.name}</h3>
+              <p>View scheduled open houses and request private showings.</p>
+              <a href="#" class="btn btn-outline btn-full">View Open Houses</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  document.getElementById('listHead').textContent='Available Properties in '+d.name;
+  showPage('community');
+};
+
+/* ══════════════════════════════════════════
    INIT — Load all dynamic content on page load
 ══════════════════════════════════════════ */
 async function initSiteData(){
@@ -4835,7 +5366,13 @@ async function initSiteData(){
     loadListings(),
     loadHeroSlides(),
     loadAgents(),
-    loadTestimonials()
+    loadTestimonials(),
+    loadCommunities(),
+    loadSettings(),
+    loadIntro(),
+    loadAbout(),
+    loadCTA(),
+    loadFooter()
   ]);
 }
 initSiteData();
