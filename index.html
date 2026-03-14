@@ -1246,7 +1246,20 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
                 <option value="Tips & Advice">Tips & Advice</option>
               </select>
             </div>
-            <div class="fg"><label>Image URL</label><input type="text" id="postImage" placeholder="images/your-image.jpg or full URL"></div>
+            <div class="fg">
+              <label>Featured Image</label>
+              <div style="display:flex;gap:8px;align-items:flex-start">
+                <input type="text" id="postImage" placeholder="images/your-image.jpg or full URL" style="flex:1">
+                <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">
+                  📷 Upload
+                  <input type="file" id="postImageUpload" accept="image/*" onchange="uploadBlogImage(this)" style="display:none">
+                </label>
+              </div>
+              <div id="imageUploadStatus" style="font-family:var(--fu);font-size:11px;color:var(--gray);margin-top:6px;display:none"></div>
+              <div id="imagePreview" style="margin-top:10px;display:none">
+                <img id="imagePreviewImg" style="max-height:160px;border:1px solid var(--cream);object-fit:cover">
+              </div>
+            </div>
           </div>
           <div class="fg"><label>Excerpt</label><textarea id="postExcerpt" rows="2" placeholder="Short description for the blog card..."></textarea></div>
           <div class="fg">
@@ -1261,6 +1274,8 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
               <button onclick="execFmt('insertUnorderedList')" title="Bullet List">• List</button>
               <button onclick="execFmt('insertOrderedList')" title="Numbered List">1. List</button>
               <button onclick="execFmt('formatBlock','BLOCKQUOTE')" title="Quote">❝ Quote</button>
+              <button onclick="document.getElementById('bodyImageUpload').click()" title="Insert Image">📷 Image</button>
+              <input type="file" id="bodyImageUpload" accept="image/*" onchange="uploadBodyImage(this)" style="display:none">
             </div>
             <div class="editor-body" id="postBody" contenteditable="true"></div>
           </div>
@@ -1446,12 +1461,14 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage-compat.js"></script>
 <script>
 /* ── Firebase Init ── */
 const firebaseConfig={apiKey:"AIzaSyC1mX0znMtTvREmL2YEcDUphXuHBBDtQvE",authDomain:"cbsca-blog.firebaseapp.com",projectId:"cbsca-blog",storageBucket:"cbsca-blog.firebasestorage.app",messagingSenderId:"432902375657",appId:"1:432902375657:web:bbf4bb4c9d8be0367a4878",measurementId:"G-DXTCNJJEZ3"};
 firebase.initializeApp(firebaseConfig);
 const db=firebase.firestore();
 const auth=firebase.auth();
+const storage=firebase.storage();
 </script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── Community data ── */
@@ -4288,6 +4305,8 @@ function openEditor(id){
     document.getElementById('postExcerpt').value='';
     document.getElementById('postBody').innerHTML='';
     document.getElementById('postPinned').checked=false;
+    document.getElementById('imageUploadStatus').style.display='none';
+    document.getElementById('imagePreview').style.display='none';
   }
 }
 async function editPost(id){
@@ -4302,6 +4321,12 @@ async function editPost(id){
     document.getElementById('postExcerpt').value=p.excerpt||'';
     document.getElementById('postBody').innerHTML=p.body||'';
     document.getElementById('postPinned').checked=!!p.pinned;
+    // Show image preview if editing a post with an image
+    const previewEl=document.getElementById('imagePreview');
+    const previewImg=document.getElementById('imagePreviewImg');
+    if(p.image){previewImg.src=p.image;previewEl.style.display='block';}
+    else{previewEl.style.display='none';}
+    document.getElementById('imageUploadStatus').style.display='none';
   }catch(e){console.error(e);}
 }
 function closeEditor(){
@@ -4311,6 +4336,57 @@ function closeEditor(){
   loadAdminPosts();
 }
 function execFmt(cmd,val){document.execCommand(cmd,false,val||null);}
+
+/* ── Image upload to Firebase Storage ── */
+async function uploadBlogImage(input){
+  const file=input.files[0];if(!file)return;
+  const statusEl=document.getElementById('imageUploadStatus');
+  const previewEl=document.getElementById('imagePreview');
+  const previewImg=document.getElementById('imagePreviewImg');
+  statusEl.style.display='block';statusEl.textContent='Uploading...';statusEl.style.color='var(--gold)';
+  previewEl.style.display='none';
+
+  try{
+    const ext=file.name.split('.').pop().toLowerCase();
+    const fname=Date.now()+'_'+Math.random().toString(36).substr(2,8)+'.'+ext;
+    const ref=storage.ref('blog-images/'+fname);
+    const snap=await ref.put(file);
+    const url=await snap.ref.getDownloadURL();
+    document.getElementById('postImage').value=url;
+    statusEl.textContent='Uploaded successfully!';statusEl.style.color='#27ae60';
+    previewImg.src=url;previewEl.style.display='block';
+  }catch(e){
+    console.error('Upload error:',e);
+    statusEl.textContent='Upload failed: '+e.message;statusEl.style.color='#c0392b';
+  }
+  input.value='';
+}
+
+async function uploadBodyImage(input){
+  const file=input.files[0];if(!file)return;
+  const editor=document.getElementById('postBody');
+  const placeholder=document.createElement('p');
+  placeholder.textContent='⏳ Uploading image...';
+  placeholder.style.cssText='color:var(--gold);font-family:var(--fu);font-size:12px;font-style:italic';
+  editor.appendChild(placeholder);
+
+  try{
+    const ext=file.name.split('.').pop().toLowerCase();
+    const fname=Date.now()+'_'+Math.random().toString(36).substr(2,8)+'.'+ext;
+    const ref=storage.ref('blog-images/'+fname);
+    const snap=await ref.put(file);
+    const url=await snap.ref.getDownloadURL();
+    const img=document.createElement('img');
+    img.src=url;img.style.cssText='max-width:100%;height:auto;margin:16px 0;display:block';
+    img.alt='Blog image';
+    placeholder.replaceWith(img);
+  }catch(e){
+    console.error('Body image upload error:',e);
+    placeholder.textContent='Image upload failed: '+e.message;
+    placeholder.style.color='#c0392b';
+  }
+  input.value='';
+}
 
 async function savePost(){
   const errEl=document.getElementById('editorError');errEl.style.display='none';
