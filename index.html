@@ -825,13 +825,9 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 <div class="page active" id="page-home">
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="heroSection">
     <div class="slide slide-1 active"></div>
-    <div class="slide slide-2"></div>
-    <div class="slide slide-3"></div>
-    <div class="slide slide-4"></div>
-    <div class="slide slide-5"></div>
-    <div class="hero-content">
+    <div class="hero-content" id="heroContent">
       <div class="hero-badge">Your Grand Strand Experts</div>
       <h1 class="hero-title">Find Your <em>Perfect</em><br>Coastal Retreat</h1>
       <p class="hero-sub">From gated waterway estates to oceanfront condos — the finest properties along South Carolina's Grand Strand, curated by experts who call it home.</p>
@@ -840,13 +836,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <a href="#" class="btn btn-outline" onclick="showPage('home-value');return false">What's My Home Worth?</a>
       </div>
     </div>
-    <div class="slide-dots">
-      <button class="dot active" onclick="goToSlide(0)"></button>
-      <button class="dot" onclick="goToSlide(1)"></button>
-      <button class="dot" onclick="goToSlide(2)"></button>
-      <button class="dot" onclick="goToSlide(3)"></button>
-      <button class="dot" onclick="goToSlide(4)"></button>
-    </div>
+    <div class="slide-dots" id="heroDots"></div>
   </section>
 
   <!-- Search Bar -->
@@ -894,43 +884,8 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <h2 class="h2 light">Open Houses</h2>
         <p style="color:rgba(255,255,255,.55)">Tour these homes in person — no appointment needed.</p>
       </div>
-      <div class="oh-grid">
-        <div class="oh-card">
-          <div class="oh-day">Saturday, Mar 8</div>
-          <div class="oh-addr">412 Pelican Bay Dr</div>
-          <div class="oh-details">Little River · 4 BD · 3.5 BA · Pool</div>
-          <div class="oh-bottom">
-            <span class="oh-price">$749,000</span>
-            <span class="oh-time-pill">1–3 PM</span>
-          </div>
-        </div>
-        <div class="oh-card">
-          <div class="oh-day">Saturday, Mar 8</div>
-          <div class="oh-addr">1825 Sea Mist Ct</div>
-          <div class="oh-details">North Myrtle Beach · 3 BD · 2 BA</div>
-          <div class="oh-bottom">
-            <span class="oh-price">$1,125,000</span>
-            <span class="oh-time-pill">12–2 PM</span>
-          </div>
-        </div>
-        <div class="oh-card">
-          <div class="oh-day">Sunday, Mar 9</div>
-          <div class="oh-addr">7703 Tidewater Ln</div>
-          <div class="oh-details">Murrells Inlet · 5 BD · 4 BA · Waterfront</div>
-          <div class="oh-bottom">
-            <span class="oh-price">$2,450,000</span>
-            <span class="oh-time-pill">2–4 PM</span>
-          </div>
-        </div>
-        <div class="oh-card">
-          <div class="oh-day">Sunday, Mar 9</div>
-          <div class="oh-addr">3204 Pawleys Club Blvd</div>
-          <div class="oh-details">Pawleys Island · 4 BD · 3 BA</div>
-          <div class="oh-bottom">
-            <span class="oh-price">$895,000</span>
-            <span class="oh-time-pill">11 AM–1 PM</span>
-          </div>
-        </div>
+      <div class="oh-grid" id="ohGrid">
+        <!-- Loaded from Firestore -->
       </div>
       <div class="oh-view-all">
         <a href="#" class="btn btn-outline">View All Open Houses →</a>
@@ -993,25 +948,8 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   <section class="agents-sec">
     <div class="container">
       <div class="sec-header"><span class="lbl">Your Local Experts</span><h2 class="h2">Meet Our Grand Strand Team</h2></div>
-      <div class="agents-grid">
-        <div class="agent-card">
-          <div class="agent-photo agent-p1"></div>
-          <div class="agent-body">
-            <div class="agent-name">Your Listing Specialist</div>
-            <span class="agent-title">Senior Listing Agent · Grand Strand Expert</span>
-            <p class="agent-bio">Our listing specialists bring deep Grand Strand market knowledge, cutting-edge marketing, and a relentless commitment to getting you the best possible outcome. With years of experience across every price point and community, we know how to position your home to sell fast and for top dollar.</p>
-            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="/cdn-cgi/l/email-protection#d1b8bfb7be91b2b3a2b4b0b2beb0a2a5ffb2bebc"><span class="__cf_email__" data-cfemail="93fafdf5fcd3f0f1e0f6f2f0fcf2e0e7bdf0fcfe">[email&#160;protected]</span></a></div>
-          </div>
-        </div>
-        <div class="agent-card">
-          <div class="agent-photo agent-p2"></div>
-          <div class="agent-body">
-            <div class="agent-name">Your Buyer's Specialist</div>
-            <span class="agent-title">Buyer's Agent · Relocation Expert</span>
-            <p class="agent-bio">Discovering a new home on the South Carolina coast is one of life's great adventures — and our buyer's specialists are the ideal guides. From first-time coastal buyers to seasoned investors, our team provides the local insight, market data, and genuine care that make all the difference.</p>
-            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="/cdn-cgi/l/email-protection#c5acaba3aa85a6a7b6a0a4a6aaa4b6b1eba6aaa8"><span class="__cf_email__" data-cfemail="cba2a5ada48ba8a9b8aeaaa8a4aab8bfe5a8a4a6">[email&#160;protected]</span></a></div>
-          </div>
-        </div>
+      <div class="agents-grid" id="agentsGrid">
+        <!-- Loaded from Firestore -->
       </div>
     </div>
   </section>
@@ -1020,10 +958,8 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   <section class="test-sec">
     <div class="container">
       <div class="sec-header"><span class="lbl">Client Stories</span><h2 class="h2">What Our Clients Say</h2></div>
-      <div class="test-grid">
-        <div class="test-card"><p class="test-text">Our agents made our move from Charlotte to Murrells Inlet feel completely effortless. They knew every neighborhood, every street, and exactly what we needed before we did.</p><div class="test-author">Michael &amp; Sarah T.</div><span class="test-loc">Murrells Inlet · Closed 2024</span></div>
-        <div class="test-card"><p class="test-text">The Sea Coast Advantage team sold our Pawleys Island home in 11 days — above asking. Their marketing, staging guidance, and negotiation skills are simply on a different level.</p><div class="test-author">Robert &amp; Diana F.</div><span class="test-loc">Pawleys Island · Sold 2024</span></div>
-        <div class="test-card"><p class="test-text">As an out-of-state investor, I needed someone I could trust completely. My agent walked me through three communities via video and I flew in to sign papers on a property I knew was exactly right.</p><div class="test-author">James W.</div><span class="test-loc">North Myrtle Beach · Closed 2025</span></div>
+      <div class="test-grid" id="testGrid">
+        <!-- Loaded from Firestore -->
       </div>
     </div>
   </section>
@@ -1058,10 +994,8 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <div class="lf"><label>Type</label><select><option>All Types</option><option>Single Family</option><option>Condo</option><option>Waterfront</option></select></div>
         <div class="lf"><label>Beds</label><select><option>Any</option><option>2+</option><option>3+</option><option>4+</option></select></div>
       </div>
-      <div class="list-grid">
-        <div class="listing"><div class="l-photo"><div class="l-bg" style="background-image:url('images/pelican-bay-1.jpg')"></div><div class="l-badge">New Listing</div></div><div class="l-info"><div class="l-price">$1,250,000</div><div class="l-addr">412 Waterway Blvd</div><div class="l-loc">Gated Waterway Community</div><div class="l-specs"><div><span class="ls-v">4</span><span class="ls-l">Beds</span></div><div><span class="ls-v">3.5</span><span class="ls-l">Baths</span></div><div><span class="ls-v">3,240</span><span class="ls-l">Sq Ft</span></div><div><span class="ls-v">🚤</span><span class="ls-l">Dock</span></div></div></div></div>
-        <div class="listing"><div class="l-photo"><div class="l-bg" style="background-image:url('images/pelican-bay-2.jpg')"></div><div class="l-badge">Price Reduced</div></div><div class="l-info"><div class="l-price">$749,000</div><div class="l-addr">8820 Tidal Creek Dr</div><div class="l-loc">Marsh View · Golf Nearby</div><div class="l-specs"><div><span class="ls-v">3</span><span class="ls-l">Beds</span></div><div><span class="ls-v">2</span><span class="ls-l">Baths</span></div><div><span class="ls-v">2,100</span><span class="ls-l">Sq Ft</span></div><div><span class="ls-v">🏊</span><span class="ls-l">Pool</span></div></div></div></div>
-        <div class="listing"><div class="l-photo"><div class="l-bg" style="background-image:url('images/plantation-lakes-home-1.jpg')"></div><div class="l-badge">Open House</div></div><div class="l-info"><div class="l-price">$2,100,000</div><div class="l-addr">3 Oceanview Terrace</div><div class="l-loc">Direct Ocean Views · Gated</div><div class="l-specs"><div><span class="ls-v">5</span><span class="ls-l">Beds</span></div><div><span class="ls-v">4</span><span class="ls-l">Baths</span></div><div><span class="ls-v">4,800</span><span class="ls-l">Sq Ft</span></div><div><span class="ls-v">🌊</span><span class="ls-l">Ocean</span></div></div></div></div>
+      <div class="list-grid" id="listGrid">
+        <!-- Loaded from Firestore -->
       </div>
       <div style="text-align:center;margin-top:36px"><a href="#" class="btn btn-navy">View All Listings in This Area</a></div>
     </div>
@@ -1194,15 +1128,15 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 <div class="page" id="page-admin">
   <div class="page-hero">
     <span class="lbl" style="margin-bottom:10px">Admin Panel</span>
-    <h1>Blog Manager</h1>
-    <p>Create, edit, and manage blog posts for The Grand Strand Journal.</p>
+    <h1>Site Manager</h1>
+    <p>Manage blog posts, open houses, listings, hero slides, agents, testimonials, and community content.</p>
   </div>
 
   <!-- Login -->
   <div id="adminLogin">
     <div class="admin-login">
       <h2>Admin Login</h2>
-      <p>Sign in to manage blog posts.</p>
+      <p>Sign in to manage your site.</p>
       <div class="fg"><label>Email</label><input type="email" id="adminEmail" placeholder="Email address"></div>
       <div class="fg"><label>Password</label><input type="password" id="adminPass" placeholder="Password" onkeydown="if(event.key==='Enter')adminSignIn()"></div>
       <button class="btn btn-navy btn-full" onclick="adminSignIn()" style="margin-top:8px">Sign In</button>
@@ -1214,15 +1148,84 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   <div id="adminDash" style="display:none">
     <div class="blog-body">
       <div class="container">
-        <div class="admin-bar">
-          <h2>📝 All Posts</h2>
-          <div class="admin-bar-actions">
-            <span class="admin-user" id="adminUserEmail"></span>
-            <button class="btn btn-gold" onclick="openEditor()">+ New Post</button>
-            <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream)" onclick="adminSignOut()">Sign Out</button>
-          </div>
+        <!-- Admin Tabs -->
+        <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:28px;border-bottom:2px solid var(--cream);padding-bottom:4px">
+          <button class="blog-cat-btn active" onclick="switchAdminTab('blog',this)">📝 Blog</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('openhouses',this)">🏡 Open Houses</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('listings',this)">🏠 Listings</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('hero',this)">🖼️ Hero Slides</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('agents',this)">👤 Agents</button>
+          <button class="blog-cat-btn" onclick="switchAdminTab('testimonials',this)">💬 Testimonials</button>
+          <div style="flex:1"></div>
+          <span class="admin-user" id="adminUserEmail" style="align-self:center"></span>
+          <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream);padding:8px 16px;font-size:10px" onclick="adminSignOut()">Sign Out</button>
         </div>
-        <div class="admin-posts-list" id="adminPostsList"></div>
+
+        <!-- TAB: Blog Posts -->
+        <div class="admin-tab" id="adminTab-blog">
+          <div class="admin-bar">
+            <h2>📝 Blog Posts</h2>
+            <div class="admin-bar-actions">
+              <button class="btn btn-gold" onclick="openEditor()">+ New Post</button>
+            </div>
+          </div>
+          <div class="admin-posts-list" id="adminPostsList"></div>
+        </div>
+
+        <!-- TAB: Open Houses -->
+        <div class="admin-tab" id="adminTab-openhouses" style="display:none">
+          <div class="admin-bar">
+            <h2>🏡 Open Houses</h2>
+            <div class="admin-bar-actions">
+              <button class="btn btn-gold" onclick="openOHEditor()">+ Add Open House</button>
+            </div>
+          </div>
+          <div class="admin-posts-list" id="adminOHList"></div>
+        </div>
+
+        <!-- TAB: Listings -->
+        <div class="admin-tab" id="adminTab-listings" style="display:none">
+          <div class="admin-bar">
+            <h2>🏠 Featured Listings</h2>
+            <div class="admin-bar-actions">
+              <button class="btn btn-gold" onclick="openListingEditor()">+ Add Listing</button>
+            </div>
+          </div>
+          <div class="admin-posts-list" id="adminListingsList"></div>
+        </div>
+
+        <!-- TAB: Hero Slides -->
+        <div class="admin-tab" id="adminTab-hero" style="display:none">
+          <div class="admin-bar">
+            <h2>🖼️ Hero Slideshow</h2>
+            <div class="admin-bar-actions">
+              <button class="btn btn-gold" onclick="openHeroEditor()">+ Add Slide</button>
+            </div>
+          </div>
+          <div class="admin-posts-list" id="adminHeroList"></div>
+        </div>
+
+        <!-- TAB: Agents -->
+        <div class="admin-tab" id="adminTab-agents" style="display:none">
+          <div class="admin-bar">
+            <h2>👤 Agent Profiles</h2>
+            <div class="admin-bar-actions">
+              <button class="btn btn-gold" onclick="openAgentEditor()">+ Add Agent</button>
+            </div>
+          </div>
+          <div class="admin-posts-list" id="adminAgentsList"></div>
+        </div>
+
+        <!-- TAB: Testimonials -->
+        <div class="admin-tab" id="adminTab-testimonials" style="display:none">
+          <div class="admin-bar">
+            <h2>💬 Testimonials</h2>
+            <div class="admin-bar-actions">
+              <button class="btn btn-gold" onclick="openTestEditor()">+ Add Testimonial</button>
+            </div>
+          </div>
+          <div class="admin-posts-list" id="adminTestList"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1288,6 +1291,148 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Open House Editor -->
+  <div id="adminOHEditor" style="display:none">
+    <div class="blog-body"><div class="container"><div class="editor-wrap">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+        <a href="#" class="blog-single-back" onclick="closeOHEditor();return false">← Back to Open Houses</a>
+        <span id="ohEditorTitle" style="font-family:var(--fd);font-size:1.2rem;font-weight:600;color:var(--navy)">New Open House</span>
+      </div>
+      <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+        <div class="fg"><label>Day &amp; Date</label><input type="text" id="ohDay" placeholder="Saturday, Mar 15"></div>
+        <div class="fg"><label>Time</label><input type="text" id="ohTime" placeholder="1–3 PM"></div>
+      </div>
+      <div class="fg"><label>Address</label><input type="text" id="ohAddress" placeholder="412 Pelican Bay Dr"></div>
+      <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+        <div class="fg"><label>Details</label><input type="text" id="ohDetails" placeholder="Little River · 4 BD · 3.5 BA · Pool"></div>
+        <div class="fg"><label>Price</label><input type="text" id="ohPrice" placeholder="$749,000"></div>
+      </div>
+      <div class="fg"><label>Sort Order</label><input type="number" id="ohOrder" placeholder="1" value="0"></div>
+      <div class="editor-actions">
+        <button class="btn btn-navy" onclick="saveOH()">Save Open House</button>
+        <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream)" onclick="closeOHEditor()">Cancel</button>
+      </div>
+      <p id="ohEditorError" style="color:#c0392b;font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+    </div></div></div>
+  </div>
+
+  <!-- Listing Editor -->
+  <div id="adminListingEditor" style="display:none">
+    <div class="blog-body"><div class="container"><div class="editor-wrap">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+        <a href="#" class="blog-single-back" onclick="closeListingEditor();return false">← Back to Listings</a>
+        <span id="listingEditorTitle" style="font-family:var(--fd);font-size:1.2rem;font-weight:600;color:var(--navy)">New Listing</span>
+      </div>
+      <div class="fg"><label>Address</label><input type="text" id="listAddr" placeholder="412 Waterway Blvd"></div>
+      <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+        <div class="fg"><label>Price</label><input type="text" id="listPrice" placeholder="$1,250,000"></div>
+        <div class="fg"><label>Badge</label>
+          <select id="listBadge"><option value="New Listing">New Listing</option><option value="Price Reduced">Price Reduced</option><option value="Open House">Open House</option><option value="Under Contract">Under Contract</option><option value="Just Sold">Just Sold</option><option value="">None</option></select>
+        </div>
+      </div>
+      <div class="fg"><label>Location / Tagline</label><input type="text" id="listLocation" placeholder="Gated Waterway Community"></div>
+      <div class="form-row" style="grid-template-columns:1fr 1fr 1fr 1fr;gap:16px">
+        <div class="fg"><label>Beds</label><input type="text" id="listBeds" placeholder="4"></div>
+        <div class="fg"><label>Baths</label><input type="text" id="listBaths" placeholder="3.5"></div>
+        <div class="fg"><label>Sq Ft</label><input type="text" id="listSqft" placeholder="3,240"></div>
+        <div class="fg"><label>Feature Icon</label><input type="text" id="listFeature" placeholder="🚤 Dock"></div>
+      </div>
+      <div class="fg">
+        <label>Photo</label>
+        <div style="display:flex;gap:8px;align-items:flex-start">
+          <input type="text" id="listImage" placeholder="images/photo.jpg or full URL" style="flex:1">
+          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">📷 Upload<input type="file" accept="image/*" onchange="uploadToField(this,'listImage')" style="display:none"></label>
+        </div>
+      </div>
+      <div class="fg"><label>MLS Link (optional)</label><input type="text" id="listLink" placeholder="https://..."></div>
+      <div class="fg"><label>Sort Order</label><input type="number" id="listOrder" placeholder="1" value="0"></div>
+      <div class="editor-actions">
+        <button class="btn btn-navy" onclick="saveListing()">Save Listing</button>
+        <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream)" onclick="closeListingEditor()">Cancel</button>
+      </div>
+      <p id="listEditorError" style="color:#c0392b;font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+    </div></div></div>
+  </div>
+
+  <!-- Hero Slide Editor -->
+  <div id="adminHeroEditor" style="display:none">
+    <div class="blog-body"><div class="container"><div class="editor-wrap">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+        <a href="#" class="blog-single-back" onclick="closeHeroEditor();return false">← Back to Slides</a>
+        <span id="heroEditorTitle" style="font-family:var(--fd);font-size:1.2rem;font-weight:600;color:var(--navy)">New Slide</span>
+      </div>
+      <div class="fg">
+        <label>Background Image</label>
+        <div style="display:flex;gap:8px;align-items:flex-start">
+          <input type="text" id="heroImage" placeholder="images/photo.jpg or full URL" style="flex:1">
+          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">📷 Upload<input type="file" accept="image/*" onchange="uploadToField(this,'heroImage')" style="display:none"></label>
+        </div>
+      </div>
+      <div class="fg"><label>Badge Text</label><input type="text" id="heroBadge" placeholder="Your Grand Strand Experts"></div>
+      <div class="fg"><label>Title (use &lt;em&gt; for gold italic)</label><input type="text" id="heroTitle" placeholder='Find Your <em>Perfect</em> Coastal Retreat'></div>
+      <div class="fg"><label>Subtitle</label><textarea id="heroSub" rows="2" placeholder="Short description..."></textarea></div>
+      <div class="fg"><label>Sort Order</label><input type="number" id="heroOrder" placeholder="1" value="0"></div>
+      <div class="editor-actions">
+        <button class="btn btn-navy" onclick="saveHero()">Save Slide</button>
+        <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream)" onclick="closeHeroEditor()">Cancel</button>
+      </div>
+      <p id="heroEditorError" style="color:#c0392b;font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+    </div></div></div>
+  </div>
+
+  <!-- Agent Editor -->
+  <div id="adminAgentEditor" style="display:none">
+    <div class="blog-body"><div class="container"><div class="editor-wrap">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+        <a href="#" class="blog-single-back" onclick="closeAgentEditor();return false">← Back to Agents</a>
+        <span id="agentEditorTitle" style="font-family:var(--fd);font-size:1.2rem;font-weight:600;color:var(--navy)">New Agent</span>
+      </div>
+      <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+        <div class="fg"><label>Name</label><input type="text" id="agentName" placeholder="Full name"></div>
+        <div class="fg"><label>Title</label><input type="text" id="agentTitle" placeholder="Senior Listing Agent · Grand Strand Expert"></div>
+      </div>
+      <div class="fg"><label>Bio</label><textarea id="agentBio" rows="3" placeholder="Short bio..."></textarea></div>
+      <div class="fg">
+        <label>Photo</label>
+        <div style="display:flex;gap:8px;align-items:flex-start">
+          <input type="text" id="agentImage" placeholder="images/photo.jpg or full URL" style="flex:1">
+          <label class="btn btn-gold" style="cursor:pointer;flex-shrink:0;padding:12px 18px;margin:0;font-size:10px">📷 Upload<input type="file" accept="image/*" onchange="uploadToField(this,'agentImage')" style="display:none"></label>
+        </div>
+      </div>
+      <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+        <div class="fg"><label>Phone</label><input type="text" id="agentPhone" placeholder="(843) 555-1234"></div>
+        <div class="fg"><label>Email</label><input type="email" id="agentEmail" placeholder="agent@cbsca.com"></div>
+      </div>
+      <div class="fg"><label>Sort Order</label><input type="number" id="agentOrder" placeholder="1" value="0"></div>
+      <div class="editor-actions">
+        <button class="btn btn-navy" onclick="saveAgent()">Save Agent</button>
+        <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream)" onclick="closeAgentEditor()">Cancel</button>
+      </div>
+      <p id="agentEditorError" style="color:#c0392b;font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+    </div></div></div>
+  </div>
+
+  <!-- Testimonial Editor -->
+  <div id="adminTestEditor" style="display:none">
+    <div class="blog-body"><div class="container"><div class="editor-wrap">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+        <a href="#" class="blog-single-back" onclick="closeTestEditor();return false">← Back to Testimonials</a>
+        <span id="testEditorTitle" style="font-family:var(--fd);font-size:1.2rem;font-weight:600;color:var(--navy)">New Testimonial</span>
+      </div>
+      <div class="fg"><label>Quote</label><textarea id="testQuote" rows="4" placeholder="What the client said..."></textarea></div>
+      <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+        <div class="fg"><label>Author Name</label><input type="text" id="testAuthor" placeholder="Jane D."></div>
+        <div class="fg"><label>Location / Details</label><input type="text" id="testLoc" placeholder="Carolina Forest · Closed 2026"></div>
+      </div>
+      <div class="fg"><label>Sort Order</label><input type="number" id="testOrder" placeholder="1" value="0"></div>
+      <div class="editor-actions">
+        <button class="btn btn-navy" onclick="saveTest()">Save Testimonial</button>
+        <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream)" onclick="closeTestEditor()">Cancel</button>
+      </div>
+      <p id="testEditorError" style="color:#c0392b;font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+    </div></div></div>
   </div>
 </div>
 
@@ -1555,15 +1700,20 @@ function setLifestyleTab(tab){
   });
 }
 
-/* ── Slideshow ── */
+/* ── Slideshow (fallback — overridden by Firebase hero data) ── */
 let cur=0;
-const slides=document.querySelectorAll('.slide');
-const dots=document.querySelectorAll('.dot');
 function goToSlide(n){
-  slides[cur].classList.remove('active'); dots[cur].classList.remove('active');
-  cur=n; slides[cur].classList.add('active'); dots[cur].classList.add('active');
+  const section=document.getElementById('heroSection');
+  const slides=section.querySelectorAll('.slide');
+  const dots=document.getElementById('heroDots').querySelectorAll('.dot');
+  if(!slides.length)return;
+  if(slides[cur])slides[cur].classList.remove('active');
+  if(dots[cur])dots[cur].classList.remove('active');
+  cur=n;
+  if(slides[cur])slides[cur].classList.add('active');
+  if(dots[cur])dots[cur].classList.add('active');
 }
-setInterval(()=>goToSlide((cur+1)%slides.length),5500);
+setInterval(()=>{const s=document.getElementById('heroSection').querySelectorAll('.slide');if(s.length>1)goToSlide((cur+1)%s.length);},5500);
 
 /* ── Navbar scroll ── */
 window.addEventListener('scroll',()=>{
@@ -4245,8 +4395,9 @@ function copyPostLink(){
 ══════════════════════════════════════════ */
 function checkAdminAuth(){
   const u=auth.currentUser;
+  const editors=['adminEditor','adminOHEditor','adminListingEditor','adminHeroEditor','adminAgentEditor','adminTestEditor'];
   if(u){showAdminDash(u);}
-  else{document.getElementById('adminLogin').style.display='block';document.getElementById('adminDash').style.display='none';document.getElementById('adminEditor').style.display='none';}
+  else{document.getElementById('adminLogin').style.display='block';document.getElementById('adminDash').style.display='none';editors.forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});}
 }
 async function adminSignIn(){
   const email=document.getElementById('adminEmail').value.trim();
@@ -4266,10 +4417,47 @@ function adminSignOut(){
 }
 async function showAdminDash(user){
   document.getElementById('adminLogin').style.display='none';
-  document.getElementById('adminEditor').style.display='none';
+  ['adminEditor','adminOHEditor','adminListingEditor','adminHeroEditor','adminAgentEditor','adminTestEditor'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});
   document.getElementById('adminDash').style.display='block';
   document.getElementById('adminUserEmail').textContent=user.email;
   await loadAdminPosts();
+}
+
+/* ── Admin Tab Switching ── */
+let currentAdminTab='blog';
+function switchAdminTab(tab,btn){
+  document.querySelectorAll('.admin-tab').forEach(t=>t.style.display='none');
+  document.getElementById('adminTab-'+tab).style.display='block';
+  btn.parentElement.querySelectorAll('.blog-cat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentAdminTab=tab;
+  if(tab==='blog') loadAdminPosts();
+  if(tab==='openhouses') loadAdminOH();
+  if(tab==='listings') loadAdminListings();
+  if(tab==='hero') loadAdminHero();
+  if(tab==='agents') loadAdminAgents();
+  if(tab==='testimonials') loadAdminTests();
+}
+
+/* ── Generic image upload to any field ── */
+async function uploadToField(input,fieldId){
+  const file=input.files[0];if(!file)return;
+  const field=document.getElementById(fieldId);
+  const origVal=field.value;
+  field.value='Uploading...';
+  try{
+    const ext=file.name.split('.').pop().toLowerCase();
+    const fname=Date.now()+'_'+Math.random().toString(36).substr(2,8)+'.'+ext;
+    const ref=storage.ref('blog-images/'+fname);
+    const snap=await ref.put(file);
+    const url=await snap.ref.getDownloadURL();
+    field.value=url;
+  }catch(e){
+    console.error('Upload error:',e);
+    field.value=origVal;
+    alert('Upload failed: '+e.message);
+  }
+  input.value='';
 }
 async function loadAdminPosts(){
   try{
@@ -4433,6 +4621,224 @@ async function deletePost(id,title){
   try{await db.collection('blog_posts').doc(id).delete();loadAdminPosts();}
   catch(e){console.error(e);alert('Delete failed.');}
 }
+
+/* ══════════════════════════════════════════
+   OPEN HOUSES — Admin CRUD + Front-end
+══════════════════════════════════════════ */
+let editingOHId=null;
+async function loadAdminOH(){
+  try{
+    const snap=await db.collection('open_houses').orderBy('order').get();
+    const list=document.getElementById('adminOHList');
+    if(snap.empty){list.innerHTML='<p style="font-family:var(--fb);color:var(--gray);padding:20px;text-align:center">No open houses yet.</p>';return;}
+    list.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="admin-post-row"><div><div class="title">${p.address}</div><div class="meta">${p.day} · ${p.time} · ${p.price}</div></div><div class="admin-post-actions"><button onclick="editOH('${d.id}')">Edit</button><button class="del" onclick="deleteOH('${d.id}','${p.address.replace(/'/g,"\\'")}')">Delete</button></div></div>`;}).join('');
+  }catch(e){console.error(e);}
+}
+function openOHEditor(id){editingOHId=id||null;document.getElementById('adminDash').style.display='none';document.getElementById('adminOHEditor').style.display='block';document.getElementById('ohEditorTitle').textContent=id?'Edit Open House':'New Open House';document.getElementById('ohEditorError').style.display='none';if(!id){['ohDay','ohTime','ohAddress','ohDetails','ohPrice'].forEach(f=>document.getElementById(f).value='');document.getElementById('ohOrder').value='0';}}
+async function editOH(id){try{const d=await db.collection('open_houses').doc(id).get();if(!d.exists)return;const p=d.data();openOHEditor(id);document.getElementById('ohDay').value=p.day||'';document.getElementById('ohTime').value=p.time||'';document.getElementById('ohAddress').value=p.address||'';document.getElementById('ohDetails').value=p.details||'';document.getElementById('ohPrice').value=p.price||'';document.getElementById('ohOrder').value=p.order||0;}catch(e){console.error(e);}}
+function closeOHEditor(){editingOHId=null;document.getElementById('adminOHEditor').style.display='none';document.getElementById('adminDash').style.display='block';loadAdminOH();}
+async function saveOH(){
+  const errEl=document.getElementById('ohEditorError');errEl.style.display='none';
+  const data={day:document.getElementById('ohDay').value.trim(),time:document.getElementById('ohTime').value.trim(),address:document.getElementById('ohAddress').value.trim(),details:document.getElementById('ohDetails').value.trim(),price:document.getElementById('ohPrice').value.trim(),order:parseInt(document.getElementById('ohOrder').value)||0};
+  if(!data.address){errEl.textContent='Address is required.';errEl.style.display='block';return;}
+  try{if(editingOHId)await db.collection('open_houses').doc(editingOHId).update(data);else await db.collection('open_houses').add(data);closeOHEditor();}catch(e){errEl.textContent='Save failed: '+e.message;errEl.style.display='block';}
+}
+async function deleteOH(id,name){if(!confirm('Delete "'+name+'"?'))return;try{await db.collection('open_houses').doc(id).delete();loadAdminOH();}catch(e){alert('Delete failed.');}}
+
+/* ── Front-end: Load open houses ── */
+async function loadOpenHouses(){
+  try{
+    const snap=await db.collection('open_houses').orderBy('order').get();
+    const grid=document.getElementById('ohGrid');
+    if(snap.empty){grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px;font-family:var(--fb);color:rgba(255,255,255,.5)">No open houses scheduled. Check back soon!</div>';return;}
+    grid.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="oh-card"><div class="oh-day">${p.day}</div><div class="oh-addr">${p.address}</div><div class="oh-details">${p.details}</div><div class="oh-bottom"><span class="oh-price">${p.price}</span><span class="oh-time-pill">${p.time}</span></div></div>`;}).join('');
+  }catch(e){console.error('OH load error:',e);}
+}
+
+/* ══════════════════════════════════════════
+   LISTINGS — Admin CRUD + Front-end
+══════════════════════════════════════════ */
+let editingListId=null;
+async function loadAdminListings(){
+  try{
+    const snap=await db.collection('listings').orderBy('order').get();
+    const list=document.getElementById('adminListingsList');
+    if(snap.empty){list.innerHTML='<p style="font-family:var(--fb);color:var(--gray);padding:20px;text-align:center">No listings yet.</p>';return;}
+    list.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="admin-post-row"><div><div class="title">${p.address}</div><div class="meta">${p.price} · ${p.badge||'No badge'} · ${p.location||''}</div></div><div class="admin-post-actions"><button onclick="editListing('${d.id}')">Edit</button><button class="del" onclick="deleteListing('${d.id}','${p.address.replace(/'/g,"\\'")}')">Delete</button></div></div>`;}).join('');
+  }catch(e){console.error(e);}
+}
+function openListingEditor(id){editingListId=id||null;document.getElementById('adminDash').style.display='none';document.getElementById('adminListingEditor').style.display='block';document.getElementById('listingEditorTitle').textContent=id?'Edit Listing':'New Listing';document.getElementById('listEditorError').style.display='none';if(!id){['listAddr','listPrice','listLocation','listBeds','listBaths','listSqft','listFeature','listImage','listLink'].forEach(f=>document.getElementById(f).value='');document.getElementById('listBadge').value='New Listing';document.getElementById('listOrder').value='0';}}
+async function editListing(id){try{const d=await db.collection('listings').doc(id).get();if(!d.exists)return;const p=d.data();openListingEditor(id);document.getElementById('listAddr').value=p.address||'';document.getElementById('listPrice').value=p.price||'';document.getElementById('listBadge').value=p.badge||'';document.getElementById('listLocation').value=p.location||'';document.getElementById('listBeds').value=p.beds||'';document.getElementById('listBaths').value=p.baths||'';document.getElementById('listSqft').value=p.sqft||'';document.getElementById('listFeature').value=p.feature||'';document.getElementById('listImage').value=p.image||'';document.getElementById('listLink').value=p.link||'';document.getElementById('listOrder').value=p.order||0;}catch(e){console.error(e);}}
+function closeListingEditor(){editingListId=null;document.getElementById('adminListingEditor').style.display='none';document.getElementById('adminDash').style.display='block';loadAdminListings();}
+async function saveListing(){
+  const errEl=document.getElementById('listEditorError');errEl.style.display='none';
+  const feat=document.getElementById('listFeature').value.trim();const fParts=feat.split(' ');
+  const data={address:document.getElementById('listAddr').value.trim(),price:document.getElementById('listPrice').value.trim(),badge:document.getElementById('listBadge').value,location:document.getElementById('listLocation').value.trim(),beds:document.getElementById('listBeds').value.trim(),baths:document.getElementById('listBaths').value.trim(),sqft:document.getElementById('listSqft').value.trim(),featureIcon:fParts[0]||'',featureLabel:fParts.slice(1).join(' ')||'',image:document.getElementById('listImage').value.trim(),link:document.getElementById('listLink').value.trim(),order:parseInt(document.getElementById('listOrder').value)||0};
+  if(!data.address){errEl.textContent='Address is required.';errEl.style.display='block';return;}
+  try{if(editingListId)await db.collection('listings').doc(editingListId).update(data);else await db.collection('listings').add(data);closeListingEditor();}catch(e){errEl.textContent='Save failed: '+e.message;errEl.style.display='block';}
+}
+async function deleteListing(id,name){if(!confirm('Delete "'+name+'"?'))return;try{await db.collection('listings').doc(id).delete();loadAdminListings();}catch(e){alert('Delete failed.');}}
+
+/* ── Front-end: Load listings ── */
+async function loadListings(){
+  try{
+    const snap=await db.collection('listings').orderBy('order').get();
+    const grid=document.getElementById('listGrid');
+    if(snap.empty){grid.innerHTML='<p style="text-align:center;padding:40px;font-family:var(--fb);color:var(--gray)">No listings available. Check back soon!</p>';return;}
+    grid.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="listing"${p.link?' onclick="window.open(\''+p.link+'\',\'_blank\')"':''}><div class="l-photo"><div class="l-bg" style="background-image:url('${p.image||'images/barefoot-landing.jpg'}')"></div>${p.badge?'<div class="l-badge">'+p.badge+'</div>':''}</div><div class="l-info"><div class="l-price">${p.price}</div><div class="l-addr">${p.address}</div><div class="l-loc">${p.location||''}</div><div class="l-specs"><div><span class="ls-v">${p.beds||''}</span><span class="ls-l">Beds</span></div><div><span class="ls-v">${p.baths||''}</span><span class="ls-l">Baths</span></div><div><span class="ls-v">${p.sqft||''}</span><span class="ls-l">Sq Ft</span></div><div><span class="ls-v">${p.featureIcon||''}</span><span class="ls-l">${p.featureLabel||''}</span></div></div></div></div>`;}).join('');
+  }catch(e){console.error('Listings load error:',e);}
+}
+
+/* ══════════════════════════════════════════
+   HERO SLIDES — Admin CRUD + Front-end
+══════════════════════════════════════════ */
+let editingHeroId=null;
+async function loadAdminHero(){
+  try{
+    const snap=await db.collection('hero_slides').orderBy('order').get();
+    const list=document.getElementById('adminHeroList');
+    if(snap.empty){list.innerHTML='<p style="font-family:var(--fb);color:var(--gray);padding:20px;text-align:center">No slides yet. The default slide will show.</p>';return;}
+    list.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="admin-post-row"><div><div class="title">${p.title||'(No title)'}</div><div class="meta">Badge: ${p.badge||'none'} · Order: ${p.order||0}</div></div><div class="admin-post-actions"><button onclick="editHero('${d.id}')">Edit</button><button class="del" onclick="deleteHero('${d.id}')">Delete</button></div></div>`;}).join('');
+  }catch(e){console.error(e);}
+}
+function openHeroEditor(id){editingHeroId=id||null;document.getElementById('adminDash').style.display='none';document.getElementById('adminHeroEditor').style.display='block';document.getElementById('heroEditorTitle').textContent=id?'Edit Slide':'New Slide';document.getElementById('heroEditorError').style.display='none';if(!id){['heroImage','heroBadge','heroTitle','heroSub'].forEach(f=>document.getElementById(f).value='');document.getElementById('heroOrder').value='0';}}
+async function editHero(id){try{const d=await db.collection('hero_slides').doc(id).get();if(!d.exists)return;const p=d.data();openHeroEditor(id);document.getElementById('heroImage').value=p.image||'';document.getElementById('heroBadge').value=p.badge||'';document.getElementById('heroTitle').value=p.title||'';document.getElementById('heroSub').value=p.subtitle||'';document.getElementById('heroOrder').value=p.order||0;}catch(e){console.error(e);}}
+function closeHeroEditor(){editingHeroId=null;document.getElementById('adminHeroEditor').style.display='none';document.getElementById('adminDash').style.display='block';loadAdminHero();}
+async function saveHero(){
+  const errEl=document.getElementById('heroEditorError');errEl.style.display='none';
+  const data={image:document.getElementById('heroImage').value.trim(),badge:document.getElementById('heroBadge').value.trim(),title:document.getElementById('heroTitle').value.trim(),subtitle:document.getElementById('heroSub').value.trim(),order:parseInt(document.getElementById('heroOrder').value)||0};
+  if(!data.image){errEl.textContent='Background image is required.';errEl.style.display='block';return;}
+  try{if(editingHeroId)await db.collection('hero_slides').doc(editingHeroId).update(data);else await db.collection('hero_slides').add(data);closeHeroEditor();}catch(e){errEl.textContent='Save failed: '+e.message;errEl.style.display='block';}
+}
+async function deleteHero(id){if(!confirm('Delete this slide?'))return;try{await db.collection('hero_slides').doc(id).delete();loadAdminHero();}catch(e){alert('Delete failed.');}}
+
+/* ── Front-end: Load hero slides ── */
+let heroSlides=[];let heroCur=0;let heroInterval;
+async function loadHeroSlides(){
+  try{
+    const snap=await db.collection('hero_slides').orderBy('order').get();
+    if(snap.empty)return; // keep default
+    heroSlides=snap.docs.map(d=>({id:d.id,...d.data()}));
+    const section=document.getElementById('heroSection');
+    const content=document.getElementById('heroContent');
+    const dotsEl=document.getElementById('heroDots');
+    // Remove old slides
+    section.querySelectorAll('.slide').forEach(s=>s.remove());
+    // Add new slides
+    heroSlides.forEach((s,i)=>{
+      const div=document.createElement('div');
+      div.className='slide'+(i===0?' active':'');
+      div.style.backgroundImage='url('+s.image+')';
+      div.style.backgroundSize='cover';div.style.backgroundPosition='center';
+      section.insertBefore(div,content);
+    });
+    // Update content from first slide
+    if(heroSlides[0].badge) content.querySelector('.hero-badge').textContent=heroSlides[0].badge;
+    if(heroSlides[0].title) content.querySelector('.hero-title').innerHTML=heroSlides[0].title;
+    if(heroSlides[0].subtitle) content.querySelector('.hero-sub').textContent=heroSlides[0].subtitle;
+    // Dots
+    dotsEl.innerHTML=heroSlides.map((s,i)=>`<button class="dot${i===0?' active':''}" onclick="goToHeroSlide(${i})"></button>`).join('');
+    // Start slideshow
+    heroCur=0;
+    if(heroInterval)clearInterval(heroInterval);
+    heroInterval=setInterval(()=>goToHeroSlide((heroCur+1)%heroSlides.length),5500);
+  }catch(e){console.error('Hero load error:',e);}
+}
+function goToHeroSlide(n){
+  const section=document.getElementById('heroSection');
+  const slides=section.querySelectorAll('.slide');
+  const dots=document.getElementById('heroDots').querySelectorAll('.dot');
+  const content=document.getElementById('heroContent');
+  if(!slides.length)return;
+  slides[heroCur]?.classList.remove('active');dots[heroCur]?.classList.remove('active');
+  heroCur=n;
+  slides[heroCur]?.classList.add('active');dots[heroCur]?.classList.add('active');
+  if(heroSlides[heroCur]){
+    if(heroSlides[heroCur].badge) content.querySelector('.hero-badge').textContent=heroSlides[heroCur].badge;
+    if(heroSlides[heroCur].title) content.querySelector('.hero-title').innerHTML=heroSlides[heroCur].title;
+    if(heroSlides[heroCur].subtitle) content.querySelector('.hero-sub').textContent=heroSlides[heroCur].subtitle;
+  }
+}
+
+/* ══════════════════════════════════════════
+   AGENTS — Admin CRUD + Front-end
+══════════════════════════════════════════ */
+let editingAgentId=null;
+async function loadAdminAgents(){
+  try{
+    const snap=await db.collection('agents').orderBy('order').get();
+    const list=document.getElementById('adminAgentsList');
+    if(snap.empty){list.innerHTML='<p style="font-family:var(--fb);color:var(--gray);padding:20px;text-align:center">No agents yet.</p>';return;}
+    list.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="admin-post-row"><div><div class="title">${p.name}</div><div class="meta">${p.title||''} · ${p.phone||''}</div></div><div class="admin-post-actions"><button onclick="editAgent('${d.id}')">Edit</button><button class="del" onclick="deleteAgent('${d.id}','${p.name.replace(/'/g,"\\'")}')">Delete</button></div></div>`;}).join('');
+  }catch(e){console.error(e);}
+}
+function openAgentEditor(id){editingAgentId=id||null;document.getElementById('adminDash').style.display='none';document.getElementById('adminAgentEditor').style.display='block';document.getElementById('agentEditorTitle').textContent=id?'Edit Agent':'New Agent';document.getElementById('agentEditorError').style.display='none';if(!id){['agentName','agentTitle','agentBio','agentImage','agentPhone','agentEmail'].forEach(f=>document.getElementById(f).value='');document.getElementById('agentOrder').value='0';}}
+async function editAgent(id){try{const d=await db.collection('agents').doc(id).get();if(!d.exists)return;const p=d.data();openAgentEditor(id);document.getElementById('agentName').value=p.name||'';document.getElementById('agentTitle').value=p.title||'';document.getElementById('agentBio').value=p.bio||'';document.getElementById('agentImage').value=p.image||'';document.getElementById('agentPhone').value=p.phone||'';document.getElementById('agentEmail').value=p.email||'';document.getElementById('agentOrder').value=p.order||0;}catch(e){console.error(e);}}
+function closeAgentEditor(){editingAgentId=null;document.getElementById('adminAgentEditor').style.display='none';document.getElementById('adminDash').style.display='block';loadAdminAgents();}
+async function saveAgent(){
+  const errEl=document.getElementById('agentEditorError');errEl.style.display='none';
+  const data={name:document.getElementById('agentName').value.trim(),title:document.getElementById('agentTitle').value.trim(),bio:document.getElementById('agentBio').value.trim(),image:document.getElementById('agentImage').value.trim(),phone:document.getElementById('agentPhone').value.trim(),email:document.getElementById('agentEmail').value.trim(),order:parseInt(document.getElementById('agentOrder').value)||0};
+  if(!data.name){errEl.textContent='Name is required.';errEl.style.display='block';return;}
+  try{if(editingAgentId)await db.collection('agents').doc(editingAgentId).update(data);else await db.collection('agents').add(data);closeAgentEditor();}catch(e){errEl.textContent='Save failed: '+e.message;errEl.style.display='block';}
+}
+async function deleteAgent(id,name){if(!confirm('Delete "'+name+'"?'))return;try{await db.collection('agents').doc(id).delete();loadAdminAgents();}catch(e){alert('Delete failed.');}}
+
+/* ── Front-end: Load agents ── */
+async function loadAgents(){
+  try{
+    const snap=await db.collection('agents').orderBy('order').get();
+    const grid=document.getElementById('agentsGrid');
+    if(snap.empty){grid.innerHTML='<p style="text-align:center;padding:40px;font-family:var(--fb);color:var(--gray)">Agent profiles coming soon.</p>';return;}
+    grid.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="agent-card"><div class="agent-photo" style="background-image:url('${p.image||'images/nmb-sign.jpg'}');background-size:cover;background-position:center top"></div><div class="agent-body"><div class="agent-name">${p.name}</div><span class="agent-title">${p.title||''}</span><p class="agent-bio">${p.bio||''}</p><div class="agent-links">${p.phone?'<a href="tel:'+p.phone.replace(/\D/g,'')+'">📞 '+p.phone+'</a>':''}${p.email?'<a href="mailto:'+p.email+'">✉️ '+p.email+'</a>':''}</div></div></div>`;}).join('');
+  }catch(e){console.error('Agents load error:',e);}
+}
+
+/* ══════════════════════════════════════════
+   TESTIMONIALS — Admin CRUD + Front-end
+══════════════════════════════════════════ */
+let editingTestId=null;
+async function loadAdminTests(){
+  try{
+    const snap=await db.collection('testimonials').orderBy('order').get();
+    const list=document.getElementById('adminTestList');
+    if(snap.empty){list.innerHTML='<p style="font-family:var(--fb);color:var(--gray);padding:20px;text-align:center">No testimonials yet.</p>';return;}
+    list.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="admin-post-row"><div><div class="title">${p.author}</div><div class="meta">${p.location||''}</div></div><div class="admin-post-actions"><button onclick="editTest('${d.id}')">Edit</button><button class="del" onclick="deleteTest('${d.id}','${p.author.replace(/'/g,"\\'")}')">Delete</button></div></div>`;}).join('');
+  }catch(e){console.error(e);}
+}
+function openTestEditor(id){editingTestId=id||null;document.getElementById('adminDash').style.display='none';document.getElementById('adminTestEditor').style.display='block';document.getElementById('testEditorTitle').textContent=id?'Edit Testimonial':'New Testimonial';document.getElementById('testEditorError').style.display='none';if(!id){['testQuote','testAuthor','testLoc'].forEach(f=>document.getElementById(f).value='');document.getElementById('testOrder').value='0';}}
+async function editTest(id){try{const d=await db.collection('testimonials').doc(id).get();if(!d.exists)return;const p=d.data();openTestEditor(id);document.getElementById('testQuote').value=p.quote||'';document.getElementById('testAuthor').value=p.author||'';document.getElementById('testLoc').value=p.location||'';document.getElementById('testOrder').value=p.order||0;}catch(e){console.error(e);}}
+function closeTestEditor(){editingTestId=null;document.getElementById('adminTestEditor').style.display='none';document.getElementById('adminDash').style.display='block';loadAdminTests();}
+async function saveTest(){
+  const errEl=document.getElementById('testEditorError');errEl.style.display='none';
+  const data={quote:document.getElementById('testQuote').value.trim(),author:document.getElementById('testAuthor').value.trim(),location:document.getElementById('testLoc').value.trim(),order:parseInt(document.getElementById('testOrder').value)||0};
+  if(!data.quote||!data.author){errEl.textContent='Quote and author are required.';errEl.style.display='block';return;}
+  try{if(editingTestId)await db.collection('testimonials').doc(editingTestId).update(data);else await db.collection('testimonials').add(data);closeTestEditor();}catch(e){errEl.textContent='Save failed: '+e.message;errEl.style.display='block';}
+}
+async function deleteTest(id,name){if(!confirm('Delete testimonial from "'+name+'"?'))return;try{await db.collection('testimonials').doc(id).delete();loadAdminTests();}catch(e){alert('Delete failed.');}}
+
+/* ── Front-end: Load testimonials ── */
+async function loadTestimonials(){
+  try{
+    const snap=await db.collection('testimonials').orderBy('order').get();
+    const grid=document.getElementById('testGrid');
+    if(snap.empty){grid.innerHTML='<p style="text-align:center;padding:40px;font-family:var(--fb);color:var(--gray)">Client testimonials coming soon.</p>';return;}
+    grid.innerHTML=snap.docs.map(d=>{const p=d.data();return `<div class="test-card"><p class="test-text">${p.quote}</p><div class="test-author">${p.author}</div><span class="test-loc">${p.location||''}</span></div>`;}).join('');
+  }catch(e){console.error('Testimonials load error:',e);}
+}
+
+/* ══════════════════════════════════════════
+   INIT — Load all dynamic content on page load
+══════════════════════════════════════════ */
+async function initSiteData(){
+  await Promise.all([
+    loadOpenHouses(),
+    loadListings(),
+    loadHeroSlides(),
+    loadAgents(),
+    loadTestimonials()
+  ]);
+}
+initSiteData();
 
 /* ── Auto-load blog on page show ── */
 auth.onAuthStateChanged(u=>{
