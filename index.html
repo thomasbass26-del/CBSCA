@@ -132,16 +132,24 @@ img{max-width:100%;display:block}
 .dot{width:24px;height:3px;background:rgba(255,255,255,.3);border:none;cursor:pointer;transition:var(--ease)}
 .dot.active{background:var(--gold);width:44px}
 
-/* Open house panel — desktop only */
-.oh-panel{position:absolute;z-index:3;bottom:0;right:0;width:330px;background:var(--white);padding:28px;box-shadow:var(--shadow-lg)}
-.oh-head{font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--cream)}
-.oh-item{padding:12px 0;border-bottom:1px solid var(--cream);cursor:pointer;transition:var(--ease)}
-.oh-item:last-child{border-bottom:none}
-.oh-item:hover{padding-left:5px}
-.oh-time{font-family:var(--fu);font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
-.oh-addr{font-family:var(--fd);font-size:14px;font-weight:600;color:var(--navy);margin:3px 0}
-.oh-det{font-family:var(--fu);font-size:11px;color:var(--gray)}
-.oh-price{font-family:var(--fu);font-size:12px;font-weight:600;color:var(--blue);margin-top:2px}
+/* Open Houses Section */
+.oh-sec{padding:64px 0;background:var(--navy);position:relative;overflow:hidden}
+.oh-sec::before{content:'';position:absolute;bottom:-60px;left:-60px;width:320px;height:320px;background:radial-gradient(circle,rgba(201,168,76,.1) 0%,transparent 70%);pointer-events:none}
+.oh-sec::after{content:'';position:absolute;top:-40px;right:-40px;width:260px;height:260px;background:radial-gradient(circle,rgba(0,87,168,.12) 0%,transparent 70%);pointer-events:none}
+.oh-grid{display:grid;grid-template-columns:1fr;gap:3px}
+.oh-card{position:relative;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:28px 24px;cursor:pointer;transition:var(--ease);overflow:hidden}
+.oh-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform .35s cubic-bezier(.4,0,.2,1)}
+.oh-card:hover{background:rgba(255,255,255,.08);border-color:rgba(201,168,76,.2);transform:translateY(-3px)}
+.oh-card:hover::before{transform:scaleY(1)}
+.oh-day{font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.oh-day::after{content:'';flex:1;height:1px;background:rgba(201,168,76,.2)}
+.oh-addr{font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--white);line-height:1.3;margin-bottom:6px}
+.oh-details{font-family:var(--fu);font-size:11px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:10px}
+.oh-bottom{display:flex;justify-content:space-between;align-items:center}
+.oh-price{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--gold-light)}
+.oh-time-pill{font-family:var(--fu);font-size:9px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(255,255,255,.06);padding:5px 12px;border:1px solid rgba(255,255,255,.08)}
+.oh-view-all{display:flex;justify-content:center;margin-top:32px}
+.oh-view-all .btn{min-width:220px}
 
 /* ══════════════════════════════════════
    SEARCH BAR
@@ -347,7 +355,29 @@ img{max-width:100%;display:block}
    BLOG PAGE
 ══════════════════════════════════════ */
 .blog-body{padding:48px 0}
-.blog-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:36px}
+.blog-toolbar{display:flex;flex-direction:column;gap:16px;margin-bottom:36px}
+.blog-cats{display:flex;flex-wrap:wrap;gap:6px}
+.blog-cat-btn{font-family:var(--fu);font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);background:var(--off-white);border:1px solid var(--cream);padding:9px 18px;cursor:pointer;transition:var(--ease)}
+.blog-cat-btn:hover{color:var(--navy);border-color:var(--navy)}
+.blog-cat-btn.active{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.blog-search{position:relative;max-width:340px;width:100%}
+.blog-search input{width:100%;background:var(--off-white);border:1px solid var(--cream);border-bottom:2px solid var(--navy);padding:12px 16px 12px 40px;font-family:var(--fu);font-size:13px;color:var(--dark);outline:none;transition:var(--ease)}
+.blog-search input:focus{border-bottom-color:var(--gold);background:var(--white)}
+.blog-search::before{content:'🔍';position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:13px;pointer-events:none}
+
+/* Featured post */
+.blog-featured{position:relative;margin-bottom:40px;cursor:pointer;overflow:hidden;background:var(--navy)}
+.blog-featured-img{height:320px;background-size:cover;background-position:center;position:relative}
+.blog-featured-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,20,80,.92) 0%,rgba(0,20,80,.3) 60%,rgba(0,20,80,.1) 100%)}
+.blog-featured-body{position:absolute;bottom:0;left:0;right:0;padding:32px 28px;z-index:2}
+.blog-featured-pin{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--navy);font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;padding:5px 12px;margin-bottom:12px}
+.blog-featured .b-cat{color:var(--gold-light)}
+.blog-featured .b-title{font-family:var(--fd);font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;color:var(--white);line-height:1.3;margin-bottom:10px}
+.blog-featured .b-exc{font-family:var(--fb);font-size:1rem;font-weight:300;color:rgba(255,255,255,.7);line-height:1.7;max-width:560px}
+.blog-featured .b-meta{border-top-color:rgba(255,255,255,.12);color:rgba(255,255,255,.5);margin-top:14px}
+
+/* Blog cards */
+.blog-grid{display:grid;grid-template-columns:1fr;gap:20px}
 .blog-card{background:var(--white);box-shadow:var(--shadow);cursor:pointer;transition:var(--ease);overflow:hidden}
 .blog-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
 .b-photo{height:180px;background-size:cover;background-position:center}
@@ -356,6 +386,65 @@ img{max-width:100%;display:block}
 .b-title{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:10px}
 .b-exc{font-family:var(--fb);font-size:.95rem;font-weight:300;color:var(--gray);line-height:1.7;margin-bottom:16px}
 .b-meta{display:flex;justify-content:space-between;padding-top:14px;border-top:1px solid var(--cream);font-family:var(--fu);font-size:10px;color:var(--gray)}
+.blog-empty{text-align:center;padding:60px 20px;font-family:var(--fb);font-size:1.1rem;color:var(--gray)}
+.blog-load-more{text-align:center;margin-top:40px}
+
+/* Single post view */
+.blog-single{max-width:780px;margin:0 auto;padding:48px 16px 80px}
+.blog-single-back{display:inline-flex;align-items:center;gap:6px;font-family:var(--fu);font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);cursor:pointer;margin-bottom:24px;transition:var(--ease)}
+.blog-single-back:hover{color:var(--navy);gap:10px}
+.blog-single .b-cat{margin-bottom:14px}
+.blog-single h1{font-family:var(--fd);font-size:clamp(1.6rem,4vw,2.6rem);font-weight:700;color:var(--navy);line-height:1.2;margin-bottom:16px}
+.blog-single-meta{display:flex;flex-wrap:wrap;gap:16px;font-family:var(--fu);font-size:11px;color:var(--gray);margin-bottom:28px;padding-bottom:20px;border-bottom:1px solid var(--cream)}
+.blog-single-img{width:100%;height:360px;background-size:cover;background-position:center;margin-bottom:32px}
+.blog-single-content{font-family:var(--fb);font-size:1.1rem;font-weight:300;color:#4A5568;line-height:2}
+.blog-single-content p{margin-bottom:18px}
+.blog-single-content h2{font-family:var(--fd);font-size:1.5rem;font-weight:700;color:var(--navy);margin:32px 0 14px}
+.blog-single-content h3{font-family:var(--fd);font-size:1.2rem;font-weight:600;color:var(--navy);margin:24px 0 10px}
+.blog-single-content ul,.blog-single-content ol{margin:14px 0 14px 24px}
+.blog-single-content li{margin-bottom:8px}
+.blog-single-content blockquote{border-left:3px solid var(--gold);padding:16px 24px;margin:24px 0;background:var(--off-white);font-style:italic}
+
+/* Share buttons */
+.blog-share{display:flex;align-items:center;gap:12px;margin-top:40px;padding-top:24px;border-top:1px solid var(--cream)}
+.blog-share-label{font-family:var(--fu);font-size:9px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold)}
+.share-btn{width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;transition:var(--ease);border:1px solid var(--cream);background:var(--off-white);color:var(--navy)}
+.share-btn:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.share-toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--white);font-family:var(--fu);font-size:12px;padding:12px 24px;z-index:9999;opacity:0;transition:opacity .3s;pointer-events:none}
+.share-toast.show{opacity:1}
+
+/* ══════════════════════════════════════
+   BLOG ADMIN PANEL
+══════════════════════════════════════ */
+.admin-login{max-width:400px;margin:0 auto;padding:60px 20px}
+.admin-login h2{font-family:var(--fd);font-size:1.8rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.admin-login p{font-family:var(--fb);font-size:.95rem;color:var(--gray);margin-bottom:28px}
+.admin-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px;padding:16px 0;border-bottom:1px solid var(--cream)}
+.admin-bar h2{font-family:var(--fd);font-size:1.4rem;font-weight:700;color:var(--navy)}
+.admin-bar-actions{display:flex;gap:10px;align-items:center}
+.admin-user{font-family:var(--fu);font-size:11px;color:var(--gray)}
+.admin-posts-list{display:flex;flex-direction:column;gap:8px}
+.admin-post-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:16px;background:var(--off-white);border-left:3px solid transparent;transition:var(--ease)}
+.admin-post-row:hover{border-left-color:var(--gold);background:var(--cream)}
+.admin-post-row .title{font-family:var(--fd);font-size:1rem;font-weight:600;color:var(--navy)}
+.admin-post-row .meta{font-family:var(--fu);font-size:10px;color:var(--gray);margin-top:3px}
+.admin-post-row .meta .pinned{color:var(--gold);font-weight:600}
+.admin-post-actions{display:flex;gap:6px}
+.admin-post-actions button{font-family:var(--fu);font-size:10px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:7px 14px;border:1px solid var(--cream);background:var(--white);color:var(--navy);cursor:pointer;transition:var(--ease)}
+.admin-post-actions button:hover{border-color:var(--navy);background:var(--navy);color:var(--white)}
+.admin-post-actions button.del:hover{border-color:#c0392b;background:#c0392b;color:var(--white)}
+
+/* Editor */
+.editor-wrap{max-width:860px}
+.editor-wrap .fg{margin-bottom:18px}
+.editor-toolbar{display:flex;flex-wrap:wrap;gap:4px;padding:8px;background:var(--off-white);border:1px solid var(--cream);border-bottom:none;margin-top:7px}
+.editor-toolbar button{font-family:var(--fu);font-size:11px;padding:6px 12px;background:var(--white);border:1px solid var(--cream);cursor:pointer;transition:var(--ease);color:var(--dark)}
+.editor-toolbar button:hover{background:var(--navy);color:var(--white);border-color:var(--navy)}
+.editor-body{width:100%;min-height:360px;background:var(--white);border:1px solid var(--cream);border-bottom:2px solid var(--navy);padding:20px;font-family:var(--fb);font-size:1.05rem;line-height:1.9;color:var(--dark);outline:none;overflow-y:auto}
+.editor-body:focus{border-bottom-color:var(--gold)}
+.editor-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.editor-check{display:flex;align-items:center;gap:8px;font-family:var(--fu);font-size:12px;color:var(--navy);margin-top:14px;cursor:pointer}
+.editor-check input{accent-color:var(--gold);width:16px;height:16px}
 
 /* ══════════════════════════════════════
    ABOUT PAGE
@@ -403,6 +492,9 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   .topbar .tb-loc{display:inline}
   .hero-content{padding:0 32px;max-width:640px}
   .comm-grid{grid-template-columns:repeat(2,1fr)}
+  .oh-grid{grid-template-columns:repeat(2,1fr)}
+  .blog-toolbar{flex-direction:row;align-items:center;justify-content:space-between}
+  .blog-featured-img{height:380px}
   .life-grid{grid-template-columns:repeat(3,1fr)}
   .agents-grid{grid-template-columns:repeat(2,1fr)}
   .test-grid{grid-template-columns:repeat(2,1fr)}
@@ -436,8 +528,9 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
   .hero-title{font-size:clamp(2.6rem,5vw,4.8rem)}
   .hero-sub{font-size:clamp(1rem,1.6vw,1.3rem)}
   .hero-actions{flex-wrap:nowrap}
-  .oh-panel{display:block}
   .slide-dots{left:80px;bottom:40px}
+  .oh-sec{padding:100px 0}
+  .oh-grid{grid-template-columns:repeat(4,1fr)}
 
   /* Search */
   .search-bar{flex-wrap:nowrap}
@@ -486,6 +579,9 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 
   /* Blog */
   .blog-grid{grid-template-columns:repeat(3,1fr)}
+  .blog-featured-img{height:440px}
+  .blog-single{padding:60px 32px 100px}
+  .blog-single-img{height:440px}
 
   /* About */
   .about-hero{padding:100px 80px 80px}
@@ -621,7 +717,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 <div class="topbar">
   <a href="tel:8434305201">(843) 430-5201</a>
   <span class="tb-sep"> · </span>
-  <a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a>
+  <a href="/cdn-cgi/l/email-protection#7c15121a133c1f1e0f191d1f131d0f08521f1311"><span class="__cf_email__" data-cfemail="c7aea9a1a887a4a5b4a2a6a4a8a6b4b3e9a4a8aa">[email&#160;protected]</span></a>
   <span class="tb-sep tb-loc"> · Myrtle Beach, SC | Grand Strand</span>
 </div>
 
@@ -736,7 +832,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
     <div class="slide slide-4"></div>
     <div class="slide slide-5"></div>
     <div class="hero-content">
-      <div class="hero-badge">Open Houses This Weekend</div>
+      <div class="hero-badge">Your Grand Strand Experts</div>
       <h1 class="hero-title">Find Your <em>Perfect</em><br>Coastal Retreat</h1>
       <p class="hero-sub">From gated waterway estates to oceanfront condos — the finest properties along South Carolina's Grand Strand, curated by experts who call it home.</p>
       <div class="hero-actions">
@@ -750,46 +846,6 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
       <button class="dot" onclick="goToSlide(2)"></button>
       <button class="dot" onclick="goToSlide(3)"></button>
       <button class="dot" onclick="goToSlide(4)"></button>
-    </div>
-    <!-- Desktop open houses panel -->
-    <div class="oh-panel" style="display:none">
-      <div class="oh-head">🏡 Open Houses This Weekend</div>
-      <div class="oh-item"><span class="oh-time">Sat Mar 8 · 1–3 PM</span><div class="oh-addr">412 Pelican Bay Dr</div><div class="oh-det">Little River · 4 BD · 3.5 BA · Pool</div><div class="oh-price">$749,000</div></div>
-      <div class="oh-item"><span class="oh-time">Sat Mar 8 · 12–2 PM</span><div class="oh-addr">1825 Sea Mist Ct</div><div class="oh-det">North Myrtle Beach · 3 BD · 2 BA</div><div class="oh-price">$1,125,000</div></div>
-      <div class="oh-item"><span class="oh-time">Sun Mar 9 · 2–4 PM</span><div class="oh-addr">7703 Tidewater Ln</div><div class="oh-det">Murrells Inlet · 5 BD · 4 BA · Waterfront</div><div class="oh-price">$2,450,000</div></div>
-      <div class="oh-item"><span class="oh-time">Sun Mar 9 · 11 AM–1 PM</span><div class="oh-addr">3204 Pawleys Club Blvd</div><div class="oh-det">Pawleys Island · 4 BD · 3 BA</div><div class="oh-price">$895,000</div></div>
-    </div>
-  </section>
-
-  <!-- Open Houses Mobile Card -->
-  <section style="background:var(--navy);padding:24px 0">
-    <div class="container">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
-        <span class="lbl" style="color:var(--gold)">🏡 Open Houses This Weekend</span>
-        <a href="#" style="font-family:var(--fu);font-size:10px;color:rgba(255,255,255,.5);letter-spacing:1px">View All →</a>
-      </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-        <div style="background:rgba(255,255,255,.06);padding:14px;border-left:2px solid var(--gold)">
-          <span style="font-family:var(--fu);font-size:9px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase">Sat · 1–3 PM</span>
-          <div style="font-family:var(--fd);font-size:14px;font-weight:600;color:var(--white);margin-top:4px">412 Pelican Bay Dr</div>
-          <div style="font-family:var(--fu);font-size:11px;color:rgba(255,255,255,.55);margin-top:3px">Little River · $749K</div>
-        </div>
-        <div style="background:rgba(255,255,255,.06);padding:14px;border-left:2px solid var(--gold)">
-          <span style="font-family:var(--fu);font-size:9px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase">Sat · 12–2 PM</span>
-          <div style="font-family:var(--fd);font-size:14px;font-weight:600;color:var(--white);margin-top:4px">1825 Sea Mist Ct</div>
-          <div style="font-family:var(--fu);font-size:11px;color:rgba(255,255,255,.55);margin-top:3px">NMB · $1.1M</div>
-        </div>
-        <div style="background:rgba(255,255,255,.06);padding:14px;border-left:2px solid var(--gold)">
-          <span style="font-family:var(--fu);font-size:9px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase">Sun · 2–4 PM</span>
-          <div style="font-family:var(--fd);font-size:14px;font-weight:600;color:var(--white);margin-top:4px">7703 Tidewater Ln</div>
-          <div style="font-family:var(--fu);font-size:11px;color:rgba(255,255,255,.55);margin-top:3px">Murrells Inlet · $2.4M</div>
-        </div>
-        <div style="background:rgba(255,255,255,.06);padding:14px;border-left:2px solid var(--gold)">
-          <span style="font-family:var(--fu);font-size:9px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase">Sun · 11AM–1PM</span>
-          <div style="font-family:var(--fd);font-size:14px;font-weight:600;color:var(--white);margin-top:4px">3204 Pawleys Club</div>
-          <div style="font-family:var(--fu);font-size:11px;color:rgba(255,255,255,.55);margin-top:3px">Pawleys Is. · $895K</div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -826,6 +882,58 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
           <div class="intro-img" style="background-image:url('images/nmb-beach-access.jpg')"></div>
           <div class="intro-img" style="background-image:url('images/barefoot-landing.jpg')"></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Houses -->
+  <section class="oh-sec">
+    <div class="container">
+      <div class="sec-header">
+        <span class="lbl">This Weekend</span>
+        <h2 class="h2 light">Open Houses</h2>
+        <p style="color:rgba(255,255,255,.55)">Tour these homes in person — no appointment needed.</p>
+      </div>
+      <div class="oh-grid">
+        <div class="oh-card">
+          <div class="oh-day">Saturday, Mar 8</div>
+          <div class="oh-addr">412 Pelican Bay Dr</div>
+          <div class="oh-details">Little River · 4 BD · 3.5 BA · Pool</div>
+          <div class="oh-bottom">
+            <span class="oh-price">$749,000</span>
+            <span class="oh-time-pill">1–3 PM</span>
+          </div>
+        </div>
+        <div class="oh-card">
+          <div class="oh-day">Saturday, Mar 8</div>
+          <div class="oh-addr">1825 Sea Mist Ct</div>
+          <div class="oh-details">North Myrtle Beach · 3 BD · 2 BA</div>
+          <div class="oh-bottom">
+            <span class="oh-price">$1,125,000</span>
+            <span class="oh-time-pill">12–2 PM</span>
+          </div>
+        </div>
+        <div class="oh-card">
+          <div class="oh-day">Sunday, Mar 9</div>
+          <div class="oh-addr">7703 Tidewater Ln</div>
+          <div class="oh-details">Murrells Inlet · 5 BD · 4 BA · Waterfront</div>
+          <div class="oh-bottom">
+            <span class="oh-price">$2,450,000</span>
+            <span class="oh-time-pill">2–4 PM</span>
+          </div>
+        </div>
+        <div class="oh-card">
+          <div class="oh-day">Sunday, Mar 9</div>
+          <div class="oh-addr">3204 Pawleys Club Blvd</div>
+          <div class="oh-details">Pawleys Island · 4 BD · 3 BA</div>
+          <div class="oh-bottom">
+            <span class="oh-price">$895,000</span>
+            <span class="oh-time-pill">11 AM–1 PM</span>
+          </div>
+        </div>
+      </div>
+      <div class="oh-view-all">
+        <a href="#" class="btn btn-outline">View All Open Houses →</a>
       </div>
     </div>
   </section>
@@ -892,7 +1000,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
             <div class="agent-name">Your Listing Specialist</div>
             <span class="agent-title">Senior Listing Agent · Grand Strand Expert</span>
             <p class="agent-bio">Our listing specialists bring deep Grand Strand market knowledge, cutting-edge marketing, and a relentless commitment to getting you the best possible outcome. With years of experience across every price point and community, we know how to position your home to sell fast and for top dollar.</p>
-            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a></div>
+            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="/cdn-cgi/l/email-protection#d1b8bfb7be91b2b3a2b4b0b2beb0a2a5ffb2bebc"><span class="__cf_email__" data-cfemail="93fafdf5fcd3f0f1e0f6f2f0fcf2e0e7bdf0fcfe">[email&#160;protected]</span></a></div>
           </div>
         </div>
         <div class="agent-card">
@@ -901,7 +1009,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
             <div class="agent-name">Your Buyer's Specialist</div>
             <span class="agent-title">Buyer's Agent · Relocation Expert</span>
             <p class="agent-bio">Discovering a new home on the South Carolina coast is one of life's great adventures — and our buyer's specialists are the ideal guides. From first-time coastal buyers to seasoned investors, our team provides the local insight, market data, and genuine care that make all the difference.</p>
-            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a></div>
+            <div class="agent-links"><a href="tel:8434305201">📞 (843) 430-5201</a>✉️ <a href="/cdn-cgi/l/email-protection#c5acaba3aa85a6a7b6a0a4a6aaa4b6b1eba6aaa8"><span class="__cf_email__" data-cfemail="cba2a5ada48ba8a9b8aeaaa8a4aab8bfe5a8a4a6">[email&#160;protected]</span></a></div>
           </div>
         </div>
       </div>
@@ -1051,17 +1159,119 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
     <h1>The Grand Strand Journal</h1>
     <p>Market updates, community spotlights, lifestyle guides, and expert advice from South Carolina's most trusted real estate team.</p>
   </div>
-  <div class="blog-body">
+
+  <!-- Blog list view -->
+  <div class="blog-body" id="blogListView">
     <div class="container">
-      <div class="blog-grid">
-        <div class="blog-card"><div class="b-photo" style="background-image:url('images/barefoot-landing.jpg')"></div><div class="b-body"><span class="b-cat">Market Update</span><div class="b-title">Grand Strand Luxury Market: Q1 2025 Report & What It Means for Buyers</div><p class="b-exc">Inventory remains historically low while demand continues to outpace supply in the $1M+ segment. Here's what you need to know.</p><div class="b-meta"><span>March 4, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
-        <div class="blog-card"><div class="b-photo" style="background-image:url('images/pelican-bay-4.jpg')"></div><div class="b-body"><span class="b-cat">Community Spotlight</span><div class="b-title">Pelican Bay: Why Little River's Best-Kept Secret Is Finally Getting Noticed</div><p class="b-exc">Gated. Waterway-front. Minutes from the ocean. We take a deep look at why Pelican Bay is one of the Grand Strand's most sought-after communities right now.</p><div class="b-meta"><span>February 28, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
-        <div class="blog-card"><div class="b-photo" style="background-image:url('images/long-bay-2.jpg')"></div><div class="b-body"><span class="b-cat">Lifestyle Guide</span><div class="b-title">The Ultimate Guide to Golf Communities Along the Grand Strand</div><p class="b-exc">From TPC Myrtle Beach to Pawleys Plantation — we break down the top golf course communities for buyers at every price point.</p><div class="b-meta"><span>February 14, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
-        <div class="blog-card"><div class="b-photo" style="background-image:url('images/nmb-beach-drone.jpg')"></div><div class="b-body"><span class="b-cat">Buyer's Guide</span><div class="b-title">Relocating to Myrtle Beach? 7 Things Every Buyer Should Know First</div><p class="b-exc">Flood zones, HOA fees, rental income potential, and proximity to healthcare — the questions every relocation buyer should ask.</p><div class="b-meta"><span>February 6, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
-        <div class="blog-card"><div class="b-photo" style="background-image:url('images/barefoot-cabana.jpg')"></div><div class="b-body"><span class="b-cat">Investing</span><div class="b-title">Short-Term Rental Potential on the Grand Strand: The Numbers Behind the Opportunity</div><p class="b-exc">Airbnb occupancy rates, average nightly rates, and which neighborhoods deliver the strongest returns for coastal property owners.</p><div class="b-meta"><span>January 22, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
-        <div class="blog-card"><div class="b-photo" style="background-image:url('images/barefoot-drone.jpg')"></div><div class="b-body"><span class="b-cat">Lifestyle Guide</span><div class="b-title">Life on the Intracoastal: A Day in the Life of a Waterway Homeowner</div><p class="b-exc">Morning kayak, afternoon cruise, evening marsh views — what makes ICW living so uniquely South Carolinian.</p><div class="b-meta"><span>January 10, 2026</span><span>CB Sea Coast Advantage</span></div></div></div>
+      <div class="blog-toolbar">
+        <div class="blog-cats">
+          <button class="blog-cat-btn active" onclick="filterBlog('all')">All</button>
+          <button class="blog-cat-btn" onclick="filterBlog('Market Update')">Market Updates</button>
+          <button class="blog-cat-btn" onclick="filterBlog('Community Spotlight')">Spotlights</button>
+          <button class="blog-cat-btn" onclick="filterBlog('Lifestyle')">Lifestyle</button>
+          <button class="blog-cat-btn" onclick="filterBlog('Tips & Advice')">Tips &amp; Advice</button>
+        </div>
+        <div class="blog-search">
+          <input type="text" id="blogSearchInput" placeholder="Search articles..." oninput="searchBlog(this.value)">
+        </div>
       </div>
-      <div style="text-align:center;margin-top:40px"><a href="#" class="btn btn-navy">Load More Articles</a></div>
+      <div id="blogFeatured"></div>
+      <div class="blog-grid" id="blogGrid"></div>
+      <div class="blog-empty" id="blogEmpty" style="display:none">No articles found. Check back soon!</div>
+      <div class="blog-load-more" id="blogLoadMore" style="display:none"><a href="#" class="btn btn-navy" onclick="loadMorePosts();return false">Load More Articles</a></div>
+    </div>
+  </div>
+
+  <!-- Blog single post view -->
+  <div id="blogSingleView" style="display:none">
+    <div class="blog-single" id="blogSingleContent"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     BLOG ADMIN PAGE
+══════════════════════════════════════════ -->
+<div class="page" id="page-admin">
+  <div class="page-hero">
+    <span class="lbl" style="margin-bottom:10px">Admin Panel</span>
+    <h1>Blog Manager</h1>
+    <p>Create, edit, and manage blog posts for The Grand Strand Journal.</p>
+  </div>
+
+  <!-- Login -->
+  <div id="adminLogin">
+    <div class="admin-login">
+      <h2>Admin Login</h2>
+      <p>Sign in to manage blog posts.</p>
+      <div class="fg"><label>Email</label><input type="email" id="adminEmail" placeholder="Email address"></div>
+      <div class="fg"><label>Password</label><input type="password" id="adminPass" placeholder="Password" onkeydown="if(event.key==='Enter')adminSignIn()"></div>
+      <button class="btn btn-navy btn-full" onclick="adminSignIn()" style="margin-top:8px">Sign In</button>
+      <p id="adminError" style="color:#c0392b;font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="adminDash" style="display:none">
+    <div class="blog-body">
+      <div class="container">
+        <div class="admin-bar">
+          <h2>📝 All Posts</h2>
+          <div class="admin-bar-actions">
+            <span class="admin-user" id="adminUserEmail"></span>
+            <button class="btn btn-gold" onclick="openEditor()">+ New Post</button>
+            <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream)" onclick="adminSignOut()">Sign Out</button>
+          </div>
+        </div>
+        <div class="admin-posts-list" id="adminPostsList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Editor -->
+  <div id="adminEditor" style="display:none">
+    <div class="blog-body">
+      <div class="container">
+        <div class="editor-wrap">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+            <a href="#" class="blog-single-back" onclick="closeEditor();return false">← Back to Posts</a>
+            <span id="editorTitle" style="font-family:var(--fd);font-size:1.2rem;font-weight:600;color:var(--navy)">New Post</span>
+          </div>
+          <div class="fg"><label>Title</label><input type="text" id="postTitle" placeholder="Post title"></div>
+          <div class="form-row" style="grid-template-columns:1fr 1fr;gap:16px">
+            <div class="fg"><label>Category</label>
+              <select id="postCategory">
+                <option value="Market Update">Market Update</option>
+                <option value="Community Spotlight">Community Spotlight</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Tips & Advice">Tips & Advice</option>
+              </select>
+            </div>
+            <div class="fg"><label>Image URL</label><input type="text" id="postImage" placeholder="images/your-image.jpg or full URL"></div>
+          </div>
+          <div class="fg"><label>Excerpt</label><textarea id="postExcerpt" rows="2" placeholder="Short description for the blog card..."></textarea></div>
+          <div class="fg">
+            <label>Body</label>
+            <div class="editor-toolbar">
+              <button onclick="execFmt('bold')" title="Bold"><b>B</b></button>
+              <button onclick="execFmt('italic')" title="Italic"><i>I</i></button>
+              <button onclick="execFmt('underline')" title="Underline"><u>U</u></button>
+              <button onclick="execFmt('formatBlock','H2')" title="Heading">H2</button>
+              <button onclick="execFmt('formatBlock','H3')" title="Subheading">H3</button>
+              <button onclick="execFmt('formatBlock','P')" title="Paragraph">P</button>
+              <button onclick="execFmt('insertUnorderedList')" title="Bullet List">• List</button>
+              <button onclick="execFmt('insertOrderedList')" title="Numbered List">1. List</button>
+              <button onclick="execFmt('formatBlock','BLOCKQUOTE')" title="Quote">❝ Quote</button>
+            </div>
+            <div class="editor-body" id="postBody" contenteditable="true"></div>
+          </div>
+          <label class="editor-check"><input type="checkbox" id="postPinned"> Pin as featured post</label>
+          <div class="editor-actions">
+            <button class="btn btn-navy" onclick="savePost()">Save &amp; Publish</button>
+            <button class="btn btn-outline" style="color:var(--navy);border-color:var(--cream)" onclick="closeEditor()">Cancel</button>
+          </div>
+          <p id="editorError" style="color:#c0392b;font-family:var(--fu);font-size:12px;margin-top:12px;display:none"></p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1215,7 +1425,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
         <h4>Contact</h4>
         <ul>
           <li><a href="tel:8434305201">(843) 430-5201</a></li>
-          <li><a href="mailto:info@cbseacoast.com">info@cbseacoast.com</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#94fdfaf2fbd4f7f6e7f1f5f7fbf5e7e0baf7fbf9"><span class="__cf_email__" data-cfemail="0a63646c654a6968796f6b69656b797e24696567">[email&#160;protected]</span></a></li>
           <li><a href="#">Schedule a Consultation</a></li>
           <li><a href="#" onclick="showPage('about');return false">About the Team</a></li>
           <li><a href="#" onclick="showPage('blog');return false">Blog &amp; Resources</a></li>
@@ -1225,7 +1435,7 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
     </div>
     <div class="foot-bottom">
       <p>© 2026 Coldwell Banker Sea Coast Advantage · All Rights Reserved · SC License #12345</p>
-      <span>Coldwell Banker ®</span>
+      <span><a href="#" onclick="showPage('admin');return false" style="color:rgba(255,255,255,.15);transition:color .2s" onmouseover="this.style.color='rgba(255,255,255,.4)'" onmouseout="this.style.color='rgba(255,255,255,.15)'">Admin</a> · Coldwell Banker ®</span>
     </div>
   </div>
 </footer>
@@ -1233,7 +1443,17 @@ footer{background:#050F1F;color:rgba(255,255,255,.6);padding:64px 0 0}
 <!-- ══════════════════════════════════════════
      JAVASCRIPT
 ══════════════════════════════════════════ -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script>
+/* ── Firebase Init ── */
+const firebaseConfig={apiKey:"AIzaSyC1mX0znMtTvREmL2YEcDUphXuHBBDtQvE",authDomain:"cbsca-blog.firebaseapp.com",projectId:"cbsca-blog",storageBucket:"cbsca-blog.firebasestorage.app",messagingSenderId:"432902375657",appId:"1:432902375657:web:bbf4bb4c9d8be0367a4878",measurementId:"G-DXTCNJJEZ3"};
+firebase.initializeApp(firebaseConfig);
+const db=firebase.firestore();
+const auth=firebase.auth();
+</script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── Community data ── */
 const C = {
   'little-river':{name:'Little River',tag:'Gated Waterway & Marina Living',tagline:'Where the waterway meets the good life.',bg:'images/little-river-1.jpg',intro:`Little River sits at the northernmost tip of the Grand Strand, where the Intracoastal Waterway opens into Cherry Grove Inlet and the Atlantic Ocean. This quiet fishing village turned upscale waterway community is one of the most coveted addresses on the South Carolina coast — and one of the best-kept secrets outside of it.`,p2:`Known for its annual Blue Crab Festival, a thriving casino boat scene, and some of the most spectacular waterway frontage in the state, Little River offers a lifestyle that feels like permanent vacation. Gated communities like Pelican Bay, Lightkeepers Village, and Cypress Village draw buyers who want privacy, natural beauty, and serious boating access without sacrificing proximity to shopping, dining, and golf.`,hi:[{i:'⚓',t:'Deep Water Access',d:'Direct ICW and ocean access with deep-water boat slips and private docks'},{i:'🦀',t:'Blue Crab Festival',d:'Annual festival draws 50,000+ visitors each May to this charming waterfront village'},{i:'⛳',t:'20+ Golf Courses',d:'World-class courses minutes from most neighborhoods'},{i:'🎰',t:'Casino Boats',d:'Unique waterfront entertainment at the Big M and other local vessels'},{i:'🍽️',t:'Waterfront Dining',d:'Fresh seafood restaurants lining the waterway with stunning sunset views'},{i:'🛡️',t:'Gated Communities',d:'Multiple premier gated communities including Pelican Bay and Lightkeepers Village'}]},
@@ -1253,9 +1473,11 @@ function showPage(p){
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
   document.getElementById('page-'+p).classList.add('active');
   document.querySelectorAll('.nav-links>li>a').forEach(a=>a.classList.remove('active'));
-  const m={'home':'nav-home','lifestyle':'nav-lifestyle','home-value':'nav-homevalue','blog':'nav-blog','about':'nav-about'};
+  const m={'home':'nav-home','lifestyle':'nav-lifestyle','home-value':'nav-homevalue','blog':'nav-blog','about':'nav-about','admin':'nav-blog'};
   if(m[p]) document.getElementById(m[p])?.classList.add('active');
   window.scrollTo({top:0,behavior:'smooth'});
+  if(p==='blog'){ blogBackToList(); loadBlogPosts(); }
+  if(p==='admin') checkAdminAuth();
 }
 
 /* ── Community pages ── */
@@ -1331,13 +1553,6 @@ window.addEventListener('scroll',()=>{
   document.getElementById('mainNav').classList.toggle('scrolled',scrollY>40);
 });
 
-/* ── Desktop OH panel visibility ── */
-/* ── Desktop OH panel visibility ── */
-function checkOH(){
-  const p=document.querySelector('.oh-panel');
-  if(p) p.style.display=window.innerWidth>=900?'block':'none';
-}
-checkOH(); window.addEventListener('resize',checkOH);
 
 /* ── Hamburger / mobile nav ── */
 const ham=document.getElementById('hamburger');
@@ -3758,23 +3973,7 @@ showCommunity = function(slug){
       luxSec.className='lux-comm-sec';
       luxSec.innerHTML=`<div class="container">
         <div class="sec-header">
-          <span class="lbl">Explore</span>
-          <h2 class="h2">Luxury Communities in Little River</h2>
-          <p>From ultra-exclusive waterway enclaves to private island estates — discover the finest communities in Little River.</p>
-        </div>
-        <div class="lux-grid">${lrLuxuryCardsHTML()}</div>
-      </div>`;
-      hook.appendChild(luxSec);
-    }
-  }
-  if(slug==='conway'){
-    const hook=document.querySelector('#commContent .comm-content');
-    if(hook){
-      const luxSec=document.createElement('div');
-      luxSec.className='lux-comm-sec';
-      luxSec.innerHTML=`<div class="container">
-        <div class="sec-header">
-          <span class="lbl">Explore</span>
+          <span class="lbl">">Explore</span>
           <h2 class="h2">Luxury Communities in Conway</h2>
           <p>Discover the premier luxury neighborhoods and communities in the Conway corridor.</p>
         </div>
@@ -3881,6 +4080,290 @@ showCommunity = function(slug){
   }
 
 };
+
+/* ══════════════════════════════════════════
+   BLOG SYSTEM — Firebase Powered
+══════════════════════════════════════════ */
+let blogPosts=[];
+let blogFiltered=[];
+let blogCategory='all';
+let blogSearchTerm='';
+let blogDisplayCount=9;
+let editingPostId=null;
+
+/* ── Load posts from Firestore ── */
+async function loadBlogPosts(){
+  try{
+    const snap=await db.collection('blog_posts').orderBy('date','desc').get();
+    blogPosts=snap.docs.map(d=>({id:d.id,...d.data()}));
+    blogDisplayCount=9;
+    applyBlogFilters();
+  }catch(e){console.error('Blog load error:',e);
+    document.getElementById('blogGrid').innerHTML='';
+    document.getElementById('blogEmpty').style.display='block';
+  }
+}
+
+/* ── Filter + Search ── */
+function filterBlog(cat){
+  blogCategory=cat;
+  blogDisplayCount=9;
+  document.querySelectorAll('.blog-cat-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim()===(cat==='all'?'All':cat==='Market Update'?'Market Updates':cat==='Community Spotlight'?'Spotlights':cat==='Lifestyle'?'Lifestyle':'Tips & Advice')));
+  applyBlogFilters();
+}
+function searchBlog(term){
+  blogSearchTerm=term.toLowerCase().trim();
+  blogDisplayCount=9;
+  applyBlogFilters();
+}
+function applyBlogFilters(){
+  blogFiltered=blogPosts.filter(p=>{
+    const catMatch=blogCategory==='all'||p.category===blogCategory;
+    const searchMatch=!blogSearchTerm||p.title.toLowerCase().includes(blogSearchTerm)||p.excerpt.toLowerCase().includes(blogSearchTerm)||(p.category||'').toLowerCase().includes(blogSearchTerm);
+    return catMatch&&searchMatch;
+  });
+  renderBlog();
+}
+
+/* ── Render blog list ── */
+function renderBlog(){
+  const featEl=document.getElementById('blogFeatured');
+  const gridEl=document.getElementById('blogGrid');
+  const emptyEl=document.getElementById('blogEmpty');
+  const loadMoreEl=document.getElementById('blogLoadMore');
+  featEl.innerHTML='';gridEl.innerHTML='';
+  emptyEl.style.display='none';loadMoreEl.style.display='none';
+
+  if(!blogFiltered.length){emptyEl.style.display='block';return;}
+
+  let posts=[...blogFiltered];
+  const pinned=posts.find(p=>p.pinned);
+  
+  // Show featured if on 'all' category with no search
+  if(pinned&&blogCategory==='all'&&!blogSearchTerm){
+    featEl.innerHTML=renderFeaturedCard(pinned);
+    posts=posts.filter(p=>p.id!==pinned.id);
+  }
+
+  const visible=posts.slice(0,blogDisplayCount);
+  gridEl.innerHTML=visible.map(p=>renderBlogCard(p)).join('');
+  if(posts.length>blogDisplayCount) loadMoreEl.style.display='block';
+}
+function loadMorePosts(){blogDisplayCount+=9;renderBlog();}
+
+function renderFeaturedCard(p){
+  const date=p.date?.toDate?p.date.toDate():new Date(p.date);
+  const dateStr=date.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const readTime=Math.max(1,Math.ceil((p.body||'').split(/\s+/).length/200));
+  return `<div class="blog-featured" onclick="showBlogPost('${p.id}')">
+    <div class="blog-featured-img" style="background-image:url('${p.image||'images/barefoot-landing.jpg'}')"></div>
+    <div class="blog-featured-body">
+      <div class="blog-featured-pin">★ Featured</div>
+      <span class="b-cat">${p.category||''}</span>
+      <div class="b-title">${p.title}</div>
+      <p class="b-exc">${p.excerpt||''}</p>
+      <div class="b-meta"><span>${dateStr} · ${readTime} min read</span><span>CB Sea Coast Advantage</span></div>
+    </div>
+  </div>`;
+}
+function renderBlogCard(p){
+  const date=p.date?.toDate?p.date.toDate():new Date(p.date);
+  const dateStr=date.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const readTime=Math.max(1,Math.ceil((p.body||'').split(/\s+/).length/200));
+  return `<div class="blog-card" onclick="showBlogPost('${p.id}')">
+    <div class="b-photo" style="background-image:url('${p.image||'images/barefoot-landing.jpg'}')"></div>
+    <div class="b-body">
+      <span class="b-cat">${p.category||''}</span>
+      <div class="b-title">${p.title}</div>
+      <p class="b-exc">${p.excerpt||''}</p>
+      <div class="b-meta"><span>${dateStr} · ${readTime} min read</span><span>CB Sea Coast Advantage</span></div>
+    </div>
+  </div>`;
+}
+
+/* ── Single post view ── */
+function showBlogPost(id){
+  const p=blogPosts.find(x=>x.id===id);if(!p)return;
+  const date=p.date?.toDate?p.date.toDate():new Date(p.date);
+  const dateStr=date.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+  const readTime=Math.max(1,Math.ceil((p.body||'').split(/\s+/).length/200));
+  const url=encodeURIComponent(window.location.href);
+  const title=encodeURIComponent(p.title);
+
+  document.getElementById('blogListView').style.display='none';
+  document.getElementById('blogSingleView').style.display='block';
+  document.getElementById('blogSingleContent').innerHTML=`
+    <a class="blog-single-back" onclick="blogBackToList()">← Back to Journal</a>
+    <span class="b-cat">${p.category||''}</span>
+    <h1>${p.title}</h1>
+    <div class="blog-single-meta">
+      <span>${dateStr}</span>
+      <span>${readTime} min read</span>
+      <span>CB Sea Coast Advantage</span>
+    </div>
+    ${p.image?`<div class="blog-single-img" style="background-image:url('${p.image}')"></div>`:''}
+    <div class="blog-single-content">${p.body||''}</div>
+    <div class="blog-share">
+      <span class="blog-share-label">Share</span>
+      <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=${url}" target="_blank" rel="noopener" title="Share on Facebook">f</a>
+      <a class="share-btn" href="https://twitter.com/intent/tweet?url=${url}&text=${title}" target="_blank" rel="noopener" title="Share on X">𝕏</a>
+      <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=${url}" target="_blank" rel="noopener" title="Share on LinkedIn">in</a>
+      <button class="share-btn" onclick="copyPostLink()" title="Copy link">🔗</button>
+    </div>`;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function blogBackToList(){
+  document.getElementById('blogListView').style.display='block';
+  document.getElementById('blogSingleView').style.display='none';
+}
+function copyPostLink(){
+  navigator.clipboard.writeText(window.location.href).then(()=>{
+    const t=document.createElement('div');t.className='share-toast show';t.textContent='Link copied!';
+    document.body.appendChild(t);setTimeout(()=>{t.classList.remove('show');setTimeout(()=>t.remove(),300)},2000);
+  });
+}
+
+/* ══════════════════════════════════════════
+   BLOG ADMIN — Firebase Auth + Firestore
+══════════════════════════════════════════ */
+function checkAdminAuth(){
+  const u=auth.currentUser;
+  if(u){showAdminDash(u);}
+  else{document.getElementById('adminLogin').style.display='block';document.getElementById('adminDash').style.display='none';document.getElementById('adminEditor').style.display='none';}
+}
+async function adminSignIn(){
+  const email=document.getElementById('adminEmail').value.trim();
+  const pass=document.getElementById('adminPass').value;
+  const errEl=document.getElementById('adminError');
+  errEl.style.display='none';
+  try{
+    const cred=await auth.signInWithEmailAndPassword(email,pass);
+    showAdminDash(cred.user);
+  }catch(e){
+    errEl.textContent=e.code==='auth/wrong-password'||e.code==='auth/invalid-credential'?'Invalid email or password.':e.code==='auth/user-not-found'?'No account found.':'Login failed: '+e.message;
+    errEl.style.display='block';
+  }
+}
+function adminSignOut(){
+  auth.signOut().then(()=>checkAdminAuth());
+}
+async function showAdminDash(user){
+  document.getElementById('adminLogin').style.display='none';
+  document.getElementById('adminEditor').style.display='none';
+  document.getElementById('adminDash').style.display='block';
+  document.getElementById('adminUserEmail').textContent=user.email;
+  await loadAdminPosts();
+}
+async function loadAdminPosts(){
+  try{
+    const snap=await db.collection('blog_posts').orderBy('date','desc').get();
+    const list=document.getElementById('adminPostsList');
+    if(snap.empty){list.innerHTML='<p style="font-family:var(--fb);color:var(--gray);padding:20px;text-align:center">No posts yet. Click "+ New Post" to get started.</p>';return;}
+    list.innerHTML=snap.docs.map(d=>{
+      const p=d.data();
+      const date=p.date?.toDate?p.date.toDate():new Date(p.date);
+      const dateStr=date.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+      return `<div class="admin-post-row">
+        <div><div class="title">${p.title}</div><div class="meta">${p.category} · ${dateStr}${p.pinned?' · <span class="pinned">★ Pinned</span>':''}</div></div>
+        <div class="admin-post-actions">
+          <button onclick="editPost('${d.id}')">Edit</button>
+          <button class="del" onclick="deletePost('${d.id}','${p.title.replace(/'/g,"\\'")}')">Delete</button>
+        </div>
+      </div>`;
+    }).join('');
+  }catch(e){console.error('Admin load error:',e);}
+}
+
+/* ── Editor ── */
+function openEditor(id){
+  editingPostId=id||null;
+  document.getElementById('adminDash').style.display='none';
+  document.getElementById('adminEditor').style.display='block';
+  document.getElementById('editorTitle').textContent=id?'Edit Post':'New Post';
+  document.getElementById('editorError').style.display='none';
+  if(!id){
+    document.getElementById('postTitle').value='';
+    document.getElementById('postCategory').value='Market Update';
+    document.getElementById('postImage').value='';
+    document.getElementById('postExcerpt').value='';
+    document.getElementById('postBody').innerHTML='';
+    document.getElementById('postPinned').checked=false;
+  }
+}
+async function editPost(id){
+  try{
+    const doc=await db.collection('blog_posts').doc(id).get();
+    if(!doc.exists)return;
+    const p=doc.data();
+    openEditor(id);
+    document.getElementById('postTitle').value=p.title||'';
+    document.getElementById('postCategory').value=p.category||'Market Update';
+    document.getElementById('postImage').value=p.image||'';
+    document.getElementById('postExcerpt').value=p.excerpt||'';
+    document.getElementById('postBody').innerHTML=p.body||'';
+    document.getElementById('postPinned').checked=!!p.pinned;
+  }catch(e){console.error(e);}
+}
+function closeEditor(){
+  editingPostId=null;
+  document.getElementById('adminEditor').style.display='none';
+  document.getElementById('adminDash').style.display='block';
+  loadAdminPosts();
+}
+function execFmt(cmd,val){document.execCommand(cmd,false,val||null);}
+
+async function savePost(){
+  const errEl=document.getElementById('editorError');errEl.style.display='none';
+  const title=document.getElementById('postTitle').value.trim();
+  const category=document.getElementById('postCategory').value;
+  const image=document.getElementById('postImage').value.trim();
+  const excerpt=document.getElementById('postExcerpt').value.trim();
+  const body=document.getElementById('postBody').innerHTML.trim();
+  const pinned=document.getElementById('postPinned').checked;
+
+  if(!title){errEl.textContent='Title is required.';errEl.style.display='block';return;}
+  if(!body){errEl.textContent='Body content is required.';errEl.style.display='block';return;}
+
+  const postData={title,category,image,excerpt,body,pinned,date:editingPostId?undefined:firebase.firestore.FieldValue.serverTimestamp(),updatedAt:firebase.firestore.FieldValue.serverTimestamp()};
+
+  // If pinning this post, unpin others
+  if(pinned){
+    try{
+      const pinSnap=await db.collection('blog_posts').where('pinned','==',true).get();
+      const batch=db.batch();
+      pinSnap.docs.forEach(d=>{if(d.id!==editingPostId) batch.update(d.ref,{pinned:false});});
+      await batch.commit();
+    }catch(e){console.warn('Unpin error:',e);}
+  }
+
+  try{
+    if(editingPostId){
+      // Don't overwrite the original date on edit
+      delete postData.date;
+      await db.collection('blog_posts').doc(editingPostId).update(postData);
+    }else{
+      postData.date=firebase.firestore.FieldValue.serverTimestamp();
+      await db.collection('blog_posts').add(postData);
+    }
+    closeEditor();
+  }catch(e){
+    errEl.textContent='Save failed: '+e.message;errEl.style.display='block';
+    console.error(e);
+  }
+}
+
+async function deletePost(id,title){
+  if(!confirm('Delete "'+title+'"? This cannot be undone.'))return;
+  try{await db.collection('blog_posts').doc(id).delete();loadAdminPosts();}
+  catch(e){console.error(e);alert('Delete failed.');}
+}
+
+/* ── Auto-load blog on page show ── */
+auth.onAuthStateChanged(u=>{
+  if(document.getElementById('page-admin')?.classList.contains('active')) checkAdminAuth();
+});
 </script>
+<!-- Share toast -->
+<div class="share-toast" id="shareToast"></div>
 </body>
 </html>
