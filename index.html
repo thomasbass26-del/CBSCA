@@ -5299,7 +5299,7 @@ async function resetCommPage(slug,name){
 }
 
 /* ── Override showCommunity to use Firestore data when available ── */
-const _origShowCommunity=showCommunity;
+const _firestoreShowCommunity=showCommunity;
 showCommunity=async function(slug){
   let d=null;
   try{
@@ -5309,52 +5309,56 @@ showCommunity=async function(slug){
       d={name:fd.name,tag:fd.tag,tagline:fd.tagline,bg:fd.image,intro:fd.intro,p2:fd.p2,hi:(fd.highlights||[]).map(h=>({i:h.icon,t:h.title,d:h.desc}))};
     }
   }catch(e){console.warn('Firestore community fetch failed, using default',e);}
-  if(!d) d=C[slug];
-  if(!d) return;
 
-  const hiHtml=d.hi.map(h=>`<div class="hl"><div class="hl-icon">${h.i}</div><div><h4>${h.t}</h4><p>${h.d}</p></div></div>`).join('');
-  document.getElementById('commContent').innerHTML=`
-    <div class="comm-hero" style="background-image:url('${d.bg}')">
-      <div class="comm-hero-body">
-        <span class="lbl">Grand Strand Community</span>
-        <h1>${d.name}</h1>
-        <p>${d.tagline}</p>
+  if(d){
+    // Use Firestore data — render directly
+    const hiHtml=d.hi.map(h=>`<div class="hl"><div class="hl-icon">${h.i}</div><div><h4>${h.t}</h4><p>${h.d}</p></div></div>`).join('');
+    document.getElementById('commContent').innerHTML=`
+      <div class="comm-hero" style="background-image:url('${d.bg}')">
+        <div class="comm-hero-body">
+          <span class="lbl">Grand Strand Community</span>
+          <h1>${d.name}</h1>
+          <p>${d.tagline}</p>
+        </div>
       </div>
-    </div>
-    <div class="comm-content">
-      <div class="container">
-        <div class="comm-layout">
-          <div class="comm-desc">
-            <div class="comm-tag-pill">${d.tag}</div>
-            <h2>About ${d.name}</h2>
-            <p>${d.intro}</p>
-            <p>${d.p2}</p>
-            <h3 style="font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--navy);margin:28px 0 16px">Why ${d.name}?</h3>
-            <div class="highlights">${hiHtml}</div>
-          </div>
-          <div class="comm-sidebar">
-            <div class="sb-card">
-              <h3>Ready to Find Your Home in ${d.name}?</h3>
-              <p>Our team knows every neighborhood, every builder, and every street. Let us help you find the perfect property.</p>
-              <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Get a Free Consultation</a>
+      <div class="comm-content">
+        <div class="container">
+          <div class="comm-layout">
+            <div class="comm-desc">
+              <div class="comm-tag-pill">${d.tag}</div>
+              <h2>About ${d.name}</h2>
+              <p>${d.intro}</p>
+              <p>${d.p2}</p>
+              <h3 style="font-family:var(--fd);font-size:1.3rem;font-weight:700;color:var(--navy);margin:28px 0 16px">Why ${d.name}?</h3>
+              <div class="highlights">${hiHtml}</div>
             </div>
-            <div class="sb-prices">
-              <h3>Search by Price Range</h3>
-              <a href="#" class="price-link">$600K – $1,000,000 <span>→</span></a>
-              <a href="#" class="price-link">$1,000,000 – $3,000,000 <span>→</span></a>
-              <a href="#" class="price-link">$3,000,000+ <span>→</span></a>
-            </div>
-            <div class="sb-oh">
-              <h3>Open Houses in ${d.name}</h3>
-              <p>View scheduled open houses and request private showings.</p>
-              <a href="#" class="btn btn-outline btn-full">View Open Houses</a>
+            <div class="comm-sidebar">
+              <div class="sb-card">
+                <h3>Ready to Find Your Home in ${d.name}?</h3>
+                <p>Our team knows every neighborhood, every builder, and every street. Let us help you find the perfect property.</p>
+                <a href="#" class="btn btn-gold btn-full" onclick="showPage('home-value');return false">Get a Free Consultation</a>
+              </div>
+              <div class="sb-prices">
+                <h3>Search by Price Range</h3>
+                <a href="#" class="price-link">$600K – $1,000,000 <span>→</span></a>
+                <a href="#" class="price-link">$1,000,000 – $3,000,000 <span>→</span></a>
+                <a href="#" class="price-link">$3,000,000+ <span>→</span></a>
+              </div>
+              <div class="sb-oh">
+                <h3>Open Houses in ${d.name}</h3>
+                <p>View scheduled open houses and request private showings.</p>
+                <a href="#" class="btn btn-outline btn-full">View Open Houses</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>`;
-  document.getElementById('listHead').textContent='Available Properties in '+d.name;
-  showPage('community');
+      </div>`;
+    document.getElementById('listHead').textContent='Available Properties in '+d.name;
+    showPage('community');
+  } else {
+    // Fall back to the existing override chain (hardcoded C + luxury grids)
+    _firestoreShowCommunity(slug);
+  }
 };
 
 /* ══════════════════════════════════════════
